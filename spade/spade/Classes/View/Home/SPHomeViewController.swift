@@ -27,7 +27,7 @@ class SPHomeViewController: UIViewController {
 extension SPHomeViewController {
     
     fileprivate func setupUI() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigation-direction", target: self, action: #selector(test))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
         
     }
 }

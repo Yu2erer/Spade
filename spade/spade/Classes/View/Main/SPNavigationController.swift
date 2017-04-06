@@ -22,6 +22,7 @@ class SPNavigationController: UINavigationController {
         if childViewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
         }
+        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(target: self, action: #selector(popToParent))
         super.pushViewController(viewController, animated: animated)
     }
     /// POP 返回到上一级 控制器

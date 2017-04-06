@@ -19,6 +19,6 @@ class SPDemoViewController: UIViewController {
 extension SPDemoViewController {
     
     fileprivate func setupUI() {
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.white
     }
 }
