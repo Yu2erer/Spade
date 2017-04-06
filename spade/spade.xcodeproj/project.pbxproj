@@ -13,6 +13,10 @@
 		9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */; };
 		9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */; };
 		9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA61E9630BA0019D76A /* SPHomeViewController.swift */; };
+		9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA81E964B2F0019D76A /* SPHomeTableViewCell.swift */; };
+		9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA91E964B2F0019D76A /* SPHomeTableViewCell.xib */; };
+		9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CAD1E964C670019D76A /* SPDemoViewController.swift */; };
+		9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CAF1E964F200019D76A /* NTUIBarButtonItem+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTBundle+Extensions.swift"; sourceTree = "<group>"; };
 		9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNavigationController.swift; sourceTree = "<group>"; };
 		9FDC1CA61E9630BA0019D76A /* SPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomeViewController.swift; sourceTree = "<group>"; };
+		9FDC1CA81E964B2F0019D76A /* SPHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomeTableViewCell.swift; sourceTree = "<group>"; };
+		9FDC1CA91E964B2F0019D76A /* SPHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeTableViewCell.xib; sourceTree = "<group>"; };
+		9FDC1CAD1E964C670019D76A /* SPDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDemoViewController.swift; sourceTree = "<group>"; };
+		9FDC1CAF1E964F200019D76A /* NTUIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				9FDC1CA61E9630BA0019D76A /* SPHomeViewController.swift */,
+				9FDC1CA81E964B2F0019D76A /* SPHomeTableViewCell.swift */,
+				9FDC1CA91E964B2F0019D76A /* SPHomeTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -126,6 +136,7 @@
 		9FDC1C9D1E962C4B0019D76A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9FDC1CAC1E964C4F0019D76A /* Test */,
 				9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */,
 				9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */,
 			);
@@ -143,8 +154,17 @@
 			isa = PBXGroup;
 			children = (
 				9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */,
+				9FDC1CAF1E964F200019D76A /* NTUIBarButtonItem+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9FDC1CAC1E964C4F0019D76A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				9FDC1CAD1E964C670019D76A /* SPDemoViewController.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */,
+				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
+				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
+				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
 				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 			);
