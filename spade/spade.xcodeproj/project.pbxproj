@@ -11,7 +11,6 @@
 		9FDC1C871E96272F0019D76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C861E96272F0019D76A /* ViewController.swift */; };
 		9FDC1C8A1E96272F0019D76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C881E96272F0019D76A /* Main.storyboard */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
-		9FDC1C8F1E96272F0019D76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8D1E96272F0019D76A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,6 @@
 		9FDC1C861E96272F0019D76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FDC1C891E96272F0019D76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FDC1C8B1E96272F0019D76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9FDC1C8E1E96272F0019D76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FDC1C901E96272F0019D76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +54,6 @@
 			children = (
 				9FDC1C861E96272F0019D76A /* ViewController.swift */,
 				9FDC1C881E96272F0019D76A /* Main.storyboard */,
-				9FDC1C8D1E96272F0019D76A /* LaunchScreen.storyboard */,
 				9FDC1C961E96275A0019D76A /* Support Files */,
 			);
 			path = spade;
@@ -132,7 +129,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FDC1C8F1E96272F0019D76A /* LaunchScreen.storyboard in Resources */,
 				9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */,
 				9FDC1C8A1E96272F0019D76A /* Main.storyboard in Resources */,
 			);
@@ -159,14 +155,6 @@
 				9FDC1C891E96272F0019D76A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9FDC1C8D1E96272F0019D76A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9FDC1C8E1E96272F0019D76A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -269,6 +257,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 26K4QZ9DA7;
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -283,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 26K4QZ9DA7;
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
