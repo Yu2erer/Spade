@@ -10,6 +10,9 @@
 		9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C841E96272F0019D76A /* AppDelegate.swift */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
 		9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */; };
+		9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */; };
+		9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */; };
+		9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA61E9630BA0019D76A /* SPHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +21,9 @@
 		9FDC1C8B1E96272F0019D76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FDC1C901E96272F0019D76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPMainViewController.swift; sourceTree = "<group>"; };
+		9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTBundle+Extensions.swift"; sourceTree = "<group>"; };
+		9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNavigationController.swift; sourceTree = "<group>"; };
+		9FDC1CA61E9630BA0019D76A /* SPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		9FDC1C981E962C4B0019D76A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9FDC1CA11E962ED80019D76A /* Extensions */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 		9FDC1C9B1E962C4B0019D76A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9FDC1CA61E9630BA0019D76A /* SPHomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -119,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */,
+				9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -128,6 +137,14 @@
 			children = (
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		9FDC1CA11E962ED80019D76A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +173,7 @@
 		9FDC1C791E96272E0019D76A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SP;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ntian;
@@ -201,7 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
+				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
+				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
