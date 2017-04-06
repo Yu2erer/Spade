@@ -475,6 +475,7 @@
 				9FDC1C951E96272F0019D76A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

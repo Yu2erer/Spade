@@ -8,5 +8,5 @@ target 'spade' do
 
 pod 'Alamofire'
 pod 'Kingfisher'
-
+pod 'OAuthSwift'
 end
