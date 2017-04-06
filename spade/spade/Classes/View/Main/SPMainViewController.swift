@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SPMainViewController.swift
 //  spade
 //
 //  Created by ntian on 2017/4/6.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SPMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.white
+
     }
 
-
-
 }
-
