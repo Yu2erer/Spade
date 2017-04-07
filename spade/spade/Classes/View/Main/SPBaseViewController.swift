@@ -14,6 +14,8 @@ class SPBaseViewController: UIViewController {
     var tableView: UITableView?
     /// 刷新控件
     var refreshControl: UIRefreshControl?
+    /// 上拉刷新标记
+    var isPullup = false
     
 
     override func viewDidLoad() {
@@ -58,5 +60,22 @@ extension SPBaseViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    // 到最后一行 上拉刷新
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            print("上拉刷新")
+            isPullup = true
+            loadData()
+        }
     }
 }
