@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1280E5A98AA9520C4107B199 /* Pods_spade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50C2F42A49182BA021C5361 /* Pods_spade.framework */; };
+		9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */; };
+		9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */; };
 		9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C841E96272F0019D76A /* AppDelegate.swift */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
 		9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.debug.xcconfig"; sourceTree = "<group>"; };
 		48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.release.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.release.xcconfig"; sourceTree = "<group>"; };
+		9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkManage.swift; sourceTree = "<group>"; };
+		9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCommon.swift; sourceTree = "<group>"; };
 		9FDC1C811E96272F0019D76A /* spade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDC1C841E96272F0019D76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FDC1C8B1E96272F0019D76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +63,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9F4E0EF51E9691BB004F307A /* NetworkManage */ = {
+			isa = PBXGroup;
+			children = (
+				9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */,
+			);
+			path = NetworkManage;
+			sourceTree = "<group>";
+		};
 		9FDC1C781E96272E0019D76A = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +104,7 @@
 				9FDC1C841E96272F0019D76A /* AppDelegate.swift */,
 				9FDC1C8B1E96272F0019D76A /* Assets.xcassets */,
 				9FDC1C901E96272F0019D76A /* Info.plist */,
+				9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -108,6 +121,7 @@
 		9FDC1C981E962C4B0019D76A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9F4E0EF51E9691BB004F307A /* NetworkManage */,
 				9FDC1CA11E962ED80019D76A /* Extensions */,
 			);
 			path = Tools;
@@ -322,6 +336,8 @@
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
 				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,
+				9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */,
+				9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

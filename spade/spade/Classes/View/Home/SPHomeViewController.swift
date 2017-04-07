@@ -14,6 +14,10 @@ class SPHomeViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        SPNetworkManage.shared.request(urlString: "https://api.tumblr.com/v2/user/dashboard", method: .GET) { (list, isSuccess) in
+            print(list)
+        }
+        
     }
     
     @objc fileprivate func test() {

@@ -6,7 +6,6 @@ target 'spade' do
 
   # Pods for spade
 
-pod 'Alamofire'
 pod 'Kingfisher'
 pod 'OAuthSwift'
 end
