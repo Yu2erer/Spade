@@ -22,10 +22,16 @@ class SPHomeViewController: SPBaseViewController {
     
     /// 加载数据
     override func loadData() {
-        for i in 0..<10 {
-            statusList.insert(i.description, at: 0)
-        }
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            for i in 0..<15 {
+                self.statusList.insert(i.description, at: 0)
+            }
+            print("刷新表格")
+            // 结束刷新控件
+            self.refreshControl?.endRefreshing()
+            self.tableView?.reloadData()
+        }
     }
     
     @objc fileprivate func test() {

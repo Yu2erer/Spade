@@ -25,7 +25,7 @@ class SPBaseViewController: UIViewController {
     }
     /// 具体实现子类负责
     func loadData() {
-        
+        self.refreshControl?.endRefreshing()
     }
 
 
