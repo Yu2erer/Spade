@@ -1,5 +1,5 @@
 //
-//  SPDashboard.swift
+//  SPDashBoard.swift
 //  spade
 //
 //  Created by ntian on 2017/4/7.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SPDashboard: NSObject {
+class SPDashBoard: NSObject {
     
     var id: Int64 = 0
     // 内容
