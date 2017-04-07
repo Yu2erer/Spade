@@ -8,4 +8,8 @@ target 'spade' do
 
 pod 'Kingfisher'
 pod 'OAuthSwift'
+pod 'YYModel'
+pod 'SwiftyJSON'
+
+
 end
