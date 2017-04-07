@@ -8,15 +8,15 @@
 
 import UIKit
 
-class SPHomeViewController: UIViewController {
+class SPHomeViewController: SPBaseViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-        SPNetworkManage.shared.request(urlString: "https://api.tumblr.com/v2/user/dashboard", method: .GET) { (list, isSuccess) in
-            print(list)
-        }
+      
         
     }
     
@@ -32,6 +32,8 @@ extension SPHomeViewController {
     
     fileprivate func setupUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-        
+    }
+    override func setupTableView() {
+        super.setupTableView()
     }
 }

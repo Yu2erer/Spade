@@ -14,3 +14,6 @@ let CONSUMERSECRET = "96wNoKZPTf35pLdpFcUM3CDt7jdAkgFjtSdirWEogjtu4WoFYi"
 let REQUESTTOKENURL = "https://api.twitter.com/oauth/request_token"
 let AUTHORIZEURL = "https://api.twitter.com/oauth/authorize"
 let ACCESSTOKENURL = "https://api.twitter.com/oauth/access_token"
+// MAKR: - API信息
+let baseURL = "https://api.tumblr.com/v2/"
+let dashBoardURL = baseURL + "user/dashboard"

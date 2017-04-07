@@ -14,5 +14,5 @@ class SPDashboard: NSObject {
     // 内容
     var summary: String?
     
-
+    
 }

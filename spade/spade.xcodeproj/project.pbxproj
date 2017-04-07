@@ -11,6 +11,8 @@
 		9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */; };
 		9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */; };
 		9F4E0EFC1E972E50004F307A /* SPDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFB1E972E50004F307A /* SPDashboard.swift */; };
+		9F4E0EFE1E9744FD004F307A /* SPNetworkManage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFD1E9744FD004F307A /* SPNetworkManage+Extensions.swift */; };
+		9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */; };
 		9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C841E96272F0019D76A /* AppDelegate.swift */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
 		9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */; };
@@ -29,6 +31,8 @@
 		9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkManage.swift; sourceTree = "<group>"; };
 		9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCommon.swift; sourceTree = "<group>"; };
 		9F4E0EFB1E972E50004F307A /* SPDashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashboard.swift; sourceTree = "<group>"; };
+		9F4E0EFD1E9744FD004F307A /* SPNetworkManage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SPNetworkManage+Extensions.swift"; sourceTree = "<group>"; };
+		9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBaseViewController.swift; sourceTree = "<group>"; };
 		9FDC1C811E96272F0019D76A /* spade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDC1C841E96272F0019D76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FDC1C8B1E96272F0019D76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */,
+				9F4E0EFD1E9744FD004F307A /* SPNetworkManage+Extensions.swift */,
 			);
 			path = NetworkManage;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				9FDC1CAC1E964C4F0019D76A /* Test */,
 				9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */,
 				9FDC1CA41E962F9F0019D76A /* SPNavigationController.swift */,
+				9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4E0EFE1E9744FD004F307A /* SPNetworkManage+Extensions.swift in Sources */,
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
@@ -350,6 +357,7 @@
 				9F4E0EFC1E972E50004F307A /* SPDashboard.swift in Sources */,
 				9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */,
 				9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */,
+				9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
