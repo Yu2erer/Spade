@@ -8,15 +8,23 @@
 
 import UIKit
 
+private let cellId = "cellId"
+
 class SPHomeViewController: SPBaseViewController {
     
-    
+    fileprivate lazy var statusList = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
-      
+    }
+    
+    /// 加载数据
+    override func loadData() {
+        for i in 0..<10 {
+            statusList.insert(i.description, at: 0)
+        }
         
     }
     
@@ -27,6 +35,20 @@ class SPHomeViewController: SPBaseViewController {
 
     
 }
+
+// MARK: - 表格数据源方法
+extension SPHomeViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statusList.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        cell.textLabel?.text = statusList[indexPath.row]
+        return cell
+    }
+}
 // MARK: - 设置界面
 extension SPHomeViewController {
     
@@ -35,5 +57,6 @@ extension SPHomeViewController {
     }
     override func setupTableView() {
         super.setupTableView()
+        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 }
