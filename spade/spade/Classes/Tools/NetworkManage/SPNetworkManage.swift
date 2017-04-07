@@ -19,7 +19,6 @@ class SPNetworkManage {
     
     func request(urlString: String, method: OAuthSwiftHTTPRequest.Method, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
-
         SPNetworkManage.oauthswift.client.credential.oauthToken = "dTV6aFRu9gCj8IuVDspdc70Bu4SxJi0cFvXykaCQClbJayJouq"
         SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = "dmMhBTyN2ukZom0PUxbEcDIiUXcECYN0luvCNUVp6UsVaOAHQH"
         
