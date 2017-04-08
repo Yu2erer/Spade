@@ -52,8 +52,9 @@ extension SPHomeViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = dashBoardViewModel.dashBoardList[indexPath.row].summary
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
+        cell.statusLabel?.text = dashBoardViewModel.dashBoardList[indexPath.row].summary
+        cell.nameLabel.text = dashBoardViewModel.dashBoardList[indexPath.row].blog_name
         return cell
     }
 }
@@ -66,6 +67,10 @@ extension SPHomeViewController {
     override func setupTableView() {
         super.setupTableView()
         
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 300
+        
+        tableView?.separatorStyle = .none
     }
 }
