@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Kingfisher
 
 private let cellId = "cellId"
 
 class SPHomeViewController: SPBaseViewController {
     
     /// 列表视图模型
-    fileprivate lazy var dashBoardViewModel = SPDashBoardViewModel()
+    fileprivate lazy var dashBoardViewModel = SPDashBoardListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        SPNetworkManage.shared.blogInfo(blogName: "ntian.tumblr.com") { (json, isSuccess) in
+            print(json)
+        }
 
         
     }
@@ -55,6 +59,8 @@ extension SPHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
         cell.statusLabel?.text = dashBoardViewModel.dashBoardList[indexPath.row].summary
         cell.nameLabel.text = dashBoardViewModel.dashBoardList[indexPath.row].blog_name
+        
+        
         return cell
     }
 }
@@ -66,7 +72,6 @@ extension SPHomeViewController {
     }
     override func setupTableView() {
         super.setupTableView()
-        
         tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300

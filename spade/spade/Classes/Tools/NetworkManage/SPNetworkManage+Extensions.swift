@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 // MARK: - 封装Tumblr 网络请求方法
 extension SPNetworkManage {
@@ -20,11 +19,24 @@ extension SPNetworkManage {
         request(urlString: dashBoardURL, method: .GET, parameters: params) { (json, isSuccess) in
             
             let result = json as? [String: Any]
-            let data = JSON(result ?? [:])["response"]["posts"].arrayObject as? [[String: Any]]
+        
+            let data = result?["response"] as? [String: Any]
+//            let data = JSON(json ?? [])["response"]["posts"].arrayObject as? [[String: Any]]
+            completion(data?["posts"] as? [[String: Any]], isSuccess)
+        }   
+    }
+    
+    /// 加载 BlogInfo
+    func blogInfo(blogName: String, completion: @escaping (_ list: [String: Any]?, _ isSuccess: Bool)->()) {
+        
+        request(urlString: blogInfoURL + blogName + "/info", method: .GET, parameters: nil) { (json, isSuccess) in
             
-            completion(data, isSuccess)
+            let result = json as? [String: Any]
+            
+            let data = result?["response"] as? [String: Any]
+            
+            completion(data?["blog"] as? [String: Any], isSuccess)
         }
-
     }
     
         

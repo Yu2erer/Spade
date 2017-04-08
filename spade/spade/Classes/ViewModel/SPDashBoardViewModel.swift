@@ -1,5 +1,5 @@
 //
-//  SPDashBoardViewModel.swift
+//  SPDashBoardListViewModel.swift
 //  spade
 //
 //  Created by ntian on 2017/4/7.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-class SPDashBoardViewModel {
+class SPDashBoardListViewModel {
     
     lazy var dashBoardList = [SPDashBoard]()
     
-    func loadDashBoard(pullup: Bool,completion: @escaping (_ isSuccess: Bool) -> ()) {
+    func loadDashBoard(pullup: Bool, completion: @escaping (_ isSuccess: Bool) -> ()) {
         
         let since_id = pullup ? "\(String(describing: dashBoardList.last?.id))" : "\(String(describing: dashBoardList.first?.id))"
         
@@ -29,8 +29,10 @@ class SPDashBoardViewModel {
             } else {
                 // 下拉刷新
                 self.dashBoardList = array + self.dashBoardList
+                
             }
             completion(isSuccess)
         }
     }
+    
 }

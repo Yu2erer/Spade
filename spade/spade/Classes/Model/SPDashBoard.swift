@@ -22,7 +22,6 @@ class SPDashBoard: NSObject {
             // 通过String的扩展获取 前八位https://
             // 和后18位的中间 Blog 的地址
             post_url = post_url?.getBlogString()
-            print(post_url)
         }
     }
     
