@@ -12,27 +12,22 @@ private let cellId = "cellId"
 
 class SPHomeViewController: SPBaseViewController {
     
-    fileprivate lazy var statusList = [String]()
+    /// 列表视图模型
+    fileprivate lazy var dashBoardViewModel = SPDashBoardViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+
+        
     }
     
     /// 加载数据
     override func loadData() {
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            for i in 0..<15 {
-                if self.isPullup {
-                    // 将数据追加到底部
-                    self.statusList.append("上拉\(i)")
-                } else {
-                    self.statusList.insert(i.description, at: 0)
-                }
-            }
-            print("刷新表格")
+        dashBoardViewModel.loadDashBoard(pullup: self.isPullup) { (isSuccess) in
+            
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
@@ -53,12 +48,12 @@ class SPHomeViewController: SPBaseViewController {
 extension SPHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return dashBoardViewModel.dashBoardList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = dashBoardViewModel.dashBoardList[indexPath.row].summary
         return cell
     }
 }
@@ -70,6 +65,7 @@ extension SPHomeViewController {
     }
     override func setupTableView() {
         super.setupTableView()
+        
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
 }

@@ -14,8 +14,28 @@ class SPMainViewController: UITabBarController {
         super.viewDidLoad()
         
         setupChildControllers()
+        delegate = self
     }
 
+}
+// MARK: - UITabBarControllerDelegate
+extension SPMainViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        
+        let idx = (childViewControllers as NSArray).index(of: viewController)
+        if selectedIndex == 0 && idx == selectedIndex {
+            
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! SPHomeViewController
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            vc.loadData()
+            
+        }
+        
+        return true
+    }
 }
 
 // MARK: - 设置界面

@@ -17,17 +17,38 @@ class SPNetworkManage {
     private static let oauthswift = OAuth1Swift(consumerKey: CONSUMERKEY, consumerSecret: CONSUMERSECRET, requestTokenUrl: REQUESTTOKENURL, authorizeUrl: AUTHORIZEURL, accessTokenUrl: ACCESSTOKENURL)
     
     
-    func request(urlString: String, method: OAuthSwiftHTTPRequest.Method,parameters: [String: Any], completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
+    func request(urlString: String, method: OAuthSwiftHTTPRequest.Method,parameters: [String: Any]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
-        SPNetworkManage.oauthswift.client.credential.oauthToken = "dTV6aFRu9gCj8IuVDspdc70Bu4SxJi0cFvXykaCQClbJayJouq"
-        SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = "dmMhBTyN2ukZom0PUxbEcDIiUXcECYN0luvCNUVp6UsVaOAHQH"
+
+        SPNetworkManage.oauthswift.client.credential.oauthToken = "YqUxedXOpUlhbIZBQrhngmFXPj87aJvslJyRX5dDulpxRD6goK"
+        SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = "u8vldkgoP2SZrZ4ArMU0XdUL1cbpt6ngAdiFmi3KR5k9RMoFju"
         
         
-        SPNetworkManage.oauthswift.client.request(urlString, method: method, parameters: parameters, success: { (response) in
-            completion(try? response.jsonObject(), true)
+        if parameters == nil {
+            SPNetworkManage.oauthswift.client.request(urlString, method: method, success: { (response) in
+                completion(try? response.jsonObject(), true)
+            }, failure: { (error) in
+                completion(nil, false)
+                print(error)
+            })
+        } else {
+            SPNetworkManage.oauthswift.client.request(urlString, method: method, parameters: parameters!, success: { (response) in
+                completion(try? response.jsonObject(), true)
+            }) { (error) in
+                completion(nil, false)
+                print(error)
+            }
+        }
+    }
+    
+    func loadToken() {
+        
+        let handle = SPNetworkManage.oauthswift.authorize(withCallbackURL: "oauth-swift://oauth-callback/tumblr", success: { (credential, response, parameters) in
+            
+            SPNetworkManage.oauthswift.client.credential.oauthToken = credential.oauthToken
+            SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = credential.oauthTokenSecret
         }) { (error) in
-            completion(nil, false)
-            print(error)
+            print(error.description)
         }
     }
 }

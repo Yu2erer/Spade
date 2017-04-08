@@ -7,19 +7,25 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 // MARK: - 封装Tumblr 网络请求方法
 extension SPNetworkManage {
     
-    
-    func dashBoardList(since_id: Int, completion: @escaping ()->()) {
+    /// 加载 dashBoard
+    func dashBoardList(since_id: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
         
         let params = ["since_id": since_id]
         
         request(urlString: dashBoardURL, method: .GET, parameters: params) { (json, isSuccess) in
             
+            let result = json as? [String: Any]
+            let data = JSON(result ?? [:])["response"]["posts"].arrayObject as? [[String: Any]]
+            
+            completion(data, isSuccess)
         }
 
     }
     
+        
 }

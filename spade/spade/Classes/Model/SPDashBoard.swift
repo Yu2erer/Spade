@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import YYModel
 
 class SPDashBoard: NSObject {
     
-    var id: Int64 = 0
+    var id: Int = 0
     // 内容
     var summary: String?
     
+    override var description: String {
+        return yy_modelDescription()
+    }
     
 }
