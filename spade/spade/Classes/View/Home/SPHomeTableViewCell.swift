@@ -31,6 +31,7 @@ class SPHomeTableViewCell: UITableViewCell {
             likeIcon.image = viewModel?.likeImage
 //            timeLabel.text = viewModel?.dashBoard.createDate?.description
             
+            pictureView.heightCons.constant = 0
         }
     }
 }
