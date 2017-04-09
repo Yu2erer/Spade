@@ -17,7 +17,6 @@
 		9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */; };
 		9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */; };
 		9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */; };
-		9F9A2C8B1E9914410067E1A4 /* SPBlogAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8A1E9914410067E1A4 /* SPBlogAvatar.swift */; };
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
 		9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */; };
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
@@ -45,7 +44,6 @@
 		9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTString+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogInfo.swift; sourceTree = "<group>"; };
-		9F9A2C8A1E9914410067E1A4 /* SPBlogAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogAvatar.swift; sourceTree = "<group>"; };
 		9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTDate+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListViewModel.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			children = (
 				9F4E0EFB1E972E50004F307A /* SPDashBoard.swift */,
 				9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */,
-				9F9A2C8A1E9914410067E1A4 /* SPBlogAvatar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F9A2C8B1E9914410067E1A4 /* SPBlogAvatar.swift in Sources */,
 				9F4E0EFE1E9744FD004F307A /* SPNetworkManage+Extensions.swift in Sources */,
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
