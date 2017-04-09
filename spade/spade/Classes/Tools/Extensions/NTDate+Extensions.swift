@@ -22,14 +22,13 @@ extension Date {
         return dateFormatter.string(from: date)
     }
     
-    /// 将获取的时间字符串转换成日期
-    ///
-    /// - Parameter string: Tue Sep 15 12:12:12 +0000 2017
-    /// - Returns: 日期
     static func nt_Date(string: String) -> Date? {
         
-        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
+//        let sourceTimeZone = NSTimeZone.init(abbreviation: "GMT")
+        
+        dateFormatter.dateFormat = "yyyy-MM-DD HH:mm:ss zzz"
         // 转换并且返回日期
+        
         return dateFormatter.date(from: string)
     }
     /**
@@ -51,10 +50,10 @@ extension Date {
             }
             return "\(delta / 3600)小时前"
         }
-        var fmt = " HH:mm"
-        if calendar.isDateInYesterday(self) {
-            fmt = "昨天" + fmt
-        }
+//        var fmt = " HH:mm"
+//        if calendar.isDateInYesterday(self) {
+//            fmt = "昨天" + fmt
+//        }
         
         return dateFormatter.string(from: self)
     }

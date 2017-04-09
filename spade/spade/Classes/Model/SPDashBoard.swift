@@ -24,6 +24,22 @@ class SPDashBoard: NSObject {
             post_url = post_url?.getBlogString()
         }
     }
+    /// 是否喜欢
+    var liked: Int = 0
+    /// 是否关注
+    var followed: Int = 0
+    
+    /// 图片布局
+    var photoset_layout: String?
+    /// 时间字符串
+    var date: String? {
+        didSet {
+            createDate = Date.nt_Date(string: date!)
+        }
+    }
+    /// 带描述文字的时间
+    var createDate: Date?
+    
     
     override var description: String {
         return yy_modelDescription()

@@ -20,12 +20,19 @@ class SPHomeViewController: SPBaseViewController {
         super.viewDidLoad()
 
         setupUI()
-        SPNetworkManage.shared.blogInfo(blogName: "ntian.tumblr.com") { (json, isSuccess) in
-            print(json)
-        }
+//        SPNetworkManage.shared.blogInfo(blogName: "ntian.tumblr.com") { (json, isSuccess) in
+//            print(json)
+//        }
 
         
     }
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+
     
     /// 加载数据
     override func loadData() {
@@ -77,5 +84,17 @@ extension SPHomeViewController {
         tableView?.estimatedRowHeight = 300
         
         tableView?.separatorStyle = .none
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pan = scrollView.panGestureRecognizer
+        let velocity = pan.velocity(in: scrollView).y
+        
+        if velocity < -5 {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        } else if velocity > 5{
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+
     }
 }

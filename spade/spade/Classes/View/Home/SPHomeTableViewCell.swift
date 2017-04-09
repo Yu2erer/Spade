@@ -17,6 +17,10 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     // 头像
     @IBOutlet weak var iconView: UIImageView!
+    /// 爱心喜欢
+    @IBOutlet weak var likeIcon: UIImageView!
+    /// 配图视图
+    @IBOutlet weak var pictureView: SPHomePictureView!
     
     var viewModel: SPDashBoardViewModel? {
         
@@ -24,6 +28,8 @@ class SPHomeTableViewCell: UITableViewCell {
             nameLabel.text = viewModel?.dashBoard.blog_name
             statusLabel.text = viewModel?.dashBoard.summary
             iconView.nt_setImage(urlString: viewModel?.avatarURL, placeholder: nil, isAvator: true)
+            likeIcon.image = viewModel?.likeImage
+//            timeLabel.text = viewModel?.dashBoard.createDate?.description
             
         }
     }

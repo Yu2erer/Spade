@@ -15,6 +15,7 @@ class SPNavigationController: UINavigationController {
         
         interactivePopGestureRecognizer?.delegate = self
         interactivePopGestureRecognizer?.isEnabled = true
+
     }
     // 重写 push 方法
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {

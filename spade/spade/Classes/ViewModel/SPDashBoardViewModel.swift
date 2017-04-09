@@ -15,10 +15,17 @@ class SPDashBoardViewModel: CustomStringConvertible {
     var dashBoard: SPDashBoard
     /// 头像
     var avatarURL: String?
+    /// 喜欢图像 喜欢就换成爱心图
+    var likeImage: UIImage?
     
     init(model: SPDashBoard) {
         self.dashBoard = model
         avatarURL = blogInfoURL + model.post_url! + "/avatar"
+        if model.liked == 1 {
+            likeImage = UIImage(named: "glyph-liked")
+        } else {
+            likeImage = UIImage(named: "glyph-like")
+        }
     }
     
     var description: String {
