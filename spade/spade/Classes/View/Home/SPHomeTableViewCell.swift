@@ -17,4 +17,14 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     // 头像
     @IBOutlet weak var iconView: UIImageView!
+    
+    var viewModel: SPDashBoardViewModel? {
+        
+        didSet {
+            nameLabel.text = viewModel?.dashBoard.blog_name
+            statusLabel.text = viewModel?.dashBoard.summary
+            iconView.nt_setImage(urlString: viewModel?.avatarURL, placeholder: nil, isAvator: true)
+            
+        }
+    }
 }

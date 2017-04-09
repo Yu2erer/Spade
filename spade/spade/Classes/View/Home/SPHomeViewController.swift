@@ -14,7 +14,7 @@ private let cellId = "cellId"
 class SPHomeViewController: SPBaseViewController {
     
     /// 列表视图模型
-    fileprivate lazy var dashBoardViewModel = SPDashBoardListViewModel()
+    fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class SPHomeViewController: SPBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        dashBoardViewModel.loadDashBoard(pullup: self.isPullup) { (isSuccess) in
+        dashBoardListViewModel.loadDashBoard(pullup: self.isPullup) { (isSuccess) in
             
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
@@ -52,14 +52,14 @@ class SPHomeViewController: SPBaseViewController {
 extension SPHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dashBoardViewModel.dashBoardList.count
+        return dashBoardListViewModel.dashBoardList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
-        cell.statusLabel?.text = dashBoardViewModel.dashBoardList[indexPath.row].summary
-        cell.nameLabel.text = dashBoardViewModel.dashBoardList[indexPath.row].blog_name
-        
+    
+        let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
+        cell.viewModel = vm
         
         return cell
     }

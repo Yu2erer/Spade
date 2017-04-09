@@ -19,8 +19,6 @@ class SPBlogInfo: NSObject {
     var followers: Int = 0
     /// 个性签名吧？
     var title: String?
-    /// 头像 Tumblr 太傻比了 一个头像也要数组
-    var avatar: [SPBlogAvatar]?
     
     override var description: String {
         return yy_modelDescription()
