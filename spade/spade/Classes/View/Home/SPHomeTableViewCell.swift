@@ -31,8 +31,9 @@ class SPHomeTableViewCell: UITableViewCell {
             likeIcon.image = viewModel?.likeImage
 //            timeLabel.text = viewModel?.dashBoard.createDate?.description
             
-            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+//            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
             pictureView.urls = viewModel?.dashBoard.photos
+            pictureView.viewModel = viewModel
         }
     }
 }

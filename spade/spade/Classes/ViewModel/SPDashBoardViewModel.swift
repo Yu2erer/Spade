@@ -41,12 +41,13 @@ class SPDashBoardViewModel: CustomStringConvertible {
         
         var height = PictureViewOutterMargin
         if row == 1 {
-            // 取出第一张照片的 高度为 500的图
+            
+            // 取出第一张照片的高度
             guard let originalHeight = dashBoard.photos?[0].original_size?.height else {
                 return CGSize()
             }
             // 计算高度
-            height += CGFloat(Double(originalHeight)! * 0.4)
+            height += CGFloat(Double(originalHeight)! * 0.37)
 
             return CGSize(width: PictureViewWidth, height: height)
         }

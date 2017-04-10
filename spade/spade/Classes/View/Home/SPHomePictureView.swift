@@ -11,6 +11,21 @@ import UIKit
 class SPHomePictureView: UIView {
     
 
+    var viewModel: SPDashBoardViewModel? {
+        didSet {
+            calcViewSize()
+        }
+    }
+    private func calcViewSize() {
+        
+        let v = subviews[0]
+        let viewSize = viewModel?.pictureViewSize ?? CGSize()
+        v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: viewSize.height)
+        
+        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+
+    }
+    /// 配图视图的数组
     var urls: [SPDashBoardPicture]? {
         didSet {
             // 隐藏所有的 imageView
@@ -52,11 +67,10 @@ extension SPHomePictureView {
         let count = 9
         
         let rect = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: 300)
-        for i in 0..<count {
+        for _ in 0..<count {
             
             let iv = UIImageView()
-            iv.backgroundColor = UIColor.red
-            
+
             iv.frame = rect
             addSubview(iv)
         }
