@@ -21,7 +21,6 @@ extension SPNetworkManage {
             let result = json as? [String: Any]
         
             let data = result?["response"] as? [String: Any]
-//            let data = JSON(json ?? [])["response"]["posts"].arrayObject as? [[String: Any]]
             completion(data?["posts"] as? [[String: Any]], isSuccess)
         }   
     }

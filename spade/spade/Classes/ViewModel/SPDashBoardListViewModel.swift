@@ -26,14 +26,17 @@ class SPDashBoardListViewModel {
             var array = [SPDashBoardViewModel]()
             // 遍历数组 字典转模型
             for dict in list ?? [] {
+                
                 // 创建dashBoard模型
                 let dashBoard = SPDashBoard()
                 dashBoard.yy_modelSet(with: dict)
+                
                 let viewModel = SPDashBoardViewModel(model: dashBoard)
                 
                 array.append(viewModel)
                 
             }
+            print(array)
 
 //            guard let array = NSArray.yy_modelArray(with: SPDashBoard.self, json: list ?? []) as? [SPDashBoard] else {
 //                completion(isSuccess)

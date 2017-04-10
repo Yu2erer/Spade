@@ -31,6 +31,9 @@ class SPDashBoard: NSObject {
     
     /// 图片布局
     var photoset_layout: String?
+    var photos: [SPDashBoardPicture]?
+    /// 标签
+    var tags: Array<String>?
     /// 时间字符串
     var date: String? {
         didSet {
@@ -44,5 +47,9 @@ class SPDashBoard: NSObject {
     override var description: String {
         return yy_modelDescription()
     }
-    
+    /// 类函数 - 告诉第三方框架 如果遇到数组类型的属性 数组中存放的是什么类
+    class func modelContainerPropertyGenericClass() -> [String: Any] {
+        return ["photos": SPDashBoardPicture.self]
+    }
+
 }

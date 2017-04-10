@@ -21,6 +21,7 @@
 		9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */; };
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
+		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
 		9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C841E96272F0019D76A /* AppDelegate.swift */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
 		9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */; };
@@ -49,6 +50,7 @@
 		9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListViewModel.swift; sourceTree = "<group>"; };
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
+		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
 		9FDC1C811E96272F0019D76A /* spade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDC1C841E96272F0019D76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FDC1C8B1E96272F0019D76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				9F4E0EFB1E972E50004F307A /* SPDashBoard.swift */,
+				9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */,
 				9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */,
 			);
 			path = Model;
@@ -382,6 +385,7 @@
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
+				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
 				9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,

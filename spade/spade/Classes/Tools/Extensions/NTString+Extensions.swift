@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let dateFormatter = DateFormatter()
+
 extension String {
     
     /// 获取 Blog 中间字符串地址
@@ -17,5 +19,15 @@ extension String {
         return self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
         
     }
+    func timeStampToString() -> String {
+        let string = NSString(string: self)
+        let timeSta: TimeInterval = string.doubleValue
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = Date(timeIntervalSince1970: timeSta)
+        return dateFormatter.string(from: date)
+    }
+  
+    
+    
 
 }

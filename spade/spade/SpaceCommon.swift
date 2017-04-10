@@ -6,6 +6,7 @@
 //  Copyright © 2017年 ntian. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 // MARK: - oAuth信息
@@ -19,3 +20,11 @@ let baseURL = "https://api.tumblr.com/v2/"
 let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"
 let blogInfoURL = baseURL + "blog/"
+
+// MARK: - 配图视图
+/// 配图视图外部间距
+let PictureViewOutterMargin = CGFloat(11)
+/// 配图视图内部间距
+let PictureViewInnerMargin = CGFloat(3)
+/// 屏幕宽度
+let PictureViewWidth = UIScreen.main.bounds.width
