@@ -24,9 +24,8 @@ extension Date {
     
     static func nt_Date(string: String) -> Date? {
         
-//        let sourceTimeZone = NSTimeZone.init(abbreviation: "GMT")
         
-        dateFormatter.dateFormat = "yyyy-MM-DD HH:mm:ss zzz"
+        dateFormatter.dateFormat = "yyyy-MM-DD HH:mm:ss"
         // 转换并且返回日期
         
         return dateFormatter.date(from: string)
@@ -41,7 +40,7 @@ extension Date {
         
         if calendar.isDateInToday(self) {
             
-            let delta = -Int(self.timeIntervalSinceNow)
+            let delta = Int(Date().timeIntervalSince(self))
             if delta < 60 {
                 return "刚刚"
             }

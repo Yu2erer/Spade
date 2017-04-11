@@ -38,10 +38,6 @@ class SPDashBoardListViewModel {
             }
             print(array)
 
-//            guard let array = NSArray.yy_modelArray(with: SPDashBoard.self, json: list ?? []) as? [SPDashBoard] else {
-//                completion(isSuccess)
-//                return
-//            }
             if pullup {
                 self.dashBoardList += array
             } else {

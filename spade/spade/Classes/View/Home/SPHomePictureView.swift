@@ -18,11 +18,23 @@ class SPHomePictureView: UIView {
     }
     private func calcViewSize() {
         
-        let v = subviews[0]
-        let viewSize = viewModel?.pictureViewSize ?? CGSize()
-        v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: viewSize.height)
+        if viewModel?.dashBoard.photosCount == 1 {
+            let v = subviews[0]
+            let viewSize = viewModel?.pictureViewSize ?? CGSize()
+            v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: viewSize.height)
+            
+        } else if viewModel?.dashBoard.photosCount == 2 {
+            
+            for i in 0...1 {
+                let v = subviews[i]
+                let viewSize = viewModel?.pictureViewSize ?? CGSize()
+                let xOffset = CGFloat(i) * (PictureViewWidth / 2 + PictureViewInnerMargin)
+                v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: viewSize.width, height: viewSize.height).offsetBy(dx: xOffset, dy: 0)
+            }
+        }
+     
         
-        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+        heightCons.constant = (viewModel?.pictureViewSize.height ?? 0) + PictureViewOutterMargin
 
     }
     /// 配图视图的数组
@@ -40,7 +52,7 @@ class SPHomePictureView: UIView {
                 let iv = subviews[index] as! UIImageView
                 iv.contentMode = .scaleAspectFill
                 iv.clipsToBounds = true
-                
+            
                 iv.nt_setImage(urlString: url.alt_sizes?[0].url, placeholder: nil)
                 // 显示图像
                 iv.isHidden = false
@@ -66,7 +78,7 @@ extension SPHomePictureView {
         
         let count = 9
         
-        let rect = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: 300)
+        let rect = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: 0)
         for _ in 0..<count {
             
             let iv = UIImageView()

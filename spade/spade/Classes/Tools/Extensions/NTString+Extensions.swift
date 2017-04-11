@@ -22,7 +22,7 @@ extension String {
     func timeStampToString() -> String {
         let string = NSString(string: self)
         let timeSta: TimeInterval = string.doubleValue
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
         let date = Date(timeIntervalSince1970: timeSta)
         return dateFormatter.string(from: date)
     }

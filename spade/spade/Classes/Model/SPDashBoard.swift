@@ -28,16 +28,34 @@ class SPDashBoard: NSObject {
     var liked: Int = 0
     /// 是否关注
     var followed: Int = 0
-    
+    /// 类型
+    var type: String?
     /// 图片布局
-    var photoset_layout: String?
-    var photos: [SPDashBoardPicture]?
+    var photoset_layout: String? {
+        didSet {
+            var i = Int(photoset_layout ?? "") ?? 0
+            while i > 0 {
+                photosCount += i % 10
+                i /= 10
+            }
+        }
+    }
+    /// 图片数组
+    var photos: [SPDashBoardPicture]? {
+        didSet {
+            if photoset_layout == nil {
+                photoset_layout = "1"
+            }
+        }
+    }
+    /// 图片数量
+    var photosCount: Int = 0
     /// 标签
     var tags: Array<String>?
     /// 时间字符串
-    var date: String? {
+    var timestamp: String? {
         didSet {
-            createDate = Date.nt_Date(string: date!)
+            createDate = Date.nt_Date(string: timestamp?.timeStampToString() ?? "")
         }
     }
     /// 带描述文字的时间
