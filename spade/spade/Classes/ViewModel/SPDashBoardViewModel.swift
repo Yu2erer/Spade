@@ -38,19 +38,47 @@ class SPDashBoardViewModel: CustomStringConvertible {
     fileprivate func calcPictureViewSize(layout: String?) -> CGSize {
         
 
-        // 根据字符串长度 知道多少行 如果为 nil 就默认是 1行1张
+        // 根据字符串长度 知道多少行
         row = layout?.characters.count ?? 0
         
         var height = PictureViewOutterMargin
         
-        // 只有1行时
-        if row == 1 {
-            guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
-                return CGSize()
+        var temp: Int = 0
+        for i in 0..<row {
+            var i = Int(dashBoard.photoset_layout ?? "") ?? 0
+            while i > 0 {
+                temp = i % 10
+                guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
+                    return CGSize()
+                }
+                height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
+                return CGSize(width: PictureViewWidth / CGFloat(temp), height: height)
+            
+                i /= 10
             }
-            height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(dashBoard.photosCount)
-            return CGSize(width: PictureViewWidth / CGFloat(dashBoard.photosCount), height: height)
         }
+        
+//        // 只有1行时
+//        if row == 1 {
+//            guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
+//                return CGSize()
+//            }
+//            height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(dashBoard.photosCount)
+//            return CGSize(width: PictureViewWidth / CGFloat(dashBoard.photosCount), height: height)
+//        }
+//        if row == 2 {
+////            var i = Int(dashBoard.photoset_layout ?? "") ?? 0
+////            while i > 0 {
+////                print(i % 10)
+////                i /= 10
+////            }
+//            // 11
+//            guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
+//                return CGSize()
+//            }
+//            height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(dashBoard.photosCount)
+//
+//        }
         return CGSize()
       
     }

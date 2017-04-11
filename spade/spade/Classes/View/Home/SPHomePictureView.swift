@@ -18,21 +18,22 @@ class SPHomePictureView: UIView {
     }
     private func calcViewSize() {
         
-        if viewModel?.dashBoard.photosCount == 1 {
-            let v = subviews[0]
-            let viewSize = viewModel?.pictureViewSize ?? CGSize()
-            v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: viewSize.height)
+        guard let photosCount = viewModel?.dashBoard.photosCount else {
+            return
+        }
+
+        if viewModel?.row == 1 {
             
-        } else if viewModel?.dashBoard.photosCount == 2 {
             
-            for i in 0...1 {
+            for i in 0..<photosCount {
                 let v = subviews[i]
                 let viewSize = viewModel?.pictureViewSize ?? CGSize()
-                let xOffset = CGFloat(i) * (PictureViewWidth / 2 + PictureViewInnerMargin)
+                let xOffset = CGFloat(i) * (PictureViewWidth / CGFloat(photosCount) + PictureViewInnerMargin)
                 v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: viewSize.width, height: viewSize.height).offsetBy(dx: xOffset, dy: 0)
             }
         }
-     
+        //                let yOffset = CGFloat(i) * (viewSize.height + PictureViewInnerMargin)
+
         
         heightCons.constant = (viewModel?.pictureViewSize.height ?? 0) + PictureViewOutterMargin
 
