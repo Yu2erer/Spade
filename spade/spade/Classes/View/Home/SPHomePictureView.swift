@@ -10,7 +10,8 @@ import UIKit
 
 class SPHomePictureView: UIView {
     
-
+    
+    var pro: Float?
     var viewModel: SPDashBoardViewModel? {
         didSet {
             calcViewSize()
@@ -18,26 +19,50 @@ class SPHomePictureView: UIView {
     }
     private func calcViewSize() {
         
-        guard let photosCount = viewModel?.dashBoard.photosCount else {
+        guard let row = viewModel?.row else {
             return
         }
-
-        if viewModel?.row == 1 {
-            
-            
-            for i in 0..<photosCount {
-                let v = subviews[i]
-                let viewSize = viewModel?.pictureViewSize ?? CGSize()
-                let xOffset = CGFloat(i) * (PictureViewWidth / CGFloat(photosCount) + PictureViewInnerMargin)
-                v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: viewSize.width, height: viewSize.height).offsetBy(dx: xOffset, dy: 0)
-            }
-        }
-        //                let yOffset = CGFloat(i) * (viewSize.height + PictureViewInnerMargin)
-
+        var rowNum = (Int(viewModel?.dashBoard.photoset_layout ?? "") ?? 0).reverse()
+        /// 这一行有多少张图
+        var temp = 0
+        /// ImageView 序列
+        var index = 0
+        /// 图片序列
+        var picNum = 0
+        /// 临时高度
+        var tempHeight: CGFloat = 0
         
-        heightCons.constant = (viewModel?.pictureViewSize.height ?? 0) + PictureViewOutterMargin
+        for r in 0..<row {
+            temp = rowNum % 10
+            rowNum = rowNum / 10
+            for i in 0..<temp {
+                let v = subviews[index] as! UIImageView
+                let pv = v.subviews[0] as! UIProgressView
+
+                let originalHeight = Double(viewModel?.dashBoard.photos?[picNum].original_size?.height ?? "") ?? 0
+                let originalWidth = Double(viewModel?.dashBoard.photos?[picNum].original_size?.width ?? "") ?? 0
+                let picHeight = CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
+                let xOffset = CGFloat(i) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin)
+                var yOffset: CGFloat = 0
+                
+                if r == 0 {
+                    tempHeight = picHeight
+                }
+                if row > 1 && r > 0 {
+                    yOffset = tempHeight + PictureViewInnerMargin
+                }
+                
+                v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth / CGFloat(temp), height: picHeight).offsetBy(dx: xOffset, dy: yOffset)
+                pv.center = CGPoint(x: v.bounds.width / 2, y: v.bounds.height / 2)
+
+                index = index + 1
+            }
+            picNum = picNum + temp
+        }
+        heightCons.constant = (viewModel?.height ?? 0) + PictureViewOutterMargin
 
     }
+
     /// 配图视图的数组
     var urls: [SPDashBoardPicture]? {
         didSet {
@@ -47,18 +72,21 @@ class SPHomePictureView: UIView {
             }
             // 设置图像
             var index = 0
-            
             for url in urls ?? [] {
-                
                 let iv = subviews[index] as! UIImageView
+                let pv = iv.subviews[0] as! UIProgressView
                 iv.contentMode = .scaleAspectFill
                 iv.clipsToBounds = true
-            
-                iv.nt_setImage(urlString: url.alt_sizes?[0].url, placeholder: nil)
+                
+                iv.nt_setImage(urlString: url.alt_sizes?[0].url, placeholder: nil, progress: { (receivedSize, expectedSize) in
+                    pv.progress = Float(receivedSize) / Float(expectedSize)
+                }, completionHandle: { (_, _, _, _) in
+                    pv.isHidden = true
+                })
                 // 显示图像
                 iv.isHidden = false
-                
                 index += 1
+                
             }
             
         }
@@ -73,19 +101,19 @@ class SPHomePictureView: UIView {
 extension SPHomePictureView {
     
     fileprivate func setupUI() {
-        
         /// 超出边界不显示
         clipsToBounds = true
         
-        let count = 9
+        let count = 10
         
-        let rect = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth, height: 0)
+        let rect = CGRect(x: 0, y: PictureViewOutterMargin, width: 0, height: 0)
         for _ in 0..<count {
-            
-            let iv = UIImageView()
+            let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+            let iv = UIImageView(frame: rect)
 
-            iv.frame = rect
+            iv.backgroundColor = UIColor(hex: 0xEAEAEA)
             addSubview(iv)
+            iv.addSubview(progressView)
         }
  
     }

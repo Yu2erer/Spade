@@ -11,6 +11,7 @@ import YYModel
 
 class SPDashBoard: NSObject {
     
+    /// id
     var id: Int = 0
     // 内容
     var summary: String?

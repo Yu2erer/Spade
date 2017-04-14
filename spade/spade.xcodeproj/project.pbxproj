@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1280E5A98AA9520C4107B199 /* Pods_spade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50C2F42A49182BA021C5361 /* Pods_spade.framework */; };
+		9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */; };
+		9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */; };
 		9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */; };
 		9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */; };
 		9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFB1E972E50004F307A /* SPDashBoard.swift */; };
@@ -15,6 +17,7 @@
 		9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */; };
 		9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */; };
 		9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */; };
+		9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */; };
 		9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */; };
 		9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */; };
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
@@ -37,6 +40,8 @@
 /* Begin PBXFileReference section */
 		415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.debug.xcconfig"; sourceTree = "<group>"; };
 		48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.release.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.release.xcconfig"; sourceTree = "<group>"; };
+		9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIColor+Extensions.swift"; sourceTree = "<group>"; };
+		9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPhotoProgressView.swift; sourceTree = "<group>"; };
 		9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkManage.swift; sourceTree = "<group>"; };
 		9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCommon.swift; sourceTree = "<group>"; };
 		9F4E0EFB1E972E50004F307A /* SPDashBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoard.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBaseViewController.swift; sourceTree = "<group>"; };
 		9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIImage+Extensions.swift"; sourceTree = "<group>"; };
 		9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
+		9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTInt+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTString+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogInfo.swift; sourceTree = "<group>"; };
 		9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTDate+Extensions.swift"; sourceTree = "<group>"; };
@@ -231,9 +237,12 @@
 		9FDC1CA11E962ED80019D76A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */,
 				9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */,
+				9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */,
 				9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */,
 				9FDC1CA21E962EFC0019D76A /* NTBundle+Extensions.swift */,
+				9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */,
 				9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */,
 				9FDC1CAF1E964F200019D76A /* NTUIBarButtonItem+Extensions.swift */,
 				9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */,
@@ -388,10 +397,13 @@
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
 				9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */,
+				9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
+				9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */,
+				9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */,
 				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,
 				9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */,
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,

@@ -14,12 +14,12 @@
         <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="308" id="KGk-i7-Jjw" customClass="SPHomeTableViewCell" customModule="spade" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="307.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cellId" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="staff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-yd-pjt" userLabel="昵称">
-                        <rect key="frame" x="56" y="11" width="31.5" height="18"/>
+                        <rect key="frame" x="56" y="11" width="32" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -32,23 +32,23 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3小时前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-hv-LP5" userLabel="时间">
-                        <rect key="frame" x="56" y="33" width="37.5" height="12"/>
+                        <rect key="frame" x="56" y="33" width="38" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="1" green="0.42352941176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hol-g3-GoP" userLabel="分割线">
-                        <rect key="frame" x="0.0" y="307" width="320" height="0.5"/>
+                        <rect key="frame" x="0.0" y="306" width="320" height="1"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.79607843137254897" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="Cfv-Wg-vcc"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-u3-PLh" userLabel="toolBar">
-                        <rect key="frame" x="0.0" y="282" width="320" height="25"/>
+                        <rect key="frame" x="0.0" y="281" width="320" height="25"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyph-like" translatesAutoresizingMaskIntoConstraints="NO" id="Z0w-bz-14f">
-                                <rect key="frame" x="18" y="-0.5" width="20" height="20"/>
+                                <rect key="frame" x="18" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="RNX-hn-BHb"/>
                                     <constraint firstAttribute="width" constant="20" id="nor-g9-Bpi"/>
@@ -70,7 +70,7 @@
                         </connections>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-xw-FCu" userLabel="正文">
-                        <rect key="frame" x="11" y="256" width="37.5" height="15"/>
+                        <rect key="frame" x="11" y="256" width="38" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ok8-EQ-03E"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="pKc-If-8Qg"/>
                     <constraint firstItem="I4n-xw-FCu" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="tWN-gW-RnJ"/>
-                    <constraint firstItem="I4n-xw-FCu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VB0-3J-APA" secondAttribute="bottom" constant="11" id="tuu-io-IeU"/>
+                    <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="VB0-3J-APA" secondAttribute="bottom" constant="11" id="tuu-io-IeU"/>
                     <constraint firstAttribute="trailing" secondItem="LGH-u3-PLh" secondAttribute="trailing" id="v1i-94-grw"/>
                 </constraints>
             </tableViewCellContentView>

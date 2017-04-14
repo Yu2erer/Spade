@@ -17,10 +17,10 @@ class SPDashBoardViewModel: CustomStringConvertible {
     var avatarURL: String?
     /// 喜欢图像 喜欢就换成爱心图
     var likeImage: UIImage?
-    /// 配图视图大小
-    var pictureViewSize = CGSize()
     /// 行数
     var row: Int = 0
+    /// 高度
+    var height: CGFloat = 0
     
     init(model: SPDashBoard) {
         self.dashBoard = model
@@ -31,63 +31,40 @@ class SPDashBoardViewModel: CustomStringConvertible {
             likeImage = UIImage(named: "glyph-like")
         }
         
-        // 计算配图视图大小
-        pictureViewSize = calcPictureViewSize(layout: dashBoard.photoset_layout)
+        // 计算配图视图高度
+        calcPictureViewSize(layout: dashBoard.photoset_layout)
     }
     
-    fileprivate func calcPictureViewSize(layout: String?) -> CGSize {
-        
-
+    fileprivate func calcPictureViewSize(layout: String?) {
         // 根据字符串长度 知道多少行
         row = layout?.characters.count ?? 0
         
-        var height = PictureViewOutterMargin
-        
         var temp: Int = 0
-        for i in 0..<row {
-            var i = Int(dashBoard.photoset_layout ?? "") ?? 0
-            while i > 0 {
-                temp = i % 10
-                guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
-                    return CGSize()
-                }
-                height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
-                return CGSize(width: PictureViewWidth / CGFloat(temp), height: height)
-            
-                i /= 10
-            }
-        }
+        var rowNum: Int = 0
+        var originalHeight: Double = 0
+        var originalWidth: Double = 0
+        // 0 是第一行 1是第二行 temp 是一行几张图
+        rowNum = (Int(dashBoard.photoset_layout ?? "") ?? 0).reverse()
         
-//        // 只有1行时
-//        if row == 1 {
-//            guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
-//                return CGSize()
-//            }
-//            height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(dashBoard.photosCount)
-//            return CGSize(width: PictureViewWidth / CGFloat(dashBoard.photosCount), height: height)
-//        }
-//        if row == 2 {
-////            var i = Int(dashBoard.photoset_layout ?? "") ?? 0
-////            while i > 0 {
-////                print(i % 10)
-////                i /= 10
-////            }
-//            // 11
-//            guard let originalHeight = Double(dashBoard.photos?[0].original_size?.height ?? ""), let originalWidth = Double(dashBoard.photos?[0].original_size?.width ?? "") else {
-//                return CGSize()
-//            }
-//            height += CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(dashBoard.photosCount)
-//
-//        }
-        return CGSize()
-      
+        height = PictureViewOutterMargin
+        var index = 0 // 图片索引
+        for _ in 0..<row {
+            
+            temp = rowNum % 10
+            rowNum /= 10
+            for _ in 0..<temp {
+                originalHeight = Double(dashBoard.photos?[index].original_size?.height ?? "") ?? 0
+                originalWidth = Double(dashBoard.photos?[index].original_size?.width ?? "") ?? 0
+            }
+            height += CGFloat(originalHeight / originalWidth) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin * CGFloat(row - 1))
+            index = index + temp
+        }
     }
-    
-    
     
     
     var description: String {
         return dashBoard.description
     }
+    
 
 }
