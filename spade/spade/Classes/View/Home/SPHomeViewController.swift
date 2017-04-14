@@ -37,8 +37,7 @@ class SPHomeViewController: SPBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        dashBoardListViewModel.loadDashBoard(pullup: self.isPullup) { (isSuccess) in
-            
+        dashBoardListViewModel.loadDashBoard(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess) in
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
@@ -92,7 +91,7 @@ extension SPHomeViewController {
         
         if velocity < -5 {
             self.navigationController?.setNavigationBarHidden(true, animated: true)
-        } else if velocity > 5{
+        } else if velocity > 5 {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
 

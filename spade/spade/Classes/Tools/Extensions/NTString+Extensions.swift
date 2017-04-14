@@ -17,8 +17,13 @@ extension String {
         let range1 = self.range(of: "://")
         let range2 = self.range(of: "/post/")
         return self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
-        
     }
+//    func removeHref() -> String {
+//        let range1 = self.range(of: "<a")
+//        let range2 = self.range(of: "/a>")
+//        self.removeSubrange(self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
+//        return self.substring(to: String.Index)
+//    }
   
     
 

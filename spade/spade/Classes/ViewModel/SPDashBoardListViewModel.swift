@@ -13,11 +13,12 @@ class SPDashBoardListViewModel {
     lazy var dashBoardList = [SPDashBoardViewModel]()
     
     
-    func loadDashBoard(pullup: Bool, completion: @escaping (_ isSuccess: Bool) -> ()) {
+    func loadDashBoard(pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool) -> ()) {
         
-        let since_id = pullup ? "\(String(describing: dashBoardList.last?.dashBoard.id))" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
+        let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
+        let offset = !pullup ? "" : "\(pullupCount)"
         
-        SPNetworkManage.shared.dashBoardList(since_id: since_id) { (list, isSuccess) in
+        SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset) { (list, isSuccess) in
             
             if !isSuccess {
                 completion(false)

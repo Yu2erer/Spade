@@ -12,9 +12,10 @@ import Foundation
 extension SPNetworkManage {
     
     /// 加载 dashBoard
-    func dashBoardList(since_id: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+    func dashBoardList(since_id: String, offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
         
-        let params = ["since_id": since_id]
+        let params = ["since_id": since_id,
+                      "offset": offset]
         
         request(urlString: dashBoardURL, method: .GET, parameters: params) { (json, isSuccess) in
             

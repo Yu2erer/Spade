@@ -48,10 +48,10 @@
                         <rect key="frame" x="0.0" y="281" width="320" height="25"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyph-like" translatesAutoresizingMaskIntoConstraints="NO" id="Z0w-bz-14f">
-                                <rect key="frame" x="18" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="11" y="-2.5" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="RNX-hn-BHb"/>
-                                    <constraint firstAttribute="width" constant="20" id="nor-g9-Bpi"/>
+                                    <constraint firstAttribute="height" constant="24" id="RNX-hn-BHb"/>
+                                    <constraint firstAttribute="width" constant="24" id="nor-g9-Bpi"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -84,9 +84,9 @@
                     <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="top" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
+                    <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="leading" secondItem="ga4-yd-pjt" secondAttribute="leading" id="Mte-mN-eJF"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="Od7-Ok-4G1"/>
-                    <constraint firstItem="Z0w-bz-14f" firstAttribute="centerX" secondItem="NL7-Je-BqX" secondAttribute="centerX" id="WMO-zY-Azd"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="bottom" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="cn3-uF-IIy"/>
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>

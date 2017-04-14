@@ -79,8 +79,11 @@ class SPHomePictureView: UIView {
                 iv.contentMode = .scaleAspectFill
                 iv.clipsToBounds = true
                 iv.nt_setImage(urlString: url.alt_sizes?[0].url, placeholder: nil, progress: { (receivedSize, expectedSize) in
-                    DispatchQueue.main.async(execute: { 
-                        pv.progress = Float(receivedSize) / Float(expectedSize)
+                    DispatchQueue.main.async(execute: {
+                        let progress = Float(receivedSize) / Float(expectedSize)
+                        if progress < 1 {
+                            pv.progress = Float(receivedSize) / Float(expectedSize)
+                        }
                     })
                 }, completionHandle: { (_, _, _, _) in
                     pv.isHidden = true

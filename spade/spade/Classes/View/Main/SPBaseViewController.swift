@@ -16,7 +16,8 @@ class SPBaseViewController: UIViewController {
     var refreshControl: UIRefreshControl?
     /// 上拉刷新标记
     var isPullup = false
-    
+    var pullupCount = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ extension SPBaseViewController: UITableViewDelegate, UITableViewDataSource {
         if row == (count - 1) && !isPullup {
             print("上拉刷新")
             isPullup = true
+            self.pullupCount += 20
             loadData()
         }
     }
