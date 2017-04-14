@@ -21,5 +21,12 @@ extension Int {
         }
         return result
     }
+    /// 时间戳转时间
+    func timeStampToDate() -> Date {
+        let timeSta: TimeInterval = Double(self)
+        let date = Date(timeIntervalSince1970: timeSta)
+        return date
+    }
+
 
 }

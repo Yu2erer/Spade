@@ -54,9 +54,9 @@ class SPDashBoard: NSObject {
     /// 标签
     var tags: Array<String>?
     /// 时间字符串
-    var timestamp: String? {
+    var timestamp: Int = 0 {
         didSet {
-            createDate = Date.nt_Date(string: timestamp?.timeStampToString() ?? "")
+            createDate = timestamp.timeStampToDate()
         }
     }
     /// 带描述文字的时间

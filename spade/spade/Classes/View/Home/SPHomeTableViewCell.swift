@@ -29,7 +29,7 @@ class SPHomeTableViewCell: UITableViewCell {
             statusLabel.text = viewModel?.dashBoard.summary
             iconView.nt_setAvatarImage(urlString: viewModel?.avatarURL, placeholder: nil, isAvator: true)
             likeIcon.image = viewModel?.likeImage
-//            timeLabel.text = viewModel?.dashBoard.createDate?.nt_dateDescription
+            timeLabel.text = viewModel?.dashBoard.createDate?.nt_dateDescription
             
             pictureView.urls = viewModel?.dashBoard.photos
             pictureView.viewModel = viewModel
