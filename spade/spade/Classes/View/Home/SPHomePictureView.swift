@@ -29,6 +29,8 @@ class SPHomePictureView: UIView {
         var index = 0
         /// 图片序列
         var picNum = 0
+        var originalHeight: Double = 0
+        var originalWidth: Double = 0
         /// 临时高度
         var tempHeight: CGFloat = 0
         
@@ -39,27 +41,26 @@ class SPHomePictureView: UIView {
                 let v = subviews[index] as! UIImageView
                 let pv = v.subviews[0] as! UIProgressView
 
-                let originalHeight = Double(viewModel?.dashBoard.photos?[picNum].original_size?.height ?? "") ?? 0
-                let originalWidth = Double(viewModel?.dashBoard.photos?[picNum].original_size?.width ?? "") ?? 0
+                originalHeight = Double(viewModel?.dashBoard.photos?[picNum].original_size?.height ?? "") ?? 0
+                originalWidth = Double(viewModel?.dashBoard.photos?[picNum].original_size?.width ?? "") ?? 0
                 let picHeight = CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
                 let xOffset = CGFloat(i) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin)
                 var yOffset: CGFloat = 0
                 
-                if r == 0 {
-                    tempHeight = picHeight
-                }
                 if row > 1 && r > 0 {
-                    yOffset = tempHeight + PictureViewInnerMargin
+                    yOffset = tempHeight
                 }
-                
                 v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth / CGFloat(temp), height: picHeight).offsetBy(dx: xOffset, dy: yOffset)
                 pv.center = CGPoint(x: v.bounds.width / 2, y: v.bounds.height / 2)
 
                 index = index + 1
             }
+            let picHeight = CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
+            tempHeight += picHeight + PictureViewInnerMargin
+
             picNum = picNum + temp
         }
-        heightCons.constant = (viewModel?.height ?? 0) + PictureViewOutterMargin
+        heightCons.constant = (viewModel?.height ?? 0)
 
     }
 
@@ -113,6 +114,7 @@ extension SPHomePictureView {
 
             iv.backgroundColor = UIColor(hex: 0xEAEAEA)
             addSubview(iv)
+            progressView.progress = 0
             iv.addSubview(progressView)
         }
  

@@ -56,7 +56,7 @@ class SPDashBoardViewModel: CustomStringConvertible {
                 originalHeight = Double(dashBoard.photos?[index].original_size?.height ?? "") ?? 0
                 originalWidth = Double(dashBoard.photos?[index].original_size?.width ?? "") ?? 0
             }
-            height += CGFloat(originalHeight / originalWidth) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin * CGFloat(row - 1))
+            height += CGFloat(originalHeight / originalWidth) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin)
             index = index + temp
         }
     }
