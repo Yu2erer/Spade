@@ -19,15 +19,7 @@ extension String {
         return self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
         
     }
-    func timeStampToString() -> String {
-        let string = NSString(string: self)
-        let timeSta: TimeInterval = string.doubleValue
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss zzz"
-        let date = Date(timeIntervalSince1970: timeSta)
-        return dateFormatter.string(from: date)
-    }
   
-    
     
 
 }
