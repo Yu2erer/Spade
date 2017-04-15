@@ -1,18 +1,27 @@
 PODS:
+  - BMPlayer (0.8.3):
+    - NVActivityIndicatorView (~> 3.5)
+    - SnapKit (~> 3.2)
   - Kingfisher (3.5.0)
+  - NVActivityIndicatorView (3.6.1)
   - OAuthSwift (1.1.1)
+  - SnapKit (3.2.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
+  - BMPlayer
   - Kingfisher
   - OAuthSwift
   - YYModel
 
 SPEC CHECKSUMS:
+  BMPlayer: 9322d07c99f1ccff6d5352ab37516ab10955dd74
   Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
+  NVActivityIndicatorView: 9f52a7f84bf5c6a798722c450fe3c198e01c56ed
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9158c91753cf7ed2895155f724e8a491430474fc
+PODFILE CHECKSUM: 897114b2cb8fb0f05adae6d37b781b49a49d27b9
 
 COCOAPODS: 1.2.0.beta.3

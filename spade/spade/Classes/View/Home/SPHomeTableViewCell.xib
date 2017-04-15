@@ -75,6 +75,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="qbu-iD-QmF">
+                        <rect key="frame" x="288" y="16" width="24" height="24"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="trailing" constant="11" id="0Jv-Zk-Mqk"/>
@@ -82,6 +85,7 @@
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="top" id="6hS-as-Tm9"/>
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="trailing" constant="11" id="AhI-V9-uxl"/>
                     <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
+                    <constraint firstItem="qbu-iD-QmF" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Dd5-Rh-WAv"/>
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="top" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
@@ -92,6 +96,7 @@
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>
                     <constraint firstAttribute="trailing" secondItem="VB0-3J-APA" secondAttribute="trailing" id="gGS-bP-YEe"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="lFi-O2-Z9J"/>
+                    <constraint firstAttribute="trailing" secondItem="qbu-iD-QmF" secondAttribute="trailing" constant="8" id="luf-Go-Wga"/>
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ok8-EQ-03E"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="pKc-If-8Qg"/>
                     <constraint firstItem="I4n-xw-FCu" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="tWN-gW-RnJ"/>
@@ -112,5 +117,6 @@
     </objects>
     <resources>
         <image name="glyph-like" width="24" height="24"/>
+        <image name="more" width="24" height="24"/>
     </resources>
 </document>

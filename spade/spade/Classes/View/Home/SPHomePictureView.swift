@@ -10,8 +10,6 @@ import UIKit
 
 class SPHomePictureView: UIView {
     
-    
-    var pro: Float?
     var viewModel: SPDashBoardViewModel? {
         didSet {
             calcViewSize()
@@ -61,7 +59,6 @@ class SPHomePictureView: UIView {
             picNum = picNum + temp
         }
         heightCons.constant = (viewModel?.height ?? 0)
-
     }
 
     /// 配图视图的数组
