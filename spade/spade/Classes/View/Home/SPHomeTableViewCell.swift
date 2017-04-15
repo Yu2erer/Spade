@@ -21,6 +21,8 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeIcon: UIImageView!
     /// 配图视图
     @IBOutlet weak var pictureView: SPHomePictureView!
+    /// 正文的 顶部约束
+    @IBOutlet weak var statusCons: NSLayoutConstraint!
     
     var viewModel: SPDashBoardViewModel? {
         
@@ -33,6 +35,10 @@ class SPHomeTableViewCell: UITableViewCell {
             
             pictureView.urls = viewModel?.dashBoard.photos
             pictureView.viewModel = viewModel
+            /// 没有文字时 工具条向前 11
+            if viewModel?.dashBoard.summary == "" {
+                statusCons.constant = 0
+            }
         }
     }
     override func awakeFromNib() {
