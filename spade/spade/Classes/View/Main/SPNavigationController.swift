@@ -32,11 +32,11 @@ class SPNavigationController: UINavigationController {
     }
 }
 
-// MARK: - 侧滑手势
-extension SPNavigationController: UIGestureRecognizerDelegate {
-    
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        
-        return childViewControllers.count > 1
-    }
-}
+////// MARK: - 侧滑手势
+//extension SPNavigationController: UIGestureRecognizerDelegate {
+//    
+//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        
+//        return childViewControllers.count > 1
+//    }
+//}

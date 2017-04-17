@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import Kingfisher
+import ZFPlayer
 
-private let cellId = "cellId"
+private let photoCellId = "photoCellId"
+private let videoCellId = "videoCellId"
 
 class SPHomeViewController: SPBaseViewController {
     
@@ -50,6 +51,13 @@ class SPHomeViewController: SPBaseViewController {
         let vc = SPDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    lazy var playerView: ZFPlayerView? = {
+        let playerView = ZFPlayerView.shared()
+        
+        playerView?.stopPlayWhileCellNotVisable = true
+        return playerView
+    }()
 
     
 }
@@ -58,13 +66,30 @@ class SPHomeViewController: SPBaseViewController {
 extension SPHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return dashBoardListViewModel.dashBoardList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
-    
         let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
+
+        let cellId = (vm.dashBoard.type == "photo") ? photoCellId : videoCellId
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
+        weak var weakSelf = self
+        if vm.dashBoard.type == "video" {
+            cell.playBack = {
+                
+                let playerModel = ZFPlayerModel()
+                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "")
+                playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url
+                playerModel.indexPath = indexPath
+                playerModel.tableView = tableView
+                playerModel.fatherView = cell.videoView
+                weakSelf?.playerView?.playerModel(playerModel)
+                weakSelf?.playerView?.autoPlayTheVideo()
+            }
+        }
+    
         cell.viewModel = vm
         
         return cell
@@ -78,7 +103,10 @@ extension SPHomeViewController {
     }
     override func setupTableView() {
         super.setupTableView()
-        tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        
+        tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: photoCellId)
+        tableView?.register(UINib(nibName: "SPHomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: videoCellId)
+
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
         

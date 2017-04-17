@@ -17,6 +17,14 @@ class SPDashBoard: NSObject {
     var summary: String?
     // 名字
     var blog_name: String?
+    /// 时间字符串
+    var timestamp: Int = 0 {
+        didSet {
+            createDate = timestamp.timeStampToDate()
+        }
+    }
+    /// 带描述文字的时间
+    var createDate: Date?
     // 链接 用来取 blog 相关信息的
     var post_url: String? {
         didSet {
@@ -53,14 +61,14 @@ class SPDashBoard: NSObject {
     var photosCount: Int = 0
     /// 标签
     var tags: Array<String>?
-    /// 时间字符串
-    var timestamp: Int = 0 {
-        didSet {
-            createDate = timestamp.timeStampToDate()
-        }
-    }
-    /// 带描述文字的时间
-    var createDate: Date?
+    /// 视频地址
+    var video_url: String?
+    /// 视频缩略图地址
+    var thumbnail_url: String?
+    /// 视频宽度
+    var thumbnail_width: Int = 0
+    /// 视频高度
+    var thumbnail_height: Int = 0
     
     
     override var description: String {

@@ -20,9 +20,17 @@ class SPHomeTableViewCell: UITableViewCell {
     /// 爱心喜欢
     @IBOutlet weak var likeIcon: UIImageView!
     /// 配图视图
-    @IBOutlet weak var pictureView: SPHomePictureView!
-    /// 正文的 顶部约束
+    @IBOutlet weak var pictureView: SPHomePictureView?
+    /// 视频View
+    @IBOutlet weak var videoView: SPHomeVideoView?
+    /// 正文的 底部约束
     @IBOutlet weak var statusCons: NSLayoutConstraint!
+    /// 播放按钮
+    @IBOutlet weak var playBtn: UIButton?
+    /// 视频占位图
+    @IBOutlet weak var placeholderImage: UIImageView?
+    /// 播放按钮回调
+    var playBack: (()->())?
     
     var viewModel: SPDashBoardViewModel? {
         
@@ -33,8 +41,12 @@ class SPHomeTableViewCell: UITableViewCell {
             likeIcon.image = viewModel?.likeImage
             timeLabel.text = viewModel?.dashBoard.createDate?.nt_dateDescription
             
-            pictureView.urls = viewModel?.dashBoard.photos
-            pictureView.viewModel = viewModel
+            pictureView?.urls = viewModel?.dashBoard.photos
+            pictureView?.viewModel = viewModel
+            
+            videoView?.viewModel = viewModel
+            
+            placeholderImage?.nt_setImage(urlString: viewModel?.dashBoard.thumbnail_url, placeholder: nil, progress: nil, completionHandle: nil)
             /// 没有文字时 工具条向前 11
             if viewModel?.dashBoard.summary == "" {
                 statusCons.constant = 0
@@ -49,4 +61,9 @@ class SPHomeTableViewCell: UITableViewCell {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
+    
+    @IBAction func play(_ sender: UIButton) {
+        playBack?()
+    }
+    
 }
