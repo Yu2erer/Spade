@@ -47,7 +47,7 @@ extension SPMainViewController {
             ["clsName": "SPHomeViewController", "imageName": "tabbar-home"],
             ["clsName": "SPHomeViewController", "imageName": "tabbar-search"],
             ["clsName": "SPHomeViewController", "imageName": "tabbar-activity"],
-            ["clsName": "SPHomeViewController", "imageName": "tabbar-profile"]
+            ["clsName": "SPProfileViewController", "imageName": "tabbar-profile"]
         ]
         var arrayM = [UIViewController]()
         for dict in array {

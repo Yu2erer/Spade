@@ -21,9 +21,11 @@ class SPNavigationController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         if childViewControllers.count > 0 {
+            
             viewController.hidesBottomBarWhenPushed = true
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(target: self, action: #selector(popToParent))
+
         }
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(target: self, action: #selector(popToParent))
         super.pushViewController(viewController, animated: animated)
     }
     /// POP 返回到上一级 控制器

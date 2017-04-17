@@ -73,9 +73,13 @@ extension SPHomeViewController {
         
         let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
 
-        let cellId = (vm.dashBoard.type == "photo") ? photoCellId : videoCellId
+        let cellId = (vm.dashBoard.type == "video") ? videoCellId : photoCellId
+  
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
         weak var weakSelf = self
+        cell.viewModel = vm
+        
         if vm.dashBoard.type == "video" {
             cell.playBack = {
                 
@@ -84,14 +88,11 @@ extension SPHomeViewController {
                 playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView
-                playerModel.fatherView = cell.videoView
+                playerModel.fatherView = cell.placeholderImage
                 weakSelf?.playerView?.playerModel(playerModel)
                 weakSelf?.playerView?.autoPlayTheVideo()
             }
         }
-    
-        cell.viewModel = vm
-        
         return cell
     }
 }

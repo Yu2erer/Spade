@@ -21,14 +21,13 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeIcon: UIImageView!
     /// 配图视图
     @IBOutlet weak var pictureView: SPHomePictureView?
-    /// 视频View
-    @IBOutlet weak var videoView: SPHomeVideoView?
     /// 正文的 底部约束
     @IBOutlet weak var statusCons: NSLayoutConstraint!
-    /// 播放按钮
-    @IBOutlet weak var playBtn: UIButton?
-    /// 视频占位图
+    /// 占位图
     @IBOutlet weak var placeholderImage: UIImageView?
+    @IBOutlet weak var heightCons: NSLayoutConstraint?
+    let playBtn = UIButton(type: .custom)
+
     /// 播放按钮回调
     var playBack: (()->())?
     
@@ -44,7 +43,7 @@ class SPHomeTableViewCell: UITableViewCell {
             pictureView?.urls = viewModel?.dashBoard.photos
             pictureView?.viewModel = viewModel
             
-            videoView?.viewModel = viewModel
+            calcViewHeight()
             placeholderImage?.nt_setImage(urlString: viewModel?.dashBoard.thumbnail_url, placeholder: nil, progress: nil, completionHandle: nil)
             /// 没有文字时 工具条向前 11
             if viewModel?.dashBoard.summary == "" {
@@ -52,17 +51,32 @@ class SPHomeTableViewCell: UITableViewCell {
             }
         }
     }
+    fileprivate func calcViewHeight() {
+        let thumbnail_height = CGFloat(viewModel?.dashBoard.thumbnail_height ?? 0)
+        let thumbnail_width = CGFloat(viewModel?.dashBoard.thumbnail_width ?? 0)
+        let height = (thumbnail_height / thumbnail_width) * PictureViewWidth
+
+        placeholderImage?.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: height)
+        playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
+        heightCons?.constant = height
+
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
+
+
+        playBtn.setImage(UIImage(named: "video_list_cell_big_icon"), for: .normal)
+        playBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        playBtn.addTarget(self, action: #selector(play), for: .touchUpInside)
+
+        self.placeholderImage?.addSubview(playBtn)
         // 离屏渲染
         self.layer.drawsAsynchronously = true
         // 栅格化
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
-    
-    @IBAction func play(_ sender: UIButton) {
+    func play() {
         playBack?()
     }
-    
 }
