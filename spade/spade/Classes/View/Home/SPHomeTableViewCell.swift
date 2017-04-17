@@ -45,7 +45,6 @@ class SPHomeTableViewCell: UITableViewCell {
             pictureView?.viewModel = viewModel
             
             videoView?.viewModel = viewModel
-            
             placeholderImage?.nt_setImage(urlString: viewModel?.dashBoard.thumbnail_url, placeholder: nil, progress: nil, completionHandle: nil)
             /// 没有文字时 工具条向前 11
             if viewModel?.dashBoard.summary == "" {
