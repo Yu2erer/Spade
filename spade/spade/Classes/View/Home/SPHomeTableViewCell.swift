@@ -57,6 +57,7 @@ class SPHomeTableViewCell: UITableViewCell {
         let height = (thumbnail_height / thumbnail_width) * PictureViewWidth
 
         placeholderImage?.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: height)
+        
         playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
         heightCons?.constant = height
 
@@ -76,7 +77,7 @@ class SPHomeTableViewCell: UITableViewCell {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
-    func play() {
+    @objc fileprivate func play() {
         playBack?()
     }
 }

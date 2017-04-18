@@ -28,3 +28,5 @@ let PictureViewOutterMargin = CGFloat(11)
 let PictureViewInnerMargin = CGFloat(3)
 /// 屏幕宽度
 let PictureViewWidth = UIScreen.main.bounds.width
+/// 屏幕高度
+let PictureViewHeight = UIScreen.main.bounds.height

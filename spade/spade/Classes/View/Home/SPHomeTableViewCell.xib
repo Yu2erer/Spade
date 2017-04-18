@@ -70,7 +70,7 @@
                         </connections>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-xw-FCu" userLabel="正文">
-                        <rect key="frame" x="11" y="256" width="38" height="20.5"/>
+                        <rect key="frame" x="11" y="256" width="38" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -86,7 +86,7 @@
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="trailing" constant="11" id="AhI-V9-uxl"/>
                     <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
                     <constraint firstItem="qbu-iD-QmF" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Dd5-Rh-WAv"/>
-                    <constraint firstItem="LGH-u3-PLh" firstAttribute="top" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
+                    <constraint firstItem="LGH-u3-PLh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="leading" secondItem="ga4-yd-pjt" secondAttribute="leading" id="Mte-mN-eJF"/>

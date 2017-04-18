@@ -14,14 +14,14 @@ class SPNetworkManage {
     private init() {}
     
     static let shared = SPNetworkManage()
-    private static let oauthswift = OAuth1Swift(consumerKey: "Rbi5Bfim0iUYElkEWHo78I99FMbpMD3HjWKmu425UnMdahOckW", consumerSecret: "TjwKUiuWttcuV4qdjbmrUUnYUImNjWA6aJ0q6vk79ZawpLotOu", requestTokenUrl: REQUESTTOKENURL, authorizeUrl: AUTHORIZEURL, accessTokenUrl: ACCESSTOKENURL)
+    private static let oauthswift = OAuth1Swift(consumerKey: "HkEH8ZjbTtMcvcX6BYONlwHNhsFWi18voM9mqCOcYiDIiv4s3L", consumerSecret: "96wNoKZPTf35pLdpFcUM3CDt7jdAkgFjtSdirWEogjtu4WoFYi", requestTokenUrl: REQUESTTOKENURL, authorizeUrl: AUTHORIZEURL, accessTokenUrl: ACCESSTOKENURL)
     
     
     func request(urlString: String, method: OAuthSwiftHTTPRequest.Method,parameters: [String: Any]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
 
-        SPNetworkManage.oauthswift.client.credential.oauthToken = "ZqA8DFwckrrpy2toOUcoqXpYWguS8YvOpjbk4CcmOIu81Sz3yT"
-        SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = "nQ9o9ctmagrBNw4QaEXJiU6eyu1ALfPsG0oPNYzzvcBGtS1y5V"
+        SPNetworkManage.oauthswift.client.credential.oauthToken = "N6daXtXmnPSbyhYn6VTfTSz7uqEfFwdXfLceux7cyERYNZre8E"
+        SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = "aiE22nqrDB8oirfrEQf28Yi1Fbguf5a45KbAl04XAzuhyFHDDW"
         
         
         if parameters == nil {

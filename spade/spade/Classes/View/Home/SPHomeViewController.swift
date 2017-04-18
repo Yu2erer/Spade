@@ -69,6 +69,7 @@ extension SPHomeViewController {
         
         return dashBoardListViewModel.dashBoardList.count
     }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
@@ -114,15 +115,18 @@ extension SPHomeViewController {
         tableView?.separatorStyle = .none
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pan = scrollView.panGestureRecognizer
-        let velocity = pan.velocity(in: scrollView).y
-        
-        if velocity < -5 {
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
-        } else if velocity > 5 {
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-        }
-
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let pan = scrollView.panGestureRecognizer
+//        let velocity = pan.velocity(in: scrollView).y
+//        
+//        if velocity < -10 {
+////            UIApplication.shared.setStatusBarHidden(true, with: .fade)
+//            self.navigationController?.setNavigationBarHidden(true, animated: true)
+//        } else if velocity > 10 {
+////            UIApplication.shared.setStatusBarHidden(false, with: .none)
+//
+//            self.navigationController?.setNavigationBarHidden(false, animated: true)
+//        }
+//
+//    }
 }

@@ -26,6 +26,19 @@ extension SPNetworkManage {
         }   
     }
     
+    func userList(blogName: String, offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+        
+        let params = ["offset": offset]
+        
+        request(urlString: blogInfoURL + blogName + "/posts", method: .GET, parameters: params) { (json, isSuccess) in
+            
+            let result = json as? [String: Any]
+            
+            let data = result?["response"] as? [String: Any]
+            completion(data?["posts"] as? [[String: Any]], isSuccess)
+        }
+    }
+    
     /// 加载 BlogInfo
     func blogInfo(blogName: String, completion: @escaping (_ list: [String: Any]?, _ isSuccess: Bool)->()) {
         
@@ -36,6 +49,17 @@ extension SPNetworkManage {
             let data = result?["response"] as? [String: Any]
             
             completion(data?["blog"] as? [String: Any], isSuccess)
+        }
+    }
+    /// 加载用户 blogInfo
+    func userBlogInfo(completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+        
+        request(urlString: infoURL, method: .GET, parameters: nil) { (json, isSuccess) in
+            let result = json as? [String: Any]
+            let data = result?["response"] as? [String: Any]
+            let user = data?["user"] as? [String: Any]
+
+            completion(user?["blogs"] as? [[String: Any]], isSuccess)
         }
     }
     

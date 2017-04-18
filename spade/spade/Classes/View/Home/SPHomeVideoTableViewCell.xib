@@ -61,7 +61,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-xw-FCu" userLabel="正文">
-                        <rect key="frame" x="11" y="267" width="38" height="22"/>
+                        <rect key="frame" x="11" y="267" width="38" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                     <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
                     <constraint firstItem="qbu-iD-QmF" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Dd5-Rh-WAv"/>
                     <constraint firstItem="BOw-gb-ZEZ" firstAttribute="top" secondItem="R1V-hv-LP5" secondAttribute="bottom" constant="11" id="EVd-f9-tbJ"/>
-                    <constraint firstItem="LGH-u3-PLh" firstAttribute="top" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
+                    <constraint firstItem="LGH-u3-PLh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
                     <constraint firstAttribute="trailing" secondItem="BOw-gb-ZEZ" secondAttribute="trailing" id="IZ9-mY-JiF"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
