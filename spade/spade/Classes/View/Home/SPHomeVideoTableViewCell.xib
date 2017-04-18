@@ -71,6 +71,7 @@
                     </imageView>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BOw-gb-ZEZ">
                         <rect key="frame" x="0.0" y="56" width="320" height="200"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="d6H-XW-0cx"/>
                         </constraints>

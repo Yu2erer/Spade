@@ -7,21 +7,28 @@
 //
 
 import Foundation
+/// 上拉刷新 最大尝试次数
+private let maxPullupTryTimes = 3
 
 class SPDashBoardListViewModel {
     
     lazy var dashBoardList = [SPDashBoardViewModel]()
+    /// 上拉刷新错误次数
+    private var pullupErrorTimes = 0
     
-    
-    func loadDashBoard(pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool) -> ()) {
+    func loadDashBoard(pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
+        if pullup && pullupErrorTimes > maxPullupTryTimes {
+            completion(true, false)
+            return
+        }
         let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
         let offset = !pullup ? "" : "\(pullupCount)"
         
         SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset) { (list, isSuccess) in
             
             if !isSuccess {
-                completion(false)
+                completion(false, false)
             }
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
@@ -38,14 +45,28 @@ class SPDashBoardListViewModel {
                 
             }
             print(array)
-
+            let firstId = self.dashBoardList.first?.dashBoard.id
+            
             if pullup {
                 self.dashBoardList += array
             } else {
                 // 下拉刷新
                 self.dashBoardList = array + self.dashBoardList
             }
-            completion(isSuccess)
+            
+            if self.dashBoardList.first?.dashBoard.id == firstId {
+                print("扎心了 老铁")
+                self.pullupErrorTimes = 3
+                completion(isSuccess, false)
+                return
+            }
+            // 判断上拉刷新的数据量
+            if pullup && array.count == 0 {
+                self.pullupErrorTimes += 1
+                completion(isSuccess, false)
+            } else {
+                completion(isSuccess, true)
+            }
         }
     }
     

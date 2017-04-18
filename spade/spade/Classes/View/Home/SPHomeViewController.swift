@@ -38,12 +38,14 @@ class SPHomeViewController: SPBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        dashBoardListViewModel.loadDashBoard(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess) in
+        dashBoardListViewModel.loadDashBoard(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
             // 结束刷新控件
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
             self.isPullup = false
-            self.tableView?.reloadData()
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
         }
     }
     

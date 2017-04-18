@@ -25,11 +25,13 @@ class SPProfileViewController: SPBaseViewController {
         blogInfoViewModel.loadBlogInfo { (isSuccess) in
             if (!isSuccess) { return }
             let blogName = self.blogInfoViewModel.blogInfo[0].name ?? "" + ".tumblr.com"
-            self.userListViewModel.loadUserList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess) in
+            self.userListViewModel.loadUserList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
                 self.refreshControl?.endRefreshing()
                 // 恢复上拉刷新标记
                 self.isPullup = false
-                self.tableView?.reloadData()
+                if shouldRefresh {
+                    self.tableView?.reloadData()
+                }
             }
         }
     }
