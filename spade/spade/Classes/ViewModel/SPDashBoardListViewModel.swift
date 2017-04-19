@@ -55,6 +55,7 @@ class SPDashBoardListViewModel {
             }
             
             if self.dashBoardList.first?.dashBoard.id == firstId {
+                // FIXME: 此处应该有一个酷炫的 SVProgressHud 显示信息
                 print("扎心了 老铁")
                 self.pullupErrorTimes = 3
                 completion(isSuccess, false)

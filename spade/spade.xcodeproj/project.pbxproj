@@ -29,6 +29,13 @@
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
 		9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */; };
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
+		9FB378431EA725E10048A51C /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378371EA725E10048A51C /* MJPhoto.m */; };
+		9FB378441EA725E10048A51C /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FB378381EA725E10048A51C /* MJPhotoBrowser.bundle */; };
+		9FB378451EA725E10048A51C /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3783A1EA725E10048A51C /* MJPhotoBrowser.m */; };
+		9FB378461EA725E10048A51C /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3783C1EA725E10048A51C /* MJPhotoLoadingView.m */; };
+		9FB378471EA725E10048A51C /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3783E1EA725E10048A51C /* MJPhotoProgressView.m */; };
+		9FB378481EA725E10048A51C /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378401EA725E10048A51C /* MJPhotoToolbar.m */; };
+		9FB378491EA725E10048A51C /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378421EA725E10048A51C /* MJPhotoView.m */; };
 		9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */; };
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
 		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
@@ -68,6 +75,19 @@
 		9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTDate+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListViewModel.swift; sourceTree = "<group>"; };
+		9FB378361EA725E10048A51C /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		9FB378371EA725E10048A51C /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		9FB378381EA725E10048A51C /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		9FB378391EA725E10048A51C /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		9FB3783A1EA725E10048A51C /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		9FB3783B1EA725E10048A51C /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		9FB3783C1EA725E10048A51C /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		9FB3783D1EA725E10048A51C /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		9FB3783E1EA725E10048A51C /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		9FB3783F1EA725E10048A51C /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		9FB378401EA725E10048A51C /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		9FB378411EA725E10048A51C /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		9FB378421EA725E10048A51C /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
 		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
@@ -137,6 +157,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9FB378351EA725E10048A51C /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				9FB378361EA725E10048A51C /* MJPhoto.h */,
+				9FB378371EA725E10048A51C /* MJPhoto.m */,
+				9FB378381EA725E10048A51C /* MJPhotoBrowser.bundle */,
+				9FB378391EA725E10048A51C /* MJPhotoBrowser.h */,
+				9FB3783A1EA725E10048A51C /* MJPhotoBrowser.m */,
+				9FB3783B1EA725E10048A51C /* MJPhotoLoadingView.h */,
+				9FB3783C1EA725E10048A51C /* MJPhotoLoadingView.m */,
+				9FB3783D1EA725E10048A51C /* MJPhotoProgressView.h */,
+				9FB3783E1EA725E10048A51C /* MJPhotoProgressView.m */,
+				9FB3783F1EA725E10048A51C /* MJPhotoToolbar.h */,
+				9FB378401EA725E10048A51C /* MJPhotoToolbar.m */,
+				9FB378411EA725E10048A51C /* MJPhotoView.h */,
+				9FB378421EA725E10048A51C /* MJPhotoView.m */,
+			);
+			path = MJPhotoBrowser;
+			sourceTree = "<group>";
+		};
 		9FDC1C781E96272E0019D76A = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +229,7 @@
 		9FDC1C981E962C4B0019D76A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9FB378351EA725E10048A51C /* MJPhotoBrowser */,
 				9F4E0EF51E9691BB004F307A /* NetworkManage */,
 				9FDC1CA11E962ED80019D76A /* Extensions */,
 			);
@@ -355,6 +396,7 @@
 				9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */,
 				9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
+				9FB378441EA725E10048A51C /* MJPhotoBrowser.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,14 +462,20 @@
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
+				9FB378481EA725E10048A51C /* MJPhotoToolbar.m in Sources */,
 				9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */,
 				9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */,
 				9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */,
+				9FB378431EA725E10048A51C /* MJPhoto.m in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
 				9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */,
+				9FB378471EA725E10048A51C /* MJPhotoProgressView.m in Sources */,
+				9FB378461EA725E10048A51C /* MJPhotoLoadingView.m in Sources */,
+				9FB378491EA725E10048A51C /* MJPhotoView.m in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
+				9FB378451EA725E10048A51C /* MJPhotoBrowser.m in Sources */,
 				9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */,
 				9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */,
 				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,

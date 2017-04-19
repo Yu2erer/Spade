@@ -94,7 +94,22 @@ class SPHomePictureView: UIView {
         }
     }
     @IBOutlet weak var heightCons: NSLayoutConstraint!
-    
+    /// 监听方法
+    @objc fileprivate func tapImageView(tap: UITapGestureRecognizer) {
+        
+        guard let iv = tap.view, let photo = viewModel?.dashBoard.photos else {
+            return
+        }
+        let selectedIndex = iv.tag
+        let urls = ((photo as NSArray).value(forKey: "original_size") as! NSArray).value(forKey: "url") as! [String]
+        var imageViewList = [UIImageView]()
+        
+        for iv in subviews as! [UIImageView] {
+            if !iv.isHidden {
+                imageViewList.append(iv)
+            }
+        }
+    }
     override func awakeFromNib() {
         setupUI()
     }
@@ -109,7 +124,7 @@ extension SPHomePictureView {
         let count = 10
         
         let rect = CGRect(x: 0, y: PictureViewOutterMargin, width: 0, height: 0)
-        for _ in 0..<count {
+        for i in 0..<count {
             let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             let iv = UIImageView(frame: rect)
 
@@ -117,6 +132,12 @@ extension SPHomePictureView {
             addSubview(iv)
             progressView.progress = 0
             iv.addSubview(progressView)
+            
+            iv.isUserInteractionEnabled = true
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            iv.addGestureRecognizer(tap)
+            iv.tag = i
         }
  
     }
