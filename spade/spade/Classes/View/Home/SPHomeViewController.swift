@@ -82,6 +82,7 @@ extension SPHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
         weak var weakSelf = self
         cell.viewModel = vm
+        cell.cellDelegate = self
         
         if vm.dashBoard.type == "video" {
             cell.playBack = {
@@ -131,4 +132,13 @@ extension SPHomeViewController {
 //        }
 //
 //    }
+}
+// MARK: - SPHomeTableViewCellDelegate
+extension SPHomeViewController: SPHomeTableViewCellDelegate {
+    func didClickUser(user: SPDashBoard) {
+        print(user)
+        let vc = SPUserDetailViewController()
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

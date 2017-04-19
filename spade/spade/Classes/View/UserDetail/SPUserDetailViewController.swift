@@ -10,10 +10,22 @@ import UIKit
 
 class SPUserDetailViewController: UIViewController {
 
+    var user: SPDashBoard? {
+        didSet {
+            guard let user = user else {
+                return
+            }
+            navigationItem.title = user.blog_name
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.red
+        setupUI()
     }
     
+}
+extension SPUserDetailViewController {
+    fileprivate func setupUI() {
+        view.backgroundColor = UIColor.white
+    }
 }

@@ -9,9 +9,8 @@
 import UIKit
 
 @objc protocol SPHomeTableViewCellDelegate: NSObjectProtocol {
-    @objc optional func homeTableViewCell(_ cell: SPHomeTableViewCell, didClickUser user: SPDashBoard)
+    @objc optional func didClickUser(user: SPDashBoard)
 }
-
 class SPHomeTableViewCell: UITableViewCell {
     // 正文
     @IBOutlet weak var statusLabel: UILabel!
@@ -30,12 +29,12 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var heightCons: NSLayoutConstraint?
     // 播放按钮
     let playBtn = UIButton(type: .custom)
-
     fileprivate var trackingTouch = false
 
+    public weak var cellDelegate: SPHomeTableViewCellDelegate?
     /// 播放按钮回调
     var playBack: (()->())?
-    
+
     var viewModel: SPDashBoardViewModel? {
         
         didSet {
@@ -103,8 +102,7 @@ extension SPHomeTableViewCell {
         if !trackingTouch {
             super.touchesEnded(touches, with: event)
         } else {
-            print("你给我看上了")
-//            delegate?.homeTableViewCell?(self, didClickUser: (self.viewModel?.dashBoard)!)
+            cellDelegate?.didClickUser?(user: (viewModel?.dashBoard)!)
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
