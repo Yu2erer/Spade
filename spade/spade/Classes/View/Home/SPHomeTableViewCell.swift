@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol SPHomeTableViewCellDelegate: NSObjectProtocol {
+    @objc optional func homeTableViewCell(_ cell: SPHomeTableViewCell, didClickUser user: SPDashBoard)
+}
+
 class SPHomeTableViewCell: UITableViewCell {
     // 正文
     @IBOutlet weak var statusLabel: UILabel!
@@ -24,7 +28,10 @@ class SPHomeTableViewCell: UITableViewCell {
     /// 占位图
     @IBOutlet weak var placeholderImage: UIImageView?
     @IBOutlet weak var heightCons: NSLayoutConstraint?
+    // 播放按钮
     let playBtn = UIButton(type: .custom)
+
+    fileprivate var trackingTouch = false
 
     /// 播放按钮回调
     var playBack: (()->())?
@@ -59,7 +66,6 @@ class SPHomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-
         playBtn.setImage(UIImage(named: "video_list_cell_big_icon"), for: .normal)
         playBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         playBtn.addTarget(self, action: #selector(play), for: .touchUpInside)
@@ -73,5 +79,37 @@ class SPHomeTableViewCell: UITableViewCell {
     }
     @objc fileprivate func play() {
         playBack?()
+    }
+}
+
+// MARK: - 点击事件
+extension SPHomeTableViewCell {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.trackingTouch = false
+        let t: UITouch = (touches as NSSet).anyObject() as! UITouch
+        var p = t.location(in: iconView)
+        if (iconView.bounds).contains(p) {
+            self.trackingTouch = true
+        }
+        p = t.location(in: nameLabel)
+        if nameLabel.bounds.contains(p) && nameLabel.bounds.size.width > p.x {
+            self.trackingTouch = true
+        }
+        if !trackingTouch {
+            super.touchesBegan(touches, with: event)
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !trackingTouch {
+            super.touchesEnded(touches, with: event)
+        } else {
+            print("你给我看上了")
+//            delegate?.homeTableViewCell?(self, didClickUser: (self.viewModel?.dashBoard)!)
+        }
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !trackingTouch {
+            super.touchesCancelled(touches, with: event)
+        }
     }
 }

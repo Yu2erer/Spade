@@ -54,7 +54,9 @@ extension SPMainViewController {
             arrayM.append(controller(dict: dict))
             
         }
+
         viewControllers = arrayM
+        
     }
     
     fileprivate func controller(dict: [String: String]) -> UIViewController {

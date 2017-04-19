@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.rootViewController = SPMainViewController()
         window?.makeKeyAndVisible()
+        #if DEBUG
+            let fpsLabel = NTFPSLabel(frame: CGRect(x: 15, y: UIScreen.main.bounds.size.height - 80, width: 55, height: 20))
+            self.window?.addSubview(fpsLabel)
+        #endif
         return true
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

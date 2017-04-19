@@ -29,6 +29,8 @@
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
 		9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */; };
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
+		9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */; };
+		9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378591EA746640048A51C /* NTFPSLabel.swift */; };
 		9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */; };
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
 		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
@@ -69,6 +71,8 @@
 		9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListViewModel.swift; sourceTree = "<group>"; };
 		9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spade-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailViewController.swift; sourceTree = "<group>"; };
+		9FB378591EA746640048A51C /* NTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFPSLabel.swift; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
 		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
@@ -138,6 +142,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9FB378561EA73C3E0048A51C /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 		9FDC1C781E96272E0019D76A = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 		9FDC1C981E962C4B0019D76A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
 				9F4E0EF51E9691BB004F307A /* NetworkManage */,
 				9FDC1CA11E962ED80019D76A /* Extensions */,
 			);
@@ -200,6 +213,7 @@
 		9FDC1C991E962C4B0019D76A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FB378561EA73C3E0048A51C /* UserDetail */,
 				9FDC1C9D1E962C4B0019D76A /* Main */,
 				9FDC1C9B1E962C4B0019D76A /* Home */,
 				9FDC1C9A1E962C4B0019D76A /* Discover */,
@@ -426,6 +440,7 @@
 				9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */,
 				9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
+				9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */,
 				9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
@@ -436,6 +451,7 @@
 				9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */,
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,
 				9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */,
+				9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */,
 				9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */,
 				9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */,
 				9F8BEA351EA6051900F9CF0A /* SPProfilePictureView.swift in Sources */,
