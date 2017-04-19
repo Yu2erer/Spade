@@ -86,13 +86,13 @@
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="trailing" constant="11" id="AhI-V9-uxl"/>
                     <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
                     <constraint firstItem="qbu-iD-QmF" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Dd5-Rh-WAv"/>
-                    <constraint firstItem="LGH-u3-PLh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="EWV-NB-tRN"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="leading" secondItem="ga4-yd-pjt" secondAttribute="leading" id="Mte-mN-eJF"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="Od7-Ok-4G1"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="bottom" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="cn3-uF-IIy"/>
+                    <constraint firstItem="LGH-u3-PLh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="eDs-Hb-wv7"/>
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>
                     <constraint firstAttribute="trailing" secondItem="VB0-3J-APA" secondAttribute="trailing" id="gGS-bP-YEe"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="lFi-O2-Z9J"/>
@@ -109,7 +109,6 @@
                 <outlet property="likeIcon" destination="Z0w-bz-14f" id="xhL-LD-4nZ"/>
                 <outlet property="nameLabel" destination="ga4-yd-pjt" id="DnG-hj-eEs"/>
                 <outlet property="pictureView" destination="VB0-3J-APA" id="ouQ-f4-Lym"/>
-                <outlet property="statusCons" destination="EWV-NB-tRN" id="Vqw-8R-45C"/>
                 <outlet property="statusLabel" destination="I4n-xw-FCu" id="cpA-vJ-74c"/>
                 <outlet property="timeLabel" destination="R1V-hv-LP5" id="MPI-Bo-3eF"/>
             </connections>

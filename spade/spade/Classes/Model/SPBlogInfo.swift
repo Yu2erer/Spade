@@ -16,6 +16,7 @@ class SPBlogInfo: NSObject {
     /// 多少个 followers
     var followers: Int = 0
     var following: Int = 0
+    var total_posts: Int = 0
     var name: String? {
         didSet {
             avatarURL = blogInfoURL + name! + ".tumblr.com/avatar/96"

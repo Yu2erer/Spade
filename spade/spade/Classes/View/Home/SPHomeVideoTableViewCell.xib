@@ -108,7 +108,6 @@
                 <outlet property="likeIcon" destination="Z0w-bz-14f" id="xhL-LD-4nZ"/>
                 <outlet property="nameLabel" destination="ga4-yd-pjt" id="DnG-hj-eEs"/>
                 <outlet property="placeholderImage" destination="BOw-gb-ZEZ" id="zIm-Dj-Jnk"/>
-                <outlet property="statusCons" destination="EWV-NB-tRN" id="2M2-mT-MoN"/>
                 <outlet property="statusLabel" destination="I4n-xw-FCu" id="cpA-vJ-74c"/>
                 <outlet property="timeLabel" destination="R1V-hv-LP5" id="MPI-Bo-3eF"/>
             </connections>

@@ -29,11 +29,6 @@
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
 		9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */; };
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
-		9FB378511EA729880048A51C /* PhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3784C1EA729880048A51C /* PhotoBrowser.swift */; };
-		9FB378521EA729880048A51C /* PhotoToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3784D1EA729880048A51C /* PhotoToolBar.swift */; };
-		9FB378531EA729880048A51C /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3784E1EA729880048A51C /* PhotoViewCell.swift */; };
-		9FB378541EA729880048A51C /* SimpleHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3784F1EA729880048A51C /* SimpleHUD.swift */; };
-		9FB378551EA729880048A51C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378501EA729880048A51C /* UIViewExtension.swift */; };
 		9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */; };
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
 		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
@@ -74,11 +69,6 @@
 		9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListViewModel.swift; sourceTree = "<group>"; };
 		9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spade-Bridging-Header.h"; sourceTree = "<group>"; };
-		9FB3784C1EA729880048A51C /* PhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowser.swift; sourceTree = "<group>"; };
-		9FB3784D1EA729880048A51C /* PhotoToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoToolBar.swift; sourceTree = "<group>"; };
-		9FB3784E1EA729880048A51C /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
-		9FB3784F1EA729880048A51C /* SimpleHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleHUD.swift; sourceTree = "<group>"; };
-		9FB378501EA729880048A51C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
 		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
@@ -148,18 +138,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		9FB3784B1EA729880048A51C /* PhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				9FB3784C1EA729880048A51C /* PhotoBrowser.swift */,
-				9FB3784D1EA729880048A51C /* PhotoToolBar.swift */,
-				9FB3784E1EA729880048A51C /* PhotoViewCell.swift */,
-				9FB3784F1EA729880048A51C /* SimpleHUD.swift */,
-				9FB378501EA729880048A51C /* UIViewExtension.swift */,
-			);
-			path = PhotoBrowser;
-			sourceTree = "<group>";
-		};
 		9FDC1C781E96272E0019D76A = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +191,6 @@
 		9FDC1C981E962C4B0019D76A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				9FB3784B1EA729880048A51C /* PhotoBrowser */,
 				9F4E0EF51E9691BB004F307A /* NetworkManage */,
 				9FDC1CA11E962ED80019D76A /* Extensions */,
 			);
@@ -443,27 +420,23 @@
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
 				9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */,
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
-				9FB378541EA729880048A51C /* SimpleHUD.swift in Sources */,
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
 				9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */,
 				9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */,
 				9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */,
-				9FB378521EA729880048A51C /* PhotoToolBar.swift in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
 				9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
 				9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */,
-				9FB378511EA729880048A51C /* PhotoBrowser.swift in Sources */,
 				9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */,
 				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,
 				9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */,
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,
 				9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */,
 				9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */,
-				9FB378551EA729880048A51C /* UIViewExtension.swift in Sources */,
 				9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */,
 				9F8BEA351EA6051900F9CF0A /* SPProfilePictureView.swift in Sources */,
 				9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */,
@@ -472,7 +445,6 @@
 				9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 				9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */,
-				9FB378531EA729880048A51C /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

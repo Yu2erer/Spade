@@ -27,6 +27,9 @@ class SPUserListViewModel {
             if !isSuccess {
                 completion(false, false)
             }
+            /// 上次的 最高一条的id
+            let firstId = self.userViewModel.first?.dashBoard.id
+            let lastId = self.userViewModel.last?.dashBoard.id
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
             // 遍历数组 字典转模型
@@ -41,20 +44,24 @@ class SPUserListViewModel {
                 array.append(viewModel)
                 
             }
-            /// 上次的 最高一条的id
-            let firstId = self.userViewModel.first?.dashBoard.id
+
             
             if pullup {
+                if self.userViewModel.last?.dashBoard.id == lastId && lastId != nil {
+                    print("扎心了 老铁")
+                    self.pullupErrorTimes = 3
+                    completion(isSuccess, false)
+                    return
+                }
                 self.userViewModel += array
             } else {
+                if self.userViewModel.last?.dashBoard.id == firstId && firstId != nil {
+                    print("没有新数据呗")
+                    completion(isSuccess, false)
+                    return
+                }
                 // 下拉刷新
                 self.userViewModel = array + self.userViewModel
-            }
-            if self.userViewModel.first?.dashBoard.id == firstId {
-                print("扎心了 老铁")
-                self.pullupErrorTimes = 3
-                completion(isSuccess, false)
-                return
             }
         
 

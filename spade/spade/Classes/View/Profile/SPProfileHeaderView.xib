@@ -33,7 +33,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-nd-VWF" userLabel="infoView">
                     <rect key="frame" x="96" y="13" width="211" height="35"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜欢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-E9-wS6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帖子" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7u-E9-wS6">
                             <rect key="frame" x="25" y="16.5" width="27" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="27" id="K5U-NW-07V"/>
@@ -115,7 +115,7 @@
                 <outlet property="avatarImage" destination="nAI-iL-2re" id="fec-P0-S4c"/>
                 <outlet property="followersNum" destination="QRn-ga-iiE" id="BKx-oG-eU7"/>
                 <outlet property="followingNum" destination="Fwy-R0-dhL" id="Kpu-DM-pF0"/>
-                <outlet property="likeNum" destination="G7w-mn-2Jf" id="iBf-ez-IT3"/>
+                <outlet property="postNum" destination="G7w-mn-2Jf" id="77b-dT-cC8"/>
             </connections>
             <point key="canvasLocation" x="200" y="-131"/>
         </view>

@@ -95,6 +95,7 @@ class SPHomePictureView: UIView {
     }
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     /// 监听方法
+    // FIXME: 图片浏览没做完
     @objc fileprivate func tapImageView(tap: UITapGestureRecognizer) {
         
         guard let iv = tap.view, let photo = viewModel?.dashBoard.photos else {
@@ -109,6 +110,8 @@ class SPHomePictureView: UIView {
                 imageViewList.append(iv)
             }
         }
+ 
+
     }
     override func awakeFromNib() {
         setupUI()

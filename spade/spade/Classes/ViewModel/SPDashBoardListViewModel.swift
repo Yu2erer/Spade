@@ -22,6 +22,7 @@ class SPDashBoardListViewModel {
             completion(true, false)
             return
         }
+        
         let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
         let offset = !pullup ? "" : "\(pullupCount)"
         
@@ -30,6 +31,9 @@ class SPDashBoardListViewModel {
             if !isSuccess {
                 completion(false, false)
             }
+            /// 上次的 最高一条的id
+            let firstId = self.dashBoardList.first?.dashBoard.id
+            let lastId = self.dashBoardList.last?.dashBoard.id
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
             // 遍历数组 字典转模型
@@ -45,22 +49,27 @@ class SPDashBoardListViewModel {
                 
             }
             print(array)
-            let firstId = self.dashBoardList.first?.dashBoard.id
             
             if pullup {
+                if self.dashBoardList.last?.dashBoard.id == lastId && lastId != nil {
+                    // FIXME: 此处应该有一个酷炫的 SVProgressHud 显示信息
+                    print("扎心了 老铁")
+                    self.pullupErrorTimes = 3
+                    completion(isSuccess, false)
+                    return
+                }
                 self.dashBoardList += array
             } else {
+                if self.dashBoardList.first?.dashBoard.id == firstId && firstId != nil {
+                    print("没有新数据呗")
+                    completion(isSuccess, false)
+                    return
+                }
                 // 下拉刷新
                 self.dashBoardList = array + self.dashBoardList
             }
             
-            if self.dashBoardList.first?.dashBoard.id == firstId {
-                // FIXME: 此处应该有一个酷炫的 SVProgressHud 显示信息
-                print("扎心了 老铁")
-                self.pullupErrorTimes = 3
-                completion(isSuccess, false)
-                return
-            }
+
             // 判断上拉刷新的数据量
             if pullup && array.count == 0 {
                 self.pullupErrorTimes += 1

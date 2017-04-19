@@ -21,8 +21,6 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeIcon: UIImageView!
     /// 配图视图
     @IBOutlet weak var pictureView: SPHomePictureView?
-    /// 正文的 底部约束
-    @IBOutlet weak var statusCons: NSLayoutConstraint!
     /// 占位图
     @IBOutlet weak var placeholderImage: UIImageView?
     @IBOutlet weak var heightCons: NSLayoutConstraint?
@@ -45,10 +43,6 @@ class SPHomeTableViewCell: UITableViewCell {
             
             calcViewHeight()
             placeholderImage?.nt_setImage(urlString: viewModel?.dashBoard.thumbnail_url, placeholder: nil, progress: nil, completionHandle: nil)
-            /// 没有文字时 工具条向前 11
-            if viewModel?.dashBoard.summary == "" {
-                statusCons.constant = 0
-            }
         }
     }
     fileprivate func calcViewHeight() {

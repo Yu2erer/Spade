@@ -15,7 +15,8 @@ extension SPNetworkManage {
     func dashBoardList(since_id: String, offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
         
         let params = ["since_id": since_id,
-                      "offset": offset]
+                      "offset": offset,
+                      "limit": "20"]
         
         request(urlString: dashBoardURL, method: .GET, parameters: params) { (json, isSuccess) in
             
@@ -28,7 +29,8 @@ extension SPNetworkManage {
     
     func userList(blogName: String, offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
         
-        let params = ["offset": offset]
+        let params = ["offset": offset,
+                      "limit": "20"]
         
         request(urlString: blogInfoURL + blogName + "/posts", method: .GET, parameters: params) { (json, isSuccess) in
             
