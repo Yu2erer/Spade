@@ -10,7 +10,6 @@ import Foundation
 
 class SPBlogInfoViewModel {
     
-    lazy var userBlogInfo = [SPBlogInfo]()
     lazy var blogInfo = SPBlogInfo()
     
     func loadUserBlogInfo(completion: @escaping (_ isSuccess: Bool)->()) {
@@ -19,11 +18,8 @@ class SPBlogInfoViewModel {
             if !isSuccess {
                 completion(false)
             }
-            guard let array = NSArray.yy_modelArray(with: SPBlogInfo.self, json: list ?? []) as? [SPBlogInfo] else {
-                completion(isSuccess)
-                    return
-                }
-            self.userBlogInfo += array
+            self.blogInfo.yy_modelSet(with: list ?? [:])
+            print(self.blogInfo)
 
             completion(isSuccess)
         }
@@ -39,21 +35,7 @@ class SPBlogInfoViewModel {
          
             self.blogInfo.yy_modelSet(with: list ?? [:])
             print(self.blogInfo)
-//            guard let array = NSArray.yy_modelArray(with: SPBlogInfo.self, json: list ?? []) as? [SPBlogInfo] else {
-//                completion(isSuccess)
-//                return
-//            }
-//            for dict in list ?? [] {
-//                // 创建dashBoard模型
-//                let dashBoard = SPDashBoard()
-//                dashBoard.yy_modelSet(with: dict)
-//                let viewModel = SPDashBoardViewModel(model: dashBoard)
-//                array.append(viewModel)
-//            }
             
-//            print(array)
-//            self.blogInfo += array
-//            
             completion(isSuccess)
         }
     }

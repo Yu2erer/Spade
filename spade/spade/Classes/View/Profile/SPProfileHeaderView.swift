@@ -21,8 +21,8 @@ class SPProfileHeaderView: UIView {
             guard let model = model else {
                 return
             }
-            followersNum.text = String(model.followers)
-            postNum.text = String(model.total_posts)
+            followersNum.text = String(describing: model.blogs?[0].followers ?? 0)
+            postNum.text = String(describing: model.blogs?[0].total_posts ?? 0)
             followingNum.text = String(model.following)
             avatarImage.nt_setAvatarImage(urlString: model.avatarURL, placeholder: nil, isAvator: true)
             nameLabel.text = String(describing: model.name ?? " ")

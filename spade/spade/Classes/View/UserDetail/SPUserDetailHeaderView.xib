@@ -63,6 +63,18 @@
                             <color key="textColor" red="0.050980392156862744" green="0.51372549019607838" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-ip-MeH">
+                            <rect key="frame" x="141" y="6" width="70" height="23"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="Teo-YJ-Ted"/>
+                                <constraint firstAttribute="height" constant="23" id="lp0-AT-Ihq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" backgroundImage="followBtn">
+                                <color key="titleColor" red="0.050980392156862744" green="0.51372549019607838" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="followHighlight"/>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="G7w-mn-2Jf" firstAttribute="top" secondItem="tJR-nd-VWF" secondAttribute="top" id="13e-yI-fd8"/>
@@ -72,9 +84,11 @@
                         <constraint firstItem="QRn-ga-iiE" firstAttribute="centerX" secondItem="Om6-SB-qPC" secondAttribute="centerX" id="Z0O-dR-niX"/>
                         <constraint firstItem="z7u-E9-wS6" firstAttribute="top" secondItem="G7w-mn-2Jf" secondAttribute="bottom" constant="-3" id="auk-2Y-RDX"/>
                         <constraint firstItem="Om6-SB-qPC" firstAttribute="centerX" secondItem="tJR-nd-VWF" secondAttribute="centerX" id="efC-uf-Tgf"/>
+                        <constraint firstAttribute="trailing" secondItem="Y0s-ip-MeH" secondAttribute="trailing" id="hsp-mN-wXP"/>
                         <constraint firstItem="Om6-SB-qPC" firstAttribute="bottom" secondItem="z7u-E9-wS6" secondAttribute="bottom" id="lTi-VG-IWo"/>
                         <constraint firstAttribute="bottom" secondItem="z7u-E9-wS6" secondAttribute="bottom" constant="2.5" id="p0z-Ov-Jyo"/>
                         <constraint firstAttribute="height" constant="35" id="pdy-RD-IP5"/>
+                        <constraint firstItem="Y0s-ip-MeH" firstAttribute="centerY" secondItem="tJR-nd-VWF" secondAttribute="centerY" id="tfI-Eb-NLQ"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpu-su-fxo">
@@ -108,4 +122,8 @@
             <point key="canvasLocation" x="200" y="-147.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="followBtn" width="210" height="69"/>
+        <image name="followHighlight" width="210" height="69"/>
+    </resources>
 </document>

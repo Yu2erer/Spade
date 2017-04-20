@@ -54,14 +54,14 @@ extension SPNetworkManage {
         }
     }
     /// 加载用户 blogInfo
-    func userBlogInfo(completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+    func userBlogInfo(completion: @escaping (_ list: [String: Any]?, _ isSuccess: Bool)->()) {
         
         request(urlString: infoURL, method: .GET, parameters: nil) { (json, isSuccess) in
             let result = json as? [String: Any]
             let data = result?["response"] as? [String: Any]
-            let user = data?["user"] as? [String: Any]
 
-            completion(user?["blogs"] as? [[String: Any]], isSuccess)
+            print(data?["user"] as? [String: Any])
+            completion(data?["user"] as? [String: Any], isSuccess)
         }
     }
     

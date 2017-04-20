@@ -24,7 +24,7 @@ class SPProfileViewController: SPBaseViewController {
     override func loadData() {
         blogInfoViewModel.loadUserBlogInfo { (isSuccess) in
             if (!isSuccess) { return }
-            let blogName = self.blogInfoViewModel.userBlogInfo[0].name ?? "" + ".tumblr.com"
+            let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
             self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
                 self.refreshControl?.endRefreshing()
                 // 恢复上拉刷新标记
@@ -56,7 +56,7 @@ extension SPProfileViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        headerView.model = blogInfoViewModel.userBlogInfo[0]
+        headerView.model = blogInfoViewModel.blogInfo
         
         let vm = userListViewModel.userViewModel[indexPath.row]
         
@@ -113,7 +113,7 @@ extension SPProfileViewController {
         } else if offsetY > 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
             navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = self.blogInfoViewModel.userBlogInfo[0].name
+            self.navigationItem.title = self.blogInfoViewModel.blogInfo.name
         }
     }
 

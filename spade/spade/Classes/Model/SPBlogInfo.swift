@@ -14,7 +14,6 @@ class SPBlogInfo: NSObject {
     /// 多少个 like
     var likes: Int = 0
     /// 多少个 followers
-    var followers: Int = 0
     var following: Int = 0
     var total_posts: Int = 0
     var name: String? {
@@ -22,13 +21,22 @@ class SPBlogInfo: NSObject {
             avatarURL = blogInfoURL + name! + ".tumblr.com/avatar/96"
         }
     }
+    var blogs: [SPBlogsInfo]?
 
     var avatarURL: String?
     
-    
+    /// 类函数 - 告诉第三方框架 如果遇到数组类型的属性 数组中存放的是什么类
+    class func modelContainerPropertyGenericClass() -> [String: Any] {
+        return ["blogs": SPBlogsInfo.self]
+    }
+
     override var description: String {
         return yy_modelDescription()
     }
-    
-
+}
+/// 用户信息扩展。。
+class SPBlogsInfo: NSObject {
+    var followed: Int = 0
+    var followers: Int = 0
+    var total_posts: Int = 0
 }
