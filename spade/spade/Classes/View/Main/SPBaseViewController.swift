@@ -40,12 +40,14 @@ extension SPBaseViewController {
         setupTableView()
     }
     func setupTableView() {
-        
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableView!)
         // 实现数据源方法
         tableView?.delegate = self
         tableView?.dataSource = self
+//        automaticallyAdjustsScrollViewInsets = false
+        // 指示器缩进
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         // 实例化 refreshControl
         refreshControl = UIRefreshControl()
         tableView?.addSubview(refreshControl!)

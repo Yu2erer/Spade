@@ -44,11 +44,11 @@ extension SPNetworkManage {
     /// 加载 BlogInfo
     func blogInfo(blogName: String, completion: @escaping (_ list: [String: Any]?, _ isSuccess: Bool)->()) {
         
-        request(urlString: blogInfoURL + blogName + "/info", method: .GET, parameters: nil) { (json, isSuccess) in
+        request(urlString: blogInfoURL + blogName + "/posts", method: .GET, parameters: nil) { (json, isSuccess) in
             
             let result = json as? [String: Any]
-            
             let data = result?["response"] as? [String: Any]
+
             
             completion(data?["blog"] as? [String: Any], isSuccess)
         }

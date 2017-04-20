@@ -13,7 +13,7 @@ class SPUserListViewModel {
     lazy var userViewModel = [SPDashBoardViewModel]()
     private var pullupErrorTimes = 0
     
-    func loadUserList(blogName: String, pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+    func loadBlogInfoList(blogName: String, pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
             completion(true, false)
@@ -47,21 +47,21 @@ class SPUserListViewModel {
 
             
             if pullup {
+                self.userViewModel += array
                 if self.userViewModel.last?.dashBoard.id == lastId && lastId != nil {
                     print("扎心了 老铁")
-                    self.pullupErrorTimes = 3
+                    self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
-                self.userViewModel += array
             } else {
+                // 下拉刷新
+                self.userViewModel = array + self.userViewModel
                 if self.userViewModel.last?.dashBoard.id == firstId && firstId != nil {
                     print("没有新数据呗")
                     completion(isSuccess, false)
                     return
                 }
-                // 下拉刷新
-                self.userViewModel = array + self.userViewModel
             }
         
 

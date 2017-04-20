@@ -19,13 +19,13 @@ class SPProfileViewController: SPBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
     }
     override func loadData() {
-        blogInfoViewModel.loadBlogInfo { (isSuccess) in
+        blogInfoViewModel.loadUserBlogInfo { (isSuccess) in
             if (!isSuccess) { return }
-            let blogName = self.blogInfoViewModel.blogInfo[0].name ?? "" + ".tumblr.com"
-            self.userListViewModel.loadUserList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
+            let blogName = self.blogInfoViewModel.userBlogInfo[0].name ?? "" + ".tumblr.com"
+            self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
                 self.refreshControl?.endRefreshing()
                 // 恢复上拉刷新标记
                 self.isPullup = false
@@ -37,7 +37,7 @@ class SPProfileViewController: SPBaseViewController {
     }
     lazy var headerView: SPProfileHeaderView = {
         let headerView = UINib(nibName: "SPProfileHeaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SPProfileHeaderView
-        headerView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: 100)
+        headerView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: 95)
         return headerView
     }()
     lazy var playerView: ZFPlayerView? = {
@@ -46,10 +46,6 @@ class SPProfileViewController: SPBaseViewController {
         playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
-
-    
-
-
 }
 // MARK: - tableView
 extension SPProfileViewController {
@@ -60,8 +56,7 @@ extension SPProfileViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        self.navigationItem.title = self.blogInfoViewModel.blogInfo[0].name
-        headerView.model = blogInfoViewModel.blogInfo[0]
+        headerView.model = blogInfoViewModel.userBlogInfo[0]
         
         let vm = userListViewModel.userViewModel[indexPath.row]
         
@@ -93,6 +88,11 @@ extension SPProfileViewController {
 // MARK: - 设置界面
 extension SPProfileViewController {
     
+    fileprivate func setupUI() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
     override func setupTableView() {
         super.setupTableView()
         
@@ -103,4 +103,19 @@ extension SPProfileViewController {
         tableView?.tableHeaderView = headerView
         tableView?.separatorStyle = .none
     }
+    /// 处理导航栏
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offsetY = scrollView.contentOffset.y
+        if offsetY >= 0 && offsetY <= 36 {
+            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
+            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+            self.navigationItem.title = nil
+        } else if offsetY > 36 {
+            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
+            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+            self.navigationItem.title = self.blogInfoViewModel.userBlogInfo[0].name
+        }
+    }
+
 }

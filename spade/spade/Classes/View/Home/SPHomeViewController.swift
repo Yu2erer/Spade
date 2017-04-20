@@ -21,20 +21,8 @@ class SPHomeViewController: SPBaseViewController {
         super.viewDidLoad()
 
         setupUI()
-//        SPNetworkManage.shared.blogInfo(blogName: "ntian.tumblr.com") { (json, isSuccess) in
-//            print(json)
-//        }
-
         
-    }
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
-
-    
+    }    
     /// 加载数据
     override func loadData() {
         
@@ -60,8 +48,8 @@ class SPHomeViewController: SPBaseViewController {
         playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
-
     
+
 }
 
 // MARK: - 表格数据源方法
@@ -105,10 +93,21 @@ extension SPHomeViewController {
     
     fileprivate func setupUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
+        let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
+        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.title = "Spade"
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
+//        // 指示器缩进
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
+    }
+  
     override func setupTableView() {
         super.setupTableView()
-        
+
         tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: photoCellId)
         tableView?.register(UINib(nibName: "SPHomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: videoCellId)
 
@@ -117,21 +116,7 @@ extension SPHomeViewController {
         
         tableView?.separatorStyle = .none
     }
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let pan = scrollView.panGestureRecognizer
-//        let velocity = pan.velocity(in: scrollView).y
-//        
-//        if velocity < -10 {
-////            UIApplication.shared.setStatusBarHidden(true, with: .fade)
-//            self.navigationController?.setNavigationBarHidden(true, animated: true)
-//        } else if velocity > 10 {
-////            UIApplication.shared.setStatusBarHidden(false, with: .none)
-//
-//            self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        }
-//
-//    }
+
 }
 // MARK: - SPHomeTableViewCellDelegate
 extension SPHomeViewController: SPHomeTableViewCellDelegate {

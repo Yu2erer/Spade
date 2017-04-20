@@ -51,25 +51,24 @@ class SPDashBoardListViewModel {
             print(array)
             
             if pullup {
+                self.dashBoardList += array
                 if self.dashBoardList.last?.dashBoard.id == lastId && lastId != nil {
                     // FIXME: 此处应该有一个酷炫的 SVProgressHud 显示信息
                     print("扎心了 老铁")
-                    self.pullupErrorTimes = 3
+                    self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
-                self.dashBoardList += array
             } else {
-                if self.dashBoardList.first?.dashBoard.id == firstId && firstId != nil {
+                // 下拉刷新
+                self.dashBoardList = array + self.dashBoardList
+                if self.dashBoardList.first?.dashBoard.id ?? 0 == firstId ?? 0 && firstId != nil {
                     print("没有新数据呗")
                     completion(isSuccess, false)
                     return
                 }
-                // 下拉刷新
-                self.dashBoardList = array + self.dashBoardList
             }
             
-
             // 判断上拉刷新的数据量
             if pullup && array.count == 0 {
                 self.pullupErrorTimes += 1

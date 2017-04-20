@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SPProfileHeaderView: UIView {
-
+class SPUserDetailHeaderView: UIView {
+    
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var followingNum: UILabel!
-    @IBOutlet weak var followersNum: UILabel!
+    @IBOutlet weak var likesNum: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var postNum: UILabel!
     
@@ -21,11 +20,10 @@ class SPProfileHeaderView: UIView {
             guard let model = model else {
                 return
             }
-            followersNum.text = String(model.followers)
+            likesNum.text = String(model.likes)
             postNum.text = String(model.total_posts)
-            followingNum.text = String(model.following)
             avatarImage.nt_setAvatarImage(urlString: model.avatarURL, placeholder: nil, isAvator: true)
-            nameLabel.text = String(describing: model.name ?? " ")
+            nameLabel.text = String(describing: model.name ?? "")
         }
     }
 }
