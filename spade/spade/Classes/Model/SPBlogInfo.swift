@@ -22,6 +22,8 @@ class SPBlogInfo: NSObject {
         }
     }
     var blogs: [SPBlogsInfo]?
+    var followed: Int = 0
+    var admin: Int = 0
 
     var avatarURL: String?
     

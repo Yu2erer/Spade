@@ -12,23 +12,9 @@ class SPBlogInfoViewModel {
     
     lazy var blogInfo = SPBlogInfo()
     
-    func loadUserBlogInfo(completion: @escaping (_ isSuccess: Bool)->()) {
-        
-        SPNetworkManage.shared.userBlogInfo { (list, isSuccess) in
-            if !isSuccess {
-                completion(false)
-            }
-            self.blogInfo.yy_modelSet(with: list ?? [:])
-            print(self.blogInfo)
-
-            completion(isSuccess)
-        }
-        
-    }
-    
-    func loadBlogInfo(blogName: String, completion: @escaping (_ isSuccess: Bool)->()) {
-        
-        SPNetworkManage.shared.blogInfo(blogName: blogName) { (list, isSuccess) in
+    func loadBlogInfo(blogName: String?, completion: @escaping (_ isSuccess: Bool)->()) {
+        if blogName != nil {
+        SPNetworkManage.shared.blogInfo(blogName: blogName!) { (list, isSuccess) in
             if !isSuccess {
                 completion(false)
             }
@@ -37,6 +23,16 @@ class SPBlogInfoViewModel {
             print(self.blogInfo)
             
             completion(isSuccess)
+            }
+        } else {
+            SPNetworkManage.shared.userBlogInfo { (list, isSuccess) in
+                if !isSuccess {
+                    completion(false)
+                }
+                self.blogInfo.yy_modelSet(with: list ?? [:])
+                print(self.blogInfo)
+                completion(isSuccess)
+            }
         }
     }
     

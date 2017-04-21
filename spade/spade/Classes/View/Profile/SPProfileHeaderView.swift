@@ -8,6 +8,10 @@
 
 import UIKit
 
+@objc protocol SPProfileHeaderViewDelegate: NSObjectProtocol {
+    @objc optional func didClickPostNum()
+}
+
 class SPProfileHeaderView: UIView {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -15,6 +19,8 @@ class SPProfileHeaderView: UIView {
     @IBOutlet weak var followersNum: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var postNum: UILabel!
+    
+    weak var headerViewDelegate: SPProfileHeaderViewDelegate?
     
     var model: SPBlogInfo? {
         didSet {
@@ -28,4 +34,47 @@ class SPProfileHeaderView: UIView {
             nameLabel.text = String(describing: model.name ?? " ")
         }
     }
+    fileprivate var postTouch = false
+    fileprivate var following = false
+    fileprivate var followers = false
+}
+// MARK: - touch
+extension SPProfileHeaderView {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.postTouch = false
+        self.following = false
+        self.followers = false
+
+        let t: UITouch = (touches as NSSet).anyObject() as! UITouch
+        var p = t.location(in: postNum)
+        if (postNum.bounds).contains(p) && postNum.bounds.size.width > p.x {
+            self.postTouch = true
+        }
+        p = t.location(in: followingNum)
+        if followingNum.bounds.contains(p) && followingNum.bounds.size.width > p.x {
+            self.following = true
+        }
+        p = t.location(in: followersNum)
+        if followersNum.bounds.contains(p) && followersNum.bounds.size.width > p.x {
+            self.followers = true
+        }
+        if !postTouch || !following || !followers {
+            super.touchesBegan(touches, with: event)
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !postTouch && !following && !followers {
+            super.touchesEnded(touches, with: event)
+        } else {
+            postTouch ? headerViewDelegate?.didClickPostNum?() : ()
+            following ? print("关注") : ()
+            followers ? print("粉丝") : ()
+        }
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !postTouch || !following || !followers {
+            super.touchesCancelled(touches, with: event)
+        }
+    }
+
 }

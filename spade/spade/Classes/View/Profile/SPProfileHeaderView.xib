@@ -72,6 +72,12 @@
                             <color key="textColor" red="0.050980392156862744" green="0.51372549019607838" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-nB-MTq">
+                            <rect key="frame" x="103" y="0.0" width="4.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="textColor" red="0.050980392159999999" green="0.51372549020000002" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="CgQ-3y-3Vb" secondAttribute="trailing" constant="25" id="0lw-mE-y9e"/>
@@ -82,11 +88,13 @@
                         <constraint firstItem="CgQ-3y-3Vb" firstAttribute="top" secondItem="Fwy-R0-dhL" secondAttribute="bottom" constant="-3" id="ULQ-Vz-PrH"/>
                         <constraint firstItem="Fwy-R0-dhL" firstAttribute="top" secondItem="tJR-nd-VWF" secondAttribute="top" id="Y8l-Q8-X9L"/>
                         <constraint firstItem="z7u-E9-wS6" firstAttribute="top" secondItem="G7w-mn-2Jf" secondAttribute="bottom" constant="-3" id="auk-2Y-RDX"/>
+                        <constraint firstItem="3bo-nB-MTq" firstAttribute="centerX" secondItem="Om6-SB-qPC" secondAttribute="centerX" id="cU1-KV-IRl"/>
                         <constraint firstItem="Fwy-R0-dhL" firstAttribute="centerX" secondItem="CgQ-3y-3Vb" secondAttribute="centerX" id="ckp-Jq-ZQd"/>
                         <constraint firstItem="Om6-SB-qPC" firstAttribute="centerX" secondItem="tJR-nd-VWF" secondAttribute="centerX" id="dle-aa-9e7"/>
                         <constraint firstItem="Om6-SB-qPC" firstAttribute="bottom" secondItem="z7u-E9-wS6" secondAttribute="bottom" id="lTi-VG-IWo"/>
                         <constraint firstAttribute="bottom" secondItem="z7u-E9-wS6" secondAttribute="bottom" constant="2.5" id="p0z-Ov-Jyo"/>
                         <constraint firstAttribute="height" constant="35" id="pdy-RD-IP5"/>
+                        <constraint firstItem="3bo-nB-MTq" firstAttribute="top" secondItem="tJR-nd-VWF" secondAttribute="top" id="uDK-gR-ho6"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W38-UQ-b9d">
@@ -113,6 +121,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="avatarImage" destination="nAI-iL-2re" id="fec-P0-S4c"/>
+                <outlet property="followersNum" destination="3bo-nB-MTq" id="76A-C9-Ixi"/>
                 <outlet property="followingNum" destination="Fwy-R0-dhL" id="Kpu-DM-pF0"/>
                 <outlet property="nameLabel" destination="W38-UQ-b9d" id="IiO-Bn-6ea"/>
                 <outlet property="postNum" destination="G7w-mn-2Jf" id="77b-dT-cC8"/>

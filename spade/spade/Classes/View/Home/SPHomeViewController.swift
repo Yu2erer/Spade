@@ -88,6 +88,15 @@ extension SPHomeViewController {
         return cell
     }
 }
+// MARK: - SPHomeTableViewCellDelegate
+extension SPHomeViewController: SPHomeTableViewCellDelegate {
+    func didClickUser(user: SPDashBoard) {
+        print(user)
+        let vc = SPUserDetailViewController()
+        vc.user = user
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 // MARK: - 设置界面
 extension SPHomeViewController {
     
@@ -124,13 +133,4 @@ extension SPHomeViewController {
         }
     }
 
-}
-// MARK: - SPHomeTableViewCellDelegate
-extension SPHomeViewController: SPHomeTableViewCellDelegate {
-    func didClickUser(user: SPDashBoard) {
-        print(user)
-        let vc = SPUserDetailViewController()
-        vc.user = user
-        navigationController?.pushViewController(vc, animated: true)
-    }
 }

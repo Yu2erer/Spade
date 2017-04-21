@@ -17,6 +17,7 @@ class SPUserDetailViewController: SPBaseViewController {
     fileprivate lazy var blogInfoViewModel = SPBlogInfoViewModel()
     fileprivate lazy var userListViewModel = SPUserListViewModel()
 
+    
     var user: SPDashBoard?
     
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class SPUserDetailViewController: SPBaseViewController {
                 return
             }
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
+            self.headerView.model = self.blogInfoViewModel.blogInfo
             self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount, completion: { (isSuccess, shouldRefresh) in
                 self.refreshControl?.endRefreshing()
                 // 恢复上拉刷新标记
@@ -46,6 +48,7 @@ class SPUserDetailViewController: SPBaseViewController {
     lazy var headerView: SPUserDetailHeaderView = {
         let headerView = UINib(nibName: "SPUserDetailHeaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SPUserDetailHeaderView
         headerView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: 95)
+        headerView.headerViewDelegate = self
         return headerView
     }()
     lazy var playerView: ZFPlayerView? = {
@@ -71,8 +74,6 @@ extension SPUserDetailViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        headerView.model = blogInfoViewModel.blogInfo
-        
         let vm = userListViewModel.userViewModel[indexPath.row]
         
         let cellId = (vm.dashBoard.type == "video") ? videoCellId : photoCellId
@@ -97,8 +98,15 @@ extension SPUserDetailViewController {
         }
         return cell
     }
-
-    
+}
+// MARK: - SPUserDetailHeaderViewDelegate
+extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
+    func didClickPostNum() {
+        tableView?.setContentOffset(CGPoint(x: 0, y: 35), animated: true)
+    }
+    func didClickLikeNum() {
+        print("LikeNum")
+    }
 }
 // MARK: - 设置界面
 extension SPUserDetailViewController {

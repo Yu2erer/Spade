@@ -20,6 +20,7 @@ let baseURL = "https://api.tumblr.com/v2/"
 let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"
 let blogInfoURL = baseURL + "blog/"
+let likeURL = baseURL + "user/likes"
 
 // MARK: - 配图视图
 /// 配图视图外部间距

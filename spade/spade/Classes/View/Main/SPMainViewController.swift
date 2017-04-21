@@ -46,7 +46,7 @@ extension SPMainViewController {
         let array = [
             ["clsName": "SPHomeViewController", "imageName": "tabbar-home"],
             ["clsName": "SPHomeViewController", "imageName": "tabbar-search"],
-            ["clsName": "SPHomeViewController", "imageName": "tabbar-activity"],
+            ["clsName": "SPLikeViewController", "imageName": "tabbar-activity"],
             ["clsName": "SPProfileViewController", "imageName": "tabbar-profile"]
         ]
         var arrayM = [UIViewController]()

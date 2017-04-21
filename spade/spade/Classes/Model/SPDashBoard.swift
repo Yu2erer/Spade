@@ -13,6 +13,8 @@ class SPDashBoard: NSObject {
     
     /// id
     var id: Int = 0
+    /// 点赞要用
+    var reblog_key: String?
     // 内容
     var summary: String?
     // 名字
