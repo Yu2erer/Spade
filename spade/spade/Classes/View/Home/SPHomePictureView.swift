@@ -55,7 +55,6 @@ class SPHomePictureView: UIView {
             }
             let picHeight = CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
             tempHeight += picHeight + PictureViewInnerMargin
-
             picNum = picNum + temp
         }
         heightCons.constant = (viewModel?.height ?? 0)

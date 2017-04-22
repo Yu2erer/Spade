@@ -121,16 +121,16 @@ extension SPHomeViewController {
         tableView?.separatorStyle = .none
     }
     /// 处理导航栏
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let offsetY = scrollView.contentOffset.y
-        if offsetY >= 0 && offsetY <= 36 {
-            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        } else if offsetY > 36 {
-            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        
+//        let offsetY = scrollView.contentOffset.y
+//        if offsetY >= 0 && offsetY <= 36 {
+//            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
+//            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+//        } else if offsetY > 36 {
+//            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
+//            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+//        }
+//    }
 
 }

@@ -1,8 +1,8 @@
 //
-//  SPUserDetailViewController.swift
+//  SPUserLikesViewController.swift
 //  spade
 //
-//  Created by ntian on 2017/4/19.
+//  Created by ntian on 2017/4/22.
 //  Copyright © 2017年 ntian. All rights reserved.
 //
 
@@ -12,69 +12,46 @@ import ZFPlayer
 private let photoCellId = "photoCellId"
 private let videoCellId = "videoCellId"
 
-class SPUserDetailViewController: SPBaseViewController {
-
-    fileprivate lazy var blogInfoViewModel = SPBlogInfoViewModel()
-    fileprivate lazy var userListViewModel = SPUserListViewModel()
-
+class SPUserLikesViewController: SPBaseViewController {
     
-    var user: SPDashBoard?
+    fileprivate lazy var likeListViewModel = SPLikeListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
+    var model: SPBlogInfo?
     
     override func loadData() {
-        blogInfoViewModel.loadBlogInfo(blogName: user?.post_url ?? "") { (isSuccess) in
-            if !isSuccess {
-                return
+        likeListViewModel.loadBlogLikes(blogName: model?.name ?? "" + ".tumblr.com", pullup: self.isPullup, pullupCount: self.pullupCount) { (list, shouldRefresh) in
+            self.refreshControl?.endRefreshing()
+            // 恢复上拉刷新标记
+            self.isPullup = false
+            if shouldRefresh {
+                self.tableView?.reloadData()
             }
-            let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
-            self.headerView.model = self.blogInfoViewModel.blogInfo
-            self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount, completion: { (isSuccess, shouldRefresh) in
-                self.refreshControl?.endRefreshing()
-                // 恢复上拉刷新标记
-                self.isPullup = false
-                if shouldRefresh {
-                    self.tableView?.reloadData()
-                }
-            })
-
-            
-            self.headerView.model = self.blogInfoViewModel.blogInfo
         }
     }
-    lazy var headerView: SPUserDetailHeaderView = {
-        let headerView = UINib(nibName: "SPUserDetailHeaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SPUserDetailHeaderView
-        headerView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: 95)
-        headerView.headerViewDelegate = self
-        return headerView
-    }()
     lazy var playerView: ZFPlayerView? = {
         let playerView = ZFPlayerView.shared()
         
         playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
-    override func viewWillDisappear(_ animated: Bool) {
-        let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        super.viewWillDisappear(animated)
-    }
-
+    
     
 }
-// MARK: - tableView
-extension SPUserDetailViewController {
+// MARK: - 表格数据源方法
+extension SPUserLikesViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return userListViewModel.userViewModel.count
+        return likeListViewModel.likeModel.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let vm = userListViewModel.userViewModel[indexPath.row]
+        let vm = likeListViewModel.likeModel[indexPath.row]
         
         let cellId = (vm.dashBoard.type == "video") ? videoCellId : photoCellId
         
@@ -82,6 +59,7 @@ extension SPUserDetailViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
         weak var weakSelf = self
         cell.viewModel = vm
+        cell.cellDelegate = self
         
         if vm.dashBoard.type == "video" {
             cell.playBack = {
@@ -99,33 +77,31 @@ extension SPUserDetailViewController {
         return cell
     }
 }
-// MARK: - SPUserDetailHeaderViewDelegate
-extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
-    func didClickPostNum() {
-        tableView?.setContentOffset(CGPoint(x: 0, y: 37), animated: true)
-    }
-    func didClickLikeNum(user: SPBlogInfo) {
-        let vc = SPUserLikesViewController()
-        vc.model = user
+// MARK: - SPHomeTableViewCellDelegate
+extension SPUserLikesViewController: SPHomeTableViewCellDelegate {
+    func didClickUser(user: SPDashBoard) {
+        print(user)
+        let vc = SPUserDetailViewController()
+        vc.user = user
         navigationController?.pushViewController(vc, animated: true)
     }
-
 }
 // MARK: - 设置界面
-extension SPUserDetailViewController {
+extension SPUserLikesViewController {
     fileprivate func setupUI() {
-        view.backgroundColor = UIColor.white
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.title = "喜欢"
     }
     override func setupTableView() {
         super.setupTableView()
         
         tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: photoCellId)
         tableView?.register(UINib(nibName: "SPHomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: videoCellId)
+        
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
-        tableView?.tableHeaderView = headerView
+        
         tableView?.separatorStyle = .none
     }
     /// 处理导航栏
@@ -135,11 +111,10 @@ extension SPUserDetailViewController {
         if offsetY >= 0 && offsetY <= 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
             navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = nil
         } else if offsetY > 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
             navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = self.user?.blog_name
         }
     }
 }
+

@@ -86,7 +86,7 @@ extension SPProfileViewController {
 // MARK: - SPProfileHeaderViewDelegate
 extension SPProfileViewController: SPProfileHeaderViewDelegate {
     func didClickPostNum() {
-        tableView?.setContentOffset(CGPoint(x: 0, y: 35), animated: true)
+        tableView?.setContentOffset(CGPoint(x: 0, y: 37), animated: true)
     }
 }
 // MARK: - 设置界面

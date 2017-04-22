@@ -107,10 +107,10 @@ extension SPLikeViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
-        if offsetY >= 0 && offsetY <= 32 {
-            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 32))
+        if offsetY >= 0 && offsetY <= 36 {
+            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
             navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        } else if offsetY > 32 {
+        } else if offsetY > 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
             navigationController?.navigationBar.setBackgroundImage(image, for: .default)
         }

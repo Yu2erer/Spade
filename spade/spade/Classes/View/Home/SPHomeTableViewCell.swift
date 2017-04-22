@@ -60,7 +60,6 @@ class SPHomeTableViewCell: UITableViewCell {
         
         playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
         heightCons?.constant = height
-
     }
     override func awakeFromNib() {
         super.awakeFromNib()

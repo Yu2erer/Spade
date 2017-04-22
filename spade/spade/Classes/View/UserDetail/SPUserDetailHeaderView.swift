@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol SPUserDetailHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
-    @objc optional func didClickLikeNum()
+    @objc optional func didClickLikeNum(user: SPBlogInfo)
 }
 
 class SPUserDetailHeaderView: UIView {
@@ -26,7 +26,12 @@ class SPUserDetailHeaderView: UIView {
             guard let model = model else {
                 return
             }
-            likesNum.text = String(model.likes)
+            if model.likes > 0 {
+                likesNum.text = String(model.likes)
+            } else {
+                likesNum.text = "不可见"
+            }
+            
             postNum.text = String(model.total_posts)
             avatarImage.nt_setAvatarImage(urlString: model.avatarURL, placeholder: nil, isAvator: true)
             nameLabel.text = String(describing: model.name ?? "")
@@ -57,7 +62,7 @@ extension SPUserDetailHeaderView {
             self.postTouch = true
         }
         p = t.location(in: likesNum)
-        if likesNum.bounds.contains(p) && likesNum.bounds.size.width > p.x {
+        if likesNum.bounds.contains(p) && likesNum.bounds.size.width > p.x && model?.likes != 0 {
             self.likeTouch = true
         }
         if !postTouch || !likeTouch {
@@ -69,7 +74,7 @@ extension SPUserDetailHeaderView {
             super.touchesEnded(touches, with: event)
         } else {
             postTouch ? headerViewDelegate?.didClickPostNum?() : ()
-            likeTouch ? headerViewDelegate?.didClickLikeNum?() : ()
+            likeTouch ? headerViewDelegate?.didClickLikeNum?(user: model!) : ()
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

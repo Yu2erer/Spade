@@ -1,19 +1,19 @@
 //
-//  SPUserLikeListViewModel.swift
+//  SPLikeListViewModel.swift
 //  spade
 //
-//  Created by ntian on 2017/4/21.
+//  Created by ntian on 2017/4/22.
 //  Copyright © 2017年 ntian. All rights reserved.
 //
 
 import Foundation
 private let maxPullupTryTimes = 3
-class SPUserLikeListViewModel {
+class SPLikeListViewModel {
     
-    lazy var userLikeModel = [SPDashBoardViewModel]()
+    lazy var likeModel = [SPDashBoardViewModel]()
     private var pullupErrorTimes = 0
     
-    func loadUserLikes(pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+    func loadBlogLikes(blogName: String, pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
             completion(true, false)
@@ -21,14 +21,14 @@ class SPUserLikeListViewModel {
         }
         
         let offset = !pullup ? "" : "\(pullupCount)"
-        SPNetworkManage.shared.userBlogLikes(offset: offset) { (list, isSuccess) in
+        SPNetworkManage.shared.blogLikes(blogName: blogName, offset: offset) { (list, isSuccess) in
             
             if !isSuccess {
                 completion(false, false)
             }
             /// 上次的 最高一条的id
-            let firstId = self.userLikeModel.first?.dashBoard.id
-            let lastId = self.userLikeModel.last?.dashBoard.id
+            let firstId = self.likeModel.first?.dashBoard.id
+            let lastId = self.likeModel.last?.dashBoard.id
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
             // 遍历数组 字典转模型
@@ -45,8 +45,8 @@ class SPUserLikeListViewModel {
             }
             
             if pullup {
-                self.userLikeModel += array
-                if self.userLikeModel.last?.dashBoard.id == lastId && lastId != nil {
+                self.likeModel += array
+                if self.likeModel.last?.dashBoard.id == lastId && lastId != nil {
                     print("扎心了 老铁")
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
@@ -54,8 +54,8 @@ class SPUserLikeListViewModel {
                 }
             } else {
                 // 下拉刷新
-                self.userLikeModel = array + self.userLikeModel
-                if self.userLikeModel.first?.dashBoard.id == firstId && firstId != nil {
+                self.likeModel = array + self.likeModel
+                if self.likeModel.first?.dashBoard.id == firstId && firstId != nil {
                     print("没有新数据呗")
                     completion(isSuccess, false)
                     return

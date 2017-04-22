@@ -63,18 +63,27 @@ extension SPNetworkManage {
         }
     }
     /// 加载用户 Likes
-    func userLikes(offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+    func userBlogLikes(offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
         
         let params = ["offset": offset,
                       "limit": "20"]
-
         request(urlString: likeURL, method: .GET, parameters: params) { (json, isSuccess) in
             let result = json as? [String: Any]
             let data = result?["response"] as? [String: Any]
             completion(data?["liked_posts"] as? [[String: Any]], isSuccess)
         }
+    }
+    func blogLikes(blogName: String, offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
         
+        let params = ["offset": offset,
+                      "limit": "20"]
         
+        request(urlString: blogInfoURL + blogName + "/likes", method: .GET, parameters: params) { (json, isSuccess) in
+            let result = json as? [String: Any]
+            let data = result?["response"] as? [String: Any]
+            completion(data?["liked_posts"] as? [[String: Any]], isSuccess)
+        }
+
     }
     
 
