@@ -21,7 +21,9 @@ let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"
 let blogInfoURL = baseURL + "blog/"
 let likeURL = baseURL + "user/likes"
-
+// MARK: - 全局通知定义
+let SPUserShouldLoginNotification = "SPUserShouldLoginNotification"
+let SPUserLoginSuccessedNotification = "SPUserLoginSuccessedNotification"
 // MARK: - 配图视图
 /// 配图视图外部间距
 let PictureViewOutterMargin = CGFloat(11)

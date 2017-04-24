@@ -13,9 +13,34 @@ class SPMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupChildControllers()
         delegate = self
+        setupChildControllers()
+        SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
+//        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess(n:)), name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
+        
     }
+    deinit {
+//        NotificationCenter.default.removeObserver(self)
+    }
+
+}
+extension SPMainViewController {
+    @objc fileprivate func userLogin() {
+        print("用户登录通知")
+    }
+}
+// MARK: - 界面
+extension SPMainViewController {
+//    fileprivate func setupLoginView() {
+//        let loginView = SPLoginView.loginView()
+//        view.addSubview(loginView)
+//    }
+//    @objc fileprivate func loginSuccess(n: Notification) {
+//        print("登录成功")
+//        viewDidLoad()
+//        NotificationCenter.default.removeObserver(self)
+//    }
 
 }
 // MARK: - UITabBarControllerDelegate

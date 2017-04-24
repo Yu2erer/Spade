@@ -10,5 +10,6 @@ pod 'Kingfisher'
 pod 'OAuthSwift'
 pod 'YYModel'
 pod 'ZFPlayer'
+pod 'SVProgressHUD'
 
 end

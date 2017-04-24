@@ -21,9 +21,12 @@
 		9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */; };
 		9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */; };
 		9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */; };
+		9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */; };
 		9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */; };
 		9F887FE51EAAEF4C00094D48 /* SPLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */; };
 		9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */; };
+		9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */; };
+		9F8BB2331EADF1E30012BC86 /* SPLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */; };
 		9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */; };
 		9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */; };
 		9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */; };
@@ -33,6 +36,7 @@
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
 		9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */; };
 		9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378591EA746640048A51C /* NTFPSLabel.swift */; };
+		9FBCFCA01EACCFA0004A801E /* SPOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */; };
 		9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */; };
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
 		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
@@ -68,9 +72,12 @@
 		9F4E0EFF1E97465B004F307A /* SPBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBaseViewController.swift; sourceTree = "<group>"; };
 		9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIImage+Extensions.swift"; sourceTree = "<group>"; };
 		9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
+		9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserAccount.swift; sourceTree = "<group>"; };
 		9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTInt+Extensions.swift"; sourceTree = "<group>"; };
 		9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeListViewModel.swift; sourceTree = "<group>"; };
 		9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikesViewController.swift; sourceTree = "<group>"; };
+		9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginView.xib; sourceTree = "<group>"; };
+		9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLoginView.swift; sourceTree = "<group>"; };
 		9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogInfoViewModel.swift; sourceTree = "<group>"; };
 		9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserListViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTString+Extensions.swift"; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 		9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spade-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailViewController.swift; sourceTree = "<group>"; };
 		9FB378591EA746640048A51C /* NTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFPSLabel.swift; sourceTree = "<group>"; };
+		9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPOAuthViewController.swift; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
 		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
@@ -127,6 +135,7 @@
 		9F4E0EF51E9691BB004F307A /* NetworkManage */ = {
 			isa = PBXGroup;
 			children = (
+				9F6668701EAD907800AC1DF9 /* Model */,
 				9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */,
 				9F4E0EFD1E9744FD004F307A /* SPNetworkManage+Extensions.swift */,
 			);
@@ -154,6 +163,24 @@
 				9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9F5FF5F81EAC45E800C59585 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */,
+				9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */,
+				9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		9F6668701EAD907800AC1DF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9FB378561EA73C3E0048A51C /* UserDetail */ = {
@@ -230,6 +257,7 @@
 		9FDC1C991E962C4B0019D76A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F5FF5F81EAC45E800C59585 /* OAuth */,
 				9FB378561EA73C3E0048A51C /* UserDetail */,
 				9FDC1C9D1E962C4B0019D76A /* Main */,
 				9FDC1C9B1E962C4B0019D76A /* Home */,
@@ -357,7 +385,7 @@
 				TargetAttributes = {
 					9FDC1C801E96272E0019D76A = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 26K4QZ9DA7;
+						DevelopmentTeam = 57EGJELJS3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -390,6 +418,7 @@
 				9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */,
 				9FD36DA31EA7684B0007D3C2 /* SPUserDetailHeaderView.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
+				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +480,7 @@
 				9FD36DA51EA768B10007D3C2 /* SPUserDetailHeaderView.swift in Sources */,
 				9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */,
 				9FF8747F1EAA4C500047241E /* SPUserLikeListViewModel.swift in Sources */,
+				9FBCFCA01EACCFA0004A801E /* SPOAuthViewController.swift in Sources */,
 				9F4E0EFE1E9744FD004F307A /* SPNetworkManage+Extensions.swift in Sources */,
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
@@ -458,6 +488,7 @@
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
+				9F8BB2331EADF1E30012BC86 /* SPLoginView.swift in Sources */,
 				9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */,
 				9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */,
 				9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */,
@@ -476,6 +507,7 @@
 				9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */,
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,
 				9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */,
+				9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */,
 				9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */,
 				9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */,
 				9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */,
@@ -532,7 +564,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -576,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -590,12 +622,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 26K4QZ9DA7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 57EGJELJS3;
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.spade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "spade/Spade-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -608,12 +643,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 26K4QZ9DA7;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 57EGJELJS3;
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.spade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "spade/Spade-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

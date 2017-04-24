@@ -21,20 +21,20 @@ class SPHomeViewController: SPBaseViewController {
         super.viewDidLoad()
 
         setupUI()
-        
-    }    
+
+    }
     /// 加载数据
     override func loadData() {
-        
-        dashBoardListViewModel.loadDashBoard(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
-            // 结束刷新控件
-            self.refreshControl?.endRefreshing()
-            // 恢复上拉刷新标记
-            self.isPullup = false
-            if shouldRefresh {
-                self.tableView?.reloadData()
+            self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
+                // 结束刷新控件
+                self.refreshControl?.endRefreshing()
+                // 恢复上拉刷新标记
+                self.isPullup = false
+                if shouldRefresh {
+                    self.tableView?.reloadData()
+                }
             }
-        }
+        
     }
     
     @objc fileprivate func test() {
@@ -120,7 +120,7 @@ extension SPHomeViewController {
         
         tableView?.separatorStyle = .none
     }
-    /// 处理导航栏
+//    /// 处理导航栏
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        
 //        let offsetY = scrollView.contentOffset.y

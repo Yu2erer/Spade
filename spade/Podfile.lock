@@ -2,6 +2,7 @@ PODS:
   - Kingfisher (3.5.0)
   - Masonry (1.0.2)
   - OAuthSwift (1.1.1)
+  - SVProgressHUD (2.1.2)
   - YYModel (1.0.4)
   - ZFPlayer (2.1.3):
     - Masonry
@@ -9,6 +10,7 @@ PODS:
 DEPENDENCIES:
   - Kingfisher
   - OAuthSwift
+  - SVProgressHUD
   - YYModel
   - ZFPlayer
 
@@ -16,9 +18,10 @@ SPEC CHECKSUMS:
   Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: 8dc82b4508fbba4ee59d0304c52e30f8b3390244
 
-PODFILE CHECKSUM: 01aaadc94de83474074b667e9cbeb7661ec7e8ee
+PODFILE CHECKSUM: f7b2b7458af23d9a5e02fcb52c81aa80d52c7f64
 
 COCOAPODS: 1.2.0.beta.3

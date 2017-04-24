@@ -17,14 +17,19 @@ class SPBaseViewController: UIViewController {
     /// 上拉刷新标记
     var isPullup = false
     var pullupCount = 0
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         
-        loadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc fileprivate func loginSuccess() {
+        setupUI()
     }
     /// 具体实现子类负责
     func loadData() {
@@ -37,7 +42,8 @@ class SPBaseViewController: UIViewController {
 extension SPBaseViewController {
     
     fileprivate func setupUI() {
-        setupTableView()
+        SPNetworkManage.shared.userLogon ? loadData() : ()
+        SPNetworkManage.shared.userLogon ? setupTableView() : ()
     }
     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
