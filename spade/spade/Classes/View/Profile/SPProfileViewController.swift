@@ -16,12 +16,15 @@ class SPProfileViewController: SPBaseViewController {
 
     fileprivate lazy var blogInfoViewModel = SPBlogInfoViewModel()
     fileprivate lazy var userListViewModel = SPUserListViewModel()
-
+    fileprivate lazy var customNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: PictureViewWidth, height: 64))
+    fileprivate lazy var navItem = UINavigationItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     override func loadData() {
+        refreshControl?.beginRefreshing()
         blogInfoViewModel.loadBlogInfo(blogName: nil) { (isSuccess) in
             if (!isSuccess) { return }
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
@@ -93,8 +96,11 @@ extension SPProfileViewController: SPProfileHeaderViewDelegate {
 extension SPProfileViewController {
     
     fileprivate func setupUI() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        customNavigationBar.setBackgroundImage(UIImage(), for: .default)
+        customNavigationBar.shadowImage = UIImage()
+        customNavigationBar.items = [navItem]
+        navigationController?.view.insertSubview(customNavigationBar, at: 1)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     override func setupTableView() {
         super.setupTableView()
@@ -106,19 +112,17 @@ extension SPProfileViewController {
         tableView?.tableHeaderView = headerView
         tableView?.separatorStyle = .none
     }
-    /// 处理导航栏
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 0 && offsetY <= 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = nil
+            customNavigationBar.setBackgroundImage(image, for: .default)
+            navItem.title = nil
         } else if offsetY > 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = self.blogInfoViewModel.blogInfo.name
+            customNavigationBar.setBackgroundImage(image, for: .default)
+            navItem.title = self.blogInfoViewModel.blogInfo.name
         }
     }
-
 }

@@ -25,23 +25,19 @@ extension Date {
      yyyy-MM-dd HH:mm(更早)
      */
     var nt_dateDescription: String {
-        
-        if calendar.isDateInToday(self) {
+        var fmt = "MM-dd"
+        if calendar.isDateInToday(self) || calendar.isDateInYesterday(self) {
             let delta = -Int(self.timeIntervalSinceNow)
             if delta < 60 {
-                return "刚刚"
+                return "\(delta)s"
             }
             if delta < 3600 {
-                return "\(delta / 60)分钟前"
+                return "\(delta / 60)m"
             }
-            return "\(delta / 3600)小时前"
-        }
-        
-        var fmt = " HH:mm"
-        if calendar.isDateInYesterday(self) {
-            fmt = "昨天" + fmt
+            if delta < 86400 {
+                return "\(delta / 3600)h"
+            }
         } else {
-            fmt = "MM-dd" + fmt
             let year = calendar.component(.year, from: self)
             let thisYear = calendar.component(.year, from: Date())
             if year != thisYear {

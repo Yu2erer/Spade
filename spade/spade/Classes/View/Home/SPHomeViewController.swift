@@ -25,7 +25,8 @@ class SPHomeViewController: SPBaseViewController {
     }
     /// 加载数据
     override func loadData() {
-            self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
+        self.refreshControl?.beginRefreshing()
+        self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup,pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
                 // 结束刷新控件
                 self.refreshControl?.endRefreshing()
                 // 恢复上拉刷新标记
@@ -34,7 +35,6 @@ class SPHomeViewController: SPBaseViewController {
                     self.tableView?.reloadData()
                 }
             }
-        
     }
     
     @objc fileprivate func test() {
@@ -102,9 +102,9 @@ extension SPHomeViewController {
     
     fileprivate func setupUI() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-        let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+//        let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
+//        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.title = "Spade"
     }
 

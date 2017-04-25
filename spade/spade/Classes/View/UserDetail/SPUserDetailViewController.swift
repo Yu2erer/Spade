@@ -16,6 +16,8 @@ class SPUserDetailViewController: SPBaseViewController {
 
     fileprivate lazy var blogInfoViewModel = SPBlogInfoViewModel()
     fileprivate lazy var userListViewModel = SPUserListViewModel()
+    fileprivate lazy var customNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: PictureViewWidth, height: 64))
+    fileprivate lazy var navItem = UINavigationItem()
 
     
     var user: SPDashBoard?
@@ -57,12 +59,6 @@ class SPUserDetailViewController: SPBaseViewController {
         playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
-    override func viewWillDisappear(_ animated: Bool) {
-        let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        super.viewWillDisappear(animated)
-    }
-
     
 }
 // MARK: - tableView
@@ -115,8 +111,28 @@ extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
 extension SPUserDetailViewController {
     fileprivate func setupUI() {
         view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        customNavigationBar.setBackgroundImage(UIImage(), for: .default)
+        customNavigationBar.shadowImage = UIImage()
+        navItem.leftBarButtonItem = UIBarButtonItem(target: self, action: #selector(popToParent))
+        customNavigationBar.items = [navItem]
+    }
+    /// POP 返回到上一级 控制器
+    @objc fileprivate func popToParent() {
+        navigationController?.popViewController(animated: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.view.insertSubview(customNavigationBar, at: 1)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        customNavigationBar.removeFromSuperview()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        performSelector(onMainThread: #selector(delayHidden), with: animated, waitUntilDone: false)
+    }
+    func delayHidden(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     override func setupTableView() {
         super.setupTableView()
@@ -134,12 +150,12 @@ extension SPUserDetailViewController {
         let offsetY = scrollView.contentOffset.y
         if offsetY >= 0 && offsetY <= 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = nil
+            customNavigationBar.setBackgroundImage(image, for: .default)
+            navItem.title = nil
         } else if offsetY > 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-            self.navigationItem.title = self.user?.blog_name
+            customNavigationBar.setBackgroundImage(image, for: .default)
+            navItem.title = self.user?.blog_name
         }
     }
 }

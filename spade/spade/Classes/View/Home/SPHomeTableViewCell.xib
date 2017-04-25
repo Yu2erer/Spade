@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,8 +19,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="staff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-yd-pjt" userLabel="昵称">
-                        <rect key="frame" x="56" y="11" width="32" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="56" y="19" width="33" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,12 +31,6 @@
                             <constraint firstAttribute="width" constant="34" id="u1g-z7-CWP"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3小时前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-hv-LP5" userLabel="时间">
-                        <rect key="frame" x="56" y="33" width="38" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hol-g3-GoP" userLabel="分割线">
                         <rect key="frame" x="0.0" y="317.5" width="320" height="0.5"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.79607843137254897" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,28 +69,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="qbu-iD-QmF">
-                        <rect key="frame" x="288" y="16" width="24" height="24"/>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-hv-LP5" userLabel="时间">
+                        <rect key="frame" x="263.5" y="18.5" width="45.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="trailing" constant="11" id="0Jv-Zk-Mqk"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4Wa-c2-MBi"/>
-                    <constraint firstItem="ga4-yd-pjt" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="top" id="6hS-as-Tm9"/>
+                    <constraint firstAttribute="trailing" secondItem="R1V-hv-LP5" secondAttribute="trailing" constant="11" id="8K4-JF-Wnd"/>
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="trailing" constant="11" id="AhI-V9-uxl"/>
                     <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
-                    <constraint firstItem="qbu-iD-QmF" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Dd5-Rh-WAv"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
+                    <constraint firstItem="R1V-hv-LP5" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="KNs-14-YFU"/>
                     <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
-                    <constraint firstItem="R1V-hv-LP5" firstAttribute="leading" secondItem="ga4-yd-pjt" secondAttribute="leading" id="Mte-mN-eJF"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="Od7-Ok-4G1"/>
+                    <constraint firstItem="ga4-yd-pjt" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Zrq-cz-WeJ"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
-                    <constraint firstItem="R1V-hv-LP5" firstAttribute="bottom" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="cn3-uF-IIy"/>
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="eDs-Hb-wv7"/>
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>
                     <constraint firstAttribute="trailing" secondItem="VB0-3J-APA" secondAttribute="trailing" id="gGS-bP-YEe"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="lFi-O2-Z9J"/>
-                    <constraint firstAttribute="trailing" secondItem="qbu-iD-QmF" secondAttribute="trailing" constant="8" id="luf-Go-Wga"/>
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ok8-EQ-03E"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="pKc-If-8Qg"/>
                     <constraint firstItem="I4n-xw-FCu" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="tWN-gW-RnJ"/>
@@ -117,6 +112,5 @@
     </objects>
     <resources>
         <image name="glyph-like" width="24" height="24"/>
-        <image name="more" width="24" height="24"/>
     </resources>
 </document>

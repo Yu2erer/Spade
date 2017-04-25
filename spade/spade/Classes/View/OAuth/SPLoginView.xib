@@ -82,7 +82,7 @@
         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="pD4-Jq-i6N">
             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="313" y="-64"/>
+            <point key="canvasLocation" x="278" y="-269"/>
         </activityIndicatorView>
     </objects>
     <resources>

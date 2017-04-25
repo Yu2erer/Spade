@@ -26,6 +26,8 @@ class SPUserDetailHeaderView: UIView {
             guard let model = model else {
                 return
             }
+            postNum.isHidden = false
+            likesNum.isHidden = false
             if model.likes > 0 {
                 likesNum.text = String(model.likes)
             } else {

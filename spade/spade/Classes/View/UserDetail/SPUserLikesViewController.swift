@@ -23,6 +23,7 @@ class SPUserLikesViewController: SPBaseViewController {
     var model: SPBlogInfo?
     
     override func loadData() {
+        refreshControl?.beginRefreshing()
         likeListViewModel.loadBlogLikes(blogName: model?.name ?? "" + ".tumblr.com", pullup: self.isPullup, pullupCount: self.pullupCount) { (list, shouldRefresh) in
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
@@ -89,9 +90,7 @@ extension SPUserLikesViewController: SPHomeTableViewCellDelegate {
 // MARK: - 设置界面
 extension SPUserLikesViewController {
     fileprivate func setupUI() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationItem.title = "喜欢"
+        navigationItem.title = "喜欢"
     }
     override func setupTableView() {
         super.setupTableView()
@@ -103,18 +102,6 @@ extension SPUserLikesViewController {
         tableView?.estimatedRowHeight = 300
         
         tableView?.separatorStyle = .none
-    }
-    /// 处理导航栏
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let offsetY = scrollView.contentOffset.y
-        if offsetY >= 0 && offsetY <= 36 {
-            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        } else if offsetY > 36 {
-            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        }
     }
 }
 

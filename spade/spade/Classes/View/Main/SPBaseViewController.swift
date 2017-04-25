@@ -13,7 +13,7 @@ class SPBaseViewController: UIViewController {
     /// 表格视图
     var tableView: UITableView?
     /// 刷新控件
-    var refreshControl: UIRefreshControl?
+    var refreshControl: NTRefreshControl?
     /// 上拉刷新标记
     var isPullup = false
     var pullupCount = 0
@@ -22,6 +22,7 @@ class SPBaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
     }
@@ -42,8 +43,8 @@ class SPBaseViewController: UIViewController {
 extension SPBaseViewController {
     
     fileprivate func setupUI() {
-        SPNetworkManage.shared.userLogon ? loadData() : ()
         SPNetworkManage.shared.userLogon ? setupTableView() : ()
+        SPNetworkManage.shared.userLogon ? loadData() : ()
     }
     func setupTableView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
@@ -51,12 +52,12 @@ extension SPBaseViewController {
         // 实现数据源方法
         tableView?.delegate = self
         tableView?.dataSource = self
-//        automaticallyAdjustsScrollViewInsets = false
-//        tableView?.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 49, right: 0)
+        automaticallyAdjustsScrollViewInsets = false
+        tableView?.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 49, right: 0)
         // 指示器缩进
         tableView?.scrollIndicatorInsets = tableView!.contentInset
         // 实例化 refreshControl
-        refreshControl = UIRefreshControl()
+        refreshControl = NTRefreshControl()
         tableView?.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
