@@ -15,6 +15,7 @@ private let videoCellId = "videoCellId"
 class SPLikeViewController: SPBaseViewController {
 
     fileprivate lazy var likeListViewModel = SPUserLikeListViewModel()
+    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,13 @@ class SPLikeViewController: SPBaseViewController {
     }
     override func loadData() {
         refreshControl?.beginRefreshing()
-        likeListViewModel.loadUserLikes(pullup: self.isPullup, pullupCount: self.pullupCount) { (list, shouldRefresh) in
+        likeListViewModel.loadUserLikes(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
+            if !isSuccess {
+                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
+                self.refreshControl?.endRefreshing()
+                self.isPullup = false
+                return
+            }
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
             self.isPullup = false

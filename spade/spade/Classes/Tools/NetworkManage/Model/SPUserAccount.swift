@@ -21,8 +21,8 @@ class SPUserAccount: NSObject {
 //        UserDefaults.standard.removeObject(forKey: "oauthToken")
 //        UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
 
-        oauthToken = UserDefaults.standard.value(forKey: "oauthToken") as? String
-        oauthTokenSecret = UserDefaults.standard.value(forKey: "oauthTokenSecret") as? String
+//        oauthToken = UserDefaults.standard.value(forKey: "oauthToken") as? String
+//        oauthTokenSecret = UserDefaults.standard.value(forKey: "oauthTokenSecret") as? String
         
     }
     

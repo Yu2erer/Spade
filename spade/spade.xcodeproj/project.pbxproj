@@ -26,6 +26,7 @@
 		9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */; };
 		9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */; };
 		9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */; };
+		9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */; };
 		9F887FE51EAAEF4C00094D48 /* SPLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */; };
 		9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */; };
 		9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */; };
@@ -80,6 +81,7 @@
 		9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserAccount.swift; sourceTree = "<group>"; };
 		9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTInt+Extensions.swift"; sourceTree = "<group>"; };
+		9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMessageHud.swift; sourceTree = "<group>"; };
 		9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeListViewModel.swift; sourceTree = "<group>"; };
 		9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikesViewController.swift; sourceTree = "<group>"; };
 		9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginView.xib; sourceTree = "<group>"; };
@@ -199,6 +201,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9F85B0911EAF6721004C4D09 /* NTMessageHud */ = {
+			isa = PBXGroup;
+			children = (
+				9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */,
+			);
+			path = NTMessageHud;
+			sourceTree = "<group>";
+		};
 		9FB378561EA73C3E0048A51C /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
+				9F85B0911EAF6721004C4D09 /* NTMessageHud */,
 				9F5332BD1EAF140000C7D2BE /* NTRefreshControl */,
 				9F4E0EF51E9691BB004F307A /* NetworkManage */,
 				9FDC1CA11E962ED80019D76A /* Extensions */,
@@ -536,6 +547,7 @@
 				9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */,
 				9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
+				9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */,
 				9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

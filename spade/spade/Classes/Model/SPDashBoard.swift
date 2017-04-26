@@ -19,6 +19,8 @@ class SPDashBoard: NSObject {
     var summary: String?
     // 名字
     var blog_name: String?
+    /// 热度
+    var note_count: Int = 0
     /// 时间字符串
     var timestamp: Int = 0 {
         didSet {

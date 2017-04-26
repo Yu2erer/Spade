@@ -16,6 +16,7 @@ class SPHomeViewController: SPBaseViewController {
     
     /// 列表视图模型
     fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
+    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +28,20 @@ class SPHomeViewController: SPBaseViewController {
     override func loadData() {
         self.refreshControl?.beginRefreshing()
         self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup,pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
-                // 结束刷新控件
+            if !isSuccess {
+                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
                 self.refreshControl?.endRefreshing()
-                // 恢复上拉刷新标记
                 self.isPullup = false
-                if shouldRefresh {
-                    self.tableView?.reloadData()
-                }
+                return
             }
+            // 结束刷新控件
+            self.refreshControl?.endRefreshing()
+            // 恢复上拉刷新标记
+            self.isPullup = false
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
+        }
     }
     
     @objc fileprivate func test() {
@@ -91,7 +98,6 @@ extension SPHomeViewController {
 // MARK: - SPHomeTableViewCellDelegate
 extension SPHomeViewController: SPHomeTableViewCellDelegate {
     func didClickUser(user: SPDashBoard) {
-        print(user)
         let vc = SPUserDetailViewController()
         vc.user = user
         navigationController?.pushViewController(vc, animated: true)
@@ -101,10 +107,7 @@ extension SPHomeViewController: SPHomeTableViewCellDelegate {
 extension SPHomeViewController {
     
     fileprivate func setupUI() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-//        let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-//        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
         self.navigationItem.title = "Spade"
     }
 
@@ -120,17 +123,4 @@ extension SPHomeViewController {
         
         tableView?.separatorStyle = .none
     }
-//    /// 处理导航栏
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        
-//        let offsetY = scrollView.contentOffset.y
-//        if offsetY >= 0 && offsetY <= 36 {
-//            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: offsetY / 36))
-//            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-//        } else if offsetY > 36 {
-//            let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
-//            navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-//        }
-//    }
-
 }

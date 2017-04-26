@@ -26,9 +26,6 @@ class SPUserLikeListViewModel {
             if !isSuccess {
                 completion(false, false)
             }
-            /// 上次的 最高一条的id
-            let firstId = self.userLikeModel.first?.dashBoard.id
-            let lastId = self.userLikeModel.last?.dashBoard.id
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
             // 遍历数组 字典转模型
@@ -45,23 +42,21 @@ class SPUserLikeListViewModel {
             }
             
             if pullup {
-                self.userLikeModel += array
-                if self.userLikeModel.last?.dashBoard.id == lastId && lastId != nil {
+                if self.userLikeModel.last?.dashBoard.id == array.last?.dashBoard.id {
                     print("扎心了 老铁")
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
+                self.userLikeModel += array
             } else {
-                // 下拉刷新
-                self.userLikeModel = array + self.userLikeModel
-                if self.userLikeModel.first?.dashBoard.id == firstId && firstId != nil {
+                if self.userLikeModel.first?.dashBoard.id == array.first?.dashBoard.id {
                     print("没有新数据呗")
                     completion(isSuccess, false)
                     return
                 }
+                self.userLikeModel = array
             }
-            
             // 判断上拉刷新的数据量
             if pullup && array.count == 0 {
                 self.pullupErrorTimes += 1

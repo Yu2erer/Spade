@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,61 +15,31 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glB-ia-GGZ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="oJ0-MZ-QBp">
-                            <rect key="frame" x="117.5" y="33" width="140" height="67"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="67" id="KXe-zE-RdL"/>
-                                <constraint firstAttribute="width" constant="140" id="gyO-3G-Dhf"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="oJ0-MZ-QBp" firstAttribute="centerY" secondItem="glB-ia-GGZ" secondAttribute="centerY" id="FSW-I6-uqg"/>
-                        <constraint firstItem="oJ0-MZ-QBp" firstAttribute="centerX" secondItem="glB-ia-GGZ" secondAttribute="centerX" id="Niw-GV-CY2"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qh1-Pn-VLv">
-                    <rect key="frame" x="47.5" y="382.5" width="280" height="40"/>
+                    <rect key="frame" x="145.5" y="453" width="84" height="84"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="280" id="6LH-RK-lPr"/>
-                        <constraint firstAttribute="height" constant="40" id="quH-yh-OxR"/>
+                        <constraint firstAttribute="width" constant="84" id="6LH-RK-lPr"/>
+                        <constraint firstAttribute="height" constant="84" id="quH-yh-OxR"/>
                     </constraints>
-                    <state key="normal" title="登 录" backgroundImage="login"/>
+                    <state key="normal" backgroundImage="loginLogo"/>
                     <connections>
                         <action selector="loginBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="IPr-V1-hRE"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="r0P-00-cQZ">
-                    <rect key="frame" x="142.5" y="178.5" width="90" height="90"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="jeg-TS-Vhc">
+                    <rect key="frame" x="77.5" y="60" width="220" height="117"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="5rI-me-7h4"/>
-                        <constraint firstAttribute="height" constant="90" id="Dzm-wT-9A1"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Introducing" translatesAutoresizingMaskIntoConstraints="NO" id="New-dl-qwg">
-                    <rect key="frame" x="47.5" y="294.5" width="280" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="W78-Ja-ird"/>
-                        <constraint firstAttribute="width" constant="280" id="wmM-c5-YBB"/>
+                        <constraint firstAttribute="height" constant="117" id="Dfy-bn-KYN"/>
+                        <constraint firstAttribute="width" constant="220" id="lt6-gj-xJS"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="r0P-00-cQZ" firstAttribute="centerX" secondItem="oJ0-MZ-QBp" secondAttribute="centerX" id="0rB-lX-yzd"/>
-                <constraint firstItem="New-dl-qwg" firstAttribute="top" secondItem="r0P-00-cQZ" secondAttribute="bottom" constant="25.5" id="5s8-Ao-uOL"/>
-                <constraint firstItem="qh1-Pn-VLv" firstAttribute="centerX" secondItem="oJ0-MZ-QBp" secondAttribute="centerX" id="CfJ-ye-YKp"/>
-                <constraint firstItem="r0P-00-cQZ" firstAttribute="top" secondItem="glB-ia-GGZ" secondAttribute="bottom" constant="45" id="KEg-y9-H98"/>
-                <constraint firstAttribute="trailing" secondItem="glB-ia-GGZ" secondAttribute="trailing" id="YSN-6f-0ns"/>
-                <constraint firstItem="glB-ia-GGZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bl7-5V-pLE"/>
-                <constraint firstItem="glB-ia-GGZ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1 / 5" id="eBQ-mC-Ufe"/>
-                <constraint firstItem="glB-ia-GGZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rZK-sm-y38"/>
-                <constraint firstItem="New-dl-qwg" firstAttribute="centerX" secondItem="r0P-00-cQZ" secondAttribute="centerX" id="ri3-Pi-8Ki"/>
-                <constraint firstItem="qh1-Pn-VLv" firstAttribute="top" secondItem="New-dl-qwg" secondAttribute="bottom" constant="40" id="zw0-G7-0Hg"/>
+                <constraint firstItem="qh1-Pn-VLv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3TW-P8-dFz"/>
+                <constraint firstItem="jeg-TS-Vhc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="4RJ-eS-Lpc"/>
+                <constraint firstItem="jeg-TS-Vhc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8yM-Ti-2Ty"/>
+                <constraint firstAttribute="bottom" secondItem="qh1-Pn-VLv" secondAttribute="bottom" constant="130" id="gth-Pm-evI"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <connections>
@@ -86,9 +55,7 @@
         </activityIndicatorView>
     </objects>
     <resources>
-        <image name="Introducing" width="891" height="153"/>
-        <image name="login" width="960" height="150"/>
-        <image name="loginLogo" width="261" height="261"/>
-        <image name="title" width="432" height="207"/>
+        <image name="loginLogo" width="306" height="306"/>
+        <image name="title" width="486" height="261"/>
     </resources>
 </document>

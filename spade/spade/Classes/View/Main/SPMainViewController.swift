@@ -16,12 +16,6 @@ class SPMainViewController: UITabBarController {
         delegate = self
         setupChildControllers()
         SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
-//        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess(n:)), name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
-        
-    }
-    deinit {
-//        NotificationCenter.default.removeObserver(self)
     }
 
 }
@@ -29,19 +23,6 @@ extension SPMainViewController {
     @objc fileprivate func userLogin() {
         print("用户登录通知")
     }
-}
-// MARK: - 界面
-extension SPMainViewController {
-//    fileprivate func setupLoginView() {
-//        let loginView = SPLoginView.loginView()
-//        view.addSubview(loginView)
-//    }
-//    @objc fileprivate func loginSuccess(n: Notification) {
-//        print("登录成功")
-//        viewDidLoad()
-//        NotificationCenter.default.removeObserver(self)
-//    }
-
 }
 // MARK: - UITabBarControllerDelegate
 extension SPMainViewController: UITabBarControllerDelegate {
@@ -54,9 +35,8 @@ extension SPMainViewController: UITabBarControllerDelegate {
             
             let nav = childViewControllers[0] as! UINavigationController
             let vc = nav.childViewControllers[0] as! SPHomeViewController
-            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: true)
             vc.loadData()
-            
         }
         
         return true

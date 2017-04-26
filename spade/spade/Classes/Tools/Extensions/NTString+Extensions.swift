@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let dateFormatter = DateFormatter()
-
 extension String {
     
     /// 获取 Blog 中间字符串地址
@@ -23,13 +21,5 @@ extension String {
         let range2 = self.range(of: "/")
         return self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
     }
-//    func removeHref() -> String {
-//        let range1 = self.range(of: "<a")
-//        let range2 = self.range(of: "/a>")
-//        self.removeSubrange(self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
-//        return self.substring(to: String.Index)
-//    }
-  
-    
 
 }

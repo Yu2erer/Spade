@@ -30,7 +30,6 @@ class SPLoginView: UIView {
     @objc fileprivate func reset() {
         self.activity.stopAnimating()
         self.login.isEnabled = true
-        self.login.titleLabel?.text = "登 录"
     }
     class func loginView()-> SPLoginView {
         let nib = UINib(nibName: "SPLoginView", bundle: nil)
@@ -42,7 +41,6 @@ class SPLoginView: UIView {
     @IBAction func loginBtn(_ sender: UIButton) {
         login.isEnabled = false
         activity.startAnimating()
-        login.titleLabel?.text = ""
         SPNetworkManage.shared.loadToken { (isSuccess) in
             print(isSuccess)
             if isSuccess {
@@ -55,7 +53,6 @@ class SPLoginView: UIView {
                 SVProgressHUD.showError(withStatus: "登录失败, 请检查网络连接")
                 self.activity.stopAnimating()
                 self.login.isEnabled = true
-                self.login.titleLabel?.text = "登 录"
             }
         }
     }

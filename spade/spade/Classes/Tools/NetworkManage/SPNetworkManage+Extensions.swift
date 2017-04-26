@@ -17,7 +17,6 @@ extension SPNetworkManage {
         let params = ["since_id": since_id,
                       "offset": offset,
                       "limit": "20"]
-        
         request(urlString: dashBoardURL, method: .GET, parameters: params) { (json, isSuccess) in
             
             let result = json as? [String: Any]

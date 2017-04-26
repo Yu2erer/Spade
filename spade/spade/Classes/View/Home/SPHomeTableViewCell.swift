@@ -12,6 +12,9 @@ import UIKit
     @objc optional func didClickUser(user: SPDashBoard)
 }
 class SPHomeTableViewCell: UITableViewCell {
+    
+
+    @IBOutlet weak var noteLabel: UILabel!
     // 正文
     @IBOutlet weak var statusLabel: UILabel!
     // 名字
@@ -43,7 +46,7 @@ class SPHomeTableViewCell: UITableViewCell {
             iconView.nt_setAvatarImage(urlString: viewModel?.avatarURL, placeholder: nil, isAvator: true)
             likeIcon.image = viewModel?.likeImage
             timeLabel.text = viewModel?.dashBoard.createDate?.nt_dateDescription
-            
+            noteLabel?.text = viewModel?.note_count
             pictureView?.urls = viewModel?.dashBoard.photos
             pictureView?.viewModel = viewModel
             

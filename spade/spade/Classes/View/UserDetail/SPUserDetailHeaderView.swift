@@ -26,8 +26,6 @@ class SPUserDetailHeaderView: UIView {
             guard let model = model else {
                 return
             }
-            postNum.isHidden = false
-            likesNum.isHidden = false
             if model.likes > 0 {
                 likesNum.text = String(model.likes)
             } else {
@@ -64,7 +62,7 @@ extension SPUserDetailHeaderView {
             self.postTouch = true
         }
         p = t.location(in: likesNum)
-        if likesNum.bounds.contains(p) && likesNum.bounds.size.width > p.x && model?.likes != 0 {
+        if likesNum.bounds.contains(p) && likesNum.bounds.size.width > p.x && model?.likes != 0 && (model != nil) {
             self.likeTouch = true
         }
         if !postTouch || !likeTouch {

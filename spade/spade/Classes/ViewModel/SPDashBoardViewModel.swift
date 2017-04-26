@@ -21,6 +21,7 @@ class SPDashBoardViewModel: CustomStringConvertible {
     var row: Int = 0
     /// 高度
     var height: CGFloat = 0
+    var note_count: String?
     
     init(model: SPDashBoard) {
         self.dashBoard = model
@@ -29,6 +30,11 @@ class SPDashBoardViewModel: CustomStringConvertible {
             likeImage = UIImage(named: "glyph-liked")
         } else {
             likeImage = UIImage(named: "glyph-like")
+        }
+        if model.note_count == 0 {
+            self.note_count = ""
+        } else {
+            self.note_count = "\(model.note_count)条热度"
         }
         
         // 计算配图视图高度

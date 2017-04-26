@@ -24,16 +24,13 @@ class SPDashBoardListViewModel {
         }
         
         let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
-        let offset = !pullup ? "" : "\(pullupCount)"
+        let offset = !pullup ? "0" : "\(pullupCount)"
         
         SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset) { (list, isSuccess) in
             
             if !isSuccess {
                 completion(false, false)
             }
-            /// 上次的 最高一条的id
-            let firstId = self.dashBoardList.first?.dashBoard.id
-            let lastId = self.dashBoardList.last?.dashBoard.id
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
             // 遍历数组 字典转模型
@@ -48,25 +45,19 @@ class SPDashBoardListViewModel {
                 array.append(viewModel)
                 
             }
-            print(array)
-            
             if pullup {
-                self.dashBoardList += array
-                if self.dashBoardList.last?.dashBoard.id == lastId && lastId != nil {
-                    // FIXME: 此处应该有一个酷炫的 SVProgressHud 显示信息
-                    print("扎心了 老铁")
+                if self.dashBoardList.last?.dashBoard.id == array.last?.dashBoard.id {
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
+                self.dashBoardList += array
             } else {
-                // 下拉刷新
-                self.dashBoardList = array + self.dashBoardList
-                if self.dashBoardList.first?.dashBoard.id ?? 0 == firstId ?? 0 && firstId != nil {
-                    print("没有新数据呗")
+                if self.dashBoardList.first?.dashBoard.id == array.first?.dashBoard.id {
                     completion(isSuccess, false)
                     return
                 }
+                self.dashBoardList = array
             }
             
             // 判断上拉刷新的数据量
@@ -78,5 +69,4 @@ class SPDashBoardListViewModel {
             }
         }
     }
-    
 }

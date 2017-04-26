@@ -18,6 +18,7 @@ class SPProfileViewController: SPBaseViewController {
     fileprivate lazy var userListViewModel = SPUserListViewModel()
     fileprivate lazy var customNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: PictureViewWidth, height: 64))
     fileprivate lazy var navItem = UINavigationItem()
+    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,12 @@ class SPProfileViewController: SPBaseViewController {
     override func loadData() {
         refreshControl?.beginRefreshing()
         blogInfoViewModel.loadBlogInfo(blogName: nil) { (isSuccess) in
-            if (!isSuccess) { return }
+            if (!isSuccess) {
+                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
+                self.refreshControl?.endRefreshing()
+                self.isPullup = false
+                return
+            }
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
             self.headerView.model = self.blogInfoViewModel.blogInfo
             self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
