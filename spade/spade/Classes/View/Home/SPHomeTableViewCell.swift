@@ -24,7 +24,7 @@ class SPHomeTableViewCell: UITableViewCell {
     // 头像
     @IBOutlet weak var iconView: UIImageView!
     /// 爱心喜欢
-    @IBOutlet weak var likeIcon: UIImageView!
+    @IBOutlet weak var likeIcon: UIButton!
     /// 配图视图
     @IBOutlet weak var pictureView: SPHomePictureView?
     /// 占位图
@@ -33,6 +33,7 @@ class SPHomeTableViewCell: UITableViewCell {
     // 播放按钮
     let playBtn = UIButton(type: .custom)
     fileprivate var trackingTouch = false
+    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
     public weak var cellDelegate: SPHomeTableViewCellDelegate?
     /// 播放按钮回调
@@ -44,7 +45,8 @@ class SPHomeTableViewCell: UITableViewCell {
             nameLabel.text = viewModel?.dashBoard.blog_name
             statusLabel.text = viewModel?.dashBoard.summary
             iconView.nt_setAvatarImage(urlString: viewModel?.avatarURL, placeholder: nil, isAvator: true)
-            likeIcon.image = viewModel?.likeImage
+            likeIcon.setImage(UIImage(named: viewModel?.likeImage ?? "glyph-like"), for: .normal)
+            likeIcon.setImage(UIImage(named: viewModel?.selectedImage ?? "glyph-like"), for: .selected)
             timeLabel.text = viewModel?.dashBoard.createDate?.nt_dateDescription
             noteLabel?.text = viewModel?.note_count
             pictureView?.urls = viewModel?.dashBoard.photos
@@ -64,11 +66,37 @@ class SPHomeTableViewCell: UITableViewCell {
         playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
         heightCons?.constant = height
     }
+    @IBAction func likeBtn(_ sender: UIButton) {
+        self.likeIcon.isSelected = !self.likeIcon.isSelected
+        if viewModel?.dashBoard.liked == 0 {
+            // 就是还没喜欢的时候..
+            SPNetworkManage.shared.userLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
+                if isSuccess {
+                    self.viewModel?.dashBoard.liked = 1
+                } else {
+                    self.likeIcon.isSelected = !self.likeIcon.isSelected
+                    self.viewModel?.dashBoard.liked = 0
+                    self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
+                }
+            })
+        } else {
+            // 已经喜欢了 要取消喜欢
+            SPNetworkManage.shared.userUnLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
+                if isSuccess {
+                    self.viewModel?.dashBoard.liked = 0
+                } else {
+                    self.likeIcon.isSelected = !self.likeIcon.isSelected
+                    self.viewModel?.dashBoard.liked = 1
+                    self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
+                }
+            })
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
 
         playBtn.setImage(UIImage(named: "video_list_cell_big_icon"), for: .normal)
-        playBtn.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        playBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         playBtn.addTarget(self, action: #selector(play), for: .touchUpInside)
 
         self.placeholderImage?.addSubview(playBtn)

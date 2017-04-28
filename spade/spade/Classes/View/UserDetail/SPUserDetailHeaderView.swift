@@ -11,6 +11,7 @@ import UIKit
 @objc protocol SPUserDetailHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
     @objc optional func didClickLikeNum(user: SPBlogInfo)
+    @objc optional func didClickAvatar()
 }
 
 class SPUserDetailHeaderView: UIView {
@@ -50,12 +51,14 @@ class SPUserDetailHeaderView: UIView {
     }
     fileprivate var postTouch: Bool = false
     fileprivate var likeTouch: Bool = false
+    fileprivate var avatarTouch: Bool = false
 }
 // MARK: - touch
 extension SPUserDetailHeaderView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.postTouch = false
         self.likeTouch = false
+        self.avatarTouch = false
         let t: UITouch = (touches as NSSet).anyObject() as! UITouch
         var p = t.location(in: postNum)
         if (postNum.bounds).contains(p) && postNum.bounds.size.width > p.x {
@@ -65,16 +68,21 @@ extension SPUserDetailHeaderView {
         if likesNum.bounds.contains(p) && likesNum.bounds.size.width > p.x && model?.likes != 0 && (model != nil) {
             self.likeTouch = true
         }
-        if !postTouch || !likeTouch {
+        p = t.location(in: avatarImage)
+        if avatarImage.bounds.contains(p) && model != nil {
+            self.avatarTouch = true
+        }
+        if !postTouch || !likeTouch || !avatarTouch {
             super.touchesBegan(touches, with: event)
         }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !postTouch && !likeTouch {
+        if !postTouch && !likeTouch && !avatarTouch {
             super.touchesEnded(touches, with: event)
         } else {
             postTouch ? headerViewDelegate?.didClickPostNum?() : ()
             likeTouch ? headerViewDelegate?.didClickLikeNum?(user: model!) : ()
+            avatarTouch ? headerViewDelegate?.didClickAvatar?() : ()
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

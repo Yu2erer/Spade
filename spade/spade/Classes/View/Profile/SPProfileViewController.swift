@@ -57,6 +57,10 @@ class SPProfileViewController: SPBaseViewController {
         playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
+    @objc fileprivate func setting() {
+        let vc = UIStoryboard(name: "SPSetting", bundle: nil).instantiateInitialViewController()!
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 // MARK: - tableView
 extension SPProfileViewController {
@@ -105,8 +109,21 @@ extension SPProfileViewController {
         customNavigationBar.setBackgroundImage(UIImage(), for: .default)
         customNavigationBar.shadowImage = UIImage()
         customNavigationBar.items = [navItem]
+        navItem.rightBarButtonItem = UIBarButtonItem(imageName: "SettingsBarButton", target: self, action: #selector(setting))
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.view.insertSubview(customNavigationBar, at: 1)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        customNavigationBar.removeFromSuperview()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        performSelector(onMainThread: #selector(delayHidden), with: animated, waitUntilDone: false)
+    }
+    func delayHidden(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     override func setupTableView() {
         super.setupTableView()

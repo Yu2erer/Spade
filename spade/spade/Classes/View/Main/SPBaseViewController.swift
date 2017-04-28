@@ -20,10 +20,7 @@ class SPBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
     }
     deinit {

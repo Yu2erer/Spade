@@ -20,10 +20,17 @@ let baseURL = "https://api.tumblr.com/v2/"
 let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"
 let blogInfoURL = baseURL + "blog/"
-let likeURL = baseURL + "user/likes"
+let likesURL = baseURL + "user/likes"
+let like = baseURL + "user/like"
+let unLike = baseURL + "user/unlike"
 // MARK: - 全局通知定义
 let SPUserShouldLoginNotification = "SPUserShouldLoginNotification"
 let SPUserLoginSuccessedNotification = "SPUserLoginSuccessedNotification"
+let SPLikeNotification = "SPLikeNotification"
+// 图片通知定义
+let SPHomeCellBrowserPhotoNotification = "SPHomeCellBrowserPhotoNotification"
+let SPHomeCellBrowserPhotoSelectedIndexKey = "SPHomeCellBrowserPhotoSelectedIndexKey"
+let SPHomeCellBrowserPhotoURLsKey = "SPHomeCellBrowserPhotoURLsKey"
 // MARK: - 配图视图
 /// 配图视图外部间距
 let PictureViewOutterMargin = CGFloat(11)

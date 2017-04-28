@@ -66,7 +66,7 @@ extension SPNetworkManage {
         
         let params = ["offset": offset,
                       "limit": "20"]
-        request(urlString: likeURL, method: .GET, parameters: params) { (json, isSuccess) in
+        request(urlString: likesURL, method: .GET, parameters: params) { (json, isSuccess) in
             let result = json as? [String: Any]
             let data = result?["response"] as? [String: Any]
             completion(data?["liked_posts"] as? [[String: Any]], isSuccess)
@@ -82,7 +82,23 @@ extension SPNetworkManage {
             let data = result?["response"] as? [String: Any]
             completion(data?["liked_posts"] as? [[String: Any]], isSuccess)
         }
-
+    }
+    func userLike(id: Int, reblogKey: String, completion: @escaping (_ isSuccess: Bool)->()) {
+        
+        let params = ["id": "\(id)",
+                      "reblog_key": reblogKey]
+        
+        request(urlString: like, method: .GET, parameters: params) { (json, isSuccess) in
+            completion(isSuccess)
+        }
+    }
+    func userUnLike(id: Int, reblogKey: String, completion: @escaping (_ isSuccess: Bool)->()) {
+        
+        let params = ["id": "\(id)",
+            "reblog_key": reblogKey]
+        request(urlString: unLike, method: .GET, parameters: params) { (json, isSuccess) in
+            completion(isSuccess)
+        }
     }
     
 

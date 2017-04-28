@@ -11,5 +11,6 @@ pod 'OAuthSwift'
 pod 'YYModel'
 pod 'ZFPlayer'
 pod 'SVProgressHUD'
+pod 'SKPhotoBrowser'
 
 end

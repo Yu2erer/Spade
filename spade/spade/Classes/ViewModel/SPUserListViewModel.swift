@@ -29,6 +29,8 @@ class SPUserListViewModel {
             }
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
+            
+            let lastId = self.userViewModel.last?.dashBoard.id
             // 遍历数组 字典转模型
             for dict in list ?? [] {
                 
@@ -39,25 +41,18 @@ class SPUserListViewModel {
                 let viewModel = SPDashBoardViewModel(model: dashBoard)
                 
                 array.append(viewModel)
-                
             }
-
             
             if pullup {
-                if self.userViewModel.last?.dashBoard.id == array.last?.dashBoard.id {
+                self.userViewModel += array
+                if self.userViewModel.last?.dashBoard.id == lastId && lastId != nil {
                     print("扎心了 老铁")
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
-                self.userViewModel += array
             } else {
-                if self.userViewModel.first?.dashBoard.id == array.first?.dashBoard.id {
-                    print("没有新数据呗")
-                    completion(isSuccess, false)
-                    return
-                }
-                self.userViewModel = array
+                self.userViewModel = array 
             }
 
             // 判断上拉刷新的数据量

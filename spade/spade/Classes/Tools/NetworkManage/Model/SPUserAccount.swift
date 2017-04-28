@@ -10,8 +10,8 @@ import UIKit
 
 class SPUserAccount: NSObject {
     
-    var oauthToken: String? //= "N6daXtXmnPSbyhYn6VTfTSz7uqEfFwdXfLceux7cyERYNZre8E"
-    var oauthTokenSecret: String? // = "aiE22nqrDB8oirfrEQf28Yi1Fbguf5a45KbAl04XAzuhyFHDDW"
+    var oauthToken: String?
+    var oauthTokenSecret: String?
     
     override var description: String {
         return yy_modelDescription()
@@ -21,8 +21,8 @@ class SPUserAccount: NSObject {
 //        UserDefaults.standard.removeObject(forKey: "oauthToken")
 //        UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
 
-//        oauthToken = UserDefaults.standard.value(forKey: "oauthToken") as? String
-//        oauthTokenSecret = UserDefaults.standard.value(forKey: "oauthTokenSecret") as? String
+        oauthToken = UserDefaults.standard.value(forKey: "oauthToken") as? String
+        oauthTokenSecret = UserDefaults.standard.value(forKey: "oauthTokenSecret") as? String
         
     }
     

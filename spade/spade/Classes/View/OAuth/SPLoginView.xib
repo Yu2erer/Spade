@@ -27,10 +27,10 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="jeg-TS-Vhc">
-                    <rect key="frame" x="77.5" y="60" width="220" height="117"/>
+                    <rect key="frame" x="101" y="60" width="173" height="83"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="117" id="Dfy-bn-KYN"/>
-                        <constraint firstAttribute="width" constant="220" id="lt6-gj-xJS"/>
+                        <constraint firstAttribute="height" constant="83" id="Dfy-bn-KYN"/>
+                        <constraint firstAttribute="width" constant="173" id="lt6-gj-xJS"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -56,6 +56,6 @@
     </objects>
     <resources>
         <image name="loginLogo" width="306" height="306"/>
-        <image name="title" width="486" height="261"/>
+        <image name="title" width="432" height="207"/>
     </resources>
 </document>

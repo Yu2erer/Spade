@@ -39,8 +39,8 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-xw-FCu" userLabel="正文">
-                        <rect key="frame" x="11" y="303" width="38" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="11" y="292" width="35.5" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -60,25 +60,29 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-u3-PLh" userLabel="toolBar">
                         <rect key="frame" x="0.0" y="267" width="320" height="25"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glyph-like" translatesAutoresizingMaskIntoConstraints="NO" id="Z0w-bz-14f">
-                                <rect key="frame" x="11" y="-2.5" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="RNX-hn-BHb"/>
-                                    <constraint firstAttribute="width" constant="24" id="nor-g9-Bpi"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300条热度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCh-lr-yOI">
                                 <rect key="frame" x="249" y="3" width="60" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPA-47-hXH">
+                                <rect key="frame" x="11" y="-2.5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Btv-Ey-RAF"/>
+                                    <constraint firstAttribute="height" constant="24" id="tPu-Qu-mdl"/>
+                                </constraints>
+                                <state key="normal" image="glyph-like"/>
+                                <connections>
+                                    <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LJq-Xe-0Kh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="UCh-lr-yOI" firstAttribute="centerY" secondItem="Z0w-bz-14f" secondAttribute="centerY" id="FKZ-Q2-GOi"/>
                             <constraint firstAttribute="trailing" secondItem="UCh-lr-yOI" secondAttribute="trailing" constant="11" id="JRP-58-MpH"/>
                             <constraint firstAttribute="height" constant="25" id="kyB-Rm-qYC" userLabel="height = 25"/>
-                            <constraint firstItem="Z0w-bz-14f" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="nIT-DZ-BPo"/>
+                            <constraint firstItem="UCh-lr-yOI" firstAttribute="centerY" secondItem="YPA-47-hXH" secondAttribute="centerY" id="rzC-JI-V33"/>
+                            <constraint firstItem="YPA-47-hXH" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="w0V-D0-tBB"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -91,9 +95,9 @@
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Chq-2N-jPY"/>
                     <constraint firstAttribute="trailing" secondItem="BOw-gb-ZEZ" secondAttribute="trailing" id="IZ9-mY-JiF"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
-                    <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" constant="11" id="Jop-Io-Xvi"/>
-                    <constraint firstItem="Z0w-bz-14f" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Krm-m0-k4h"/>
+                    <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="Jop-Io-Xvi"/>
                     <constraint firstItem="BOw-gb-ZEZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="X78-ax-mA1"/>
+                    <constraint firstItem="YPA-47-hXH" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Yft-5D-0EC"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
                     <constraint firstItem="BOw-gb-ZEZ" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" constant="11" id="d4a-vn-B1z"/>
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>
@@ -108,7 +112,7 @@
             <connections>
                 <outlet property="heightCons" destination="d6H-XW-0cx" id="cpO-0Y-9oV"/>
                 <outlet property="iconView" destination="NL7-Je-BqX" id="Ibp-lL-Sl7"/>
-                <outlet property="likeIcon" destination="Z0w-bz-14f" id="xhL-LD-4nZ"/>
+                <outlet property="likeIcon" destination="YPA-47-hXH" id="wxF-NX-9xs"/>
                 <outlet property="nameLabel" destination="ga4-yd-pjt" id="DnG-hj-eEs"/>
                 <outlet property="noteLabel" destination="UCh-lr-yOI" id="ML5-Qh-z6a"/>
                 <outlet property="placeholderImage" destination="BOw-gb-ZEZ" id="zIm-Dj-Jnk"/>

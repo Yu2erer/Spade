@@ -8,6 +8,7 @@
 
 import UIKit
 import ZFPlayer
+import SKPhotoBrowser
 
 private let photoCellId = "photoCellId"
 private let videoCellId = "videoCellId"
@@ -22,7 +23,31 @@ class SPHomeViewController: SPBaseViewController {
         super.viewDidLoad()
 
         setupUI()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc fileprivate func browserPhoto(n: Notification) {
+        
+        guard let selectedIndex = n.userInfo?[SPHomeCellBrowserPhotoSelectedIndexKey] as? Int,
+            let urls = n.userInfo?[SPHomeCellBrowserPhotoURLsKey] as? [String] else {
+            return
+        }
+        var images = [SKPhoto]()
+        for url in urls {
+            let photo = SKPhoto.photoWithImageURL(url)
+            images.append(photo)
+        }
+        SKPhotoBrowserOptions.displayHorizontalScrollIndicator = false
+        SKPhotoBrowserOptions.displayVerticalScrollIndicator = false
+        SKPhotoBrowserOptions.displayCloseButton = false
+        SKPhotoBrowserOptions.enableSingleTapDismiss = true
+        SKPhotoBrowserOptions.displayAction = false
+        SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(selectedIndex)
+        present(browser, animated: true, completion: nil)
     }
     /// 加载数据
     override func loadData() {

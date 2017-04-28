@@ -20,7 +20,6 @@ class SPBlogInfoViewModel {
             }
          
             self.blogInfo.yy_modelSet(with: list ?? [:])
-            print(self.blogInfo)
             
             completion(isSuccess)
             }
@@ -30,11 +29,8 @@ class SPBlogInfoViewModel {
                     completion(false)
                 }
                 self.blogInfo.yy_modelSet(with: list ?? [:])
-                print(self.blogInfo)
                 completion(isSuccess)
             }
         }
     }
-    
-    
 }

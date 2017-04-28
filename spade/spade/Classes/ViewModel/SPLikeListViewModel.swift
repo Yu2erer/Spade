@@ -28,6 +28,7 @@ class SPLikeListViewModel {
             }
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
+            let lastId = self.likeModel.last?.dashBoard.id
             // 遍历数组 字典转模型
             for dict in list ?? [] {
                 
@@ -42,20 +43,14 @@ class SPLikeListViewModel {
             }
             
             if pullup {
-                if self.likeModel.last?.dashBoard.id == array.last?.dashBoard.id {
+                self.likeModel += array
+                if self.likeModel.last?.dashBoard.id == lastId && lastId != nil {
                     print("扎心了 老铁")
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
-                self.likeModel += array
             } else {
-                // 下拉刷新
-                if self.likeModel.first?.dashBoard.id == array.first?.dashBoard.id {
-                    print("没有新数据呗")
-                    completion(isSuccess, false)
-                    return
-                }
                 self.likeModel = array
             }
             

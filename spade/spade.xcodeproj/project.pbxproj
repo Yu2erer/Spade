@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1280E5A98AA9520C4107B199 /* Pods_spade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50C2F42A49182BA021C5361 /* Pods_spade.framework */; };
 		9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A59E41EA99021008A286D /* SPLikeViewController.swift */; };
+		9F22B0B01EB0ECA000E0A627 /* SPSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F22B0AF1EB0ECA000E0A627 /* SPSetting.storyboard */; };
 		9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */; };
 		9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */; };
 		9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */; };
@@ -22,6 +23,7 @@
 		9F5332C11EAF140000C7D2BE /* NTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5332BE1EAF140000C7D2BE /* NTRefreshControl.swift */; };
 		9F5332C21EAF140000C7D2BE /* NTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5332BF1EAF140000C7D2BE /* NTRefreshView.swift */; };
 		9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5332C01EAF140000C7D2BE /* NTRefreshView.xib */; };
+		9F5A21241EB1A574003D0FA4 /* SPSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A21231EB1A574003D0FA4 /* SPSettingViewController.swift */; };
 		9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */; };
 		9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */; };
 		9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */; };
@@ -64,6 +66,7 @@
 		415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.debug.xcconfig"; sourceTree = "<group>"; };
 		48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.release.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.release.xcconfig"; sourceTree = "<group>"; };
 		9F1A59E41EA99021008A286D /* SPLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeViewController.swift; sourceTree = "<group>"; };
+		9F22B0AF1EB0ECA000E0A627 /* SPSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SPSetting.storyboard; sourceTree = "<group>"; };
 		9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileViewController.swift; sourceTree = "<group>"; };
 		9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPProfileHeaderView.xib; sourceTree = "<group>"; };
 		9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		9F5332BE1EAF140000C7D2BE /* NTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshControl.swift; sourceTree = "<group>"; };
 		9F5332BF1EAF140000C7D2BE /* NTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshView.swift; sourceTree = "<group>"; };
 		9F5332C01EAF140000C7D2BE /* NTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTRefreshView.xib; sourceTree = "<group>"; };
+		9F5A21231EB1A574003D0FA4 /* SPSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSettingViewController.swift; sourceTree = "<group>"; };
 		9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIImage+Extensions.swift"; sourceTree = "<group>"; };
 		9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
 		9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserAccount.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 				48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F22B0AE1EB0EC8E00E0A627 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9F22B0AF1EB0ECA000E0A627 /* SPSetting.storyboard */,
+				9F5A21231EB1A574003D0FA4 /* SPSettingViewController.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		9F4E0EF51E9691BB004F307A /* NetworkManage */ = {
@@ -338,6 +351,7 @@
 		9FDC1C9E1E962C4B0019D76A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9F22B0AE1EB0EC8E00E0A627 /* Setting */,
 				9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */,
 				9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */,
 				9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */,
@@ -445,6 +459,7 @@
 				9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */,
 				9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */,
 				9FD36DA31EA7684B0007D3C2 /* SPUserDetailHeaderView.xib in Resources */,
+				9F22B0B01EB0ECA000E0A627 /* SPSetting.storyboard in Resources */,
 				9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
 				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
@@ -522,6 +537,7 @@
 				9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */,
 				9F5332C21EAF140000C7D2BE /* NTRefreshView.swift in Sources */,
 				9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */,
+				9F5A21241EB1A574003D0FA4 /* SPSettingViewController.swift in Sources */,
 				9F887FE51EAAEF4C00094D48 /* SPLikeListViewModel.swift in Sources */,
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
 				9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */,

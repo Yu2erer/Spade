@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SPMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        delegate = self
-        setupChildControllers()
-        SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
+        setupUI()
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
 }
 extension SPMainViewController {
     @objc fileprivate func userLogin() {
         print("用户登录通知")
+        setupUI()
+        selectedIndex = 0
+        SVProgressHUD.setDefaultMaskType(.gradient)
+        SVProgressHUD.showInfo(withStatus: "需要重新登录")
+        NotificationCenter.default.removeObserver(self)
     }
 }
 // MARK: - UITabBarControllerDelegate
@@ -36,15 +42,22 @@ extension SPMainViewController: UITabBarControllerDelegate {
             let nav = childViewControllers[0] as! UINavigationController
             let vc = nav.childViewControllers[0] as! SPHomeViewController
             vc.tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: true)
-            vc.loadData()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                vc.loadData()
+            })
         }
-        
         return true
     }
 }
-
 // MARK: - 设置界面
 extension SPMainViewController {
+    fileprivate func setupUI() {
+        delegate = self
+        setupChildControllers()
+        SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
+        print(SPNetworkManage.shared.userLogon)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
+    }
     
     fileprivate func setupChildControllers() {
         
@@ -71,7 +84,7 @@ extension SPMainViewController {
         }
         let vc = cls.init()
         vc.tabBarItem.image = UIImage(named: imageName)
-        vc.tabBarItem.selectedImage = UIImage(named: imageName + "-highlighted")?.withRenderingMode(.alwaysOriginal)
+        vc.tabBarItem.selectedImage = UIImage(named: imageName + "-highlighted")
         // 图像居中
         vc.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
         let nav = SPNavigationController(rootViewController: vc)

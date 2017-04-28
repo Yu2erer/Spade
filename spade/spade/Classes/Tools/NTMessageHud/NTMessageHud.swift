@@ -29,7 +29,7 @@ class NTMessageHud: UIView {
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.frame.size.width = self.frame.size.width
-        label.frame.size.height = 40
+        label.frame.size.height = 35
         label.frame.origin.y = 64 - label.frame.size.height
         view.addSubview(label)
         UIView.animate(withDuration: 0.3, animations: { 

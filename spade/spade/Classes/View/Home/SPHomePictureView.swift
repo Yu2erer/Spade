@@ -74,7 +74,7 @@ class SPHomePictureView: UIView {
                 let pv = iv.subviews[0] as! UIProgressView
                 iv.contentMode = .scaleAspectFill
                 iv.clipsToBounds = true
-                iv.nt_setImage(urlString: url.alt_sizes?[0].url, placeholder: nil, progress: { (receivedSize, expectedSize) in
+                iv.nt_setImage(urlString: url.alt_sizes?[1].url, placeholder: nil, progress: { (receivedSize, expectedSize) in
                     DispatchQueue.main.async(execute: {
                         let progress = Float(receivedSize) / Float(expectedSize)
                         if progress < 1 {
@@ -94,7 +94,6 @@ class SPHomePictureView: UIView {
     }
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     /// 监听方法
-    // FIXME: 图片浏览没做完
     @objc fileprivate func tapImageView(tap: UITapGestureRecognizer) {
         
         guard let iv = tap.view, let photo = viewModel?.dashBoard.photos else {
@@ -109,7 +108,10 @@ class SPHomePictureView: UIView {
                 imageViewList.append(iv)
             }
         }
- 
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: urls,
+                                                                                                    
+                                                                                            SPHomeCellBrowserPhotoSelectedIndexKey: selectedIndex])
+        
 
     }
     override func awakeFromNib() {

@@ -16,7 +16,8 @@ class SPDashBoardViewModel: CustomStringConvertible {
     /// 头像
     var avatarURL: String?
     /// 喜欢图像 喜欢就换成爱心图
-    var likeImage: UIImage?
+    var likeImage: String?
+    var selectedImage: String?
     /// 行数
     var row: Int = 0
     /// 高度
@@ -27,9 +28,11 @@ class SPDashBoardViewModel: CustomStringConvertible {
         self.dashBoard = model
         avatarURL = blogInfoURL + model.post_url! + "/avatar"
         if model.liked == 1 {
-            likeImage = UIImage(named: "glyph-liked")
+            likeImage = "glyph-liked"
+            selectedImage = "glyph-like"
         } else {
-            likeImage = UIImage(named: "glyph-like")
+            likeImage = "glyph-like"
+            selectedImage = "glyph-liked"
         }
         if model.note_count == 0 {
             self.note_count = ""

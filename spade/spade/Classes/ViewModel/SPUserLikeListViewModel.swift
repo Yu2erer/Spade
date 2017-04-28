@@ -28,6 +28,7 @@ class SPUserLikeListViewModel {
             }
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
+            let lastId = self.userLikeModel.last?.dashBoard.id
             // 遍历数组 字典转模型
             for dict in list ?? [] {
                 
@@ -42,19 +43,14 @@ class SPUserLikeListViewModel {
             }
             
             if pullup {
-                if self.userLikeModel.last?.dashBoard.id == array.last?.dashBoard.id {
+                self.userLikeModel += array
+                if self.userLikeModel.last?.dashBoard.id == lastId && lastId != nil {
                     print("扎心了 老铁")
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
-                self.userLikeModel += array
             } else {
-                if self.userLikeModel.first?.dashBoard.id == array.first?.dashBoard.id {
-                    print("没有新数据呗")
-                    completion(isSuccess, false)
-                    return
-                }
                 self.userLikeModel = array
             }
             // 判断上拉刷新的数据量

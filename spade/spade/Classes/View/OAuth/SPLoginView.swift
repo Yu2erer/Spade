@@ -14,6 +14,7 @@ class SPLoginView: UIView {
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var login: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
   

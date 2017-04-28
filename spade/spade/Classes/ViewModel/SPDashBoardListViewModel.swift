@@ -33,6 +33,8 @@ class SPDashBoardListViewModel {
             }
             // 定义结果可变数组
             var array = [SPDashBoardViewModel]()
+            let lastId = self.dashBoardList.last?.dashBoard.id
+
             // 遍历数组 字典转模型
             for dict in list ?? [] {
                 
@@ -46,17 +48,14 @@ class SPDashBoardListViewModel {
                 
             }
             if pullup {
-                if self.dashBoardList.last?.dashBoard.id == array.last?.dashBoard.id {
+                self.dashBoardList += array
+                if self.dashBoardList.last?.dashBoard.id == lastId && lastId != nil {
+                    print("扎心了")
                     self.pullupErrorTimes = 4
                     completion(isSuccess, false)
                     return
                 }
-                self.dashBoardList += array
             } else {
-                if self.dashBoardList.first?.dashBoard.id == array.first?.dashBoard.id {
-                    completion(isSuccess, false)
-                    return
-                }
                 self.dashBoardList = array
             }
             

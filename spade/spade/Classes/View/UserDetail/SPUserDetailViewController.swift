@@ -105,6 +105,19 @@ extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
         vc.model = user
         navigationController?.pushViewController(vc, animated: true)
     }
+    func didClickAvatar() {
+        guard var avatarUrl = blogInfoViewModel.blogInfo.avatarURL else {
+            return
+        }
+        avatarUrl.removeSubrange(avatarUrl.index(avatarUrl.endIndex, offsetBy: -2)...avatarUrl.index(before: avatarUrl.endIndex))
+        avatarUrl += "512"
+        print(avatarUrl)
+        var url = [String]()
+        url.append(avatarUrl)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: url,
+                                                                                                                                          
+                                                                                                                                          SPHomeCellBrowserPhotoSelectedIndexKey: 0])
+    }
 
 }
 // MARK: - 设置界面
