@@ -26,7 +26,6 @@ let unLike = baseURL + "user/unlike"
 // MARK: - 全局通知定义
 let SPUserShouldLoginNotification = "SPUserShouldLoginNotification"
 let SPUserLoginSuccessedNotification = "SPUserLoginSuccessedNotification"
-let SPLikeNotification = "SPLikeNotification"
 // 图片通知定义
 let SPHomeCellBrowserPhotoNotification = "SPHomeCellBrowserPhotoNotification"
 let SPHomeCellBrowserPhotoSelectedIndexKey = "SPHomeCellBrowserPhotoSelectedIndexKey"

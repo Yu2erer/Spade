@@ -13,7 +13,9 @@ import UIKit
 }
 class SPHomeTableViewCell: UITableViewCell {
     
-
+    fileprivate var likeImage = UIImage(named: "glyph-like")
+    fileprivate var likedImage = UIImage(named: "glyph-liked")
+    
     @IBOutlet weak var noteLabel: UILabel!
     // 正文
     @IBOutlet weak var statusLabel: UILabel!
@@ -45,8 +47,11 @@ class SPHomeTableViewCell: UITableViewCell {
             nameLabel.text = viewModel?.dashBoard.blog_name
             statusLabel.text = viewModel?.dashBoard.summary
             iconView.nt_setAvatarImage(urlString: viewModel?.avatarURL, placeholder: nil, isAvator: true)
-            likeIcon.setImage(UIImage(named: viewModel?.likeImage ?? "glyph-like"), for: .normal)
-            likeIcon.setImage(UIImage(named: viewModel?.selectedImage ?? "glyph-like"), for: .selected)
+            if viewModel?.dashBoard.liked == 1 {
+                likeIcon.setImage(likedImage, for: .normal)
+            } else {
+                likeIcon.setImage(likeImage, for: .normal)
+            }
             timeLabel.text = viewModel?.dashBoard.createDate?.nt_dateDescription
             noteLabel?.text = viewModel?.note_count
             pictureView?.urls = viewModel?.dashBoard.photos
@@ -67,27 +72,29 @@ class SPHomeTableViewCell: UITableViewCell {
         heightCons?.constant = height
     }
     @IBAction func likeBtn(_ sender: UIButton) {
-        self.likeIcon.isSelected = !self.likeIcon.isSelected
         if viewModel?.dashBoard.liked == 0 {
+            likeIcon.setImage(likedImage, for: .normal)
             // 就是还没喜欢的时候..
             SPNetworkManage.shared.userLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
                 if isSuccess {
                     self.viewModel?.dashBoard.liked = 1
                 } else {
                     self.likeIcon.isSelected = !self.likeIcon.isSelected
-                    self.viewModel?.dashBoard.liked = 0
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
+                    self.likeIcon.setImage(self.likeImage, for: .normal)
                 }
             })
         } else {
+            likeIcon.setImage(likeImage, for: .normal)
             // 已经喜欢了 要取消喜欢
             SPNetworkManage.shared.userUnLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
                 if isSuccess {
                     self.viewModel?.dashBoard.liked = 0
                 } else {
                     self.likeIcon.isSelected = !self.likeIcon.isSelected
-                    self.viewModel?.dashBoard.liked = 1
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
+                    self.likeIcon.setImage(self.likedImage, for: .normal)
+
                 }
             })
         }

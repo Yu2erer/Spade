@@ -24,7 +24,6 @@ class NTFPSLabel: UILabel {
 
         setupUI()
         
-
         link = CADisplayLink(target: self, selector: #selector(tick(link: )))
         link?.add(to: RunLoop.main, forMode: .commonModes)
     }
