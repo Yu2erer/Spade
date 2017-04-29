@@ -58,7 +58,7 @@
 		9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1CA91E964B2F0019D76A /* SPHomeTableViewCell.xib */; };
 		9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CAD1E964C670019D76A /* SPDemoViewController.swift */; };
 		9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1CAF1E964F200019D76A /* NTUIBarButtonItem+Extensions.swift */; };
-		9FED73301EB427E100D821D8 /* DMHeartFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FED732F1EB427E100D821D8 /* DMHeartFlyView.m */; };
+		9FDE5F311EB4354100D3440F /* DMHeartFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDE5F301EB4354100D3440F /* DMHeartFlyView.m */; };
 		9FF8747F1EAA4C500047241E /* SPUserLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8747E1EAA4C500047241E /* SPUserLikeListViewModel.swift */; };
 		9FF874811EAA52FE0047241E /* SPDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF874801EAA52FE0047241E /* SPDiscoverViewController.swift */; };
 /* End PBXBuildFile section */
@@ -119,8 +119,8 @@
 		9FDC1CA91E964B2F0019D76A /* SPHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeTableViewCell.xib; sourceTree = "<group>"; };
 		9FDC1CAD1E964C670019D76A /* SPDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDemoViewController.swift; sourceTree = "<group>"; };
 		9FDC1CAF1E964F200019D76A /* NTUIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
-		9FED732E1EB427E100D821D8 /* DMHeartFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHeartFlyView.h; sourceTree = "<group>"; };
-		9FED732F1EB427E100D821D8 /* DMHeartFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHeartFlyView.m; sourceTree = "<group>"; };
+		9FDE5F2F1EB4354100D3440F /* DMHeartFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHeartFlyView.h; sourceTree = "<group>"; };
+		9FDE5F301EB4354100D3440F /* DMHeartFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHeartFlyView.m; sourceTree = "<group>"; };
 		9FF8747E1EAA4C500047241E /* SPUserLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikeListViewModel.swift; sourceTree = "<group>"; };
 		9FF874801EAA52FE0047241E /* SPDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiscoverViewController.swift; sourceTree = "<group>"; };
 		A50C2F42A49182BA021C5361 /* Pods_spade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -290,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
-				9FED732D1EB427E100D821D8 /* HeartFlyView */,
+				9FDE5F2E1EB4354100D3440F /* HeartFlyView */,
 				9F85B0911EAF6721004C4D09 /* NTMessageHud */,
 				9F5332BD1EAF140000C7D2BE /* NTRefreshControl */,
 				9F4E0EF51E9691BB004F307A /* NetworkManage */,
@@ -387,11 +387,11 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		9FED732D1EB427E100D821D8 /* HeartFlyView */ = {
+		9FDE5F2E1EB4354100D3440F /* HeartFlyView */ = {
 			isa = PBXGroup;
 			children = (
-				9FED732E1EB427E100D821D8 /* DMHeartFlyView.h */,
-				9FED732F1EB427E100D821D8 /* DMHeartFlyView.m */,
+				9FDE5F2F1EB4354100D3440F /* DMHeartFlyView.h */,
+				9FDE5F301EB4354100D3440F /* DMHeartFlyView.m */,
 			);
 			path = HeartFlyView;
 			sourceTree = "<group>";
@@ -578,7 +578,7 @@
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 				9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */,
 				9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */,
-				9FED73301EB427E100D821D8 /* DMHeartFlyView.m in Sources */,
+				9FDE5F311EB4354100D3440F /* DMHeartFlyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
