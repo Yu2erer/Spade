@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1D39916A876DDFD614D8846DFEF07F3BE4664927",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1C1F71D2B5985FED1F33F5BCD290AE6A384479F1" : 9223372036854775807,
+    "1D39916A876DDFD614D8846DFEF07F3BE4664927" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8D924658-1550-4267-95FA-C61727A85417",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1C1F71D2B5985FED1F33F5BCD290AE6A384479F1" : "spade\/spade\/spade\/Classes\/Tools\/HeartFlyView\/",
+    "1D39916A876DDFD614D8846DFEF07F3BE4664927" : "spade\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "spade",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "spade\/spade.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yagamis\/HeartFlyView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1C1F71D2B5985FED1F33F5BCD290AE6A384479F1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.coding.net:ntian2\/spade.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1D39916A876DDFD614D8846DFEF07F3BE4664927"
+    }
+  ]
+}

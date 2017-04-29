@@ -72,8 +72,18 @@ class SPHomeTableViewCell: UITableViewCell {
         heightCons?.constant = height
     }
     @IBAction func likeBtn(_ sender: UIButton) {
+        // 爱心按钮大小关键帧动画
+        let btnAnime = CAKeyframeAnimation(keyPath: "transform.scale")
+        btnAnime.values = [1.0,0.7,0.5,0.3,0.5,0.7,1.0,1.2,1.4,1.2,1.0]
+        btnAnime.keyTimes = [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+        btnAnime.duration = 0.2
+        sender.layer.add(btnAnime, forKey: "SHOW")
         if viewModel?.dashBoard.liked == 0 {
             likeIcon.setImage(likedImage, for: .normal)
+            let heart = DMHeartFlyView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+            heart.center = CGPoint(x: likeIcon.frame.origin.x, y: likeIcon.frame.origin.y)
+            self.superview?.superview?.superview?.addSubview(heart)
+            heart.animate(in: self.superview?.superview?.superview)
             // 就是还没喜欢的时候..
             SPNetworkManage.shared.userLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
                 if isSuccess {
