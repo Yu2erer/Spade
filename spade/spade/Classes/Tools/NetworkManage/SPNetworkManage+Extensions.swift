@@ -100,6 +100,20 @@ extension SPNetworkManage {
             completion(isSuccess)
         }
     }
+    func userFollowingList(offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+        
+        let params = ["offset": offset,
+                      "limit": "20"]
+        
+        request(urlString: followingURL, method: .GET, parameters: params) { (json, isSuccess) in
+            
+            let result = json as? [String: Any]
+            
+            let data = result?["response"] as? [String: Any]
+            completion(data?["blogs"] as? [[String: Any]], isSuccess)
+        }
+    }
+
     
 
     

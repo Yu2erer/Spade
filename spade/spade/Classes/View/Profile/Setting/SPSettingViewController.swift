@@ -18,7 +18,10 @@ class SPSettingViewController: UITableViewController {
         
     }
     fileprivate func telegram() {
-        print("打开telegram")
+        guard let url = URL(string: "tg://resolve?domain=spadeApp") else {
+            return
+        }
+        UIApplication.shared.openURL(url)
     }
     fileprivate func cleanCache() {
         KingfisherManager.shared.cache.calculateDiskCacheSize { (cache) in

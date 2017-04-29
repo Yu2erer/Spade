@@ -101,6 +101,10 @@ extension SPProfileViewController: SPProfileHeaderViewDelegate {
     func didClickPostNum() {
         tableView?.setContentOffset(CGPoint(x: 0, y: 37), animated: true)
     }
+    func didClickFollowingNum() {
+        let vc = SPUserFollowingViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 // MARK: - 设置界面
 extension SPProfileViewController {

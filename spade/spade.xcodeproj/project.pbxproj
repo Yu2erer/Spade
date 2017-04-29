@@ -40,6 +40,8 @@
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
 		9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */; };
 		9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */; };
+		9FA6D66B1EB47AF600C8FA6E /* SPUserFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6D66A1EB47AF600C8FA6E /* SPUserFollowingViewController.swift */; };
+		9FA6D66D1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6D66C1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift */; };
 		9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */; };
 		9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378591EA746640048A51C /* NTFPSLabel.swift */; };
 		9FBCFCA01EACCFA0004A801E /* SPOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */; };
@@ -98,6 +100,8 @@
 		9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTDate+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardViewModel.swift; sourceTree = "<group>"; };
 		9F9A2C901E994F300067E1A4 /* SPDashBoardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListViewModel.swift; sourceTree = "<group>"; };
+		9FA6D66A1EB47AF600C8FA6E /* SPUserFollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserFollowingViewController.swift; sourceTree = "<group>"; };
+		9FA6D66C1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserFollowingListViewModel.swift; sourceTree = "<group>"; };
 		9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spade-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailViewController.swift; sourceTree = "<group>"; };
 		9FB378591EA746640048A51C /* NTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFPSLabel.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */,
 				9FF8747E1EAA4C500047241E /* SPUserLikeListViewModel.swift */,
 				9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */,
+				9FA6D66C1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift */,
 				9F9A2C8E1E994D8E0067E1A4 /* SPDashBoardViewModel.swift */,
 				9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */,
 			);
@@ -231,6 +236,7 @@
 				9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */,
 				9FD36DA41EA768B10007D3C2 /* SPUserDetailHeaderView.swift */,
 				9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */,
+				9FA6D66A1EB47AF600C8FA6E /* SPUserFollowingViewController.swift */,
 				9FD36DA21EA7684B0007D3C2 /* SPUserDetailHeaderView.xib */,
 			);
 			path = UserDetail;
@@ -565,6 +571,7 @@
 				9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */,
 				9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */,
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,
+				9FA6D66D1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift in Sources */,
 				9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */,
 				9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */,
 				9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */,
@@ -574,6 +581,7 @@
 				9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */,
 				9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */,
 				9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */,
+				9FA6D66B1EB47AF600C8FA6E /* SPUserFollowingViewController.swift in Sources */,
 				9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 				9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */,

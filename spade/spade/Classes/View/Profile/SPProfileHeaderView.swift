@@ -10,13 +10,14 @@ import UIKit
 
 @objc protocol SPProfileHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
+    @objc optional func didClickFollowingNum()
 }
 
 class SPProfileHeaderView: UIView {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var followingNum: UILabel!
-    @IBOutlet weak var followersNum: UILabel!
+    @IBOutlet weak var followersNum:	 UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var postNum: UILabel!
     
@@ -44,18 +45,17 @@ extension SPProfileHeaderView {
         self.postTouch = false
         self.following = false
         self.followers = false
-
         let t: UITouch = (touches as NSSet).anyObject() as! UITouch
         var p = t.location(in: postNum)
         if (postNum.bounds).contains(p) && postNum.bounds.size.width > p.x {
             self.postTouch = true
         }
         p = t.location(in: followingNum)
-        if followingNum.bounds.contains(p) && followingNum.bounds.size.width > p.x {
+        if followingNum.bounds.contains(p) && followingNum.bounds.size.width > p.x && model != nil {
             self.following = true
         }
         p = t.location(in: followersNum)
-        if followersNum.bounds.contains(p) && followersNum.bounds.size.width > p.x {
+        if followersNum.bounds.contains(p) && followersNum.bounds.size.width > p.x && model != nil {
             self.followers = true
         }
         if !postTouch || !following || !followers {
