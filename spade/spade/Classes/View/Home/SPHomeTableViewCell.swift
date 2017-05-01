@@ -89,7 +89,6 @@ class SPHomeTableViewCell: UITableViewCell {
                 if isSuccess {
                     self.viewModel?.dashBoard.liked = 1
                 } else {
-                    self.likeIcon.isSelected = !self.likeIcon.isSelected
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likeImage, for: .normal)
                 }

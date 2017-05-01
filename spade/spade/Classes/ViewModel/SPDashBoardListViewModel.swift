@@ -24,7 +24,7 @@ class SPDashBoardListViewModel {
         }
         
         let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
-        let offset = !pullup ? "0" : "\(pullupCount)"
+        let offset = !pullup ? "" : "\(pullupCount)"
         
         SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset) { (list, isSuccess) in
             

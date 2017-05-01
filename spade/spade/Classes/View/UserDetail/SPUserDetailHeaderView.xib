@@ -73,6 +73,9 @@
                             <state key="normal">
                                 <color key="titleColor" red="0.050980392156862744" green="0.51372549019607838" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <connections>
+                                <action selector="followAct:" destination="iN0-l3-epB" eventType="touchUpInside" id="8fV-9h-TuI"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

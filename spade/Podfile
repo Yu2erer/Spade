@@ -12,5 +12,5 @@ pod 'YYModel'
 pod 'ZFPlayer'
 pod 'SVProgressHUD'
 pod 'SKPhotoBrowser'
-
+pod 'SRDownloadManager'
 end

@@ -88,7 +88,7 @@ extension SPNetworkManage {
         let params = ["id": "\(id)",
                       "reblog_key": reblogKey]
         
-        request(urlString: like, method: .GET, parameters: params) { (json, isSuccess) in
+        request(urlString: like, method: .POST, parameters: params) { (json, isSuccess) in
             completion(isSuccess)
         }
     }
@@ -96,7 +96,7 @@ extension SPNetworkManage {
         
         let params = ["id": "\(id)",
             "reblog_key": reblogKey]
-        request(urlString: unLike, method: .GET, parameters: params) { (json, isSuccess) in
+        request(urlString: unLike, method: .POST, parameters: params) { (json, isSuccess) in
             completion(isSuccess)
         }
     }
@@ -111,6 +111,18 @@ extension SPNetworkManage {
             
             let data = result?["response"] as? [String: Any]
             completion(data?["blogs"] as? [[String: Any]], isSuccess)
+        }
+    }
+    func userFollow(blogUrl: String, completion: @escaping (_ isSuccess: Bool)->()) {
+        let params = ["url": blogUrl]
+        request(urlString: follow, method: .POST, parameters: params) { (json, isSuccess) in
+            completion(isSuccess)
+        }
+    }
+    func userUnFollow(blogUrl: String, completion: @escaping (_ isSuccess: Bool)->()) {
+        let params = ["url": blogUrl]
+        request(urlString: unFollow, method: .POST, parameters: params) { (json, isSuccess) in
+            completion(isSuccess)
         }
     }
 

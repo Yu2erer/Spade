@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @objc protocol SPUserDetailHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
@@ -47,6 +48,39 @@ class SPUserDetailHeaderView: UIView {
                     followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
                 }
             }
+        }
+    }
+    
+    @IBAction func followAct(_ sender: UIButton) {
+        SVProgressHUD.show()
+        // 还没关注点了 关注
+        if model?.followed == 0 {
+            SPNetworkManage.shared.userFollow(blogUrl: (model?.name)! + ".tumblr.com", completion: { (isSuccess) in
+                if isSuccess {
+                    SVProgressHUD.dismiss()
+                    self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+                    self.model?.followed = 1
+                } else {
+                    SVProgressHUD.dismiss()
+                    self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                }
+            })
+        } else {
+            SPNetworkManage.shared.userUnFollow(blogUrl: (model?.name)!, completion: { (isSuccess) in
+                if isSuccess {
+                    SVProgressHUD.dismiss()
+                    self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                    self.model?.followed = 0
+                } else {
+                    SVProgressHUD.dismiss()
+                    self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+
+                }
+            })
         }
     }
     fileprivate var postTouch: Bool = false

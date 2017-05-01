@@ -45,6 +45,7 @@ class SPHomeViewController: SPBaseViewController {
         SKPhotoBrowserOptions.enableSingleTapDismiss = true
         SKPhotoBrowserOptions.displayAction = false
         SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        
         let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(selectedIndex)
         present(browser, animated: true, completion: nil)

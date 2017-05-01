@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ZFPlayer
 
 private let photoCellId = "photoCellId"
 private let videoCellId = "videoCellId"
@@ -32,12 +31,6 @@ class SPUserFollowingViewController: SPBaseViewController {
             }
         }
     }
-    lazy var playerView: ZFPlayerView? = {
-        let playerView = ZFPlayerView.shared()
-        
-        playerView?.stopPlayWhileCellNotVisable = true
-        return playerView
-    }()
     
 
 
@@ -51,8 +44,8 @@ extension SPUserFollowingViewController {
     override func setupTableView() {
         super.setupTableView()
         
-        tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: photoCellId)
-        tableView?.register(UINib(nibName: "SPHomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: videoCellId)
+//        tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: photoCellId)
+//        tableView?.register(UINib(nibName: "SPHomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: videoCellId)
         
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
