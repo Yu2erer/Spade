@@ -59,7 +59,6 @@ extension SPOAuthViewController: UIWebViewDelegate {
             SVProgressHUD.dismiss()
             self.dismissWebViewController()
         }
-        
         return true
     }
     func webViewDidStartLoad(_ webView: UIWebView) {

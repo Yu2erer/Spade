@@ -77,8 +77,6 @@ class SPHomeViewController: SPBaseViewController {
     
     lazy var playerView: ZFPlayerView? = {
         let playerView = ZFPlayerView.shared()
-        
-        playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
     
@@ -115,6 +113,7 @@ extension SPHomeViewController {
                 playerModel.fatherView = cell.placeholderImage
                 weakSelf?.playerView?.playerModel(playerModel)
                 weakSelf?.playerView?.autoPlayTheVideo()
+                weakSelf?.playerView?.stopPlayWhileCellNotVisable = !isSmallWindowOn
             }
         }
         return cell

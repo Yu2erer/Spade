@@ -1,5 +1,5 @@
 //
-//  SPSettingViewController.swift
+//  SPSetting.swift
 //  spade
 //
 //  Created by ntian on 2017/4/27.
@@ -9,13 +9,13 @@
 import UIKit
 import Kingfisher
 
-class SPSettingViewController: UITableViewController {
-
+class SPSetting: UITableViewController {
+    
+    @IBOutlet weak var winSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupUI()
-        
+        winSwitch.isOn = isSmallWindowOn
+        setupUI()        
     }
     fileprivate func telegram() {
         guard let url = URL(string: "tg://resolve?domain=spadeApp") else {
@@ -35,29 +35,36 @@ class SPSettingViewController: UITableViewController {
         let actionSheet = UIActionSheet(title: "确定要退出登录吗", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "确定")
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
-
+        
     }
- 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    @IBAction func windowSwitch(_ sender: UISwitch) {
         
-        let section = indexPath.section
-        let row = indexPath.row
-        
-        if section == 0 {
-            switch row {
-            case 0:
-                telegram()
-            case 1:
-                cleanCache()
-            default:
-                break
+            UserDefaults.UserSetting.set(value: !isSmallWindowOn, forKey: .isSmallWindowOn)
+            isSmallWindowOn = !isSmallWindowOn
+            print(UserDefaults.UserSetting.bool(forKey: .isSmallWindowOn))
+       
+    }
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+            let section = indexPath.section
+            let row = indexPath.row
+    
+            if section == 1 {
+                switch row {
+                case 0:
+                    telegram()
+                case 1:
+                    cleanCache()
+                default:
+                    break
+                }
+            } else if section == 2 && row == 0 {
+                logOut()
             }
-        } else if section == 1 && row == 0 {
-            logOut()
         }
-    }  
 }
-extension SPSettingViewController: UIActionSheetDelegate {
+extension SPSetting: UIActionSheetDelegate {
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 0 {
             switch actionSheet.tag {
@@ -77,7 +84,7 @@ extension SPSettingViewController: UIActionSheetDelegate {
     }
 }
 // MARK: - 设置界面
-extension SPSettingViewController {
+extension SPSetting {
     
     fileprivate func setupUI() {
         title = "设置"

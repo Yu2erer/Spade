@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.backgroundColor = UIColor.white
+        addAditions()
         window?.rootViewController = SPMainViewController()
         window?.makeKeyAndVisible()
 
@@ -31,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let fpsLabel = NTFPSLabel(frame: CGRect(x: 15, y: UIScreen.main.bounds.size.height - 80, width: 55, height: 20))
             self.window?.addSubview(fpsLabel)
         #endif
+        if isHaveSetting == nil {
+            // 没有初始化设置
+            UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
+            UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
+        }
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if (url.host == "oauth-callback") {

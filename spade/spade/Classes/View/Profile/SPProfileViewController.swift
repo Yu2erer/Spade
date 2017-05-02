@@ -54,12 +54,11 @@ class SPProfileViewController: SPBaseViewController {
     lazy var playerView: ZFPlayerView? = {
         let playerView = ZFPlayerView.shared()
         
-        playerView?.stopPlayWhileCellNotVisable = true
         return playerView
     }()
     @objc fileprivate func setting() {
-        let vc = UIStoryboard(name: "SPSetting", bundle: nil).instantiateInitialViewController()!
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "Setting", bundle: nil).instantiateInitialViewController()
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }
 // MARK: - tableView
@@ -91,6 +90,7 @@ extension SPProfileViewController {
                 playerModel.fatherView = cell.placeholderImage
                 weakSelf?.playerView?.playerModel(playerModel)
                 weakSelf?.playerView?.autoPlayTheVideo()
+                weakSelf?.playerView?.stopPlayWhileCellNotVisable = !isSmallWindowOn
             }
         }
         return cell

@@ -42,3 +42,6 @@ let PictureViewInnerMargin = CGFloat(3)
 let PictureViewWidth = UIScreen.main.bounds.width
 /// 屏幕高度
 let PictureViewHeight = UIScreen.main.bounds.height
+// MARK: - UserInfo 用户信息存储
+let isHaveSetting = UserDefaults.UserSetting.string(forKey: .isHaveSetting)
+var isSmallWindowOn: Bool = UserDefaults.UserSetting.bool(forKey: .isSmallWindowOn)
