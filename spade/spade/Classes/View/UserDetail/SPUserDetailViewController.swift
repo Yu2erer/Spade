@@ -34,7 +34,7 @@ class SPUserDetailViewController: SPBaseViewController {
             }
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
             self.headerView.model = self.blogInfoViewModel.blogInfo
-            self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount, completion: { (isSuccess, shouldRefresh) in
+            self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, completion: { (isSuccess, shouldRefresh) in
                 self.refreshControl?.endRefreshing()
                 // 恢复上拉刷新标记
                 self.isPullup = false
@@ -42,8 +42,6 @@ class SPUserDetailViewController: SPBaseViewController {
                     self.tableView?.reloadData()
                 }
             })
-
-            
             self.headerView.model = self.blogInfoViewModel.blogInfo
         }
     }
@@ -143,6 +141,7 @@ extension SPUserDetailViewController {
         customNavigationBar.removeFromSuperview()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         performSelector(onMainThread: #selector(delayHidden), with: animated, waitUntilDone: false)
+        playerView?.resetPlayer()
     }
     func delayHidden(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)

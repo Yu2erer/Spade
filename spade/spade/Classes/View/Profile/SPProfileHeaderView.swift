@@ -47,15 +47,15 @@ extension SPProfileHeaderView {
         self.followers = false
         let t: UITouch = (touches as NSSet).anyObject() as! UITouch
         var p = t.location(in: postNum)
-        if (postNum.bounds).contains(p) && postNum.bounds.size.width > p.x {
+        if (postNum.bounds).contains(p) {
             self.postTouch = true
         }
         p = t.location(in: followingNum)
-        if followingNum.bounds.contains(p) && followingNum.bounds.size.width > p.x && model != nil {
+        if followingNum.bounds.contains(p) && model != nil {
             self.following = true
         }
         p = t.location(in: followersNum)
-        if followersNum.bounds.contains(p) && followersNum.bounds.size.width > p.x && model != nil {
+        if followersNum.bounds.contains(p) && model != nil {
             self.followers = true
         }
         if !postTouch || !following || !followers {
@@ -67,7 +67,7 @@ extension SPProfileHeaderView {
             super.touchesEnded(touches, with: event)
         } else {
             postTouch ? headerViewDelegate?.didClickPostNum?() : ()
-            following ? print("关注") : ()
+            following ? headerViewDelegate?.didClickFollowingNum?() : ()
             followers ? print("粉丝") : ()
         }
     }

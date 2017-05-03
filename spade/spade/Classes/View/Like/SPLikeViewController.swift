@@ -23,20 +23,22 @@ class SPLikeViewController: SPBaseViewController {
     }
     override func loadData() {
         refreshControl?.beginRefreshing()
-        likeListViewModel.loadUserLikes(pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
+        likeListViewModel.loadUserLikes(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+            self.refreshControl?.endRefreshing()
+            self.isPullup = false
             if !isSuccess {
                 self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
-                self.refreshControl?.endRefreshing()
-                self.isPullup = false
                 return
             }
-            self.refreshControl?.endRefreshing()
-            // 恢复上拉刷新标记
-            self.isPullup = false
             if shouldRefresh {
                 self.tableView?.reloadData()
             }
         }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        playerView?.resetPlayer()
     }
     lazy var playerView: ZFPlayerView? = {
         let playerView = ZFPlayerView.shared()

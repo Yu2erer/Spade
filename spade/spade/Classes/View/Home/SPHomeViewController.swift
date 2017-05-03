@@ -53,23 +53,24 @@ class SPHomeViewController: SPBaseViewController {
     /// 加载数据
     override func loadData() {
         self.refreshControl?.beginRefreshing()
-        self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup,pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
+        self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+            
+            self.refreshControl?.endRefreshing()
+            self.isPullup = false
             if !isSuccess {
                 self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
-                self.refreshControl?.endRefreshing()
-                self.isPullup = false
                 return
             }
-            // 结束刷新控件
-            self.refreshControl?.endRefreshing()
-            // 恢复上拉刷新标记
-            self.isPullup = false
             if shouldRefresh {
                 self.tableView?.reloadData()
             }
         }
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        playerView?.resetPlayer()
+    }
     @objc fileprivate func test() {
         let vc = SPDemoViewController()
         navigationController?.pushViewController(vc, animated: true)

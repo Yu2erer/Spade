@@ -12,8 +12,9 @@ class SPUserLikeListViewModel {
     
     lazy var userLikeModel = [SPDashBoardViewModel]()
     private var pullupErrorTimes = 0
-    
-    func loadUserLikes(pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+    private var pullupCount = 0
+
+    func loadUserLikes(pullup: Bool, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
             completion(true, false)
@@ -58,6 +59,7 @@ class SPUserLikeListViewModel {
                 self.pullupErrorTimes += 1
                 completion(isSuccess, false)
             } else {
+                self.pullupCount += 20
                 completion(isSuccess, true)
             }
         }

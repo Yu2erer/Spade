@@ -24,7 +24,7 @@ class SPUserLikesViewController: SPBaseViewController {
     
     override func loadData() {
         refreshControl?.beginRefreshing()
-        likeListViewModel.loadBlogLikes(blogName: model?.name ?? "" + ".tumblr.com", pullup: self.isPullup, pullupCount: self.pullupCount) { (list, shouldRefresh) in
+        likeListViewModel.loadBlogLikes(blogName: model?.name ?? "" + ".tumblr.com", pullup: self.isPullup) { (list, shouldRefresh) in
             self.refreshControl?.endRefreshing()
             // 恢复上拉刷新标记
             self.isPullup = false
@@ -35,7 +35,6 @@ class SPUserLikesViewController: SPBaseViewController {
     }
     lazy var playerView: ZFPlayerView? = {
         let playerView = ZFPlayerView.shared()
-        
         return playerView
     }()
     

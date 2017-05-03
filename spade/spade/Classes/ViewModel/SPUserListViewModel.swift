@@ -12,8 +12,9 @@ class SPUserListViewModel {
     
     lazy var userViewModel = [SPDashBoardViewModel]()
     private var pullupErrorTimes = 0
+    private var pullupCount = 0
     
-    func loadBlogInfoList(blogName: String, pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+    func loadBlogInfoList(blogName: String, pullup: Bool, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
             completion(true, false)
@@ -60,6 +61,7 @@ class SPUserListViewModel {
                 self.pullupErrorTimes += 1
                 completion(isSuccess, false)
             } else {
+                self.pullupCount += 20
                 completion(isSuccess, true)
             }
         }

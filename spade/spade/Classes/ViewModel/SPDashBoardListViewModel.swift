@@ -15,8 +15,9 @@ class SPDashBoardListViewModel {
     lazy var dashBoardList = [SPDashBoardViewModel]()
     /// 上拉刷新错误次数
     private var pullupErrorTimes = 0
+    private var pullupCount = 0
     
-    func loadDashBoard(pullup: Bool, pullupCount: Int, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+    func loadDashBoard(pullup: Bool, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
             completion(true, false)
@@ -58,12 +59,12 @@ class SPDashBoardListViewModel {
             } else {
                 self.dashBoardList = array
             }
-            
             // 判断上拉刷新的数据量
             if pullup && array.count == 0 {
                 self.pullupErrorTimes += 1
                 completion(isSuccess, false)
             } else {
+                self.pullupCount += 20
                 completion(isSuccess, true)
             }
         }

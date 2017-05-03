@@ -27,18 +27,15 @@ class SPProfileViewController: SPBaseViewController {
     override func loadData() {
         refreshControl?.beginRefreshing()
         blogInfoViewModel.loadBlogInfo(blogName: nil) { (isSuccess) in
+            self.refreshControl?.endRefreshing()
+            self.isPullup = false
             if (!isSuccess) {
                 self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
-                self.refreshControl?.endRefreshing()
-                self.isPullup = false
                 return
             }
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
             self.headerView.model = self.blogInfoViewModel.blogInfo
-            self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, pullupCount: self.pullupCount) { (isSuccess, shouldRefresh) in
-                self.refreshControl?.endRefreshing()
-                // 恢复上拉刷新标记
-                self.isPullup = false
+            self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup) { (isSuccess, shouldRefresh) in
                 if shouldRefresh {
                     self.tableView?.reloadData()
                 }
@@ -102,7 +99,7 @@ extension SPProfileViewController: SPProfileHeaderViewDelegate {
         tableView?.setContentOffset(CGPoint(x: 0, y: 37), animated: true)
     }
     func didClickFollowingNum() {
-        let vc = SPUserFollowingViewController()
+        let vc = SPFollowingViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -125,6 +122,7 @@ extension SPProfileViewController {
         customNavigationBar.removeFromSuperview()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         performSelector(onMainThread: #selector(delayHidden), with: animated, waitUntilDone: false)
+        playerView?.resetPlayer()
     }
     func delayHidden(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
