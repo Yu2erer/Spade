@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol SPHomeTableViewCellDelegate: NSObjectProtocol {
-    @objc optional func didClickUser(user: SPDashBoard)
+    @objc optional func didClickUser(name: String)
 }
 class SPHomeTableViewCell: UITableViewCell {
     
@@ -31,6 +31,8 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var pictureView: SPHomePictureView?
     /// 占位图
     @IBOutlet weak var placeholderImage: UIImageView?
+    /// 下载按钮
+    @IBOutlet weak var downloadBtn: UIButton?
     @IBOutlet weak var heightCons: NSLayoutConstraint?
     // 播放按钮
     let playBtn = UIButton(type: .custom)
@@ -70,6 +72,10 @@ class SPHomeTableViewCell: UITableViewCell {
         
         playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
         heightCons?.constant = height
+    }
+    @IBAction func downBtn(_ sender: UIButton) {
+        // TODO: 此处完成下载
+        print(viewModel?.dashBoard.video_url)
     }
     @IBAction func likeBtn(_ sender: UIButton) {
         // 爱心按钮大小关键帧动画
@@ -148,7 +154,7 @@ extension SPHomeTableViewCell {
         if !trackingTouch {
             super.touchesEnded(touches, with: event)
         } else {
-            cellDelegate?.didClickUser?(user: (viewModel?.dashBoard)!)
+            cellDelegate?.didClickUser?(name: (viewModel?.dashBoard.blog_name)!)
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -20,19 +20,23 @@ class SPUserDetailViewController: SPBaseViewController {
     fileprivate lazy var navItem = UINavigationItem()
 
     
-    var user: SPDashBoard?
-    
+    var name: String? {
+        didSet {
+            post_Url = name! + ".tumblr.com"
+        }
+    }
+    fileprivate var post_Url: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
     override func loadData() {
-        blogInfoViewModel.loadBlogInfo(blogName: user?.post_url ?? "") { (isSuccess) in
+        blogInfoViewModel.loadBlogInfo(blogName: post_Url ?? "") { (isSuccess) in
             if !isSuccess {
                 return
             }
-            let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
+            let blogName = self.post_Url ?? ""// ?? "" + ".tumblr.com"
             self.headerView.model = self.blogInfoViewModel.blogInfo
             self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup, completion: { (isSuccess, shouldRefresh) in
                 self.refreshControl?.endRefreshing()
@@ -167,7 +171,7 @@ extension SPUserDetailViewController {
         } else if offsetY > 36 {
             let image = UIImage().imageWithColor(color: UIColor(white: 1, alpha: 1))
             customNavigationBar.setBackgroundImage(image, for: .default)
-            navItem.title = self.user?.blog_name
+            navItem.title = self.name ?? ""
         }
     }
 }

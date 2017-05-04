@@ -9,6 +9,9 @@
 import UIKit
 import SVProgressHUD
 
+@objc protocol SPFollowingTableViewCellDelegate: NSObjectProtocol {
+    @objc optional func didClickUser(name: String)
+}
 class SPFollowingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var followBtn: UIButton!
@@ -27,6 +30,8 @@ class SPFollowingTableViewCell: UITableViewCell {
             followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
         }
     }
+    fileprivate var trackingTouch = false
+    public weak var cellDelegate: SPFollowingTableViewCellDelegate?
 
     @IBAction func follow(_ sender: UIButton) {
         SVProgressHUD.show()
@@ -60,5 +65,38 @@ class SPFollowingTableViewCell: UITableViewCell {
             })
         }
     }
-    
+}
+// MARK: - event
+extension SPFollowingTableViewCell {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.trackingTouch = false
+        let t: UITouch = (touches as NSSet).anyObject() as! UITouch
+        var p = t.location(in: avatarImage)
+        if (avatarImage.bounds).contains(p) {
+            self.trackingTouch = true
+        }
+        p = t.location(in: nameLabel)
+        if nameLabel.bounds.contains(p) && nameLabel.bounds.size.width > p.x {
+            self.trackingTouch = true
+        }
+        p = t.location(in: titleLabel)
+        if titleLabel.bounds.contains(p) && titleLabel.bounds.size.width > p.x {
+            self.trackingTouch = true
+        }
+        if !trackingTouch {
+            super.touchesBegan(touches, with: event)
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !trackingTouch {
+            super.touchesEnded(touches, with: event)
+        } else {
+            cellDelegate?.didClickUser?(name: (model?.name)!)
+        }
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !trackingTouch {
+            super.touchesCancelled(touches, with: event)
+        }
+    }
 }

@@ -83,7 +83,7 @@ extension SPNetworkManage {
             completion(data?["liked_posts"] as? [[String: Any]], isSuccess)
         }
     }
-    func userLike(id: Int, reblogKey: String, completion: @escaping (_ isSuccess: Bool)->()) {
+    func userLike(id: Int64, reblogKey: String, completion: @escaping (_ isSuccess: Bool)->()) {
         
         let params = ["id": "\(id)",
                       "reblog_key": reblogKey]
@@ -92,7 +92,7 @@ extension SPNetworkManage {
             completion(isSuccess)
         }
     }
-    func userUnLike(id: Int, reblogKey: String, completion: @escaping (_ isSuccess: Bool)->()) {
+    func userUnLike(id: Int64, reblogKey: String, completion: @escaping (_ isSuccess: Bool)->()) {
         
         let params = ["id": "\(id)",
             "reblog_key": reblogKey]

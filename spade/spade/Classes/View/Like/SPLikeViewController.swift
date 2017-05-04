@@ -86,10 +86,9 @@ extension SPLikeViewController {
 }
 // MARK: - SPHomeTableViewCellDelegate
 extension SPLikeViewController: SPHomeTableViewCellDelegate {
-    func didClickUser(user: SPDashBoard) {
-        print(user)
+    func didClickUser(name: String) {
         let vc = SPUserDetailViewController()
-        vc.user = user
+        vc.name = name
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -122,9 +122,9 @@ extension SPHomeViewController {
 }
 // MARK: - SPHomeTableViewCellDelegate
 extension SPHomeViewController: SPHomeTableViewCellDelegate {
-    func didClickUser(user: SPDashBoard) {
+    func didClickUser(name: String) {
         let vc = SPUserDetailViewController()
-        vc.user = user
+        vc.name = name
         navigationController?.pushViewController(vc, animated: true)
     }
 }

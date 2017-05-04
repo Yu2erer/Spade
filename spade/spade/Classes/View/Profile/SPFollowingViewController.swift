@@ -39,6 +39,14 @@ class SPFollowingViewController: UIViewController {
         }
     }
 }
+// MARK: - SPFollowingTableViewCellDelegate
+extension SPFollowingViewController: SPFollowingTableViewCellDelegate {
+    func didClickUser(name: String) {
+        let vc = SPUserDetailViewController()
+        vc.name = name
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SPFollowingViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -46,6 +54,7 @@ extension SPFollowingViewController: UITableViewDelegate, UITableViewDataSource 
         let vm = followingListViewModel.followingModel[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: followingCell, for: indexPath) as! SPFollowingTableViewCell
         cell.model = vm
+        cell.cellDelegate = self
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,8 +87,7 @@ extension SPFollowingViewController {
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 60
+        tableView.rowHeight = 56
         view.addSubview(tableView)
         SVProgressHUD.show()
     }

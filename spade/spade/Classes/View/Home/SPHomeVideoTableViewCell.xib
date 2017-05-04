@@ -77,9 +77,24 @@
                                     <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LJq-Xe-0Kh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo8-El-eci">
+                                <rect key="frame" x="46" y="-2.5" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="X1M-Xh-5Xm"/>
+                                    <constraint firstAttribute="height" constant="24" id="vcp-ZS-dgH"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OHb-G5-xNL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Mo8-El-eci" firstAttribute="leading" secondItem="YPA-47-hXH" secondAttribute="trailing" constant="11" id="12A-a1-Wrt"/>
                             <constraint firstAttribute="trailing" secondItem="UCh-lr-yOI" secondAttribute="trailing" constant="11" id="JRP-58-MpH"/>
+                            <constraint firstItem="Mo8-El-eci" firstAttribute="centerY" secondItem="YPA-47-hXH" secondAttribute="centerY" id="PwH-aL-4RQ"/>
                             <constraint firstAttribute="height" constant="25" id="kyB-Rm-qYC" userLabel="height = 25"/>
                             <constraint firstItem="UCh-lr-yOI" firstAttribute="centerY" secondItem="YPA-47-hXH" secondAttribute="centerY" id="rzC-JI-V33"/>
                             <constraint firstItem="YPA-47-hXH" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="w0V-D0-tBB"/>
@@ -110,6 +125,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="downloadBtn" destination="Mo8-El-eci" id="XMe-xD-xli"/>
                 <outlet property="heightCons" destination="d6H-XW-0cx" id="cpO-0Y-9oV"/>
                 <outlet property="iconView" destination="NL7-Je-BqX" id="Ibp-lL-Sl7"/>
                 <outlet property="likeIcon" destination="YPA-47-hXH" id="wxF-NX-9xs"/>
