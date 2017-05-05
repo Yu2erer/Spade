@@ -20,7 +20,6 @@ class SPBlogInfoViewModel {
             }
          
             self.blogInfo.yy_modelSet(with: list ?? [:])
-            
             completion(isSuccess)
             }
         } else {

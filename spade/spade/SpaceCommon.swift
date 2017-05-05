@@ -26,6 +26,7 @@ let unLike = baseURL + "user/unlike"
 let followingURL = baseURL + "user/following"
 let follow = baseURL + "user/follow"
 let unFollow = baseURL + "user/unfollow"
+let tagUrl = baseURL + "tagged"
 // MARK: - 全局通知定义
 let SPUserShouldLoginNotification = "SPUserShouldLoginNotification"
 let SPUserLoginSuccessedNotification = "SPUserLoginSuccessedNotification"

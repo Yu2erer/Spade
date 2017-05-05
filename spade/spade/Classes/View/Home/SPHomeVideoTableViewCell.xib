@@ -77,7 +77,7 @@
                                     <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LJq-Xe-0Kh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo8-El-eci">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo8-El-eci">
                                 <rect key="frame" x="46" y="-2.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="X1M-Xh-5Xm"/>

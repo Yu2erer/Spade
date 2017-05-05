@@ -142,8 +142,8 @@ extension SPUserDetailViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        customNavigationBar.removeFromSuperview()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        customNavigationBar.removeFromSuperview()
         performSelector(onMainThread: #selector(delayHidden), with: animated, waitUntilDone: false)
         playerView?.resetPlayer()
     }

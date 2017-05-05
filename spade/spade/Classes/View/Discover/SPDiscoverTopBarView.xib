@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SPDiscoverTopBarView" customModule="spade" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c6-E2-cNM">
                     <rect key="frame" x="195" y="5" width="180" height="30"/>
@@ -28,7 +28,7 @@
                         <color key="titleColor" red="0.30196078431372547" green="0.55294117647058827" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
-                        <action selector="postBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="yB9-A9-3b6"/>
+                        <action selector="postBtn" destination="iN0-l3-epB" eventType="touchUpInside" id="M06-FO-9F7"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lC-OS-YM5" userLabel="分割线">
@@ -51,7 +51,7 @@
                         <color key="titleColor" red="0.30196078431372547" green="0.55294117647058827" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
-                        <action selector="userBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vbp-GX-EOv"/>
+                        <action selector="userBtn" destination="iN0-l3-epB" eventType="touchUpInside" id="VGL-yP-whh"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player_top_bar_line" translatesAutoresizingMaskIntoConstraints="NO" id="VFX-gt-Vh2">
