@@ -71,10 +71,6 @@ extension SPSetting: UIActionSheetDelegate {
             case 0:
                 KingfisherManager.shared.cache.clearDiskCache()
             case 1:
-                UserDefaults.standard.removeObject(forKey: "oauthToken")
-                UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
-                SPNetworkManage.shared.userAccount.oauthToken = nil
-                SPNetworkManage.shared.userAccount.oauthTokenSecret = nil
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
                 self.navigationController?.popViewController(animated: true)
             default:

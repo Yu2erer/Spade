@@ -1,5 +1,5 @@
 PODS:
-  - Kingfisher (3.5.0)
+  - Kingfisher (3.6.2)
   - Masonry (1.0.2)
   - OAuthSwift (1.1.1)
   - SKPhotoBrowser (4.0.1)
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - ZFPlayer
 
 SPEC CHECKSUMS:
-  Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8

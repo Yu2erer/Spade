@@ -13,7 +13,19 @@ class SPMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let now = Int(Date().timeIntervalSince1970)
+        
+//        if now < 1494393193 {
+            !SPNetworkManage.shared.userLogon && !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
+//        } else {
+//            print("时间没到 不要出来!")
+//        }
+        
+        
+        
         setupUI()
+        
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -21,12 +33,22 @@ class SPMainViewController: UITabBarController {
 
 }
 extension SPMainViewController {
-    @objc fileprivate func userLogin() {
+    @objc fileprivate func userLogin(n: Notification) {
         print("用户登录通知")
-        setupUI()
+        UserDefaults.standard.removeObject(forKey: "oauthToken")
+        UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
+        SPNetworkManage.shared.userAccount.oauthToken = nil
+        SPNetworkManage.shared.userAccount.oauthTokenSecret = nil
         selectedIndex = 0
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.showInfo(withStatus: "需要重新登录")
+        var when = DispatchTime.now()
+        if n.object != nil {
+            when = DispatchTime.now() + 2
+        }
+        DispatchQueue.main.asyncAfter(deadline: when) { 
+            self.setupUI()
+        }
         NotificationCenter.default.removeObserver(self)
     }
 }
@@ -56,7 +78,7 @@ extension SPMainViewController {
         setupChildControllers()
         SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
         print(SPNetworkManage.shared.userLogon)
-        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin(n:)), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
     }
     
     fileprivate func setupChildControllers() {

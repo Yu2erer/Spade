@@ -11,6 +11,7 @@
 		9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A59E41EA99021008A286D /* SPLikeViewController.swift */; };
 		9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */; };
 		9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */; };
+		9F44EF9D1EBD766B007F7F60 /* NTProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EF9C1EBD766B007F7F60 /* NTProxyProtocol.swift */; };
 		9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */; };
 		9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */; };
 		9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */; };
@@ -76,6 +77,7 @@
 		9F1A59E41EA99021008A286D /* SPLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeViewController.swift; sourceTree = "<group>"; };
 		9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileViewController.swift; sourceTree = "<group>"; };
 		9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPProfileHeaderView.xib; sourceTree = "<group>"; };
+		9F44EF9C1EBD766B007F7F60 /* NTProxyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTProxyProtocol.swift; sourceTree = "<group>"; };
 		9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileHeaderView.swift; sourceTree = "<group>"; };
 		9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPhotoProgressView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 				9F5C75B01EB83E9300C7D5DC /* SPSetting.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		9F44EF9B1EBD7661007F7F60 /* NTProxy */ = {
+			isa = PBXGroup;
+			children = (
+				9F44EF9C1EBD766B007F7F60 /* NTProxyProtocol.swift */,
+			);
+			path = NTProxy;
 			sourceTree = "<group>";
 		};
 		9F4E0EF51E9691BB004F307A /* NetworkManage */ = {
@@ -313,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
+				9F44EF9B1EBD7661007F7F60 /* NTProxy */,
 				9FCA5F341EB8D3D40038DC66 /* NTUserDefault */,
 				9FDE5F2E1EB4354100D3440F /* HeartFlyView */,
 				9F85B0911EAF6721004C4D09 /* NTMessageHud */,
@@ -565,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F44EF9D1EBD766B007F7F60 /* NTProxyProtocol.swift in Sources */,
 				9FD36DA51EA768B10007D3C2 /* SPUserDetailHeaderView.swift in Sources */,
 				9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */,
 				9FF8747F1EAA4C500047241E /* SPUserLikeListViewModel.swift in Sources */,

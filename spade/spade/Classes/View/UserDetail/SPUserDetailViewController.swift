@@ -32,6 +32,7 @@ class SPUserDetailViewController: SPBaseViewController {
     }
     
     override func loadData() {
+        refreshControl?.beginRefreshing()
         blogInfoViewModel.loadBlogInfo(blogName: post_Url ?? "") { (isSuccess) in
             if !isSuccess {
                 return

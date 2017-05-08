@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        URLProtocol.registerClass(NTProxyProtocol.self)
+
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         addAditions()
@@ -37,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
+        
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if (url.host == "oauth-callback") {

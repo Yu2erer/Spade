@@ -47,6 +47,8 @@ class SPOAuthViewController: OAuthWebViewController {
             return
         }
         let req = URLRequest(url: url)
+        
+        
         self.webView.loadRequest(req)
     }
    

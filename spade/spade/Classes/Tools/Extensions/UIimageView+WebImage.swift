@@ -23,7 +23,12 @@ extension UIImageView {
             image = placeholder
             return
         }
+//        let urlSession = URLSessionConfiguration.default
+//        let proxyDict : NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 2333, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 2333]
+//        urlSession.connectionProxyDictionary = proxyDict as! [AnyHashable : Any]
         
+            
+//        KingfisherManager.shared.downloader.sessionConfiguration = urlSession
         kf.setImage(with: url, placeholder: placeholder, options: []) { [weak self] (image, _, _, _) in
             if isAvator {
                 self?.image = image?.nt_acatarImage(size: self?.bounds.size)
