@@ -46,3 +46,4 @@ let PictureViewHeight = UIScreen.main.bounds.height
 // MARK: - UserInfo 用户信息存储
 let isHaveSetting = UserDefaults.UserSetting.string(forKey: .isHaveSetting)
 var isSmallWindowOn: Bool = UserDefaults.UserSetting.bool(forKey: .isSmallWindowOn)
+let isOpenFucWall: Bool = true

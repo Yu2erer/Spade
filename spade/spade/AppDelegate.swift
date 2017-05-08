@@ -18,13 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        URLProtocol.registerClass(NTProxyProtocol.self)
-
+//        let proxyDict : NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 2333, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 2333]
+//        let sessionConfiguration = URLSessionConfiguration.default
+//        sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
+//        KingfisherManager.shared.downloader.sessionConfiguration = sessionConfiguration
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         addAditions()
         window?.rootViewController = SPMainViewController()
         window?.makeKeyAndVisible()
+//        URLProtocol.registerClass(NTProxyProtocol.self)
 
         return true
     }

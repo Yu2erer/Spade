@@ -735,6 +735,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks/CocoaAsyncSocket",
+					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks",
+				);
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -756,6 +761,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks/CocoaAsyncSocket",
+					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks",
+				);
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
