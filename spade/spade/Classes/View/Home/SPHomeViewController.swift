@@ -141,11 +141,15 @@ extension SPHomeViewController {
         
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
         let button = UIButton()
-        button.setTitle("刀哥", for: .normal)
+        button.setTitle("刀hahha哥", for: .normal)
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor.black, for: .highlighted)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        
-//        navigationItem.titleView 
-        self.navigationItem.title = "Spade"
+        button.setImage(UIImage(named: "DownArrow"), for: .normal)
+//        button.setImage(UIImage(named: "DownArrow"), for: <#T##UIControlState#>)
+        button.sizeToFit()
+        navigationItem.titleView = button
+//        self.navigationItem.title = "Spade"
     }
 
   
