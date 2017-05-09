@@ -9,12 +9,12 @@
 import UIKit
 import OAuthSwift
 import SVProgressHUD
+//import NEKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -42,6 +42,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
+
+//        let ss = ShadowsocksAdapterFactory(serverHost: "47.88.175.52", serverPort: 1111, protocolObfuscaterFactory:         ShadowsocksAdapter.ProtocolObfuscater.Factory(), cryptorFactory: ShadowsocksAdapter.CryptoStreamProcessor.Factory(password: "jh781201", algorithm: CryptoAlgorithm.RC4MD5), streamObfuscaterFactory: ShadowsocksAdapter.StreamObfuscater.Factory())
+//        let allRule = AllRule(adapterFactory: ss)
+//        let manager = RuleManager(fromRules: [allRule], appendDirect: true)
+//        
+//        RuleManager.currentManager = manager
+//        
+//        let proxyServer = GCDHTTPProxyServer(address: IPAddress(fromString: "127.0.0.1"), port: 9090)
+//        try! proxyServer.start()
+        
+        
+        
         
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

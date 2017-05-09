@@ -18,6 +18,9 @@ class SPMainViewController: UITabBarController {
         
 //        if now < 1494393193 {
             !SPNetworkManage.shared.userLogon && !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
+
+        
+        
 //        } else {
 //            print("时间没到 不要出来!")
 //        }

@@ -114,7 +114,6 @@ extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
         }
         avatarUrl.removeSubrange(avatarUrl.index(avatarUrl.endIndex, offsetBy: -2)...avatarUrl.index(before: avatarUrl.endIndex))
         avatarUrl += "512"
-        print(avatarUrl)
         var url = [String]()
         url.append(avatarUrl)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: url,

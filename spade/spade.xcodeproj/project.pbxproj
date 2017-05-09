@@ -46,6 +46,26 @@
 		9FA6D66D1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6D66C1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift */; };
 		9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */; };
 		9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB378591EA746640048A51C /* NTFPSLabel.swift */; };
+		9FBB9E371EC0BC720098C3E0 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E2D1EC0BC720098C3E0 /* CocoaAsyncSocket.framework */; };
+		9FBB9E381EC0BC720098C3E0 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E2D1EC0BC720098C3E0 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E391EC0BC720098C3E0 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E2E1EC0BC720098C3E0 /* CocoaLumberjack.framework */; };
+		9FBB9E3A1EC0BC720098C3E0 /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E2E1EC0BC720098C3E0 /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E3B1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E2F1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework */; };
+		9FBB9E3C1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E2F1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E3D1EC0BC720098C3E0 /* lwip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E301EC0BC720098C3E0 /* lwip.framework */; };
+		9FBB9E3E1EC0BC720098C3E0 /* lwip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E301EC0BC720098C3E0 /* lwip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E3F1EC0BC720098C3E0 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E311EC0BC720098C3E0 /* MMDB.framework */; };
+		9FBB9E401EC0BC720098C3E0 /* MMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E311EC0BC720098C3E0 /* MMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E411EC0BC720098C3E0 /* NEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E321EC0BC720098C3E0 /* NEKit.framework */; };
+		9FBB9E421EC0BC720098C3E0 /* NEKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E321EC0BC720098C3E0 /* NEKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E431EC0BC720098C3E0 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E331EC0BC720098C3E0 /* Resolver.framework */; };
+		9FBB9E441EC0BC720098C3E0 /* Resolver.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E331EC0BC720098C3E0 /* Resolver.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E451EC0BC720098C3E0 /* Sodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E341EC0BC720098C3E0 /* Sodium.framework */; };
+		9FBB9E461EC0BC720098C3E0 /* Sodium.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E341EC0BC720098C3E0 /* Sodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E471EC0BC720098C3E0 /* tun2socks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E351EC0BC720098C3E0 /* tun2socks.framework */; };
+		9FBB9E481EC0BC720098C3E0 /* tun2socks.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E351EC0BC720098C3E0 /* tun2socks.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FBB9E491EC0BC720098C3E0 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E361EC0BC720098C3E0 /* Yaml.framework */; };
+		9FBB9E4A1EC0BC720098C3E0 /* Yaml.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBB9E361EC0BC720098C3E0 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FBCFCA01EACCFA0004A801E /* SPOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */; };
 		9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */; };
 		9FCA5F361EB8D3D40038DC66 /* NTUserDefault+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA5F351EB8D3D40038DC66 /* NTUserDefault+Extensions.swift */; };
@@ -70,6 +90,29 @@
 		9FF8747F1EAA4C500047241E /* SPUserLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8747E1EAA4C500047241E /* SPUserLikeListViewModel.swift */; };
 		9FF874811EAA52FE0047241E /* SPDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF874801EAA52FE0047241E /* SPDiscoverViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FBB9E4B1EC0BC720098C3E0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FBB9E401EC0BC720098C3E0 /* MMDB.framework in Embed Frameworks */,
+				9FBB9E3A1EC0BC720098C3E0 /* CocoaLumberjack.framework in Embed Frameworks */,
+				9FBB9E381EC0BC720098C3E0 /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				9FBB9E3E1EC0BC720098C3E0 /* lwip.framework in Embed Frameworks */,
+				9FBB9E481EC0BC720098C3E0 /* tun2socks.framework in Embed Frameworks */,
+				9FBB9E4A1EC0BC720098C3E0 /* Yaml.framework in Embed Frameworks */,
+				9FBB9E441EC0BC720098C3E0 /* Resolver.framework in Embed Frameworks */,
+				9FBB9E461EC0BC720098C3E0 /* Sodium.framework in Embed Frameworks */,
+				9FBB9E421EC0BC720098C3E0 /* NEKit.framework in Embed Frameworks */,
+				9FBB9E3C1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +156,26 @@
 		9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spade-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailViewController.swift; sourceTree = "<group>"; };
 		9FB378591EA746640048A51C /* NTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFPSLabel.swift; sourceTree = "<group>"; };
+		9FBB9E041EC0A54C0098C3E0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		9FBB9E051EC0A54C0098C3E0 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		9FBB9E061EC0A54C0098C3E0 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		9FBB9E071EC0A54C0098C3E0 /* lwip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lwip.framework; path = Carthage/Build/iOS/lwip.framework; sourceTree = "<group>"; };
+		9FBB9E081EC0A54C0098C3E0 /* MMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDB.framework; path = Carthage/Build/iOS/MMDB.framework; sourceTree = "<group>"; };
+		9FBB9E091EC0A54C0098C3E0 /* NEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NEKit.framework; path = Carthage/Build/iOS/NEKit.framework; sourceTree = "<group>"; };
+		9FBB9E0A1EC0A54C0098C3E0 /* Resolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Resolver.framework; path = Carthage/Build/iOS/Resolver.framework; sourceTree = "<group>"; };
+		9FBB9E0B1EC0A54C0098C3E0 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
+		9FBB9E0C1EC0A54C0098C3E0 /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
+		9FBB9E0D1EC0A54C0098C3E0 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
+		9FBB9E2D1EC0BC720098C3E0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		9FBB9E2E1EC0BC720098C3E0 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		9FBB9E2F1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		9FBB9E301EC0BC720098C3E0 /* lwip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lwip.framework; path = ../Carthage/Build/iOS/lwip.framework; sourceTree = "<group>"; };
+		9FBB9E311EC0BC720098C3E0 /* MMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDB.framework; path = ../Carthage/Build/iOS/MMDB.framework; sourceTree = "<group>"; };
+		9FBB9E321EC0BC720098C3E0 /* NEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NEKit.framework; path = ../Carthage/Build/iOS/NEKit.framework; sourceTree = "<group>"; };
+		9FBB9E331EC0BC720098C3E0 /* Resolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Resolver.framework; path = ../Carthage/Build/iOS/Resolver.framework; sourceTree = "<group>"; };
+		9FBB9E341EC0BC720098C3E0 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = ../Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
+		9FBB9E351EC0BC720098C3E0 /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = ../Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
+		9FBB9E361EC0BC720098C3E0 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = ../Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPOAuthViewController.swift; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCA5F351EB8D3D40038DC66 /* NTUserDefault+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUserDefault+Extensions.swift"; sourceTree = "<group>"; };
@@ -147,6 +210,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBB9E431EC0BC720098C3E0 /* Resolver.framework in Frameworks */,
+				9FBB9E3B1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework in Frameworks */,
+				9FBB9E371EC0BC720098C3E0 /* CocoaAsyncSocket.framework in Frameworks */,
+				9FBB9E391EC0BC720098C3E0 /* CocoaLumberjack.framework in Frameworks */,
+				9FBB9E451EC0BC720098C3E0 /* Sodium.framework in Frameworks */,
+				9FBB9E3D1EC0BC720098C3E0 /* lwip.framework in Frameworks */,
+				9FBB9E3F1EC0BC720098C3E0 /* MMDB.framework in Frameworks */,
+				9FBB9E491EC0BC720098C3E0 /* Yaml.framework in Frameworks */,
+				9FBB9E411EC0BC720098C3E0 /* NEKit.framework in Frameworks */,
+				9FBB9E471EC0BC720098C3E0 /* tun2socks.framework in Frameworks */,
 				1280E5A98AA9520C4107B199 /* Pods_spade.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +334,23 @@
 			path = UserDetail;
 			sourceTree = "<group>";
 		};
+		9FBB9E4D1EC0BCB80098C3E0 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FBB9E2D1EC0BC720098C3E0 /* CocoaAsyncSocket.framework */,
+				9FBB9E2E1EC0BC720098C3E0 /* CocoaLumberjack.framework */,
+				9FBB9E2F1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework */,
+				9FBB9E301EC0BC720098C3E0 /* lwip.framework */,
+				9FBB9E311EC0BC720098C3E0 /* MMDB.framework */,
+				9FBB9E321EC0BC720098C3E0 /* NEKit.framework */,
+				9FBB9E331EC0BC720098C3E0 /* Resolver.framework */,
+				9FBB9E341EC0BC720098C3E0 /* Sodium.framework */,
+				9FBB9E351EC0BC720098C3E0 /* tun2socks.framework */,
+				9FBB9E361EC0BC720098C3E0 /* Yaml.framework */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
 		9FCA5F341EB8D3D40038DC66 /* NTUserDefault */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +394,7 @@
 				9FDC1C901E96272F0019D76A /* Info.plist */,
 				9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */,
 				9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */,
+				9FBB9E4D1EC0BCB80098C3E0 /* frameworks */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -439,6 +530,16 @@
 		A88D4006D94BA007A73F56EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FBB9E041EC0A54C0098C3E0 /* CocoaAsyncSocket.framework */,
+				9FBB9E051EC0A54C0098C3E0 /* CocoaLumberjack.framework */,
+				9FBB9E061EC0A54C0098C3E0 /* CocoaLumberjackSwift.framework */,
+				9FBB9E071EC0A54C0098C3E0 /* lwip.framework */,
+				9FBB9E081EC0A54C0098C3E0 /* MMDB.framework */,
+				9FBB9E091EC0A54C0098C3E0 /* NEKit.framework */,
+				9FBB9E0A1EC0A54C0098C3E0 /* Resolver.framework */,
+				9FBB9E0B1EC0A54C0098C3E0 /* Sodium.framework */,
+				9FBB9E0C1EC0A54C0098C3E0 /* tun2socks.framework */,
+				9FBB9E0D1EC0A54C0098C3E0 /* Yaml.framework */,
 				A50C2F42A49182BA021C5361 /* Pods_spade.framework */,
 			);
 			name = Frameworks;
@@ -457,6 +558,7 @@
 				9FDC1C7F1E96272E0019D76A /* Resources */,
 				E49BEC267829403022AD584C /* [CP] Embed Pods Frameworks */,
 				26C2FBF18F9EA12C0C2A5882 /* [CP] Copy Pods Resources */,
+				9FBB9E4B1EC0BC720098C3E0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -739,9 +841,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks/CocoaAsyncSocket",
 					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = spade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,9 +868,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks/CocoaAsyncSocket",
 					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = spade/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";

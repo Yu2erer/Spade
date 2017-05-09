@@ -80,7 +80,6 @@ class SPNetworkManage {
         }
         SPNetworkManage.oauthswift.client.credential.oauthToken = oauthToken
         SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = oauthTokenSecret
-        print(userAccount)
         if parameters == nil {
             SPNetworkManage.oauthswift.client.request(urlString, method: method, success: { (response) in
                 completion(try? response.jsonObject(), true)

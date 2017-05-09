@@ -35,7 +35,6 @@ class SPSetting: UITableViewController {
         let actionSheet = UIActionSheet(title: "确定要退出登录吗", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "确定")
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
-        
     }
     
     @IBAction func windowSwitch(_ sender: UISwitch) {

@@ -34,6 +34,7 @@ let SPUserLoginSuccessedNotification = "SPUserLoginSuccessedNotification"
 let SPHomeCellBrowserPhotoNotification = "SPHomeCellBrowserPhotoNotification"
 let SPHomeCellBrowserPhotoSelectedIndexKey = "SPHomeCellBrowserPhotoSelectedIndexKey"
 let SPHomeCellBrowserPhotoURLsKey = "SPHomeCellBrowserPhotoURLsKey"
+let SPHomeCellBrowserPhotoImageView = "SPHomeCellBrowserPhotoImageView"
 // MARK: - 配图视图
 /// 配图视图外部间距
 let PictureViewOutterMargin = CGFloat(11)

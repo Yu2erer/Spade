@@ -45,8 +45,14 @@ class SPHomeViewController: SPBaseViewController {
         SKPhotoBrowserOptions.enableSingleTapDismiss = true
         SKPhotoBrowserOptions.displayAction = false
         SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        guard let imageViewList = n.userInfo?[SPHomeCellBrowserPhotoImageView] as? [UIImageView], let originImage = imageViewList[selectedIndex].image else {
+            let browser = SKPhotoBrowser(photos: images)
+            browser.initializePageIndex(selectedIndex)
+            present(browser, animated: true, completion: nil)
+            return
+        }
+        let browser = SKPhotoBrowser(originImage: originImage, photos: images, animatedFromView: (imageViewList[selectedIndex]))
         
-        let browser = SKPhotoBrowser(photos: images)
         browser.initializePageIndex(selectedIndex)
         present(browser, animated: true, completion: nil)
     }

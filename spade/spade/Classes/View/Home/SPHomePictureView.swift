@@ -110,7 +110,8 @@ class SPHomePictureView: UIView {
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: urls,
                                                                                                     
-                                                                                            SPHomeCellBrowserPhotoSelectedIndexKey: selectedIndex])
+                                                                                        SPHomeCellBrowserPhotoSelectedIndexKey: selectedIndex,
+                                                                                        SPHomeCellBrowserPhotoImageView: imageViewList])
         
 
     }
