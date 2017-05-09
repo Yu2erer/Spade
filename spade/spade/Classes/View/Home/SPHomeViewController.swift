@@ -138,7 +138,13 @@ extension SPHomeViewController: SPHomeTableViewCellDelegate {
 extension SPHomeViewController {
     
     fileprivate func setupUI() {
+        
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
+        let button = UIButton()
+        button.setTitle("刀哥", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        
+//        navigationItem.titleView 
         self.navigationItem.title = "Spade"
     }
 
