@@ -65,10 +65,9 @@ extension SPMainViewController: UITabBarControllerDelegate {
             
             let nav = childViewControllers[0] as! UINavigationController
             let vc = nav.childViewControllers[0] as! SPHomeViewController
-            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: true)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
-                vc.loadData()
-            })
+            vc.tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
+            vc.loadData()
+            
         }
         return true
     }
@@ -79,7 +78,6 @@ extension SPMainViewController {
         delegate = self
         setupChildControllers()
         SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
-        print(SPNetworkManage.shared.userLogon)
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin(n:)), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
     }
     

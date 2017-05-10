@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 没有初始化设置
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
+            UserDefaults.UserSetting.set(value: loadType.home, forKey: .homeSelected)
         }
 
 //        let ss = ShadowsocksAdapterFactory(serverHost: "47.88.175.52", serverPort: 1111, protocolObfuscaterFactory:         ShadowsocksAdapter.ProtocolObfuscater.Factory(), cryptorFactory: ShadowsocksAdapter.CryptoStreamProcessor.Factory(password: "jh781201", algorithm: CryptoAlgorithm.RC4MD5), streamObfuscaterFactory: ShadowsocksAdapter.StreamObfuscater.Factory())
@@ -81,6 +82,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func isFirstStartApp() -> Bool {
         return UserDefaults.standard.bool(forKey: "firstOpen")
     }
-
 }
-

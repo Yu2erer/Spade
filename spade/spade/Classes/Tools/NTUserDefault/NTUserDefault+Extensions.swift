@@ -16,6 +16,7 @@ extension UserDefaults {
         enum defaultKeys: String {
             case isHaveSetting
             case isSmallWindowOn
+            case homeSelected
         }
     }
 }
@@ -33,8 +34,16 @@ extension UserDefaultsSettable where defaultKeys.RawValue == String {
         let key = key.rawValue
         UserDefaults.standard.set(value, forKey: key)
     }
+    static func set(value: Int, forKey key: defaultKeys) {
+        let key = key.rawValue
+        UserDefaults.standard.set(value, forKey: key)
+    }
     static func string(forKey key: defaultKeys) -> String? {
         let key = key.rawValue
         return UserDefaults.standard.string(forKey: key)
+    }
+    static func remove(forKey key: defaultKeys) {
+        let key = key.rawValue
+        UserDefaults.standard.removeObject(forKey: key)
     }
 }

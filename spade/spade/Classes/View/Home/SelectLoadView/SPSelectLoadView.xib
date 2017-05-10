@@ -36,7 +36,7 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="tapPhoto:" destination="iN0-l3-epB" eventType="touchUpInside" id="uRH-WB-R1Q"/>
+                        <action selector="tapPhoto" destination="iN0-l3-epB" eventType="touchUpInside" id="ALG-fz-6q8"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Va-3Vo">
@@ -46,17 +46,17 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="tagVideo:" destination="iN0-l3-epB" eventType="touchUpInside" id="PMK-c1-4tz"/>
+                        <action selector="tagVideo" destination="iN0-l3-epB" eventType="touchUpInside" id="suZ-oB-XgW"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-xg-DzF">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-xg-DzF">
                     <rect key="frame" x="0.0" y="5" width="112.5" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="主页">
                         <color key="titleColor" red="0.30196078431372547" green="0.55294117647058827" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
-                        <action selector="tapHome:" destination="iN0-l3-epB" eventType="touchUpInside" id="szn-Qa-nWQ"/>
+                        <action selector="tapHome" destination="iN0-l3-epB" eventType="touchUpInside" id="A59-0h-i8B"/>
                     </connections>
                 </button>
             </subviews>

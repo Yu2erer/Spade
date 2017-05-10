@@ -21,23 +21,32 @@ class SPSelectLoadView: UIView {
     @IBOutlet weak var photoLabel: UIButton!
     @IBOutlet weak var videoLabel: UIButton!
     
-    @IBAction func tapHome(_ sender: Any) {
+    @IBAction func tapHome() {
         homeLabel.setTitleColor(UIColor(hex: 0x4D8DF7), for: .normal)
         photoLabel.setTitleColor(UIColor.black, for: .normal)
         videoLabel.setTitleColor(UIColor.black, for: .normal)
+        homeLabel.isEnabled = false
+        photoLabel.isEnabled = true
+        videoLabel.isEnabled = true
         viewDelegate?.didClickHome?()
     }
     
-    @IBAction func tapPhoto(_ sender: Any) {
+    @IBAction func tapPhoto() {
         homeLabel.setTitleColor(UIColor.black, for: .normal)
         photoLabel.setTitleColor(UIColor(hex: 0x4D8DF7), for: .normal)
         videoLabel.setTitleColor(UIColor.black, for: .normal)
+        homeLabel.isEnabled = true
+        photoLabel.isEnabled = false
+        videoLabel.isEnabled = true
         viewDelegate?.didClickPhoto?()
     }
-    @IBAction func tagVideo(_ sender: Any) {
+    @IBAction func tagVideo() {
         homeLabel.setTitleColor(UIColor.black, for: .normal)
         photoLabel.setTitleColor(UIColor.black, for: .normal)
         videoLabel.setTitleColor(UIColor(hex: 0x4D8DF7), for: .normal)
+        homeLabel.isEnabled = true
+        photoLabel.isEnabled = true
+        videoLabel.isEnabled = false
         viewDelegate?.didClickVideo?()
     }
     

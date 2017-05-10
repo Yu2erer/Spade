@@ -14,14 +14,14 @@ import Popover
 private let photoCellId = "photoCellId"
 private let videoCellId = "videoCellId"
 
-private enum loadType: String {
+enum loadType: String {
     case home = "home"
     case photo = "photo"
     case video = "video"
 }
 class SPHomeViewController: SPBaseViewController {
     
-    fileprivate var selected: loadType = .home
+    fileprivate var selected: String = UserDefaults.UserSetting.string(forKey: .homeSelected) ?? loadType.home.rawValue
     /// 列表视图模型
     fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
     fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
@@ -74,7 +74,7 @@ class SPHomeViewController: SPBaseViewController {
     /// 加载数据
     override func loadData() {
         self.refreshControl?.beginRefreshing()
-        self.dashBoardListViewModel.loadDashBoard(type: self.selected.rawValue, pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+        self.dashBoardListViewModel.loadDashBoard(type: self.selected, pullup: self.isPullup) { (isSuccess, shouldRefresh) in
             
             self.refreshControl?.endRefreshing()
             self.isPullup = false
@@ -153,9 +153,10 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
-        selected = .home
+        selected = loadType.home.rawValue
+        UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
+        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
         loadData()
-        tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: false)
 
     }
     func didClickPhoto() {
@@ -163,9 +164,11 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
-        selected = .photo
+        selected = loadType.photo.rawValue
+        UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
+        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
+
         loadData()
-        tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: false)
 
     }
     func didClickVideo() {
@@ -173,9 +176,10 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
-        selected = .video
+        selected = loadType.video.rawValue
+        UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
+        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
         loadData()
-        tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: false)
 
     }
 }
@@ -184,12 +188,26 @@ extension SPHomeViewController {
     
     fileprivate func setupUI() {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-        let button = SPTitleButton(title: "Spade")
+        var title = "Spade"
+        switch selected {
+        case "home":
+            selectLoadView.tapHome()
+        case "photo":
+            title = "图片"
+            selectLoadView.tapPhoto()
+        case "video":
+            title = "视频"
+            selectLoadView.tagVideo()
+        default:
+            break
+        }
+        let button = SPTitleButton(title: title)
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         
         selectLoadView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth * 0.3, height: 120)
         selectLoadView.viewDelegate = self
+
     }
     @objc fileprivate func clickTitleButton(btn: UIButton) {
         
