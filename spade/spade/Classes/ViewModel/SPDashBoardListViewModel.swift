@@ -17,7 +17,7 @@ class SPDashBoardListViewModel {
     private var pullupErrorTimes = 0
     private var pullupCount = 0
     
-    func loadDashBoard(pullup: Bool, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
+    func loadDashBoard(type: String, pullup: Bool, completion: @escaping (_ isSuccess: Bool, _ shouldRefresh: Bool) -> ()) {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
             completion(true, false)
@@ -27,7 +27,7 @@ class SPDashBoardListViewModel {
         let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
         let offset = !pullup ? "" : "\(pullupCount)"
         
-        SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset) { (list, isSuccess) in
+        SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset, type: type) { (list, isSuccess) in
             
             if !isSuccess {
                 completion(false, false)

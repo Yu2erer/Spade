@@ -31,6 +31,8 @@
 		9F63A0BB1EBACEE300685395 /* SPDiscoverTopBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F63A0BA1EBACEE300685395 /* SPDiscoverTopBarView.xib */; };
 		9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */; };
 		9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */; };
+		9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */; };
+		9F83A8F01EC3014600CBF09D /* SPSelectLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */; };
 		9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */; };
 		9F887FE51EAAEF4C00094D48 /* SPLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */; };
 		9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */; };
@@ -98,6 +100,8 @@
 		9F63A0BA1EBACEE300685395 /* SPDiscoverTopBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPDiscoverTopBarView.xib; sourceTree = "<group>"; };
 		9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserAccount.swift; sourceTree = "<group>"; };
 		9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTInt+Extensions.swift"; sourceTree = "<group>"; };
+		9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPSelectLoadView.xib; sourceTree = "<group>"; };
+		9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSelectLoadView.swift; sourceTree = "<group>"; };
 		9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMessageHud.swift; sourceTree = "<group>"; };
 		9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeListViewModel.swift; sourceTree = "<group>"; };
 		9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikesViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 		9F6FC65D1EC2FEF0005734A7 /* SelectLoadView */ = {
 			isa = PBXGroup;
 			children = (
+				9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */,
+				9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */,
 			);
 			path = SelectLoadView;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				9FD36DA31EA7684B0007D3C2 /* SPUserDetailHeaderView.xib in Resources */,
 				9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */,
 				9F5C75AF1EB83E7200C7D5DC /* Setting.storyboard in Resources */,
+				9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
 				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
 			);
@@ -680,6 +687,7 @@
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,
 				9FA6D66D1EB47C9600C8FA6E /* SPUserFollowingListViewModel.swift in Sources */,
 				9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */,
+				9F83A8F01EC3014600CBF09D /* SPSelectLoadView.swift in Sources */,
 				9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */,
 				9FB3785A1EA746640048A51C /* NTFPSLabel.swift in Sources */,
 				9F5332C11EAF140000C7D2BE /* NTRefreshControl.swift in Sources */,

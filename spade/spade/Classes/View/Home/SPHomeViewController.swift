@@ -13,12 +13,14 @@ import Popover
 
 private let photoCellId = "photoCellId"
 private let videoCellId = "videoCellId"
+
 private enum loadType: String {
-    case home = ""
+    case home = "home"
     case photo = "photo"
     case video = "video"
 }
 class SPHomeViewController: SPBaseViewController {
+    
     fileprivate var selected: loadType = .home
     /// 列表视图模型
     fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
@@ -28,6 +30,8 @@ class SPHomeViewController: SPBaseViewController {
         .type(.down),
         .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
     ]
+    fileprivate lazy var selectLoadView: SPSelectLoadView = Bundle.main.loadNibNamed("SPSelectLoadView", owner: nil, options: nil)?.last as! SPSelectLoadView
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +74,7 @@ class SPHomeViewController: SPBaseViewController {
     /// 加载数据
     override func loadData() {
         self.refreshControl?.beginRefreshing()
-        self.dashBoardListViewModel.loadDashBoard(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+        self.dashBoardListViewModel.loadDashBoard(type: self.selected.rawValue, pullup: self.isPullup) { (isSuccess, shouldRefresh) in
             
             self.refreshControl?.endRefreshing()
             self.isPullup = false
@@ -101,7 +105,7 @@ class SPHomeViewController: SPBaseViewController {
 
 }
 
-// MARK: - 表格数据源方法
+// MARK: - UITableViewDataSource
 extension SPHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,24 +146,57 @@ extension SPHomeViewController: SPHomeTableViewCellDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+// MARK: - SPSelectLoadViewDelegate
+extension SPHomeViewController: SPSelectLoadViewDelegate {
+    func didClickHome() {
+        let button = SPTitleButton(title: "Spade")
+        button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
+        navigationItem.titleView = button
+        popover.dismiss()
+        selected = .home
+        loadData()
+        tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: false)
+
+    }
+    func didClickPhoto() {
+        let button = SPTitleButton(title: "图片")
+        button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
+        navigationItem.titleView = button
+        popover.dismiss()
+        selected = .photo
+        loadData()
+        tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: false)
+
+    }
+    func didClickVideo() {
+        let button = SPTitleButton(title: "视频")
+        button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
+        navigationItem.titleView = button
+        popover.dismiss()
+        selected = .video
+        loadData()
+        tableView?.setContentOffset(CGPoint(x: 0, y: -124), animated: false)
+
+    }
+}
 // MARK: - 设置界面
 extension SPHomeViewController {
     
     fileprivate func setupUI() {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-
-        
         let button = SPTitleButton(title: "Spade")
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
-
+        
+        selectLoadView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth * 0.3, height: 120)
+        selectLoadView.viewDelegate = self
     }
     @objc fileprivate func clickTitleButton(btn: UIButton) {
-
+        
         btn.isSelected = !btn.isSelected
         if btn.isSelected {
             popover = Popover(options: popoverOptions)
-            popover.show(UIView(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.3, height: 120)), fromView: btn)
+            popover.show(selectLoadView, fromView: btn)
         } else {
             popover.dismiss()
         }
@@ -175,7 +212,6 @@ extension SPHomeViewController {
 
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
-        
         tableView?.separatorStyle = .none
     }
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SPSelectLoadView" customModule="spade" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="112.5" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLY-vg-8gf" userLabel="分割线">
+                    <rect key="frame" x="0.0" y="40" width="112.5" height="0.5"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="Yg7-TQ-QYk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahm-y6-h6o" userLabel="分割线">
+                    <rect key="frame" x="0.0" y="79" width="112.5" height="0.5"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.79607843140000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="syD-Cj-o9d"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZS-sg-SLz">
+                    <rect key="frame" x="0.0" y="45" width="112.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="图片">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tapPhoto:" destination="iN0-l3-epB" eventType="touchUpInside" id="uRH-WB-R1Q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgW-Va-3Vo">
+                    <rect key="frame" x="0.0" y="85" width="112.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="视频">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="tagVideo:" destination="iN0-l3-epB" eventType="touchUpInside" id="PMK-c1-4tz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-xg-DzF">
+                    <rect key="frame" x="0.0" y="5" width="112.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="主页">
+                        <color key="titleColor" red="0.30196078431372547" green="0.55294117647058827" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapHome:" destination="iN0-l3-epB" eventType="touchUpInside" id="szn-Qa-nWQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RgW-Va-3Vo" firstAttribute="top" secondItem="Ahm-y6-h6o" secondAttribute="bottom" constant="5.5" id="0V6-UH-qgU"/>
+                <constraint firstAttribute="bottom" secondItem="RgW-Va-3Vo" secondAttribute="bottom" constant="5" id="0ac-7w-NpT"/>
+                <constraint firstItem="cEn-xg-DzF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="0yR-nk-Hgs"/>
+                <constraint firstItem="RgW-Va-3Vo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Iw-Sk-DhQ"/>
+                <constraint firstItem="cEn-xg-DzF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Ye-IG-4f7"/>
+                <constraint firstItem="NZS-sg-SLz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Atf-iH-br6"/>
+                <constraint firstItem="LLY-vg-8gf" firstAttribute="top" secondItem="cEn-xg-DzF" secondAttribute="bottom" constant="5" id="Bxd-fd-czy"/>
+                <constraint firstAttribute="trailing" secondItem="cEn-xg-DzF" secondAttribute="trailing" id="GC8-st-b3A"/>
+                <constraint firstAttribute="trailing" secondItem="LLY-vg-8gf" secondAttribute="trailing" id="UK9-dg-U5b"/>
+                <constraint firstItem="Ahm-y6-h6o" firstAttribute="top" secondItem="NZS-sg-SLz" secondAttribute="bottom" constant="4" id="Vd2-0S-7ag"/>
+                <constraint firstItem="Ahm-y6-h6o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YE0-sc-QL0"/>
+                <constraint firstItem="LLY-vg-8gf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="f08-Ou-zn9"/>
+                <constraint firstAttribute="trailing" secondItem="Ahm-y6-h6o" secondAttribute="trailing" id="gjM-zm-99f"/>
+                <constraint firstItem="NZS-sg-SLz" firstAttribute="top" secondItem="LLY-vg-8gf" secondAttribute="bottom" constant="4.5" id="nxY-HV-LDh"/>
+                <constraint firstAttribute="trailing" secondItem="NZS-sg-SLz" secondAttribute="trailing" id="w3m-WL-eVH"/>
+                <constraint firstAttribute="trailing" secondItem="RgW-Va-3Vo" secondAttribute="trailing" id="y67-cV-YvE"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="homeLabel" destination="cEn-xg-DzF" id="5gK-jF-5Hl"/>
+                <outlet property="photoLabel" destination="NZS-sg-SLz" id="IEe-tV-Lw7"/>
+                <outlet property="videoLabel" destination="RgW-Va-3Vo" id="uvj-4w-4ce"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54"/>
+        </view>
+    </objects>
+</document>

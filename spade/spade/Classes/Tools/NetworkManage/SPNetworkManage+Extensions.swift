@@ -12,11 +12,18 @@ import Foundation
 extension SPNetworkManage {
     
     /// 加载 dashBoard
-    func dashBoardList(since_id: String, offset: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
-        
-        let params = ["since_id": since_id,
-                      "offset": offset,
-                      "limit": "20"]
+    func dashBoardList(since_id: String, offset: String, type: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
+        var params = [String: String]()
+        if type == "home" {
+            params = ["since_id": since_id,
+                          "offset": offset,
+                          "limit": "20"]
+        } else {
+            params = ["since_id": since_id,
+                          "offset": offset,
+                          "limit": "20",
+                          "type": type]
+        }
         request(urlString: dashBoardURL, method: .GET, parameters: params) { (json, isSuccess) in
             
             let result = json as? [String: Any]
