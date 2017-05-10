@@ -153,10 +153,14 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
+        if dashBoardListViewModel.dashBoardList.count == 0 {
+            return
+        }
         selected = loadType.home.rawValue
         UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
-        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
+
         loadData()
+        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
 
     }
     func didClickPhoto() {
@@ -164,22 +168,26 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
+        if dashBoardListViewModel.dashBoardList.count == 0 {
+            return
+        }
         selected = loadType.photo.rawValue
         UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
-        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
-
         loadData()
-
+        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
     func didClickVideo() {
         let button = SPTitleButton(title: "视频")
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
+        if dashBoardListViewModel.dashBoardList.count == 0 {
+            return
+        }
         selected = loadType.video.rawValue
         UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
-        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
         loadData()
+        tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
 
     }
 }

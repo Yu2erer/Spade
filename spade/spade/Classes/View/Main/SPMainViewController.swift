@@ -23,9 +23,6 @@ class SPMainViewController: UITabBarController {
 //        } else {
 //            print("时间没到 不要出来!")
 //        }
-        
-        
-        
         setupUI()
         
     }
@@ -36,7 +33,6 @@ class SPMainViewController: UITabBarController {
 }
 extension SPMainViewController {
     @objc fileprivate func userLogin(n: Notification) {
-        print("用户登录通知")
         UserDefaults.standard.removeObject(forKey: "oauthToken")
         UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
         SPNetworkManage.shared.userAccount.oauthToken = nil
@@ -65,9 +61,8 @@ extension SPMainViewController: UITabBarControllerDelegate {
             
             let nav = childViewControllers[0] as! UINavigationController
             let vc = nav.childViewControllers[0] as! SPHomeViewController
-            vc.tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
             vc.loadData()
-            
+            vc.tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
         }
         return true
     }
@@ -80,7 +75,6 @@ extension SPMainViewController {
         SPNetworkManage.shared.userLogon ? () : view.addSubview(SPLoginView.loginView())
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin(n:)), name: NSNotification.Name(rawValue: SPUserShouldLoginNotification), object: nil)
     }
-    
     fileprivate func setupChildControllers() {
         
         let array = [
@@ -96,9 +90,7 @@ extension SPMainViewController {
         }
 
         viewControllers = arrayM
-        
     }
-    
     fileprivate func controller(dict: [String: String]) -> UIViewController {
         
         guard let clsName = dict["clsName"], let imageName = dict["imageName"], let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else {
