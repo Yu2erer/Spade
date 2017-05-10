@@ -71,6 +71,9 @@ extension SPBaseViewController: UITableViewDelegate, UITableViewDataSource {
     // 到最后一行 上拉刷新
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+        if tableView.tag != 0 {
+            return
+        }
         let row = indexPath.row
         let section = tableView.numberOfSections - 1
         

@@ -9,15 +9,25 @@
 import UIKit
 import ZFPlayer
 import SKPhotoBrowser
+import Popover
 
 private let photoCellId = "photoCellId"
 private let videoCellId = "videoCellId"
-
+private enum loadType: String {
+    case home = ""
+    case photo = "photo"
+    case video = "video"
+}
 class SPHomeViewController: SPBaseViewController {
-    
+    fileprivate var selected: loadType = .home
     /// 列表视图模型
     fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
     fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
+    fileprivate var popover: Popover!
+    fileprivate var popoverOptions: [PopoverOption] = [
+        .type(.down),
+        .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +55,7 @@ class SPHomeViewController: SPBaseViewController {
         SKPhotoBrowserOptions.enableSingleTapDismiss = true
         SKPhotoBrowserOptions.displayAction = false
         SKPhotoBrowserOptions.displayBackAndForwardButton = false
+        
         guard let imageViewList = n.userInfo?[SPHomeCellBrowserPhotoImageView] as? [UIImageView], let originImage = imageViewList[selectedIndex].image else {
             let browser = SKPhotoBrowser(photos: images)
             browser.initializePageIndex(selectedIndex)
@@ -94,27 +105,24 @@ class SPHomeViewController: SPBaseViewController {
 extension SPHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return dashBoardListViewModel.dashBoardList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
 
         let cellId = (vm.dashBoard.type == "video") ? videoCellId : photoCellId
-  
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! SPHomeTableViewCell
         weak var weakSelf = self
         cell.viewModel = vm
         cell.cellDelegate = self
-        
         if vm.dashBoard.type == "video" {
             cell.playBack = {
                 
                 let playerModel = ZFPlayerModel()
                 playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "")
-                playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url
+                playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url ?? ""
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView
                 playerModel.fatherView = cell.placeholderImage
@@ -138,21 +146,27 @@ extension SPHomeViewController: SPHomeTableViewCellDelegate {
 extension SPHomeViewController {
     
     fileprivate func setupUI() {
-        
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-        let button = UIButton()
-        button.setTitle("刀hahha哥", for: .normal)
-        button.setTitleColor(UIColor.black, for: .normal)
-        button.setTitleColor(UIColor.black, for: .highlighted)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.setImage(UIImage(named: "DownArrow"), for: .normal)
-//        button.setImage(UIImage(named: "DownArrow"), for: <#T##UIControlState#>)
-        button.sizeToFit()
-        navigationItem.titleView = button
-//        self.navigationItem.title = "Spade"
-    }
 
-  
+        
+        let button = SPTitleButton(title: "Spade")
+        button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
+        navigationItem.titleView = button
+
+    }
+    @objc fileprivate func clickTitleButton(btn: UIButton) {
+
+        btn.isSelected = !btn.isSelected
+        if btn.isSelected {
+            popover = Popover(options: popoverOptions)
+            popover.show(UIView(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.3, height: 120)), fromView: btn)
+        } else {
+            popover.dismiss()
+        }
+        popover.willDismissHandler = {
+            btn.isSelected = !btn.isSelected
+        }
+    }
     override func setupTableView() {
         super.setupTableView()
 

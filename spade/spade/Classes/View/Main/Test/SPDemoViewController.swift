@@ -17,7 +17,6 @@ class SPDemoViewController: UIViewController {
 }
 // MARK: - 设置界面
 extension SPDemoViewController {
-    
     fileprivate func setupUI() {
         view.backgroundColor = UIColor.white
     }

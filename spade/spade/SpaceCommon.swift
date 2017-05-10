@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 // MARK: - oAuth信息
-let CONSUMERKEY = SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.userAccount.Key : SPNetworkManage.shared.userAccount.CONSUMERKEY
-let CONSUMERSECRET = SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.userAccount.Secret : SPNetworkManage.shared.userAccount.CONSUMERSECRET
+let CONSUMERKEY = SPNetworkManage.shared.userAccount.Key ?? SPNetworkManage.shared.userAccount.CONSUMERKEY
+let CONSUMERSECRET = SPNetworkManage.shared.userAccount.Secret ?? SPNetworkManage.shared.userAccount.CONSUMERSECRET
 let REQUESTTOKENURL = "https://www.tumblr.com/oauth/request_token"
 let AUTHORIZEURL = "https://www.tumblr.com/oauth/authorize"
 let ACCESSTOKENURL = "https://www.tumblr.com/oauth/access_token"

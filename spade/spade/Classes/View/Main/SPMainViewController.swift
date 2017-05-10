@@ -17,7 +17,6 @@ class SPMainViewController: UITabBarController {
 //        let now = Int(Date().timeIntervalSince1970)
         
 //        if now < 1494393193 {
-            !SPNetworkManage.shared.userLogon && !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
 
         
         

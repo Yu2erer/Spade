@@ -32,6 +32,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     fileprivate func addAditions() {
+        if UserDefaults.standard.bool(forKey: "everOpen") == false {
+            UserDefaults.standard.set(true, forKey: "everOpen")
+            UserDefaults.standard.set(true, forKey: "firstOpen")
+        } else {
+            UserDefaults.standard.set(false, forKey: "firstOpen")
+        }
+        
+        if isFirstStartApp() {
+            UserDefaults.standard.removeObject(forKey: "oauthToken")
+            UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
+            let now = Int(Date().timeIntervalSince1970)
+            if now > 1494518400 {
+                !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
+            }
+        }
+        
         SVProgressHUD.setMaximumDismissTimeInterval(2)
         #if DEBUG
             let fpsLabel = NTFPSLabel(frame: CGRect(x: 15, y: UIScreen.main.bounds.size.height - 80, width: 55, height: 20))
@@ -62,7 +78,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    func isFirstStartApp() -> Bool {
+        return UserDefaults.standard.bool(forKey: "firstOpen")
+    }
 
 }
 
