@@ -9,6 +9,7 @@
 import UIKit
 import OAuthSwift
 import SVProgressHUD
+import Bugly
 //import NEKit
 
 @UIApplicationMain
@@ -32,6 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     fileprivate func addAditions() {
+        let buglyConfig = BuglyConfig()
+        buglyConfig.unexpectedTerminatingDetectionEnable = true
+        Bugly.start(withAppId: "5f41daf832", config: buglyConfig)
+        Bugly.setUserValue(<#T##value: String##String#>, forKey: <#T##String#>)
+        
         if UserDefaults.standard.bool(forKey: "everOpen") == false {
             UserDefaults.standard.set(true, forKey: "everOpen")
             UserDefaults.standard.set(true, forKey: "firstOpen")

@@ -13,5 +13,6 @@ pod 'ZFPlayer'
 pod 'SVProgressHUD'
 pod 'SKPhotoBrowser'
 pod 'Popover'
+pod 'Bugly'
 pod 'SRDownloadManager'
 end
