@@ -36,23 +36,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let buglyConfig = BuglyConfig()
         buglyConfig.unexpectedTerminatingDetectionEnable = true
         Bugly.start(withAppId: "5f41daf832", config: buglyConfig)
-        Bugly.setUserValue(<#T##value: String##String#>, forKey: <#T##String#>)
         
-        if UserDefaults.standard.bool(forKey: "everOpen") == false {
-            UserDefaults.standard.set(true, forKey: "everOpen")
-            UserDefaults.standard.set(true, forKey: "firstOpen")
-        } else {
-            UserDefaults.standard.set(false, forKey: "firstOpen")
+        let now = Int(Date().timeIntervalSince1970)
+        if now > 1494370800 {
+            !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
         }
-        
-        if isFirstStartApp() {
-            UserDefaults.standard.removeObject(forKey: "oauthToken")
-            UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
-            let now = Int(Date().timeIntervalSince1970)
-            if now > 1494518400 {
-                !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
-            }
-        }
+//        if UserDefaults.standard.bool(forKey: "everOpen") == false {
+//            UserDefaults.standard.set(true, forKey: "everOpen")
+//            UserDefaults.standard.set(true, forKey: "firstOpen")
+//        } else {
+//            UserDefaults.standard.set(false, forKey: "firstOpen")
+//        }
+//
+//        if isFirstStartApp() {
+//            let now = Int(Date().timeIntervalSince1970)
+//            if now > 1494370800 {
+//                
+//            }
+//        }
         
         SVProgressHUD.setMaximumDismissTimeInterval(2)
         #if DEBUG
@@ -63,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 没有初始化设置
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
-            UserDefaults.UserSetting.set(value: loadType.home, forKey: .homeSelected)
         }
 
 //        let ss = ShadowsocksAdapterFactory(serverHost: "47.88.175.52", serverPort: 1111, protocolObfuscaterFactory:         ShadowsocksAdapter.ProtocolObfuscater.Factory(), cryptorFactory: ShadowsocksAdapter.CryptoStreamProcessor.Factory(password: "jh781201", algorithm: CryptoAlgorithm.RC4MD5), streamObfuscaterFactory: ShadowsocksAdapter.StreamObfuscater.Factory())
@@ -74,10 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        
 //        let proxyServer = GCDHTTPProxyServer(address: IPAddress(fromString: "127.0.0.1"), port: 9090)
 //        try! proxyServer.start()
-        
-        
-        
-        
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if (url.host == "oauth-callback") {

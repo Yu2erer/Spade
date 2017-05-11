@@ -21,7 +21,7 @@ enum loadType: String {
 }
 class SPHomeViewController: SPBaseViewController {
     
-    fileprivate var selected: String = UserDefaults.UserSetting.string(forKey: .homeSelected) ?? loadType.home.rawValue
+    fileprivate var selected: String = loadType.home.rawValue
     /// 列表视图模型
     fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
     fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
@@ -125,7 +125,7 @@ extension SPHomeViewController {
             cell.playBack = {
                 
                 let playerModel = ZFPlayerModel()
-                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "")
+                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://baidu.com")
                 playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url ?? ""
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView
@@ -157,7 +157,6 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
             return
         }
         selected = loadType.home.rawValue
-        UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
 
         loadData()
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
@@ -172,7 +171,6 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
             return
         }
         selected = loadType.photo.rawValue
-        UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
         loadData()
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
@@ -185,7 +183,6 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
             return
         }
         selected = loadType.video.rawValue
-        UserDefaults.UserSetting.set(value: selected, forKey: .homeSelected)
         loadData()
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
 
@@ -196,20 +193,7 @@ extension SPHomeViewController {
     
     fileprivate func setupUI() {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "bar-button-camera", target: self, action: #selector(test))
-        var title = "Spade"
-        switch selected {
-        case "home":
-            selectLoadView.tapHome()
-        case "photo":
-            title = "图片"
-            selectLoadView.tapPhoto()
-        case "video":
-            title = "视频"
-            selectLoadView.tagVideo()
-        default:
-            break
-        }
-        let button = SPTitleButton(title: title)
+        let button = SPTitleButton(title: "Spade")
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         

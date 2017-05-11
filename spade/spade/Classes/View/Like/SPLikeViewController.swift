@@ -71,8 +71,8 @@ extension SPLikeViewController {
             cell.playBack = {
                 
                 let playerModel = ZFPlayerModel()
-                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "")
-                playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url
+                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://baidu.com")
+                playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url ?? ""
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView
                 playerModel.fatherView = cell.placeholderImage

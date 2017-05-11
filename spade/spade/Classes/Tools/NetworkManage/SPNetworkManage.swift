@@ -8,6 +8,7 @@
 
 import Foundation
 import OAuthSwift
+import Alamofire
 
 class SPNetworkManage {
     
@@ -34,28 +35,34 @@ class SPNetworkManage {
                        "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
                        "Content-Type": "application/json"]
         let params = ["limit": 1] as [String : Any]
-        SPNetworkManage.oauthswift.client.request(urlString, method: .GET, parameters: params, headers: headers, body: nil, checkTokenExpiration: false, success: { (response) in
-            let json = try? response.jsonObject()
-            let result = json as? [String: Any]
-            guard let data = result?["results"] as? [[String: Any]] else {
-                return
-            }
-            for d in data {
-                self.userAccount.Key = d["Key"] as? String
-                self.userAccount.Secret = d["Secret"] as? String
-                self.userAccount.objectId = d["objectId"] as? String
-            }
-            guard let objectId = self.userAccount.objectId else {
-                // 得不到数据 改用自带的
-                self.userAccount.Key = self.userAccount.CONSUMERKEY
-                self.userAccount.Secret = self.userAccount.CONSUMERSECRET
+        
+        Alamofire.request(urlString, method: .get
+            , parameters: params, headers: headers).responseJSON { (json) in
+            let value = json.result.value ?? ""
+                let result = value as? [String: Any]
+                guard let data = result?["results"] as? [[String: Any]] else {
+                    return
+                }
+                for d in data {
+                    self.userAccount.Key = d["Key"] as? String
+                    self.userAccount.Secret = d["Secret"] as? String
+                    self.userAccount.objectId = d["objectId"] as? String
+                }
+                guard let objectId = self.userAccount.objectId else {
+                    // 得不到数据 改用自带的
+                    self.userAccount.Key = self.userAccount.CONSUMERKEY
+                    self.userAccount.Secret = self.userAccount.CONSUMERSECRET
+                    self.userAccount.saveAccount()
+                    return
+                }
+                self.increment(objectId: objectId)
                 self.userAccount.saveAccount()
-                return
-            }
-            self.increment(objectId: objectId)
-            self.userAccount.saveAccount()
-        }) { (error) in
-            print(error.description)
+                if json.result.isFailure {
+                    print("网络错误 用自己的吧诶。。")
+                    self.userAccount.Key = self.userAccount.CONSUMERKEY
+                    self.userAccount.Secret = self.userAccount.CONSUMERSECRET
+                    self.userAccount.saveAccount()
+                }
         }
     }
     private func increment(objectId: String) {
@@ -64,9 +71,10 @@ class SPNetworkManage {
                        "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
                        "Content-Type": "application/json"]
         let params = ["usersNum": ["__op": "Increment", "amount": 1]]
-        SPNetworkManage.oauthswift.client.request(urlString, method: .PUT, parameters: params, headers: headers, body: nil, checkTokenExpiration: false, success: { (response) in
-        }) { (error) in
-            print(error)
+        Alamofire.request(urlString, method: .put, parameters: params, headers: headers).responseJSON { (json) in
+            if json.result.isFailure {
+                print(json.result.error ?? "错误")
+            }
         }
     }
     

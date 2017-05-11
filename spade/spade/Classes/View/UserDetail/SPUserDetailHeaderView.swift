@@ -52,10 +52,13 @@ class SPUserDetailHeaderView: UIView {
     }
     
     @IBAction func followAct(_ sender: UIButton) {
+        guard let name = model?.name else {
+            return
+        }
         SVProgressHUD.show()
         // 还没关注点了 关注
         if model?.followed == 0 {
-            SPNetworkManage.shared.userFollow(blogUrl: (model?.name)! + ".tumblr.com", completion: { (isSuccess) in
+            SPNetworkManage.shared.userFollow(blogUrl: name + ".tumblr.com", completion: { (isSuccess) in
                 if isSuccess {
                     SVProgressHUD.dismiss()
                     self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
@@ -68,7 +71,7 @@ class SPUserDetailHeaderView: UIView {
                 }
             })
         } else {
-            SPNetworkManage.shared.userUnFollow(blogUrl: (model?.name)!, completion: { (isSuccess) in
+            SPNetworkManage.shared.userUnFollow(blogUrl: name, completion: { (isSuccess) in
                 if isSuccess {
                     SVProgressHUD.dismiss()
                     self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)

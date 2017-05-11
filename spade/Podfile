@@ -14,5 +14,6 @@ pod 'SVProgressHUD'
 pod 'SKPhotoBrowser'
 pod 'Popover'
 pod 'Bugly'
+pod 'Alamofire'
 pod 'SRDownloadManager'
 end

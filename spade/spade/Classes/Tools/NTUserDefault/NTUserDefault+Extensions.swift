@@ -16,7 +16,6 @@ extension UserDefaults {
         enum defaultKeys: String {
             case isHaveSetting
             case isSmallWindowOn
-            case homeSelected
         }
     }
 }
