@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPA-47-hXH">
-                                <rect key="frame" x="11" y="-2.5" width="24" height="24"/>
+                                <rect key="frame" x="12" y="-2.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Btv-Ey-RAF"/>
                                     <constraint firstAttribute="height" constant="24" id="tPu-Qu-mdl"/>
@@ -77,15 +77,13 @@
                                     <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LJq-Xe-0Kh"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo8-El-eci">
-                                <rect key="frame" x="46" y="-2.5" width="24" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo8-El-eci">
+                                <rect key="frame" x="47" y="-2.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="X1M-Xh-5Xm"/>
                                     <constraint firstAttribute="height" constant="24" id="vcp-ZS-dgH"/>
                                 </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" image="downBtn"/>
                                 <connections>
                                     <action selector="downBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OHb-G5-xNL"/>
                                 </connections>
@@ -95,6 +93,7 @@
                             <constraint firstItem="Mo8-El-eci" firstAttribute="leading" secondItem="YPA-47-hXH" secondAttribute="trailing" constant="11" id="12A-a1-Wrt"/>
                             <constraint firstAttribute="trailing" secondItem="UCh-lr-yOI" secondAttribute="trailing" constant="11" id="JRP-58-MpH"/>
                             <constraint firstItem="Mo8-El-eci" firstAttribute="centerY" secondItem="YPA-47-hXH" secondAttribute="centerY" id="PwH-aL-4RQ"/>
+                            <constraint firstItem="YPA-47-hXH" firstAttribute="leading" secondItem="LGH-u3-PLh" secondAttribute="leading" constant="12" id="U09-qP-7i0"/>
                             <constraint firstAttribute="height" constant="25" id="kyB-Rm-qYC" userLabel="height = 25"/>
                             <constraint firstItem="UCh-lr-yOI" firstAttribute="centerY" secondItem="YPA-47-hXH" secondAttribute="centerY" id="rzC-JI-V33"/>
                             <constraint firstItem="YPA-47-hXH" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="w0V-D0-tBB"/>
@@ -112,7 +111,6 @@
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="Jop-Io-Xvi"/>
                     <constraint firstItem="BOw-gb-ZEZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="X78-ax-mA1"/>
-                    <constraint firstItem="YPA-47-hXH" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="Yft-5D-0EC"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
                     <constraint firstItem="BOw-gb-ZEZ" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" constant="11" id="d4a-vn-B1z"/>
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>
@@ -139,6 +137,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="downBtn" width="87" height="87"/>
         <image name="glyph-like" width="24" height="24"/>
     </resources>
 </document>

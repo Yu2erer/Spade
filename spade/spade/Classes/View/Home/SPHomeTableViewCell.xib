@@ -48,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO4-rP-Gcj">
-                                <rect key="frame" x="11" y="-2.5" width="24" height="24"/>
+                                <rect key="frame" x="13" y="-2.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="3Yq-aM-8Sr"/>
                                     <constraint firstAttribute="width" constant="24" id="aa3-xA-wR7"/>
@@ -61,6 +61,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="fO4-rP-Gcj" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="QMd-WB-ccv"/>
+                            <constraint firstItem="fO4-rP-Gcj" firstAttribute="leading" secondItem="LGH-u3-PLh" secondAttribute="leading" constant="13" id="Tim-St-WI8"/>
                             <constraint firstAttribute="height" constant="25" id="kyB-Rm-qYC" userLabel="height = 25"/>
                             <constraint firstAttribute="trailing" secondItem="TYB-Q3-ARH" secondAttribute="trailing" constant="11" id="nTt-zE-gOC"/>
                             <constraint firstItem="TYB-Q3-ARH" firstAttribute="centerY" secondItem="fO4-rP-Gcj" secondAttribute="centerY" id="z2a-iK-Zes"/>
@@ -97,7 +98,6 @@
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="KNs-14-YFU"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="trailing" constant="11" id="M48-jo-ENy"/>
-                    <constraint firstItem="fO4-rP-Gcj" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="MOv-Zd-b6N"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="Od7-Ok-4G1"/>
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Zrq-cz-WeJ"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>

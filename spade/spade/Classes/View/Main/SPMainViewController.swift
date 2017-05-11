@@ -80,6 +80,7 @@ extension SPMainViewController {
         let array = [
             ["clsName": "SPHomeViewController", "imageName": "tabbar-home"],
             ["clsName": "SPDiscoverViewController", "imageName": "tabbar-search"],
+            ["clsName": "SPDiscoverViewController", "imageName": "tabbar-download"],
             ["clsName": "SPLikeViewController", "imageName": "tabbar-activity"],
             ["clsName": "SPProfileViewController", "imageName": "tabbar-profile"]
         ]
