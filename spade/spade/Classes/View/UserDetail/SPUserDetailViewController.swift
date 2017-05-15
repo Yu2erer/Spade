@@ -85,7 +85,7 @@ extension SPUserDetailViewController {
             cell.playBack = {
                 
                 let playerModel = ZFPlayerModel()
-                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://baidu.com")
+                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://127.0.0.1")
                 playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url ?? ""
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView

@@ -17,6 +17,10 @@ import SVProgressHUD
 
 class SPUserDetailHeaderView: UIView {
     
+    // 只是为了让用户更好点而已。。
+    @IBOutlet weak var postLabel: UILabel!
+    @IBOutlet weak var likeLabel: UILabel!
+    
     @IBOutlet weak var followBtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var likesNum: UILabel!
@@ -101,8 +105,16 @@ extension SPUserDetailHeaderView {
         if (postNum.bounds).contains(p) && postNum.bounds.size.width > p.x {
             self.postTouch = true
         }
+        p = t.location(in: postLabel)
+        if (postLabel.bounds).contains(p) && postLabel.bounds.size.width > p.x {
+            self.postTouch = true
+        }
         p = t.location(in: likesNum)
         if likesNum.bounds.contains(p) && likesNum.bounds.size.width > p.x && model?.likes != 0 && (model != nil) {
+            self.likeTouch = true
+        }
+        p = t.location(in: likeLabel)
+        if likeLabel.bounds.contains(p) && likeLabel.bounds.size.width > p.x && model?.likes != 0 && (model != nil) {
             self.likeTouch = true
         }
         p = t.location(in: avatarImage)
@@ -123,7 +135,7 @@ extension SPUserDetailHeaderView {
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !postTouch || !likeTouch {
+        if !postTouch || !likeTouch || !avatarTouch {
             super.touchesCancelled(touches, with: event)
         }
     }

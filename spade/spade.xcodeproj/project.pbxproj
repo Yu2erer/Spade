@@ -34,6 +34,7 @@
 		9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */; };
 		9F83A8F01EC3014600CBF09D /* SPSelectLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */; };
 		9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */; };
+		9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */; };
 		9F887FE51EAAEF4C00094D48 /* SPLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */; };
 		9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */; };
 		9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */; };
@@ -103,6 +104,7 @@
 		9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPSelectLoadView.xib; sourceTree = "<group>"; };
 		9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSelectLoadView.swift; sourceTree = "<group>"; };
 		9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMessageHud.swift; sourceTree = "<group>"; };
+		9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDownloadViewController.swift; sourceTree = "<group>"; };
 		9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeListViewModel.swift; sourceTree = "<group>"; };
 		9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikesViewController.swift; sourceTree = "<group>"; };
 		9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginView.xib; sourceTree = "<group>"; };
@@ -285,6 +287,14 @@
 			path = NTMessageHud;
 			sourceTree = "<group>";
 		};
+		9F87A6881EC433930020E145 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
 		9FB378561EA73C3E0048A51C /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +405,7 @@
 				9FDC1C9D1E962C4B0019D76A /* Main */,
 				9FDC1C9B1E962C4B0019D76A /* Home */,
 				9FDC1C9A1E962C4B0019D76A /* Discover */,
+				9F87A6881EC433930020E145 /* Download */,
 				9FDC1C9C1E962C4B0019D76A /* Like */,
 				9FDC1C9E1E962C4B0019D76A /* Profile */,
 			);
@@ -677,6 +688,7 @@
 				9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
+				9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */,
 				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
 				9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */,
 				9FF874811EAA52FE0047241E /* SPDiscoverViewController.swift in Sources */,

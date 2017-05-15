@@ -80,7 +80,7 @@ extension SPProfileViewController {
             cell.playBack = {
                 
                 let playerModel = ZFPlayerModel()
-                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://baidu.com")
+                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://127.0.0.1")
                 playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url ?? ""
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView
@@ -101,6 +101,18 @@ extension SPProfileViewController: SPProfileHeaderViewDelegate {
     func didClickFollowingNum() {
         let vc = SPFollowingViewController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    func didClickAvatar() {
+        guard var avatarUrl = blogInfoViewModel.blogInfo.avatarURL else {
+            return
+        }
+        avatarUrl.removeSubrange(avatarUrl.index(avatarUrl.endIndex, offsetBy: -2)...avatarUrl.index(before: avatarUrl.endIndex))
+        avatarUrl += "512"
+        var url = [String]()
+        url.append(avatarUrl)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: url,
+                                                                                                                                          
+                                                                                                                                          SPHomeCellBrowserPhotoSelectedIndexKey: 0])
     }
 }
 // MARK: - 设置界面

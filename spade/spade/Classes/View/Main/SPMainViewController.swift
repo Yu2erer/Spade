@@ -61,8 +61,11 @@ extension SPMainViewController: UITabBarControllerDelegate {
             
             let nav = childViewControllers[0] as! UINavigationController
             let vc = nav.childViewControllers[0] as! SPHomeViewController
-            vc.loadData()
-            vc.tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
+            
+            if (vc.dashBoardListViewModel.dashBoardList.count != 0) {
+                vc.loadData()
+                vc.tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: true, scrollPosition: .top)
+            }
         }
         return true
     }
@@ -80,7 +83,7 @@ extension SPMainViewController {
         let array = [
             ["clsName": "SPHomeViewController", "imageName": "tabbar-home"],
             ["clsName": "SPDiscoverViewController", "imageName": "tabbar-search"],
-            ["clsName": "SPDiscoverViewController", "imageName": "tabbar-download"],
+            ["clsName": "SPDownloadViewController", "imageName": "tabbar-download"],
             ["clsName": "SPLikeViewController", "imageName": "tabbar-activity"],
             ["clsName": "SPProfileViewController", "imageName": "tabbar-profile"]
         ]

@@ -79,6 +79,10 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBAction func downBtn(_ sender: UIButton) {
         // TODO: 此处完成下载
         print(viewModel?.dashBoard.video_url)
+        guard let video_url = viewModel?.dashBoard.video_url, let url = URL(string: video_url) else {
+            return
+        }
+ 
     }
     @IBAction func likeBtn(_ sender: UIButton) {
         // 爱心按钮大小关键帧动画

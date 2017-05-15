@@ -56,7 +56,6 @@ class SPOAuthViewController: OAuthWebViewController {
 extension SPOAuthViewController: UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if let url = request.url, url.scheme == "spade" {
-            print("Url \(url)")
             self.dismissWebViewController()
             SVProgressHUD.dismiss()
         }

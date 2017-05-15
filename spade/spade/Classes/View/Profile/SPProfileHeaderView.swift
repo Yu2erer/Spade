@@ -11,10 +11,17 @@ import UIKit
 @objc protocol SPProfileHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
     @objc optional func didClickFollowingNum()
+    @objc optional func didClickAvatar()
 }
 
 class SPProfileHeaderView: UIView {
 
+    // 为了让用户更好点而已、
+    
+    @IBOutlet weak var followerLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var postLabel: UILabel!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var followingNum: UILabel!
     @IBOutlet weak var followersNum:	 UILabel!
@@ -35,6 +42,7 @@ class SPProfileHeaderView: UIView {
             nameLabel.text = String(describing: model.name ?? " ")
         }
     }
+    fileprivate var avatarTouch = false
     fileprivate var postTouch = false
     fileprivate var following = false
     fileprivate var followers = false
@@ -45,34 +53,52 @@ extension SPProfileHeaderView {
         self.postTouch = false
         self.following = false
         self.followers = false
+        self.avatarTouch = false
         let t: UITouch = (touches as NSSet).anyObject() as! UITouch
         var p = t.location(in: postNum)
         if (postNum.bounds).contains(p) {
+            self.postTouch = true
+        }
+        p = t.location(in: postLabel)
+        if (postLabel.bounds).contains(p) {
             self.postTouch = true
         }
         p = t.location(in: followingNum)
         if followingNum.bounds.contains(p) && model != nil {
             self.following = true
         }
+        p = t.location(in: followingLabel)
+        if (followingLabel.bounds).contains(p) && model != nil {
+            self.following = true
+        }
         p = t.location(in: followersNum)
         if followersNum.bounds.contains(p) && model != nil {
             self.followers = true
         }
-        if !postTouch || !following || !followers {
+        p = t.location(in: followerLabel)
+        if followerLabel.bounds.contains(p) && model != nil {
+            self.followers = true
+        }
+        p = t.location(in: avatarImage)
+        if avatarImage.bounds.contains(p) && model != nil {
+            self.avatarTouch = true
+        }
+        if !postTouch || !following || !followers || !avatarTouch {
             super.touchesBegan(touches, with: event)
         }
     }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !postTouch && !following && !followers {
+        if !postTouch && !following && !followers && !avatarTouch {
             super.touchesEnded(touches, with: event)
         } else {
             postTouch ? headerViewDelegate?.didClickPostNum?() : ()
             following ? headerViewDelegate?.didClickFollowingNum?() : ()
-            followers ? print("粉丝") : ()
+            followers ? () : ()
+            avatarTouch ? headerViewDelegate?.didClickAvatar?() : ()
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !postTouch || !following || !followers {
+        if !postTouch || !following || !followers || !avatarTouch {
             super.touchesCancelled(touches, with: event)
         }
     }

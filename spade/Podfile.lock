@@ -6,7 +6,6 @@ PODS:
   - OAuthSwift (1.1.1)
   - Popover (1.0.5)
   - SKPhotoBrowser (4.0.1)
-  - SRDownloadManager (1.0.0)
   - SVProgressHUD (2.1.2)
   - YYModel (1.0.4)
   - ZFPlayer (2.1.3):
@@ -19,7 +18,6 @@ DEPENDENCIES:
   - OAuthSwift
   - Popover
   - SKPhotoBrowser
-  - SRDownloadManager
   - SVProgressHUD
   - YYModel
   - ZFPlayer
@@ -32,11 +30,10 @@ SPEC CHECKSUMS:
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   Popover: f31b0ef6f43192256e6fcf13a0ce10f01c803159
   SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
-  SRDownloadManager: aecd803256467421a5a719010a95da22fc98e0b9
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: 8dc82b4508fbba4ee59d0304c52e30f8b3390244
 
-PODFILE CHECKSUM: 222d3a9efdd8ac19f77db8831bb01546c7ee6e93
+PODFILE CHECKSUM: b707ba6306c5b8381858905fa0b1670bfc1a0726
 
 COCOAPODS: 1.2.0.beta.3

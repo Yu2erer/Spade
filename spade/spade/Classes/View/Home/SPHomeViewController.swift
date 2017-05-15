@@ -23,7 +23,7 @@ class SPHomeViewController: SPBaseViewController {
     
     fileprivate var selected: String = loadType.home.rawValue
     /// 列表视图模型
-    fileprivate lazy var dashBoardListViewModel = SPDashBoardListViewModel()
+    lazy var dashBoardListViewModel = SPDashBoardListViewModel()
     fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
@@ -125,7 +125,7 @@ extension SPHomeViewController {
             cell.playBack = {
                 
                 let playerModel = ZFPlayerModel()
-                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://baidu.com")
+                playerModel.videoURL = URL(string: vm.dashBoard.video_url ?? "https://127.0.0.1")
                 playerModel.placeholderImageURLString = vm.dashBoard.thumbnail_url ?? ""
                 playerModel.indexPath = indexPath
                 playerModel.tableView = tableView
