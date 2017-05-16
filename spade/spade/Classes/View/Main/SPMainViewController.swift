@@ -55,7 +55,6 @@ extension SPMainViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
-        
         let idx = (childViewControllers as NSArray).index(of: viewController)
         if selectedIndex == 0 && idx == selectedIndex {
             

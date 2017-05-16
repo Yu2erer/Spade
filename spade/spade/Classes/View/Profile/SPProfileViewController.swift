@@ -88,6 +88,7 @@ extension SPProfileViewController {
                 weakSelf?.playerView?.playerModel(playerModel)
                 weakSelf?.playerView?.autoPlayTheVideo()
                 weakSelf?.playerView?.stopPlayWhileCellNotVisable = !isSmallWindowOn
+                UIApplication.shared.statusBarStyle = .default
             }
         }
         return cell
@@ -131,10 +132,10 @@ extension SPProfileViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        playerView?.resetPlayer()
         customNavigationBar.removeFromSuperview()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         performSelector(onMainThread: #selector(delayHidden), with: animated, waitUntilDone: false)
-        playerView?.resetPlayer()
     }
     func delayHidden(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)

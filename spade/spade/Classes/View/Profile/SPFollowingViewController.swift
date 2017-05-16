@@ -24,6 +24,10 @@ class SPFollowingViewController: UIViewController {
         loadData()
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SVProgressHUD.dismiss()
+    }
     fileprivate func loadData() {
         followingListViewModel.loadFollowing(pullup: isPullup) { (isSuccess, shouldRefresh) in
             // 恢复上拉刷新标记

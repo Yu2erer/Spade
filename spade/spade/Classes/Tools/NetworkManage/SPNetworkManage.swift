@@ -17,7 +17,7 @@ class SPNetworkManage {
     static let shared = SPNetworkManage()
     
     var haveKeyAndSecret: Bool {
-        return userAccount.Key != nil && userAccount.Secret != nil
+        return userAccount.Key != "" && userAccount.Secret != ""
     }
     private static let oauthswift = OAuth1Swift(consumerKey: CONSUMERKEY, consumerSecret: CONSUMERSECRET, requestTokenUrl: REQUESTTOKENURL, authorizeUrl: AUTHORIZEURL, accessTokenUrl: ACCESSTOKENURL)
     
@@ -41,8 +41,10 @@ class SPNetworkManage {
             let value = json.result.value ?? ""
                 let result = value as? [String: Any]
                 guard let data = result?["results"] as? [[String: Any]] else {
+                    print("123")
                     return
                 }
+//                print(data)
                 for d in data {
                     self.userAccount.Key = d["Key"] as? String
                     self.userAccount.Secret = d["Secret"] as? String
@@ -70,10 +72,14 @@ class SPNetworkManage {
         let headers = ["X-LC-Id": "ECkMpp8rkLW1mlo6zmqlmneF-gzGzoHsz",
                        "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
                        "Content-Type": "application/json"]
-        let params = ["usersNum": ["__op": "Increment", "amount": 1]]
-        Alamofire.request(urlString, method: .put, parameters: params, headers: headers).responseJSON { (json) in
+        let json = ["usersNum": ["__op": "Increment", "amount": 1]]
+        guard let data = try? JSONSerialization.data(withJSONObject: json, options: []), let str = String(data: data, encoding: .utf8) else {
+            return
+        }
+        Alamofire.request(urlString, method: .put, parameters: [:], encoding: str, headers: headers).responseJSON { (json) in
+            print(json)
             if json.result.isFailure {
-                print(json.result.error ?? "错误")
+                print("错误啦\(json.error)")
             }
         }
     }

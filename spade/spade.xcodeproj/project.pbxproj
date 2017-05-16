@@ -32,6 +32,10 @@
 		9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */; };
 		9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */; };
 		9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */; };
+		9F8384381EC9B1D0004617A1 /* SPDownloadedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8384361EC9B1D0004617A1 /* SPDownloadedViewCell.xib */; };
+		9F83843D1EC9B285004617A1 /* NTDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83843B1EC9B285004617A1 /* NTDownloadManager.swift */; };
+		9F83843E1EC9B285004617A1 /* NTDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83843C1EC9B285004617A1 /* NTDownloadTask.swift */; };
+		9F8384401EC9B2F0004617A1 /* SPDownloadedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83843F1EC9B2F0004617A1 /* SPDownloadedViewCell.swift */; };
 		9F83A8F01EC3014600CBF09D /* SPSelectLoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */; };
 		9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */; };
 		9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */; };
@@ -102,6 +106,10 @@
 		9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserAccount.swift; sourceTree = "<group>"; };
 		9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTInt+Extensions.swift"; sourceTree = "<group>"; };
 		9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPSelectLoadView.xib; sourceTree = "<group>"; };
+		9F8384361EC9B1D0004617A1 /* SPDownloadedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPDownloadedViewCell.xib; sourceTree = "<group>"; };
+		9F83843B1EC9B285004617A1 /* NTDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDownloadManager.swift; sourceTree = "<group>"; };
+		9F83843C1EC9B285004617A1 /* NTDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDownloadTask.swift; sourceTree = "<group>"; };
+		9F83843F1EC9B2F0004617A1 /* SPDownloadedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDownloadedViewCell.swift; sourceTree = "<group>"; };
 		9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSelectLoadView.swift; sourceTree = "<group>"; };
 		9F85B0921EAF6721004C4D09 /* NTMessageHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTMessageHud.swift; sourceTree = "<group>"; };
 		9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDownloadViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +287,16 @@
 			path = SelectLoadView;
 			sourceTree = "<group>";
 		};
+		9F83843A1EC9B285004617A1 /* NTDownload */ = {
+			isa = PBXGroup;
+			children = (
+				9F83843B1EC9B285004617A1 /* NTDownloadManager.swift */,
+				9F83843C1EC9B285004617A1 /* NTDownloadTask.swift */,
+			);
+			name = NTDownload;
+			path = NTProxy/NTDownload;
+			sourceTree = "<group>";
+		};
 		9F85B0911EAF6721004C4D09 /* NTMessageHud */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */,
+				9F83843F1EC9B2F0004617A1 /* SPDownloadedViewCell.swift */,
+				9F8384361EC9B1D0004617A1 /* SPDownloadedViewCell.xib */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -387,6 +407,7 @@
 			children = (
 				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
 				9F44EF9B1EBD7661007F7F60 /* NTProxy */,
+				9F83843A1EC9B285004617A1 /* NTDownload */,
 				9FCA5F341EB8D3D40038DC66 /* NTUserDefault */,
 				9FDE5F2E1EB4354100D3440F /* HeartFlyView */,
 				9F85B0911EAF6721004C4D09 /* NTMessageHud */,
@@ -600,6 +621,7 @@
 				9FD36DA31EA7684B0007D3C2 /* SPUserDetailHeaderView.xib in Resources */,
 				9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */,
 				9F5C75AF1EB83E7200C7D5DC /* Setting.storyboard in Resources */,
+				9F8384381EC9B1D0004617A1 /* SPDownloadedViewCell.xib in Resources */,
 				9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
 				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
@@ -666,12 +688,14 @@
 				9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */,
 				9FE4D83A1EC2BB8F00749B85 /* SPTitleButton.swift in Sources */,
 				9FF8747F1EAA4C500047241E /* SPUserLikeListViewModel.swift in Sources */,
+				9F83843E1EC9B285004617A1 /* NTDownloadTask.swift in Sources */,
 				9FBCFCA01EACCFA0004A801E /* SPOAuthViewController.swift in Sources */,
 				9F4E0EFE1E9744FD004F307A /* SPNetworkManage+Extensions.swift in Sources */,
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
 				9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */,
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
+				9F8384401EC9B2F0004617A1 /* SPDownloadedViewCell.swift in Sources */,
 				9F5C75B11EB83E9300C7D5DC /* SPSetting.swift in Sources */,
 				9FCA5F361EB8D3D40038DC66 /* NTUserDefault+Extensions.swift in Sources */,
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
@@ -707,6 +731,7 @@
 				9F9A2C8F1E994D8E0067E1A4 /* SPDashBoardViewModel.swift in Sources */,
 				9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */,
 				9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */,
+				9F83843D1EC9B285004617A1 /* NTDownloadManager.swift in Sources */,
 				9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */,
 				9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */,
 				9F63A0B91EBACED400685395 /* SPDiscoverTopBarView.swift in Sources */,

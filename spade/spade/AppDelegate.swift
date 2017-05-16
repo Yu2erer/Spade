@@ -38,9 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Bugly.start(withAppId: "5f41daf832", config: buglyConfig)
         
         let now = Int(Date().timeIntervalSince1970)
-        if now > 1494370800 {
-            !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
+        if !SPNetworkManage.shared.haveKeyAndSecret {
+            SPNetworkManage.shared.loadKeyAndSecret()
         }
+//        if now > 1494370800 {
+//            !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
+//        }
 //        if UserDefaults.standard.bool(forKey: "everOpen") == false {
 //            UserDefaults.standard.set(true, forKey: "everOpen")
 //            UserDefaults.standard.set(true, forKey: "firstOpen")

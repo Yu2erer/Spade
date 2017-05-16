@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.4.0)
   - Bugly (2.4.8)
+  - KeychainAccess (3.0.2)
   - Kingfisher (3.6.2)
   - Masonry (1.0.2)
   - OAuthSwift (1.1.1)
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Bugly
+  - KeychainAccess
   - Kingfisher
   - OAuthSwift
   - Popover
@@ -25,6 +27,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bugly: da3c02408c14838d498429320545a8e439392978
+  KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
@@ -34,6 +37,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFPlayer: 8dc82b4508fbba4ee59d0304c52e30f8b3390244
 
-PODFILE CHECKSUM: b707ba6306c5b8381858905fa0b1670bfc1a0726
+PODFILE CHECKSUM: 7577a0507664541f1688d22df6b0432319b529a2
 
 COCOAPODS: 1.2.0.beta.3

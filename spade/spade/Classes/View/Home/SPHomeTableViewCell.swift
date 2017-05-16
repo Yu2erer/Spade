@@ -35,7 +35,7 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var downloadBtn: UIButton?
     @IBOutlet weak var heightCons: NSLayoutConstraint?
     // 播放按钮
-    let playBtn = UIButton(type: .custom)
+    fileprivate let playBtn = UIButton(type: .custom)
     fileprivate var trackingTouch = false
     fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
@@ -78,10 +78,13 @@ class SPHomeTableViewCell: UITableViewCell {
     }
     @IBAction func downBtn(_ sender: UIButton) {
         // TODO: 此处完成下载
-        print(viewModel?.dashBoard.video_url)
-        guard let video_url = viewModel?.dashBoard.video_url, let url = URL(string: video_url) else {
+        guard let video_url = viewModel?.dashBoard.video_url, let fileImage = viewModel?.dashBoard.thumbnail_url else {
+            messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "该视频已被删除,无法下载", isError: true)
             return
         }
+        messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "添加到下载队列成功", isError: false)
+        NTDownloadManager.shared.newTask(urlString: video_url, fileImage: fileImage)
+        
  
     }
     @IBAction func likeBtn(_ sender: UIButton) {

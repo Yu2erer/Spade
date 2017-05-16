@@ -133,6 +133,7 @@ extension SPHomeViewController {
                 weakSelf?.playerView?.playerModel(playerModel)
                 weakSelf?.playerView?.autoPlayTheVideo()
                 weakSelf?.playerView?.stopPlayWhileCellNotVisable = !isSmallWindowOn
+                UIApplication.shared.statusBarStyle = .default
             }
         }
         return cell

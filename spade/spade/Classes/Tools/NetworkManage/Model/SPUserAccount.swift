@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class SPUserAccount: NSObject {
     
@@ -25,8 +26,11 @@ class SPUserAccount: NSObject {
         super.init()
 //        UserDefaults.standard.removeObject(forKey: "oauthToken")
 //        UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
-        Key = UserDefaults.standard.value(forKey: "Key") as? String
-        Secret = UserDefaults.standard.value(forKey: "Secret") as? String
+//        Key = UserDefaults.standard.value(forKey: "Key") as? String
+//        Secret = UserDefaults.standard.value(forKey: "Secret") as? String
+        Key = try? Keychain().getString("Key") ?? ""
+        Secret = try? Keychain().getString("Secret") ?? ""
+    
         oauthToken = UserDefaults.standard.value(forKey: "oauthToken") as? String
         oauthTokenSecret = UserDefaults.standard.value(forKey: "oauthTokenSecret") as? String
         
@@ -35,8 +39,10 @@ class SPUserAccount: NSObject {
     func saveAccount() {
         UserDefaults.standard.set(oauthToken, forKey: "oauthToken")
         UserDefaults.standard.set(oauthTokenSecret, forKey: "oauthTokenSecret")
-        UserDefaults.standard.set(Key, forKey: "Key")
-        UserDefaults.standard.set(Secret, forKey: "Secret")
+        try? Keychain().set(Key ?? "", key: "Key")
+        try? Keychain().set(Secret ?? "", key: "Secret")
+//        UserDefaults.standard.set(Key, forKey: "Key")
+//        UserDefaults.standard.set(Secret, forKey: "Secret")
         UserDefaults.standard.synchronize()
     }
 

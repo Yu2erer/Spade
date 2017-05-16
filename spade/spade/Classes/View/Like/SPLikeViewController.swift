@@ -44,6 +44,9 @@ class SPLikeViewController: SPBaseViewController {
         let playerView = ZFPlayerView.shared()
         return playerView
     }()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
 
 
 }
@@ -79,6 +82,7 @@ extension SPLikeViewController {
                 weakSelf?.playerView?.playerModel(playerModel)
                 weakSelf?.playerView?.autoPlayTheVideo()
                 weakSelf?.playerView?.stopPlayWhileCellNotVisable = !isSmallWindowOn
+                UIApplication.shared.statusBarStyle = .default
             }
         }
         return cell

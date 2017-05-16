@@ -15,4 +15,5 @@ pod 'SKPhotoBrowser'
 pod 'Popover'
 pod 'Bugly'
 pod 'Alamofire'
+pod 'KeychainAccess'
 end

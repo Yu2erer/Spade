@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="180" id="KGk-i7-Jjw" customClass="SPDownloadedViewCell" customModule="spade" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KE3-iU-xIU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="KE3-iU-xIU" secondAttribute="trailing" id="0RQ-zK-dLb"/>
+                    <constraint firstAttribute="bottom" secondItem="KE3-iU-xIU" secondAttribute="bottom" id="EJr-xP-pDb"/>
+                    <constraint firstItem="KE3-iU-xIU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VvD-Wq-5zC"/>
+                    <constraint firstItem="KE3-iU-xIU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yRe-42-SxC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="fileImage" destination="KE3-iU-xIU" id="M4z-n0-7hb"/>
+            </connections>
+            <point key="canvasLocation" x="16" y="116.5"/>
+        </tableViewCell>
+    </objects>
+</document>
