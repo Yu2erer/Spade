@@ -25,7 +25,6 @@ class NTDownloadManager: URLSessionDownloadTask {
         
         let config = URLSessionConfiguration.default
         self.session = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
-        self.taskList = [NTDownloadTask]()
         self.loadTaskList()
     }
     /// 未完成列表

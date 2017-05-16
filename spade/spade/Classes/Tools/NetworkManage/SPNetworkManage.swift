@@ -41,10 +41,8 @@ class SPNetworkManage {
             let value = json.result.value ?? ""
                 let result = value as? [String: Any]
                 guard let data = result?["results"] as? [[String: Any]] else {
-                    print("123")
                     return
                 }
-//                print(data)
                 for d in data {
                     self.userAccount.Key = d["Key"] as? String
                     self.userAccount.Secret = d["Secret"] as? String
@@ -77,7 +75,6 @@ class SPNetworkManage {
             return
         }
         Alamofire.request(urlString, method: .put, parameters: [:], encoding: str, headers: headers).responseJSON { (json) in
-            print(json)
             if json.result.isFailure {
                 print("错误啦\(json.error)")
             }

@@ -17,8 +17,6 @@ class SPMainViewController: UITabBarController {
 //        let now = Int(Date().timeIntervalSince1970)
         
 //        if now < 1494393193 {
-
-        
         
 //        } else {
 //            print("时间没到 不要出来!")

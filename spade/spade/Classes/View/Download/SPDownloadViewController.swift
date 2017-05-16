@@ -83,6 +83,7 @@ extension SPDownloadViewController: NTDownloadDelegate {
     func finishedDownload() {
         initData()
         
+        
     }
 }
 // MARK: - 设置界面
