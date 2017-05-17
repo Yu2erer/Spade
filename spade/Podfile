@@ -16,4 +16,5 @@ pod 'Popover'
 pod 'Bugly'
 pod 'Alamofire'
 pod 'KeychainAccess'
+pod 'FMDB'
 end

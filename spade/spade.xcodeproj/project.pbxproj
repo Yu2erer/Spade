@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1280E5A98AA9520C4107B199 /* Pods_spade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50C2F42A49182BA021C5361 /* Pods_spade.framework */; };
+		9F17FC631ECBF966009BE5CE /* dashboard.sql in Resources */ = {isa = PBXBuildFile; fileRef = 9F17FC611ECBF966009BE5CE /* dashboard.sql */; };
+		9F17FC641ECBF966009BE5CE /* NTSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17FC621ECBF966009BE5CE /* NTSQLiteManager.swift */; };
 		9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A59E41EA99021008A286D /* SPLikeViewController.swift */; };
 		9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */; };
 		9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */; };
@@ -82,6 +84,8 @@
 /* Begin PBXFileReference section */
 		415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.debug.xcconfig"; sourceTree = "<group>"; };
 		48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spade.release.xcconfig"; path = "Pods/Target Support Files/Pods-spade/Pods-spade.release.xcconfig"; sourceTree = "<group>"; };
+		9F17FC611ECBF966009BE5CE /* dashboard.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dashboard.sql; sourceTree = "<group>"; };
+		9F17FC621ECBF966009BE5CE /* NTSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTSQLiteManager.swift; sourceTree = "<group>"; };
 		9F1A59E41EA99021008A286D /* SPLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeViewController.swift; sourceTree = "<group>"; };
 		9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileViewController.swift; sourceTree = "<group>"; };
 		9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPProfileHeaderView.xib; sourceTree = "<group>"; };
@@ -197,6 +201,15 @@
 				48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F17FC601ECBF966009BE5CE /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				9F17FC611ECBF966009BE5CE /* dashboard.sql */,
+				9F17FC621ECBF966009BE5CE /* NTSQLiteManager.swift */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 		9F22B0AE1EB0EC8E00E0A627 /* Setting */ = {
@@ -406,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
+				9F17FC601ECBF966009BE5CE /* SQLite */,
 				9F44EF9B1EBD7661007F7F60 /* NTProxy */,
 				9F83843A1EC9B285004617A1 /* NTDownload */,
 				9FCA5F341EB8D3D40038DC66 /* NTUserDefault */,
@@ -625,6 +639,7 @@
 				9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
 				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
+				9F17FC631ECBF966009BE5CE /* dashboard.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +709,7 @@
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
 				9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */,
+				9F17FC641ECBF966009BE5CE /* NTSQLiteManager.swift in Sources */,
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
 				9F8384401EC9B2F0004617A1 /* SPDownloadedViewCell.swift in Sources */,
 				9F5C75B11EB83E9300C7D5DC /* SPSetting.swift in Sources */,

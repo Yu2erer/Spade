@@ -92,7 +92,8 @@ extension SPDownloadViewController {
         automaticallyAdjustsScrollViewInsets = false
         navigationItem.title = "离线视频"
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "队列", style: .plain, target: self, action: #selector(loadDowningView))
-        downedTableView = UITableView(frame: CGRect(x: 0, y: 64, width: PictureViewWidth, height: view.bounds.height - 64), style: .plain)
+        downedTableView = UITableView(frame: view.bounds, style: .plain)
+        downedTableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 49, right: 0)
         downedTableView.tag = 0
         downedTableView.separatorStyle = .none
         downedTableView.dataSource = self
