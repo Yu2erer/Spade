@@ -94,7 +94,9 @@ class SPHomeTableViewCell: UITableViewCell {
         btnAnime.keyTimes = [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
         btnAnime.duration = 0.2
         sender.layer.add(btnAnime, forKey: "SHOW")
+        
         if viewModel?.dashBoard.liked == 0 {
+            self.viewModel?.dashBoard.liked = 1
             likeIcon.setImage(likedImage, for: .normal)
             let heart = DMHeartFlyView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             heart.center = CGPoint(x: likeIcon.frame.origin.x, y: likeIcon.frame.origin.y)
@@ -102,20 +104,19 @@ class SPHomeTableViewCell: UITableViewCell {
             heart.animate(in: self.superview?.superview?.superview)
             // 就是还没喜欢的时候..
             SPNetworkManage.shared.userLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
-                if isSuccess {
-                    self.viewModel?.dashBoard.liked = 1
-                } else {
+                if !isSuccess {
+                    self.viewModel?.dashBoard.liked = 0
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likeImage, for: .normal)
                 }
             })
         } else {
+            self.viewModel?.dashBoard.liked = 0
             likeIcon.setImage(likeImage, for: .normal)
             // 已经喜欢了 要取消喜欢
             SPNetworkManage.shared.userUnLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
-                if isSuccess {
-                    self.viewModel?.dashBoard.liked = 0
-                } else {
+                if !isSuccess {
+                    self.viewModel?.dashBoard.liked = 1
                     self.likeIcon.isSelected = !self.likeIcon.isSelected
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likedImage, for: .normal)
