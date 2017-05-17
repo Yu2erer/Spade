@@ -53,9 +53,8 @@ class SPUserListViewModel {
                     return
                 }
             } else {
-                self.userViewModel = array 
+                self.userViewModel = array
             }
-
             // 判断上拉刷新的数据量
             if pullup && array.count == 0 {
                 self.pullupErrorTimes += 1

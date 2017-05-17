@@ -12,7 +12,10 @@ import Foundation
 class SPDashBoardListDAL {
     
     class func loadDashBoard(since_id: String, offset: String, type: String, completion: @escaping (_ list: [[String: Any]]?, _ isSuccess: Bool)->()) {
-        
+        var since_id = since_id
+        if since_id == "0" {
+            since_id = "nil"
+        }
         if type == "home" {
             let array = NTSQLiteManager.shared.loadDashBoard(userId: "1", since_id: since_id, offset: offset)
             if array.count > 0 {

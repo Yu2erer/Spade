@@ -14,13 +14,7 @@ class SPMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let now = Int(Date().timeIntervalSince1970)
-        
-//        if now < 1494393193 {
-        
-//        } else {
-//            print("时间没到 不要出来!")
-//        }
+
         setupUI()
         
     }
@@ -35,6 +29,10 @@ extension SPMainViewController {
         UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
         SPNetworkManage.shared.userAccount.oauthToken = nil
         SPNetworkManage.shared.userAccount.oauthTokenSecret = nil
+        let dbName = "dashboard.db"
+        var path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        path = (path as NSString).appendingPathComponent(dbName)
+        let _ = try? FileManager.default.removeItem(atPath: path)
         selectedIndex = 0
         SVProgressHUD.setDefaultMaskType(.gradient)
         SVProgressHUD.showInfo(withStatus: "需要重新登录")

@@ -9,6 +9,9 @@
 import Foundation
 import FMDB
 
+/// 最大数据库缓存数据 以s为单位
+private let maxDBCacheTime: TimeInterval = -3 * 24 * 60 * 60
+
 class NTSQLiteManager {
     
     static let shared = NTSQLiteManager()
@@ -22,6 +25,22 @@ class NTSQLiteManager {
         print("\(path)")
         queue = FMDatabaseQueue(path: path)
         createTable()
+        // 监听应用程序进入后台
+        NotificationCenter.default.addObserver(self, selector: #selector(clearDBCache), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc fileprivate func clearDBCache() {
+        let dateString = Date.nt_dateString(delta: maxDBCacheTime)
+        // 准备sql
+        let sql = "DELETE FROM T_dashboard WHERE createTime < ?;"
+        queue.inDatabase { (db) in
+            if db?.executeUpdate(sql, withArgumentsIn: [dateString]) == true {
+                print("删除了\(String(describing: db?.changes()))条数据")
+            }
+        }
+
     }
 }
 // MARK: - dashBoard 数据操作
@@ -42,7 +61,6 @@ extension NTSQLiteManager {
                 if db?.executeUpdate(sql, withArgumentsIn: ["\(id)", userId, jsonData]) == false {
                     // 回滚
                     rollback?.pointee = true
-                    print("写入失败了")
                     break
                 }
             }
@@ -57,6 +75,7 @@ extension NTSQLiteManager {
         
         var sql = "SELECT id, userId, dashboard FROM T_dashboard \n"
         sql += "WHERE userId = \(userId) \n"
+        
         /// 首次进入的时候 sinceId 和 offset 都会为空
         // 然后下拉刷新 offset 为空 
         // 上拉刷新 sinceId 为空
@@ -68,10 +87,9 @@ extension NTSQLiteManager {
             sql += "ORDER BY id DESC LIMIT 20 OFFSET \(offset);"
         } else {
             sql += "ORDER BY id DESC LIMIT 20;"
-
         }
-   
-        print(sql)
+    
+        print(since_id)
         // 执行 sql
         let array = execRecordSet(sql: sql)
         // 遍历数组 将数组中的 dashboard 反序列化

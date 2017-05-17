@@ -28,7 +28,6 @@ class SPProfileViewController: SPBaseViewController {
         refreshControl?.beginRefreshing()
         blogInfoViewModel.loadBlogInfo(blogName: nil) { (isSuccess) in
             self.refreshControl?.endRefreshing()
-            self.isPullup = false
             if (!isSuccess) {
                 self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
                 return
@@ -36,6 +35,7 @@ class SPProfileViewController: SPBaseViewController {
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"
             self.headerView.model = self.blogInfoViewModel.blogInfo
             self.userListViewModel.loadBlogInfoList(blogName: blogName, pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+                self.isPullup = false
                 if shouldRefresh {
                     self.tableView?.reloadData()
                 }

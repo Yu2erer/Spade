@@ -16,6 +16,12 @@ private let calendar = Calendar.current
 extension Date {
     
     
+    static func nt_dateString(delta: TimeInterval) -> String {
+        let date = Date(timeIntervalSinceNow: delta)
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateFormatter.string(from: date)
+    }
+    
     /**
      刚刚(1分钟内)
      X分钟前(1小时内)

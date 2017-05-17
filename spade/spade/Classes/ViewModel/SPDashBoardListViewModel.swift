@@ -24,7 +24,7 @@ class SPDashBoardListViewModel {
             return
         }
         
-        let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
+        let since_id = pullup ? "" : "\(dashBoardList.first?.dashBoard.id ?? 0)"
         let offset = !pullup ? "" : "\(pullupCount)"
         
         SPDashBoardListDAL.loadDashBoard(since_id: since_id, offset: offset, type: type) { (list, isSuccess) in
@@ -60,7 +60,7 @@ class SPDashBoardListViewModel {
                     return
                 }
             } else {
-                self.dashBoardList = array
+                self.dashBoardList = array + self.dashBoardList
             }
             // 判断上拉刷新的数据量
             if pullup && array.count == 0 {

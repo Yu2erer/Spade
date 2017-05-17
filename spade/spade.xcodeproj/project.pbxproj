@@ -208,8 +208,8 @@
 		9F17FC601ECBF966009BE5CE /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
-				9F17FC611ECBF966009BE5CE /* dashboard.sql */,
 				9F17FC621ECBF966009BE5CE /* NTSQLiteManager.swift */,
+				9F17FC611ECBF966009BE5CE /* dashboard.sql */,
 			);
 			path = SQLite;
 			sourceTree = "<group>";
