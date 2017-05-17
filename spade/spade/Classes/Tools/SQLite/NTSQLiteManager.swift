@@ -22,7 +22,6 @@ class NTSQLiteManager {
         print("\(path)")
         queue = FMDatabaseQueue(path: path)
         createTable()
-        
     }
 }
 // MARK: - dashBoard 数据操作
@@ -58,16 +57,21 @@ extension NTSQLiteManager {
         
         var sql = "SELECT id, userId, dashboard FROM T_dashboard \n"
         sql += "WHERE userId = \(userId) \n"
-        
+        /// 首次进入的时候 sinceId 和 offset 都会为空
+        // 然后下拉刷新 offset 为空 
+        // 上拉刷新 sinceId 为空
         /// 下拉刷新
-        if since_id != "" {
+        if since_id != "nil" && since_id != "" {
             sql += "AND id > \(since_id) \n"
             sql += "ORDER BY id DESC LIMIT 20;"
         } else if offset != "" {
             sql += "ORDER BY id DESC LIMIT 20 OFFSET \(offset);"
         } else {
             sql += "ORDER BY id DESC LIMIT 20;"
+
         }
+   
+        print(sql)
         // 执行 sql
         let array = execRecordSet(sql: sql)
         // 遍历数组 将数组中的 dashboard 反序列化

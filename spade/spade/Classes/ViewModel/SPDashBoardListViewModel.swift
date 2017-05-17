@@ -27,7 +27,10 @@ class SPDashBoardListViewModel {
         let since_id = pullup ? "" : "\(String(describing: dashBoardList.first?.dashBoard.id))"
         let offset = !pullup ? "" : "\(pullupCount)"
         
-        SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset, type: type) { (list, isSuccess) in
+        SPDashBoardListDAL.loadDashBoard(since_id: since_id, offset: offset, type: type) { (list, isSuccess) in
+            
+//        }
+//        SPNetworkManage.shared.dashBoardList(since_id: since_id, offset: offset, type: type) { (list, isSuccess) in
             
             if !isSuccess {
                 completion(false, false)
