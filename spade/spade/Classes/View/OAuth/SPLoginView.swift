@@ -14,7 +14,8 @@ class SPLoginView: UIView {
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var login: UIButton!
-
+    @IBOutlet weak var logo: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
   
@@ -24,6 +25,21 @@ class SPLoginView: UIView {
         login.addSubview(self.activity)
         activity.center = CGPoint(x: login.bounds.width / 2, y: login.bounds.height / 2)
         NotificationCenter.default.addObserver(self, selector: #selector(reset), name: NSNotification.Name(rawValue: "reset"), object: nil)
+    }
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        // layoutIfNeeded会直接按照当前的约束 更新控件位置
+        // 执行之后 控件所在位置就是xib 布局的位置
+        self.layoutIfNeeded()
+        login.center.y += 214
+        logo.center.x -= PictureViewWidth
+        UIView.animate(withDuration: 0.4, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+            self.logo.center.x += PictureViewWidth
+        }, completion: nil)
+        UIView.animate(withDuration: 0.4, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+            self.login.center.y -= 214
+            self.layoutIfNeeded()
+        }, completion: nil)
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -43,9 +59,13 @@ class SPLoginView: UIView {
         login.isEnabled = false
         activity.startAnimating()
         SPNetworkManage.shared.loadToken { (isSuccess) in
-            print(isSuccess)
             if isSuccess {
-                UIView.animate(withDuration: 0.35, animations: {
+                self.layoutIfNeeded()
+                UIView.animate(withDuration: 0.4, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+                    self.logo.center.x -= PictureViewWidth
+                }, completion: nil)
+                UIView.animate(withDuration: 0.4, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+                    self.login.center.y += 214
                     self.alpha = 0
                 }, completion: { (_) in
                     self.removeFromSuperview()

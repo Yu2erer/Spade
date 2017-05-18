@@ -76,7 +76,7 @@ class SPNetworkManage {
         }
         Alamofire.request(urlString, method: .put, parameters: [:], encoding: str, headers: headers).responseJSON { (json) in
             if json.result.isFailure {
-                print("错误啦\(json.error)")
+                print("错误啦\(String(describing: json.error))")
             }
         }
     }

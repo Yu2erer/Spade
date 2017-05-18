@@ -10,7 +10,7 @@ import UIKit
 import OAuthSwift
 import SVProgressHUD
 import Bugly
-import KeychainAccess
+//import KeychainAccess
 //import NEKit
 
 @UIApplicationMain
@@ -66,8 +66,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             OAuthSwift.handle(url: url)
         }
         return true
-    }
-    func isFirstStartApp() -> Bool {
-        return UserDefaults.standard.bool(forKey: "firstOpen")
     }
 }
