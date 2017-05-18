@@ -10,6 +10,7 @@ import UIKit
 import OAuthSwift
 import SVProgressHUD
 import Bugly
+import KeychainAccess
 //import NEKit
 
 @UIApplicationMain
@@ -23,41 +24,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let sessionConfiguration = URLSessionConfiguration.default
 //        sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
 //        KingfisherManager.shared.downloader.sessionConfiguration = sessionConfiguration
+        addAditions()
         window = UIWindow()
         window?.backgroundColor = UIColor.white
-        addAditions()
         window?.rootViewController = SPMainViewController()
         window?.makeKeyAndVisible()
 //        URLProtocol.registerClass(NTProxyProtocol.self)
-
         return true
     }
     fileprivate func addAditions() {
         let buglyConfig = BuglyConfig()
         buglyConfig.unexpectedTerminatingDetectionEnable = true
         Bugly.start(withAppId: "5f41daf832", config: buglyConfig)
-        
-        let now = Int(Date().timeIntervalSince1970)
-        if !SPNetworkManage.shared.haveKeyAndSecret {
+//        try? Keychain().remove("Key")
+//        try? Keychain().remove("Secret")
+        if !inReview && !SPNetworkManage.shared.haveKeyAndSecret{
             SPNetworkManage.shared.loadKeyAndSecret()
         }
-//        if now > 1494370800 {
-//            !SPNetworkManage.shared.haveKeyAndSecret ? SPNetworkManage.shared.loadKeyAndSecret() : ()
-//        }
-//        if UserDefaults.standard.bool(forKey: "everOpen") == false {
-//            UserDefaults.standard.set(true, forKey: "everOpen")
-//            UserDefaults.standard.set(true, forKey: "firstOpen")
-//        } else {
-//            UserDefaults.standard.set(false, forKey: "firstOpen")
-//        }
-//
-//        if isFirstStartApp() {
-//            let now = Int(Date().timeIntervalSince1970)
-//            if now > 1494370800 {
-//                
-//            }
-//        }
-        
         SVProgressHUD.setMaximumDismissTimeInterval(2)
         #if DEBUG
             let fpsLabel = NTFPSLabel(frame: CGRect(x: 15, y: UIScreen.main.bounds.size.height - 80, width: 55, height: 20))

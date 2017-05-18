@@ -28,9 +28,9 @@ class SPUserAccount: NSObject {
 //        UserDefaults.standard.removeObject(forKey: "oauthTokenSecret")
 //        Key = UserDefaults.standard.value(forKey: "Key") as? String
 //        Secret = UserDefaults.standard.value(forKey: "Secret") as? String
-        Key = try? Keychain().getString("Key") ?? ""
-        Secret = try? Keychain().getString("Secret") ?? ""
-    
+
+        Key = try! Keychain().getString("Key")
+        Secret = try! Keychain().getString("Secret")
         oauthToken = UserDefaults.standard.value(forKey: "oauthToken") as? String
         oauthTokenSecret = UserDefaults.standard.value(forKey: "oauthTokenSecret") as? String
         
@@ -39,8 +39,11 @@ class SPUserAccount: NSObject {
     func saveAccount() {
         UserDefaults.standard.set(oauthToken, forKey: "oauthToken")
         UserDefaults.standard.set(oauthTokenSecret, forKey: "oauthTokenSecret")
-        try? Keychain().set(Key ?? "", key: "Key")
-        try? Keychain().set(Secret ?? "", key: "Secret")
+        if Key != nil && Secret != nil {
+            try? Keychain().set(Key!, key: "Key")
+            try? Keychain().set(Secret!, key: "Secret")
+        }
+
 //        UserDefaults.standard.set(Key, forKey: "Key")
 //        UserDefaults.standard.set(Secret, forKey: "Secret")
         UserDefaults.standard.synchronize()

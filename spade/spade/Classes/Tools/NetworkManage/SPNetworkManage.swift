@@ -17,7 +17,7 @@ class SPNetworkManage {
     static let shared = SPNetworkManage()
     
     var haveKeyAndSecret: Bool {
-        return userAccount.Key != "" && userAccount.Secret != ""
+        return userAccount.Key != nil && userAccount.Secret != nil
     }
     private static let oauthswift = OAuth1Swift(consumerKey: CONSUMERKEY, consumerSecret: CONSUMERSECRET, requestTokenUrl: REQUESTTOKENURL, authorizeUrl: AUTHORIZEURL, accessTokenUrl: ACCESSTOKENURL)
     

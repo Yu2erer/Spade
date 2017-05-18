@@ -61,6 +61,9 @@ class SPHomeTableViewCell: UITableViewCell {
             
             calcViewHeight()
             placeholderImage?.nt_setImage(urlString: viewModel?.dashBoard.thumbnail_url, placeholder: nil, progress: nil, completionHandle: nil)
+            if inReview {
+                downloadBtn?.isHidden = true
+            }
         }
     }
     fileprivate func calcViewHeight() {
@@ -104,19 +107,20 @@ class SPHomeTableViewCell: UITableViewCell {
             heart.animate(in: self.superview?.superview?.superview)
             // 就是还没喜欢的时候..
             SPNetworkManage.shared.userLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
-                if !isSuccess {
-                    self.viewModel?.dashBoard.liked = 0
+                if isSuccess {
+                    self.viewModel?.dashBoard.liked = 1
+                } else {
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likeImage, for: .normal)
                 }
             })
         } else {
-            self.viewModel?.dashBoard.liked = 0
             likeIcon.setImage(likeImage, for: .normal)
             // 已经喜欢了 要取消喜欢
             SPNetworkManage.shared.userUnLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
-                if !isSuccess {
-                    self.viewModel?.dashBoard.liked = 1
+                if isSuccess {
+                    self.viewModel?.dashBoard.liked = 0
+                } else {
                     self.likeIcon.isSelected = !self.likeIcon.isSelected
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likedImage, for: .normal)

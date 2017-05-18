@@ -14,14 +14,11 @@ class SPMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         setupUI()
-        
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
 }
 extension SPMainViewController {
     @objc fileprivate func userLogin(n: Notification) {
@@ -78,7 +75,7 @@ extension SPMainViewController {
         let array = [
             ["clsName": "SPHomeViewController", "imageName": "tabbar-home"],
             ["clsName": "SPDiscoverViewController", "imageName": "tabbar-search"],
-            ["clsName": "SPDownloadViewController", "imageName": "tabbar-download"],
+//            ["clsName": "SPDownloadViewController", "imageName": "tabbar-download"],
             ["clsName": "SPLikeViewController", "imageName": "tabbar-activity"],
             ["clsName": "SPProfileViewController", "imageName": "tabbar-profile"]
         ]

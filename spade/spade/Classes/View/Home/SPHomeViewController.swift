@@ -158,7 +158,7 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
             return
         }
         selected = loadType.home.rawValue
-
+        dashBoardListViewModel.dashBoardList.removeAll()
         loadData()
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
 
@@ -172,6 +172,7 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
             return
         }
         selected = loadType.photo.rawValue
+        dashBoardListViewModel.dashBoardList.removeAll()
         loadData()
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
@@ -184,6 +185,7 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
             return
         }
         selected = loadType.video.rawValue
+        dashBoardListViewModel.dashBoardList.removeAll()
         loadData()
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
 

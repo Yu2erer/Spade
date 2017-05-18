@@ -83,12 +83,12 @@ extension SPDownloadViewController: NTDownloadDelegate {
     func finishedDownload() {
         initData()
         
-        
     }
 }
 // MARK: - 设置界面
 extension SPDownloadViewController {
     fileprivate func setupUI() {
+        view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
         navigationItem.title = "离线视频"
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "队列", style: .plain, target: self, action: #selector(loadDowningView))

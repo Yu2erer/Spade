@@ -57,6 +57,10 @@ class SPProfileViewController: SPBaseViewController {
         let vc = UIStoryboard(name: "Setting", bundle: nil).instantiateInitialViewController()
         navigationController?.pushViewController(vc!, animated: true)
     }
+    @objc fileprivate func download() {
+        let vc = SPDownloadViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 // MARK: - tableView
 extension SPProfileViewController {
@@ -124,6 +128,9 @@ extension SPProfileViewController {
         customNavigationBar.shadowImage = UIImage()
         customNavigationBar.items = [navItem]
         navItem.rightBarButtonItem = UIBarButtonItem(imageName: "SettingsBarButton", target: self, action: #selector(setting))
+        if !inReview {
+            navItem.leftBarButtonItem = UIBarButtonItem(imageName: "tabbar-download", target: self, action: #selector(download))
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
