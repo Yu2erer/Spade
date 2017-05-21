@@ -29,7 +29,6 @@ class NTFPSLabel: UILabel {
     }
     deinit {
         link?.invalidate()
-        print("我走了")
     }
     
     func tick(link: CADisplayLink) {

@@ -134,16 +134,6 @@
 		9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spade-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailViewController.swift; sourceTree = "<group>"; };
 		9FB378591EA746640048A51C /* NTFPSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTFPSLabel.swift; sourceTree = "<group>"; };
-		9FBB9E041EC0A54C0098C3E0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		9FBB9E051EC0A54C0098C3E0 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		9FBB9E061EC0A54C0098C3E0 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
-		9FBB9E071EC0A54C0098C3E0 /* lwip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lwip.framework; path = Carthage/Build/iOS/lwip.framework; sourceTree = "<group>"; };
-		9FBB9E081EC0A54C0098C3E0 /* MMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDB.framework; path = Carthage/Build/iOS/MMDB.framework; sourceTree = "<group>"; };
-		9FBB9E091EC0A54C0098C3E0 /* NEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NEKit.framework; path = Carthage/Build/iOS/NEKit.framework; sourceTree = "<group>"; };
-		9FBB9E0A1EC0A54C0098C3E0 /* Resolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Resolver.framework; path = Carthage/Build/iOS/Resolver.framework; sourceTree = "<group>"; };
-		9FBB9E0B1EC0A54C0098C3E0 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
-		9FBB9E0C1EC0A54C0098C3E0 /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
-		9FBB9E0D1EC0A54C0098C3E0 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPOAuthViewController.swift; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCA5F351EB8D3D40038DC66 /* NTUserDefault+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUserDefault+Extensions.swift"; sourceTree = "<group>"; };
@@ -523,16 +513,6 @@
 		A88D4006D94BA007A73F56EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9FBB9E041EC0A54C0098C3E0 /* CocoaAsyncSocket.framework */,
-				9FBB9E051EC0A54C0098C3E0 /* CocoaLumberjack.framework */,
-				9FBB9E061EC0A54C0098C3E0 /* CocoaLumberjackSwift.framework */,
-				9FBB9E071EC0A54C0098C3E0 /* lwip.framework */,
-				9FBB9E081EC0A54C0098C3E0 /* MMDB.framework */,
-				9FBB9E091EC0A54C0098C3E0 /* NEKit.framework */,
-				9FBB9E0A1EC0A54C0098C3E0 /* Resolver.framework */,
-				9FBB9E0B1EC0A54C0098C3E0 /* Sodium.framework */,
-				9FBB9E0C1EC0A54C0098C3E0 /* tun2socks.framework */,
-				9FBB9E0D1EC0A54C0098C3E0 /* Yaml.framework */,
 				A50C2F42A49182BA021C5361 /* Pods_spade.framework */,
 			);
 			name = Frameworks;
@@ -840,12 +820,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks/CocoaAsyncSocket",
-					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -868,12 +843,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks/CocoaAsyncSocket",
-					"$(PROJECT_DIR)/spade/Classes/Tools/shadowsocks",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

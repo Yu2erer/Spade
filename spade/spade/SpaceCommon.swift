@@ -10,9 +10,12 @@ import UIKit
 import Foundation
 
 // MARK: - 是否在审核期内
+// 控制该次版本功能的Id 每次上传到store一定要改！！！！
+//let inReviewObjectId = "59216c1fa0bb9f005f543183"
+//var inReview = true
 let inReview: Bool = {
-    // 大过他了 说明过了审核期 小过他 则没过审核期
-    return Int(Date().timeIntervalSince1970) < 1495512000
+//     大过他了 说明过了审核期 小过他 则没过审核期
+    return Int(Date().timeIntervalSince1970) > 1495512000
 }()
 // MARK: - oAuth信息
 let CONSUMERKEY = SPNetworkManage.shared.userAccount.Key ?? SPNetworkManage.shared.userAccount.CONSUMERKEY
@@ -21,6 +24,7 @@ let REQUESTTOKENURL = "https://www.tumblr.com/oauth/request_token"
 let AUTHORIZEURL = "https://www.tumblr.com/oauth/authorize"
 let ACCESSTOKENURL = "https://www.tumblr.com/oauth/access_token"
 // MAKR: - API信息
+let spadeBaseURL = "https://spade.mooe.me/extdomains/"
 let baseURL = "https://api.tumblr.com/v2/"
 let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"

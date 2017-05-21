@@ -12,7 +12,7 @@ import SVProgressHUD
 import Bugly
 //import KeychainAccess
 import Kingfisher
-import SKPhotoBrowser
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        KingfisherManager.shared.downloader.sessionConfiguration = sessionConfiguration
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         addAditions()
@@ -42,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SPNetworkManage.shared.loadKeyAndSecret()
         }
         SVProgressHUD.setMaximumDismissTimeInterval(2)
-
         if isHaveSetting == nil {
             // 没有初始化设置
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
@@ -51,7 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let proxyDict : NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 2333, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 2333]
         let sessionConfiguration = URLSessionConfiguration.default
                 sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
-        KingfisherManager.shared.downloader.sessionConfiguration = sessionConfiguration
+//        KingfisherManager.shared.downloader.sessionConfiguration = sessionConfiguration
+        OAuthSwift.session.configuration = sessionConfiguration
+        
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         

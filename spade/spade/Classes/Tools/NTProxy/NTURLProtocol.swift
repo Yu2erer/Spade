@@ -15,7 +15,6 @@ class NTURLProtocol: URLProtocol {
     
     override class func canInit(with request: URLRequest) -> Bool {
         
-        print("URL: \(request)")
         if URLProtocol.property(forKey: "MyURLProtocolHandledKey", in: request) != nil {
             return false
         }
@@ -41,8 +40,6 @@ class NTURLProtocol: URLProtocol {
             }
         })
         dataTask?.resume()
-
-        dataTask?.resume()
     }
     override func stopLoading() {
         if dataTask != nil {
@@ -57,6 +54,5 @@ extension NTURLProtocol: URLSessionTaskDelegate {
         URLProtocol.removeProperty(forKey: "MyURLProtocolHandledKey", in: request)
         client?.urlProtocol(self, wasRedirectedTo: request as URLRequest, redirectResponse: response)
         task.cancel()
-        
     }
 }

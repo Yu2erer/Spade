@@ -64,6 +64,4 @@ class SPDashBoardViewModel: CustomStringConvertible {
     var description: String {
         return dashBoard.description
     }
-    
-
 }

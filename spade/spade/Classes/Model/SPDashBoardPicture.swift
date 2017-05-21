@@ -23,12 +23,20 @@ class SPDashBoardPicture: NSObject {
     
 }
 class SPAlt_sizes: NSObject {
-    var url: String?
+    var url: String? {
+        didSet {
+            url = spadeBaseURL + (url?.removeHttpsString())!
+        }
+    }
     var width: String?
     var height: String?
 }
 class SPOriginal_size: NSObject {
-    var url: String?
+    var url: String? {
+        didSet {
+            url = spadeBaseURL + (url?.removeHttpsString())!
+        }
+    }
     var width: String?
     var height: String?
 }

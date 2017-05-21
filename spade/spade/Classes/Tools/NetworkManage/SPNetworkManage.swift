@@ -29,7 +29,6 @@ class SPNetworkManage {
         return userAccount.oauthToken != nil && userAccount.oauthTokenSecret != nil
     }
     func loadKeyAndSecret() {
-        
         let urlString = "https://leancloud.cn/1.1/classes/KeyClass?where=%7B%22usersNum%22%3A%7B%22%24lt%22%3A4%7D%7D"
         let headers = ["X-LC-Id": "ECkMpp8rkLW1mlo6zmqlmneF-gzGzoHsz",
                        "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
@@ -74,6 +73,22 @@ class SPNetworkManage {
             }
         }
     }
+//    func getInReview() {
+//        let urlString = "https://leancloud.cn/1.1/classes/inReview/\(inReviewObjectId)"
+//        let headers = ["X-LC-Id": "ECkMpp8rkLW1mlo6zmqlmneF-gzGzoHsz",
+//                       "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
+//                       "Content-Type": "application/json"]
+//        Alamofire.request(urlString, method: .get, parameters: nil, headers: headers).responseJSON { (json) in
+//            guard let value = json.result.value, let result = value as? [String: Any], let inReviewString = result["inReview"] as? String else {
+//                return
+//            }
+//            if inReviewString == "false" {
+//                inReview = false
+//            } else {
+//                inReview = true
+//            }
+//        }
+//    }
     
     func request(urlString: String, method: OAuthSwiftHTTPRequest.Method,parameters: [String: Any]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         

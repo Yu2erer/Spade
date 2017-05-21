@@ -17,9 +17,10 @@ extension String {
         return self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
     }
     func removeHttpsString() -> String {
-        let range1 = self.range(of: "://")
-        let range2 = self.range(of: "/")
-        return self.substring(with: (range1?.upperBound)!..<(range2?.lowerBound)!)
+        let string = self
+        let index = self.index(self.startIndex, offsetBy: 8)
+        let str = string.replacingOccurrences(of: "https://", with: "")
+        return str
     }
 
 }
