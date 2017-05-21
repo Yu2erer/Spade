@@ -144,16 +144,6 @@
 		9FBB9E0B1EC0A54C0098C3E0 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
 		9FBB9E0C1EC0A54C0098C3E0 /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
 		9FBB9E0D1EC0A54C0098C3E0 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
-		9FBB9E2D1EC0BC720098C3E0 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		9FBB9E2E1EC0BC720098C3E0 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = ../Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		9FBB9E2F1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = ../Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
-		9FBB9E301EC0BC720098C3E0 /* lwip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lwip.framework; path = ../Carthage/Build/iOS/lwip.framework; sourceTree = "<group>"; };
-		9FBB9E311EC0BC720098C3E0 /* MMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDB.framework; path = ../Carthage/Build/iOS/MMDB.framework; sourceTree = "<group>"; };
-		9FBB9E321EC0BC720098C3E0 /* NEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NEKit.framework; path = ../Carthage/Build/iOS/NEKit.framework; sourceTree = "<group>"; };
-		9FBB9E331EC0BC720098C3E0 /* Resolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Resolver.framework; path = ../Carthage/Build/iOS/Resolver.framework; sourceTree = "<group>"; };
-		9FBB9E341EC0BC720098C3E0 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = ../Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
-		9FBB9E351EC0BC720098C3E0 /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = ../Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
-		9FBB9E361EC0BC720098C3E0 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = ../Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
 		9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPOAuthViewController.swift; sourceTree = "<group>"; };
 		9FC767081EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPHomeVideoTableViewCell.xib; sourceTree = "<group>"; };
 		9FCA5F351EB8D3D40038DC66 /* NTUserDefault+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUserDefault+Extensions.swift"; sourceTree = "<group>"; };
@@ -342,23 +332,6 @@
 			path = UserDetail;
 			sourceTree = "<group>";
 		};
-		9FBB9E4D1EC0BCB80098C3E0 /* frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FBB9E2D1EC0BC720098C3E0 /* CocoaAsyncSocket.framework */,
-				9FBB9E2E1EC0BC720098C3E0 /* CocoaLumberjack.framework */,
-				9FBB9E2F1EC0BC720098C3E0 /* CocoaLumberjackSwift.framework */,
-				9FBB9E301EC0BC720098C3E0 /* lwip.framework */,
-				9FBB9E311EC0BC720098C3E0 /* MMDB.framework */,
-				9FBB9E321EC0BC720098C3E0 /* NEKit.framework */,
-				9FBB9E331EC0BC720098C3E0 /* Resolver.framework */,
-				9FBB9E341EC0BC720098C3E0 /* Sodium.framework */,
-				9FBB9E351EC0BC720098C3E0 /* tun2socks.framework */,
-				9FBB9E361EC0BC720098C3E0 /* Yaml.framework */,
-			);
-			name = frameworks;
-			sourceTree = "<group>";
-		};
 		9FCA5F341EB8D3D40038DC66 /* NTUserDefault */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,7 +375,6 @@
 				9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */,
 				9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */,
 				9FDC1C901E96272F0019D76A /* Info.plist */,
-				9FBB9E4D1EC0BCB80098C3E0 /* frameworks */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
