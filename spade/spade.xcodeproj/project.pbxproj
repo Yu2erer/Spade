@@ -14,7 +14,7 @@
 		9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A59E41EA99021008A286D /* SPLikeViewController.swift */; };
 		9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */; };
 		9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */; };
-		9F44EF9D1EBD766B007F7F60 /* NTProxyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EF9C1EBD766B007F7F60 /* NTProxyProtocol.swift */; };
+		9F44EF9D1EBD766B007F7F60 /* NTURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */; };
 		9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */; };
 		9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */; };
 		9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */; };
@@ -91,7 +91,7 @@
 		9F1A59E41EA99021008A286D /* SPLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeViewController.swift; sourceTree = "<group>"; };
 		9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileViewController.swift; sourceTree = "<group>"; };
 		9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPProfileHeaderView.xib; sourceTree = "<group>"; };
-		9F44EF9C1EBD766B007F7F60 /* NTProxyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTProxyProtocol.swift; sourceTree = "<group>"; };
+		9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTURLProtocol.swift; sourceTree = "<group>"; };
 		9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileHeaderView.swift; sourceTree = "<group>"; };
 		9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPhotoProgressView.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		9F44EF9B1EBD7661007F7F60 /* NTProxy */ = {
 			isa = PBXGroup;
 			children = (
-				9F44EF9C1EBD766B007F7F60 /* NTProxyProtocol.swift */,
+				9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */,
 			);
 			path = NTProxy;
 			sourceTree = "<group>";
@@ -399,9 +399,9 @@
 			children = (
 				9FDC1C841E96272F0019D76A /* AppDelegate.swift */,
 				9FDC1C8B1E96272F0019D76A /* Assets.xcassets */,
-				9FDC1C901E96272F0019D76A /* Info.plist */,
 				9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */,
 				9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */,
+				9FDC1C901E96272F0019D76A /* Info.plist */,
 				9FBB9E4D1EC0BCB80098C3E0 /* frameworks */,
 			);
 			name = "Support Files";
@@ -701,7 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F44EF9D1EBD766B007F7F60 /* NTProxyProtocol.swift in Sources */,
+				9F44EF9D1EBD766B007F7F60 /* NTURLProtocol.swift in Sources */,
 				9FD36DA51EA768B10007D3C2 /* SPUserDetailHeaderView.swift in Sources */,
 				9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */,
 				9FE4D83A1EC2BB8F00749B85 /* SPTitleButton.swift in Sources */,
@@ -877,6 +877,7 @@
 				INFOPLIST_FILE = spade/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

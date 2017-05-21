@@ -12,7 +12,7 @@ import Foundation
 // MARK: - 是否在审核期内
 let inReview: Bool = {
     // 大过他了 说明过了审核期 小过他 则没过审核期
-    return Int(Date().timeIntervalSince1970) < 1495253532
+    return Int(Date().timeIntervalSince1970) < 1495512000
 }()
 // MARK: - oAuth信息
 let CONSUMERKEY = SPNetworkManage.shared.userAccount.Key ?? SPNetworkManage.shared.userAccount.CONSUMERKEY

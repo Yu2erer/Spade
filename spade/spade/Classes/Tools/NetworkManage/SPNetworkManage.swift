@@ -57,12 +57,6 @@ class SPNetworkManage {
                 }
                 self.increment(objectId: objectId)
                 self.userAccount.saveAccount()
-                if json.result.isFailure {
-                    print("网络错误 用自己的吧诶。。")
-                    self.userAccount.Key = self.userAccount.CONSUMERKEY
-                    self.userAccount.Secret = self.userAccount.CONSUMERSECRET
-                    self.userAccount.saveAccount()
-                }
         }
     }
     private func increment(objectId: String) {

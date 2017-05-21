@@ -19,39 +19,39 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="staff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-yd-pjt" userLabel="昵称">
-                        <rect key="frame" x="56" y="19" width="33" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <rect key="frame" x="54" y="19" width="32" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NL7-Je-BqX" userLabel="头像">
-                        <rect key="frame" x="11" y="11" width="34" height="34"/>
+                        <rect key="frame" x="11" y="11" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="34" id="fKc-98-9pj"/>
-                            <constraint firstAttribute="width" constant="34" id="u1g-z7-CWP"/>
+                            <constraint firstAttribute="height" constant="32" id="fKc-98-9pj"/>
+                            <constraint firstAttribute="width" constant="32" id="u1g-z7-CWP"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hol-g3-GoP" userLabel="分割线">
-                        <rect key="frame" x="0.0" y="327" width="320" height="0.5"/>
+                        <rect key="frame" x="0.0" y="327" width="320" height="0.0"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.79607843137254897" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="Cfv-Wg-vcc"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-u3-PLh" userLabel="toolBar">
-                        <rect key="frame" x="0.0" y="256" width="320" height="25"/>
+                        <rect key="frame" x="0.0" y="254" width="320" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300条热度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYB-Q3-ARH">
-                                <rect key="frame" x="249" y="3" width="60" height="13.5"/>
+                                <rect key="frame" x="249" y="5" width="60" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO4-rP-Gcj">
-                                <rect key="frame" x="13" y="-2.5" width="24" height="24"/>
+                                <rect key="frame" x="13" y="0.0" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="3Yq-aM-8Sr"/>
-                                    <constraint firstAttribute="width" constant="24" id="aa3-xA-wR7"/>
+                                    <constraint firstAttribute="height" constant="25" id="3Yq-aM-8Sr"/>
+                                    <constraint firstAttribute="width" constant="25" id="aa3-xA-wR7"/>
                                 </constraints>
                                 <state key="normal" image="glyph-like"/>
                                 <connections>
@@ -60,15 +60,15 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="fO4-rP-Gcj" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="QMd-WB-ccv"/>
+                            <constraint firstItem="fO4-rP-Gcj" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="7Wr-EJ-EpY"/>
+                            <constraint firstItem="TYB-Q3-ARH" firstAttribute="centerY" secondItem="fO4-rP-Gcj" secondAttribute="centerY" id="SsQ-8P-5eL"/>
                             <constraint firstItem="fO4-rP-Gcj" firstAttribute="leading" secondItem="LGH-u3-PLh" secondAttribute="leading" constant="13" id="Tim-St-WI8"/>
-                            <constraint firstAttribute="height" constant="25" id="kyB-Rm-qYC" userLabel="height = 25"/>
+                            <constraint firstAttribute="height" constant="30" id="kyB-Rm-qYC"/>
                             <constraint firstAttribute="trailing" secondItem="TYB-Q3-ARH" secondAttribute="trailing" constant="11" id="nTt-zE-gOC"/>
-                            <constraint firstItem="TYB-Q3-ARH" firstAttribute="centerY" secondItem="fO4-rP-Gcj" secondAttribute="centerY" id="z2a-iK-Zes"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VB0-3J-APA" userLabel="配图视图" customClass="SPHomePictureView" customModule="spade" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="45" width="320" height="200"/>
+                        <rect key="frame" x="0.0" y="43" width="320" height="200"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="ABl-bE-Ovm"/>
                         </constraints>
@@ -77,13 +77,13 @@
                         </connections>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-hv-LP5" userLabel="时间">
-                        <rect key="frame" x="263.5" y="18.5" width="45.5" height="19.5"/>
+                        <rect key="frame" x="263" y="17" width="46" height="20"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-xw-FCu" userLabel="正文">
-                        <rect key="frame" x="11" y="287" width="29" height="29"/>
+                        <rect key="frame" x="14" y="284" width="29" height="32"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -99,6 +99,7 @@
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="KNs-14-YFU"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="trailing" constant="11" id="M48-jo-ENy"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="Od7-Ok-4G1"/>
+                    <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="Tfk-7E-Vir"/>
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Zrq-cz-WeJ"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
                     <constraint firstAttribute="trailing" secondItem="hol-g3-GoP" secondAttribute="trailing" id="fXc-04-bjv"/>
@@ -106,8 +107,7 @@
                     <constraint firstItem="LGH-u3-PLh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ok8-EQ-03E"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="pKc-If-8Qg"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="top" secondItem="I4n-xw-FCu" secondAttribute="bottom" constant="11" id="phQ-Yb-N84"/>
-                    <constraint firstItem="I4n-xw-FCu" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" id="tWN-gW-RnJ"/>
-                    <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" constant="6" id="uZN-ut-gum"/>
+                    <constraint firstItem="I4n-xw-FCu" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="leading" constant="3" id="tWN-gW-RnJ"/>
                     <constraint firstAttribute="trailing" secondItem="LGH-u3-PLh" secondAttribute="trailing" id="v1i-94-grw"/>
                 </constraints>
             </tableViewCellContentView>
