@@ -24,7 +24,7 @@ let REQUESTTOKENURL = "https://www.tumblr.com/oauth/request_token"
 let AUTHORIZEURL = "https://www.tumblr.com/oauth/authorize"
 let ACCESSTOKENURL = "https://www.tumblr.com/oauth/access_token"
 // MAKR: - API信息
-let spadeBaseURL = "https://spade.mooe.me/extdomains/"
+let spadeBaseURL = "https://spade.mooe.me"
 let baseURL = "https://api.tumblr.com/v2/"
 let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"
@@ -39,6 +39,8 @@ let tagUrl = baseURL + "tagged"
 // MARK: - 全局通知定义
 let SPUserShouldLoginNotification = "SPUserShouldLoginNotification"
 let SPUserLoginSuccessedNotification = "SPUserLoginSuccessedNotification"
+// 下载进度条通知定义
+let SPUpdateProgressNotification = "SPUpdateProgressNotification"
 // 图片通知定义
 let SPHomeCellBrowserPhotoNotification = "SPHomeCellBrowserPhotoNotification"
 let SPHomeCellBrowserPhotoSelectedIndexKey = "SPHomeCellBrowserPhotoSelectedIndexKey"

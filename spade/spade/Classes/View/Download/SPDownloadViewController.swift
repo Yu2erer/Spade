@@ -23,6 +23,14 @@ class SPDownloadViewController: UIViewController {
         .type(.down),
         .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
     ]
+    fileprivate lazy var tipLabel: UILabel = {
+        let tipLabel = UILabel(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: 42))
+        tipLabel.font = UIFont.systemFont(ofSize: 13)
+        tipLabel.text = "没有下载任务"
+        tipLabel.textAlignment = .center
+        tipLabel.isHidden = true
+        return tipLabel
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -50,16 +58,16 @@ class SPDownloadViewController: UIViewController {
     }
     @objc fileprivate func loadDowningView() {
         self.popover = Popover(options: self.popoverOptions)
+        var height: CGFloat = 0
         if downing.count == 0 {
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: 42))
-            label.font = UIFont.systemFont(ofSize: 13)
-            label.text = "没有下载任务"
-            label.textAlignment = .center
-            self.popover.show(label, point: CGPoint(x: self.view.frame.width - 33, y: 55))
+            height = 42
+            tipLabel.isHidden = false
         } else {
-            downingTableView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: CGFloat(42 * downing.count))
-            self.popover.show(downingTableView, point: CGPoint(x: self.view.frame.width - 33, y: 55))
+            height = CGFloat(42 * downing.count)
+            tipLabel.isHidden = true
         }
+        downingTableView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: CGFloat(height))
+        self.popover.show(downingTableView, point: CGPoint(x: self.view.frame.width - 33, y: 55))
     }
 }
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -103,11 +111,13 @@ extension SPDownloadViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - NTDownloadDelegate
 extension SPDownloadViewController: NTDownloadDelegate {
     func finishedDownload() {
-        self.popover.dismiss()
         initData()
+        if downing.count == 0 {
+            tipLabel.isHidden = false
+        }
     }
     func updateCellProgress(model: NTDownloadTask) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateProgress"), object: nil, userInfo: ["downloadModel": model])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPUpdateProgressNotification), object: nil, userInfo: ["downloadModel": model])
     }
 }
 // MARK: - 设置界面
@@ -133,6 +143,7 @@ extension SPDownloadViewController {
         downedTableView.rowHeight = 190
         downingTableView.rowHeight = 40
         view.addSubview(downedTableView)
+        downingTableView.addSubview(tipLabel)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if tableView.tag == 0 {
@@ -140,5 +151,4 @@ extension SPDownloadViewController {
             initData()
         }
     }
- 
 }

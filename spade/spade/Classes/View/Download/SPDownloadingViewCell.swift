@@ -20,7 +20,7 @@ class SPDownloadingViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateProgress), name: NSNotification.Name(rawValue: "updateProgress"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProgress), name: NSNotification.Name(rawValue: SPUpdateProgressNotification), object: nil)
     }
     deinit {
         NotificationCenter.default.removeObserver(self)

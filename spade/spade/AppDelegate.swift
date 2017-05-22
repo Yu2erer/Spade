@@ -46,11 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
-
         let proxyDict : NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 2333, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 2333]
         let sessionConfiguration = URLSessionConfiguration.default
                 sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
-        NTDownloadManager.shared.sessionConfiguration = sessionConfiguration
         OAuthSwift.session.configuration = sessionConfiguration
         
     }
