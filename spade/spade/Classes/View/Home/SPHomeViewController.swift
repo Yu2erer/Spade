@@ -35,7 +35,6 @@ class SPHomeViewController: SPBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(browserPhoto), name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: nil)
     }

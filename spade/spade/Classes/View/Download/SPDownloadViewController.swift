@@ -8,11 +8,21 @@
 
 import UIKit
 import ZFPlayer
+import Popover
+
 private let downedCellId = "downedCellId"
+private let downingCellId = "downingCellId"
 class SPDownloadViewController: UIViewController {
     
     fileprivate lazy var downedTableView: UITableView = UITableView()
+    fileprivate lazy var downingTableView: UITableView = UITableView()
     fileprivate lazy var downed = [NTDownloadTask]()
+    fileprivate lazy var downing = [NTDownloadTask]()
+    fileprivate var popover: Popover!
+    fileprivate var popoverOptions: [PopoverOption] = [
+        .type(.down),
+        .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -30,17 +40,27 @@ class SPDownloadViewController: UIViewController {
     }()
     fileprivate func initData() {
         self.downed = NTDownloadManager.shared.finishedList()
+        self.downing = NTDownloadManager.shared.unFinishedList()
         downedTableView.reloadData()
+        downingTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initData()
     }
-
     @objc fileprivate func loadDowningView() {
+        self.popover = Popover(options: self.popoverOptions)
+        if downing.count == 0 {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: 42))
+            label.font = UIFont.systemFont(ofSize: 13)
+            label.text = "没有下载任务"
+            label.textAlignment = .center
+            self.popover.show(label, point: CGPoint(x: self.view.frame.width - 33, y: 55))
+        } else {
+            downingTableView.frame = CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: CGFloat(42 * downing.count))
+            self.popover.show(downingTableView, point: CGPoint(x: self.view.frame.width - 33, y: 55))
+        }
     }
-    
-
 }
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SPDownloadViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,7 +68,7 @@ extension SPDownloadViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView.tag == 0 {
             return downed.count
         } else {
-            return 0
+            return downing.count
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,7 +93,9 @@ extension SPDownloadViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         } else {
-            return UITableViewCell(style: .default, reuseIdentifier: "cell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: downingCellId, for: indexPath) as! SPDownloadingViewCell
+            cell.fileInfo = downing[indexPath.row]
+            return cell
         }
     }
 
@@ -81,8 +103,11 @@ extension SPDownloadViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - NTDownloadDelegate
 extension SPDownloadViewController: NTDownloadDelegate {
     func finishedDownload() {
+        self.popover.dismiss()
         initData()
-        
+    }
+    func updateCellProgress(model: NTDownloadTask) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateProgress"), object: nil, userInfo: ["downloadModel": model])
     }
 }
 // MARK: - 设置界面
@@ -91,15 +116,22 @@ extension SPDownloadViewController {
         view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
         navigationItem.title = "离线视频"
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "队列", style: .plain, target: self, action: #selector(loadDowningView))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "button-download", target: self, action: #selector(loadDowningView))
         downedTableView = UITableView(frame: view.bounds, style: .plain)
+        downingTableView = UITableView(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: UIScreen.main.bounds.height / 3), style: .plain)
         downedTableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 49, right: 0)
         downedTableView.tag = 0
+        downingTableView.tag = 1
         downedTableView.separatorStyle = .none
+        downingTableView.separatorStyle = .none
         downedTableView.dataSource = self
+        downingTableView.dataSource = self
         downedTableView.delegate = self
+        downingTableView.delegate = self
         downedTableView.register(UINib(nibName: "SPDownloadedViewCell", bundle: nil), forCellReuseIdentifier: downedCellId)
+        downingTableView.register(UINib(nibName: "SPDownloadingViewCell", bundle: nil), forCellReuseIdentifier: downingCellId)
         downedTableView.rowHeight = 190
+        downingTableView.rowHeight = 40
         view.addSubview(downedTableView)
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

@@ -18,7 +18,6 @@ extension String {
     }
     func removeHttpsString() -> String {
         let string = self
-        let index = self.index(self.startIndex, offsetBy: 8)
         let str = string.replacingOccurrences(of: "https://", with: "")
         return str
     }

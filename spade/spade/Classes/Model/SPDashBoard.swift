@@ -66,12 +66,7 @@ class SPDashBoard: NSObject {
     /// 标签
     var tags: Array<String>?
     /// 视频地址
-    var video_url: String? {
-        didSet {
-//            video_url = spadeBaseURL + (video_url?.removeHttpsString())!
-//            print(video_url)
-        }
-    }
+    var video_url: String?
     /// 视频缩略图地址
     var thumbnail_url: String? {
         didSet {

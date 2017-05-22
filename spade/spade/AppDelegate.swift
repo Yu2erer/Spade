@@ -11,7 +11,6 @@ import OAuthSwift
 import SVProgressHUD
 import Bugly
 //import KeychainAccess
-import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,22 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func addAditions() {
         let buglyConfig = BuglyConfig()
         buglyConfig.unexpectedTerminatingDetectionEnable = true
-        Bugly.start(withAppId: "5f41daf832", config: buglyConfig)
+//        Bugly.start(withAppId: "5f41daf832", config: buglyConfig)
 //        try? Keychain().remove("Key")
 //        try? Keychain().remove("Secret")
         if !inReview && !SPNetworkManage.shared.haveKeyAndSecret{
             SPNetworkManage.shared.loadKeyAndSecret()
         }
+//        URLProtocol.registerClass(NTURLProtocol.self)
         SVProgressHUD.setMaximumDismissTimeInterval(2)
         if isHaveSetting == nil {
             // 没有初始化设置
             UserDefaults.UserSetting.set(value: "init", forKey: .isHaveSetting)
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
+
         let proxyDict : NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 2333, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 2333]
         let sessionConfiguration = URLSessionConfiguration.default
                 sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
-//        KingfisherManager.shared.downloader.sessionConfiguration = sessionConfiguration
+        NTDownloadManager.shared.sessionConfiguration = sessionConfiguration
         OAuthSwift.session.configuration = sessionConfiguration
         
     }

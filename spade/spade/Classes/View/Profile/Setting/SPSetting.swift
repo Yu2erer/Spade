@@ -82,7 +82,6 @@ extension SPSetting: UIActionSheetDelegate {
 extension SPSetting {
     
     fileprivate func setupUI() {
-        view.backgroundColor = UIColor.white
         title = "设置"
     }
 }

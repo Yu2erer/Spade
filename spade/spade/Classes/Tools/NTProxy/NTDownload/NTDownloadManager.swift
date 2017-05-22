@@ -16,6 +16,11 @@ class NTDownloadManager: URLSessionDownloadTask {
 
     private var session: URLSession?
     var taskList = [NTDownloadTask]()
+    var sessionConfiguration = URLSessionConfiguration.default {
+        didSet {
+            session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
+        }
+    }
     static let shared = NTDownloadManager()
     weak var downloadDelegate: NTDownloadDelegate?
     
@@ -23,8 +28,7 @@ class NTDownloadManager: URLSessionDownloadTask {
     override init() {
         super.init()
         
-        let config = URLSessionConfiguration.default
-        self.session = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
+        self.session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
         self.loadTaskList()
     }
     /// 未完成列表
@@ -93,8 +97,6 @@ class NTDownloadManager: URLSessionDownloadTask {
             let downloadTask = NTDownloadTask(url: url!, taskIdentifier: taskIdentifier, fileImage: fileImage)
             downloadTask.finished = finished
             self.taskList.append(downloadTask)
-
-
         }
     }
     /// 下载文件

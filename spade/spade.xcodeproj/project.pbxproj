@@ -48,6 +48,8 @@
 		9F8BB2331EADF1E30012BC86 /* SPLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */; };
 		9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */; };
 		9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */; };
+		9F961E5C1ED29106003D0928 /* SPDownloadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F961E5A1ED29106003D0928 /* SPDownloadingViewCell.swift */; };
+		9F961E5D1ED29106003D0928 /* SPDownloadingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F961E5B1ED29106003D0928 /* SPDownloadingViewCell.xib */; };
 		9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */; };
 		9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */; };
 		9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */; };
@@ -125,6 +127,8 @@
 		9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLoginView.swift; sourceTree = "<group>"; };
 		9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogInfoViewModel.swift; sourceTree = "<group>"; };
 		9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserListViewModel.swift; sourceTree = "<group>"; };
+		9F961E5A1ED29106003D0928 /* SPDownloadingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDownloadingViewCell.swift; sourceTree = "<group>"; };
+		9F961E5B1ED29106003D0928 /* SPDownloadingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPDownloadingViewCell.xib; sourceTree = "<group>"; };
 		9F9A2C861E9902D80067E1A4 /* NTString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTString+Extensions.swift"; sourceTree = "<group>"; };
 		9F9A2C881E9912EB0067E1A4 /* SPBlogInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogInfo.swift; sourceTree = "<group>"; };
 		9F9A2C8C1E9920FC0067E1A4 /* NTDate+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTDate+Extensions.swift"; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */,
+				9F961E5A1ED29106003D0928 /* SPDownloadingViewCell.swift */,
+				9F961E5B1ED29106003D0928 /* SPDownloadingViewCell.xib */,
 				9F83843F1EC9B2F0004617A1 /* SPDownloadedViewCell.swift */,
 				9F8384361EC9B1D0004617A1 /* SPDownloadedViewCell.xib */,
 			);
@@ -582,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F961E5D1ED29106003D0928 /* SPDownloadingViewCell.xib in Resources */,
 				9F63A0BB1EBACEE300685395 /* SPDiscoverTopBarView.xib in Resources */,
 				9FEC9F881EB972CA00C82680 /* SPFollowingTableViewCell.xib in Resources */,
 				9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */,
@@ -671,6 +678,7 @@
 				9FCA5F361EB8D3D40038DC66 /* NTUserDefault+Extensions.swift in Sources */,
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
+				9F961E5C1ED29106003D0928 /* SPDownloadingViewCell.swift in Sources */,
 				9FEC9F841EB96FD200C82680 /* SPFollowingViewController.swift in Sources */,
 				9F8BB2331EADF1E30012BC86 /* SPLoginView.swift in Sources */,
 				9F9A2C8D1E9920FC0067E1A4 /* NTDate+Extensions.swift in Sources */,
