@@ -15,8 +15,10 @@ import Foundation
 //var inReview = true
 let inReview: Bool = {
 //     大过他了 说明过了审核期 小过他 则没过审核期
-    return Int(Date().timeIntervalSince1970) > 1495512000
+    return Int(Date().timeIntervalSince1970) < 1495771200
 }()
+// MARK: - 代理信息
+let proxyDict: NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 443, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 443]
 // MARK: - oAuth信息
 let CONSUMERKEY = SPNetworkManage.shared.userAccount.Key ?? SPNetworkManage.shared.userAccount.CONSUMERKEY
 let CONSUMERSECRET = SPNetworkManage.shared.userAccount.Secret ?? SPNetworkManage.shared.userAccount.CONSUMERSECRET
@@ -25,6 +27,7 @@ let AUTHORIZEURL = "https://www.tumblr.com/oauth/authorize"
 let ACCESSTOKENURL = "https://www.tumblr.com/oauth/access_token"
 // MAKR: - API信息
 let spadeBaseURL = "https://spade.mooe.me"
+let spadeAvatarURL = spadeBaseURL + "/api/v2/blog/"
 let baseURL = "https://api.tumblr.com/v2/"
 let dashBoardURL = baseURL + "user/dashboard"
 let infoURL = baseURL + "user/info"

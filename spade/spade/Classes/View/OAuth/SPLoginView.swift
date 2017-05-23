@@ -9,6 +9,7 @@
 import UIKit
 import OAuthSwift
 import SVProgressHUD
+//import Popover
 
 class SPLoginView: UIView {
 
@@ -33,10 +34,10 @@ class SPLoginView: UIView {
         self.layoutIfNeeded()
         login.center.y += 214
         logo.center.x -= PictureViewWidth
-        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
             self.logo.center.x += PictureViewWidth
         }, completion: nil)
-        UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
             self.login.center.y -= 214
             self.layoutIfNeeded()
         }, completion: nil)
@@ -61,10 +62,10 @@ class SPLoginView: UIView {
         SPNetworkManage.shared.loadToken { (isSuccess) in
             if isSuccess {
                 self.layoutIfNeeded()
-                UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+                UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
                     self.logo.center.x -= PictureViewWidth
                 }, completion: nil)
-                UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+                UIView.animate(withDuration: 0.5, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
                     self.login.center.y += 214
                     self.alpha = 0
                 }, completion: { (_) in

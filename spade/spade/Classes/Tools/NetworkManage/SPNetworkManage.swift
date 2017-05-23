@@ -73,23 +73,24 @@ class SPNetworkManage {
             }
         }
     }
-//    func getInReview() {
+//    func getInReview(completion:  @escaping (_ inReview: Bool)->()) {
 //        let urlString = "https://leancloud.cn/1.1/classes/inReview/\(inReviewObjectId)"
 //        let headers = ["X-LC-Id": "ECkMpp8rkLW1mlo6zmqlmneF-gzGzoHsz",
 //                       "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
 //                       "Content-Type": "application/json"]
 //        Alamofire.request(urlString, method: .get, parameters: nil, headers: headers).responseJSON { (json) in
 //            guard let value = json.result.value, let result = value as? [String: Any], let inReviewString = result["inReview"] as? String else {
+//                completion(true)
 //                return
 //            }
+//            print(inReviewString)
 //            if inReviewString == "false" {
-//                inReview = false
+//                completion(false)
 //            } else {
-//                inReview = true
+//                completion(true)
 //            }
 //        }
 //    }
-    
     func request(urlString: String, method: OAuthSwiftHTTPRequest.Method,parameters: [String: Any]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
         guard let oauthToken = userAccount.oauthToken, let oauthTokenSecret = userAccount.oauthTokenSecret else {

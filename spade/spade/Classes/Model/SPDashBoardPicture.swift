@@ -19,8 +19,6 @@ class SPDashBoardPicture: NSObject {
     class func modelContainerPropertyGenericClass() -> [String: Any] {
         return ["alt_sizes": SPAlt_sizes.self]
     }
-
-    
 }
 class SPAlt_sizes: NSObject {
     var url: String? {

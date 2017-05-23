@@ -18,7 +18,7 @@ class SPSetting: UITableViewController {
         setupUI()        
     }
     fileprivate func telegram() {
-        guard let url = URL(string: "tg://resolve?domain=spadeApp") else {
+        guard let url = URL(string: "tg://join?invite=AAAAAAzKg_hdw92dD-0tJQ") else {
             return
         }
         UIApplication.shared.openURL(url)

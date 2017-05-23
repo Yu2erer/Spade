@@ -18,7 +18,11 @@ class SPBlogInfo: NSObject {
     var total_posts: Int = 0
     var name: String? {
         didSet {
-            avatarURL = blogInfoURL + name! + ".tumblr.com/avatar/96"
+            if inReview == true {
+                avatarURL = blogInfoURL + name! + ".tumblr.com/avatar/96"
+            } else {
+                avatarURL = spadeAvatarURL + name! + ".tumblr.com/avatar/96"
+            }
         }
     }
     var title: String?
@@ -27,7 +31,6 @@ class SPBlogInfo: NSObject {
     var admin: Int = 0
 
     var avatarURL: String?
-    
     /// 类函数 - 告诉第三方框架 如果遇到数组类型的属性 数组中存放的是什么类
     class func modelContainerPropertyGenericClass() -> [String: Any] {
         return ["blogs": SPBlogsInfo.self]

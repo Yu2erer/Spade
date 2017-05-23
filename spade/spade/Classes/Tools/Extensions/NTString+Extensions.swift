@@ -28,7 +28,11 @@ extension String {
     func removeMediaString() -> String {
         let string = self
         var str = string.removeHttpsString()
-        str = str.replacingOccurrences(of: ".media.tumblr.com", with: "")
+        if str.contains("media") {
+            str = str.replacingOccurrences(of: ".media.tumblr.com", with: "")
+        } else {
+            str = str.replacingOccurrences(of: ".tumblr.com", with: "")
+        }
         return "/\(str)"
     }
 

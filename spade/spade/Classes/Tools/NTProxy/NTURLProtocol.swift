@@ -10,9 +10,7 @@ import Foundation
 
 class NTURLProtocol: URLProtocol {
     
-    var dataTask: URLSessionDataTask?
-    fileprivate let proxyDict : NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 2333, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 2333]
-    
+    var dataTask: URLSessionDataTask?    
     override class func canInit(with request: URLRequest) -> Bool {
         
         if URLProtocol.property(forKey: "MyURLProtocolHandledKey", in: request) != nil {
