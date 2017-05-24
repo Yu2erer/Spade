@@ -87,9 +87,7 @@ extension NTSQLiteManager {
             sql += "ORDER BY id DESC LIMIT 20 OFFSET \(offset);"
         } else {
             sql += "ORDER BY id DESC LIMIT 20;"
-        }
-    
-        print(since_id)
+        }    
         // 执行 sql
         let array = execRecordSet(sql: sql)
         // 遍历数组 将数组中的 dashboard 反序列化

@@ -80,15 +80,12 @@ class SPHomeTableViewCell: UITableViewCell {
         heightCons?.constant = height
     }
     @IBAction func downBtn(_ sender: UIButton) {
-        // TODO: 此处完成下载
         guard let video_url = viewModel?.dashBoard.video_url, let fileImage = viewModel?.dashBoard.thumbnail_url else {
             messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "该视频已被删除,无法下载", isError: true)
             return
         }
         messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "添加到下载队列成功", isError: false)
         NTDownloadManager.shared.newTask(urlString: video_url, fileImage: fileImage)
-        
- 
     }
     @IBAction func likeBtn(_ sender: UIButton) {
         // 爱心按钮大小关键帧动画

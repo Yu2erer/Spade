@@ -57,7 +57,7 @@ class SPHomePictureView: UIView {
             tempHeight += picHeight + PictureViewInnerMargin
             picNum = picNum + temp
         }
-        heightCons.constant = (viewModel?.height ?? 0)
+        heightCons.constant = (viewModel?.picHeight ?? 0)
     }
 
     /// 配图视图的数组
@@ -87,9 +87,7 @@ class SPHomePictureView: UIView {
                 // 显示图像
                 iv.isHidden = false
                 index += 1
-                
             }
-            
         }
     }
     @IBOutlet weak var heightCons: NSLayoutConstraint!

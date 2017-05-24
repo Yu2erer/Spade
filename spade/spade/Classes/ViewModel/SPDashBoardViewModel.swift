@@ -18,8 +18,11 @@ class SPDashBoardViewModel: CustomStringConvertible {
     /// 行数
     var row: Int = 0
     /// 高度
-    var height: CGFloat = 0
+    var picHeight: CGFloat = 0
+    /// 热度
     var note_count: String?
+    /// 行高
+    var rowHeight: CGFloat = 0
     
     init(model: SPDashBoard) {
         self.dashBoard = model
@@ -36,12 +39,14 @@ class SPDashBoardViewModel: CustomStringConvertible {
         
         // 计算配图视图高度
         calcPictureViewSize(layout: dashBoard.photoset_layout)
+//        updateRowHeight()
     }
     
     fileprivate func calcPictureViewSize(layout: String?) {
         // 根据字符串长度 知道多少行
         row = layout?.characters.count ?? 0
-        
+        picHeight = PictureViewOutterMargin
+
         var temp: Int = 0
         var rowNum: Int = 0
         var originalHeight: Double = 0
@@ -49,7 +54,6 @@ class SPDashBoardViewModel: CustomStringConvertible {
         // 0 是第一行 1是第二行 temp 是一行几张图
         rowNum = (Int(dashBoard.photoset_layout ?? "") ?? 0).reverse()
         
-        height = PictureViewOutterMargin
         var index = 0 // 图片索引
         for _ in 0..<row {
             
@@ -59,9 +63,30 @@ class SPDashBoardViewModel: CustomStringConvertible {
                 originalHeight = Double(dashBoard.photos?[index].original_size?.height ?? "") ?? 0
                 originalWidth = Double(dashBoard.photos?[index].original_size?.width ?? "") ?? 0
             }
-            height += CGFloat(originalHeight / originalWidth) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin)
+            picHeight += CGFloat(originalHeight / originalWidth) * (PictureViewWidth / CGFloat(temp) + PictureViewInnerMargin)
             index = index + temp
         }
+    }
+    /// 根据当前视图模型内容计算行高
+    func updateRowHeight() {
+        // 头像间距11 + 头像高度32 + 配图高度 + 间距11 + toolBar高度30 + 正文高度 + 线0.5
+        // 头像间距11 + 头像高度32 + 间距11 + 视频占位高度 + 间距11 + toolBar高度30 + 正文高度 + 线0.5
+        let margin: CGFloat = 11
+        let iconHeight: CGFloat = 32
+        let toolBarHeight: CGFloat = 30
+        var height: CGFloat = 0
+        let viewSize: CGSize = CGSize(width: PictureViewWidth - 14 - 11, height: CGFloat(MAXFLOAT))
+        let font = UIFont.systemFont(ofSize: 14)
+        // 计算已经能算出来的高度
+        height = margin + iconHeight + margin + toolBarHeight
+        // 正文高度
+        if dashBoard.summary != "" {
+            height += (dashBoard.summary! as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName: font], context: nil).height + margin
+        } else {
+            height += margin
+        }
+        height += picHeight + 0.5
+        rowHeight = height
     }
     
     

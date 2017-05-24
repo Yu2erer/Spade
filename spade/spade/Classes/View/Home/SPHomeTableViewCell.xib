@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="328" id="KGk-i7-Jjw" customClass="SPHomeTableViewCell" customModule="spade" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="328"/>
+        <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="322" id="KGk-i7-Jjw" customClass="SPHomeTableViewCell" customModule="spade" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="322"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cellId" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="321.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="staff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-yd-pjt" userLabel="昵称">
@@ -32,11 +32,20 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hol-g3-GoP" userLabel="分割线">
-                        <rect key="frame" x="0.0" y="327" width="320" height="0.0"/>
+                        <rect key="frame" x="0.0" y="321" width="320" height="0.5"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.79607843137254897" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="Cfv-Wg-vcc"/>
                         </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VB0-3J-APA" userLabel="配图视图" customClass="SPHomePictureView" customModule="spade" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="43" width="320" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="ABl-bE-Ovm"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="heightCons" destination="ABl-bE-Ovm" id="5eW-pk-e9d"/>
+                        </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGH-u3-PLh" userLabel="toolBar">
                         <rect key="frame" x="0.0" y="254" width="320" height="30"/>
@@ -67,15 +76,6 @@
                             <constraint firstAttribute="trailing" secondItem="TYB-Q3-ARH" secondAttribute="trailing" constant="11" id="nTt-zE-gOC"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VB0-3J-APA" userLabel="配图视图" customClass="SPHomePictureView" customModule="spade" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="43" width="320" height="200"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="200" id="ABl-bE-Ovm"/>
-                        </constraints>
-                        <connections>
-                            <outlet property="heightCons" destination="ABl-bE-Ovm" id="5eW-pk-e9d"/>
-                        </connections>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-hv-LP5" userLabel="时间">
                         <rect key="frame" x="263" y="17" width="46" height="20"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -83,7 +83,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4n-xw-FCu" userLabel="正文">
-                        <rect key="frame" x="14" y="284" width="29" height="32"/>
+                        <rect key="frame" x="14" y="284" width="29" height="26"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -94,11 +94,11 @@
                     <constraint firstItem="VB0-3J-APA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4Wa-c2-MBi"/>
                     <constraint firstAttribute="trailing" secondItem="R1V-hv-LP5" secondAttribute="trailing" constant="11" id="8K4-JF-Wnd"/>
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="leading" secondItem="NL7-Je-BqX" secondAttribute="trailing" constant="11" id="AhI-V9-uxl"/>
-                    <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="BYv-6p-ygN"/>
                     <constraint firstItem="hol-g3-GoP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JWe-w7-hCv"/>
                     <constraint firstItem="R1V-hv-LP5" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="KNs-14-YFU"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4n-xw-FCu" secondAttribute="trailing" constant="11" id="M48-jo-ENy"/>
                     <constraint firstItem="VB0-3J-APA" firstAttribute="top" secondItem="NL7-Je-BqX" secondAttribute="bottom" id="Od7-Ok-4G1"/>
+                    <constraint firstAttribute="bottom" secondItem="hol-g3-GoP" secondAttribute="bottom" id="PD0-Hz-cIQ"/>
                     <constraint firstItem="I4n-xw-FCu" firstAttribute="top" secondItem="LGH-u3-PLh" secondAttribute="bottom" id="Tfk-7E-Vir"/>
                     <constraint firstItem="ga4-yd-pjt" firstAttribute="centerY" secondItem="NL7-Je-BqX" secondAttribute="centerY" id="Zrq-cz-WeJ"/>
                     <constraint firstItem="NL7-Je-BqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="bgx-Y5-sw5"/>
@@ -120,7 +120,7 @@
                 <outlet property="statusLabel" destination="I4n-xw-FCu" id="cpA-vJ-74c"/>
                 <outlet property="timeLabel" destination="R1V-hv-LP5" id="MPI-Bo-3eF"/>
             </connections>
-            <point key="canvasLocation" x="25" y="158"/>
+            <point key="canvasLocation" x="25" y="155"/>
         </tableViewCell>
     </objects>
     <resources>

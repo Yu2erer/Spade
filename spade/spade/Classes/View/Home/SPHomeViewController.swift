@@ -74,7 +74,6 @@ class SPHomeViewController: SPBaseViewController {
     override func loadData() {
         self.refreshControl?.beginRefreshing()
         self.dashBoardListViewModel.loadDashBoard(type: self.selected, pullup: self.isPullup) { (isSuccess, shouldRefresh) in
-            
             self.refreshControl?.endRefreshing()
             self.isPullup = false
             if !isSuccess {
@@ -100,10 +99,7 @@ class SPHomeViewController: SPBaseViewController {
         let playerView = ZFPlayerView.shared()
         return playerView
     }()
-    
-
 }
-
 // MARK: - UITableViewDataSource
 extension SPHomeViewController {
     
@@ -111,7 +107,12 @@ extension SPHomeViewController {
         return dashBoardListViewModel.dashBoardList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
+        if dashBoardListViewModel.dashBoardList.count == 0 {
+            let cell = UITableViewCell()
+            cell.selectionStyle = .none
+            return cell
+        }
         let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
 
         let cellId = (vm.dashBoard.type == "video") ? videoCellId : photoCellId
@@ -137,6 +138,10 @@ extension SPHomeViewController {
         }
         return cell
     }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
+//        return vm.rowHeight
+//    }
 }
 // MARK: - SPHomeTableViewCellDelegate
 extension SPHomeViewController: SPHomeTableViewCellDelegate {
