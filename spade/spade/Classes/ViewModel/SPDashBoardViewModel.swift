@@ -17,8 +17,10 @@ class SPDashBoardViewModel: CustomStringConvertible {
     var avatarURL: String?
     /// 行数
     var row: Int = 0
-    /// 高度
+    /// 图片高度
     var picHeight: CGFloat = 0
+    /// 视频高度
+    var videoHeight: CGFloat = 0
     /// 热度
     var note_count: String?
     /// 行高
@@ -39,7 +41,7 @@ class SPDashBoardViewModel: CustomStringConvertible {
         
         // 计算配图视图高度
         calcPictureViewSize(layout: dashBoard.photoset_layout)
-//        updateRowHeight()
+        updateRowHeight()
     }
     
     fileprivate func calcPictureViewSize(layout: String?) {
@@ -78,14 +80,24 @@ class SPDashBoardViewModel: CustomStringConvertible {
         let viewSize: CGSize = CGSize(width: PictureViewWidth - 14 - 11, height: CGFloat(MAXFLOAT))
         let font = UIFont.systemFont(ofSize: 14)
         // 计算已经能算出来的高度
-        height = margin + iconHeight + margin + toolBarHeight
+        height = margin + iconHeight + margin + toolBarHeight + 0.5
         // 正文高度
         if dashBoard.summary != "" {
             height += (dashBoard.summary! as NSString).boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName: font], context: nil).height + margin
         } else {
             height += margin
         }
-        height += picHeight + 0.5
+        if dashBoard.type == "photo" {
+            height += picHeight
+        } else if dashBoard.type == "video" {
+            let thumbnail_height = CGFloat(dashBoard.thumbnail_height)
+            let thumbnail_width = CGFloat(dashBoard.thumbnail_width)
+            videoHeight = (thumbnail_height / thumbnail_width) * PictureViewWidth
+            if videoHeight.isNaN {
+                videoHeight = (720 / 1280) * PictureViewWidth
+            }
+            height += margin + videoHeight
+        }
         rowHeight = height
     }
     

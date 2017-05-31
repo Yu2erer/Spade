@@ -138,10 +138,10 @@ extension SPHomeViewController {
         }
         return cell
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
-//        return vm.rowHeight
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
+        return vm.rowHeight
+    }
 }
 // MARK: - SPHomeTableViewCellDelegate
 extension SPHomeViewController: SPHomeTableViewCellDelegate {
@@ -226,8 +226,8 @@ extension SPHomeViewController {
 
         tableView?.register(UINib(nibName: "SPHomeTableViewCell", bundle: nil), forCellReuseIdentifier: photoCellId)
         tableView?.register(UINib(nibName: "SPHomeVideoTableViewCell", bundle: nil), forCellReuseIdentifier: videoCellId)
-
-        tableView?.rowHeight = UITableViewAutomaticDimension
+        // 自动行高
+//        tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
         tableView?.separatorStyle = .none
     }

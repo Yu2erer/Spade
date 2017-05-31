@@ -73,24 +73,30 @@ class SPNetworkManage {
             }
         }
     }
-//    func getInReview(completion:  @escaping (_ inReview: Bool)->()) {
-//        let urlString = "https://leancloud.cn/1.1/classes/inReview/\(inReviewObjectId)"
-//        let headers = ["X-LC-Id": "ECkMpp8rkLW1mlo6zmqlmneF-gzGzoHsz",
-//                       "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
-//                       "Content-Type": "application/json"]
-//        Alamofire.request(urlString, method: .get, parameters: nil, headers: headers).responseJSON { (json) in
-//            guard let value = json.result.value, let result = value as? [String: Any], let inReviewString = result["inReview"] as? String else {
-//                completion(true)
-//                return
-//            }
-//            print(inReviewString)
-//            if inReviewString == "false" {
-//                completion(false)
-//            } else {
-//                completion(true)
-//            }
-//        }
-//    }
+    func getInReview() {
+        let review = UserDefaults.standard.string(forKey: "review")
+        if review != nil {
+            inReview = false
+            return
+        }
+        let urlString = "https://leancloud.cn/1.1/classes/inReview/\(inReviewObjectId)"
+        let headers = ["X-LC-Id": "ECkMpp8rkLW1mlo6zmqlmneF-gzGzoHsz",
+                       "X-LC-Key": "FAfJ9C5Jtqy9WKz2e7pNp84Y",
+                       "Content-Type": "application/json"]
+        guard var request = try? URLRequest(url: urlString, method: .get, headers: headers) else {
+            return
+        }
+        request.timeoutInterval = 10.0
+        guard let data = try? NSURLConnection.sendSynchronousRequest(request, returning: nil), let json = try? JSONSerialization.jsonObject(with: data, options: []), let result = json as? [String: Any], let inReviewString = result["inReview"] as? String else {
+            return
+        }
+        if inReviewString == "false" {
+            inReview = false
+            UserDefaults.standard.set("false", forKey: "review")
+        } else {
+            inReview = true
+        }
+    }
     func request(urlString: String, method: OAuthSwiftHTTPRequest.Method,parameters: [String: Any]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
         guard let oauthToken = userAccount.oauthToken, let oauthTokenSecret = userAccount.oauthTokenSecret else {

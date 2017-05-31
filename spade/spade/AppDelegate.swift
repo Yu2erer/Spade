@@ -10,6 +10,7 @@ import UIKit
 import OAuthSwift
 import SVProgressHUD
 import Bugly
+//import StoreKit
 //import KeychainAccess
 
 @UIApplicationMain
@@ -37,9 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func addAditions() {
 //        try? Keychain().remove("Key")
 //        try? Keychain().remove("Secret")
-//        SPNetworkManage.shared.getInReview { (isReview) in
-//            inReview = isReview
-//        }
+//        SPNetworkManage.shared.getInReview()
         if !inReview && !SPNetworkManage.shared.haveKeyAndSecret{
             SPNetworkManage.shared.loadKeyAndSecret()
         }
@@ -55,6 +54,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
             OAuthSwift.session.configuration = sessionConfiguration
         }
+//        let VERIFY_RECEIPT_URL = "https://buy.itunes.apple.com/verifyReceipt"
+//        let ITMS_SANDBOX_VERIFY_RECEIPT_URL = "https://sandbox.itunes.apple.com/verifyReceipt"
+
+//        let refreshReceiptRequest = SKReceiptRefreshRequest(receiptProperties: [:])
+//        refreshReceiptRequest.start()
+//        let receiptURL = Bundle.main.appStoreReceiptURL
+//        let receiptData = try? Data(contentsOf: receiptURL!)
+//        let encodeStr = receiptData?.base64EncodedString(options: .endLineWithLineFeed)
+//        let url = URL(string: ITMS_SANDBOX_VERIFY_RECEIPT_URL)
+//        let request = NSMutableURLRequest(url: url!)
+//        request.httpMethod = "POST"
+//        let payload = NSString(string: "{\"receipt-data\" : \"" + encodeStr! + "\"}") as String
+//        let payloadData = payload.data(using: .utf8)
+//        request.httpBody = payloadData
+//        
+//        let result = try? NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: nil)
+//
+//        
+//        let dict = try? JSONSerialization.jsonObject(with: result!, options: [])
+//        print(dict as? [String: Any])
+  
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         

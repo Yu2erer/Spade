@@ -67,13 +67,14 @@ class SPHomeTableViewCell: UITableViewCell {
         }
     }
     fileprivate func calcViewHeight() {
-        let thumbnail_height = CGFloat((viewModel?.dashBoard.thumbnail_height)!)
-        let thumbnail_width = CGFloat((viewModel?.dashBoard.thumbnail_width)!)
-        var height = (thumbnail_height / thumbnail_width) * PictureViewWidth
-        if height.isNaN {
-            height = (720 / 1280) * PictureViewWidth
-        }
-        
+//        let thumbnail_height = CGFloat((viewModel?.dashBoard.thumbnail_height)!)
+//        let thumbnail_width = CGFloat((viewModel?.dashBoard.thumbnail_width)!)
+//        var height = (thumbnail_height / thumbnail_width) * PictureViewWidth
+//        if height.isNaN {
+//            height = (720 / 1280) * PictureViewWidth
+//        }
+        let height = viewModel?.videoHeight ?? 0
+
         placeholderImage?.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: height)
         
         playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
@@ -107,17 +108,20 @@ class SPHomeTableViewCell: UITableViewCell {
                 if isSuccess {
                     self.viewModel?.dashBoard.liked = 1
                 } else {
+                    self.viewModel?.dashBoard.liked = 0
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likeImage, for: .normal)
                 }
             })
         } else {
+            self.viewModel?.dashBoard.liked = 0
             likeIcon.setImage(likeImage, for: .normal)
             // 已经喜欢了 要取消喜欢
             SPNetworkManage.shared.userUnLike(id: viewModel?.dashBoard.id ?? 0, reblogKey: viewModel?.dashBoard.reblog_key ?? "", completion: { (isSuccess) in
                 if isSuccess {
                     self.viewModel?.dashBoard.liked = 0
                 } else {
+                    self.viewModel?.dashBoard.liked = 1
                     self.likeIcon.isSelected = !self.likeIcon.isSelected
                     self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likedImage, for: .normal)
