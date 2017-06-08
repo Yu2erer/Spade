@@ -36,7 +36,6 @@ class SPSetting: UITableViewController {
         actionSheet.tag = 1
         actionSheet.show(in: self.view)
     }
-    
     @IBAction func windowSwitch(_ sender: UISwitch) {
         
             UserDefaults.UserSetting.set(value: !isSmallWindowOn, forKey: .isSmallWindowOn)
@@ -80,8 +79,7 @@ extension SPSetting: UIActionSheetDelegate {
 }
 // MARK: - 设置界面
 extension SPSetting {
-    
     fileprivate func setupUI() {
-        title = "设置"
+        title = NSLocalizedString("Setting", comment: "设置")
     }
 }

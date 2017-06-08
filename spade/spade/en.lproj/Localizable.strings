@@ -23,8 +23,9 @@
 "Following" = "Following";
 // 下载控制器
 "Download" = "Download";
-"NoDownloadTask" = "None";
+"NoDownloadTask" = "No task";
 "NetworkUnavailable" = "Network unavailable";
-"VideoDeleted" = "The video has been deleted and cannot be downloaded";
-"AddDownloadSuccess" = "Added to the download queue successfully";
-
+"VideoDeleted" = "The video has been deleted";
+"AddDownloadSuccess" = "Success";
+"NeedLogin" = "Login again";
+"Setting" = "Setting";

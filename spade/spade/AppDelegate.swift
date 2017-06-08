@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        print(appLanaguage)
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         addAditions()
@@ -50,11 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
         
-        if inReview == false {
-            let sessionConfiguration = URLSessionConfiguration.default
-            sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
-            OAuthSwift.session.configuration = sessionConfiguration
-        }
+//        if inReview == false {
+//            let sessionConfiguration = URLSessionConfiguration.default
+//            sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
+//            OAuthSwift.session.configuration = sessionConfiguration
+//        }
+        
 //        let VERIFY_RECEIPT_URL = "https://buy.itunes.apple.com/verifyReceipt"
 //        let ITMS_SANDBOX_VERIFY_RECEIPT_URL = "https://sandbox.itunes.apple.com/verifyReceipt"
 
@@ -75,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        
 //        let dict = try? JSONSerialization.jsonObject(with: result!, options: [])
 //        print(dict as? [String: Any])
-  
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         

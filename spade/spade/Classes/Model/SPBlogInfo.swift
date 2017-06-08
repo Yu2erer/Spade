@@ -18,11 +18,12 @@ class SPBlogInfo: NSObject {
     var total_posts: Int = 0
     var name: String? {
         didSet {
-            if inReview == true {
+            
+//            if inReview == true {
                 avatarURL = blogInfoURL + name! + ".tumblr.com/avatar/96"
-            } else {
-                avatarURL = spadeAvatarURL + name! + ".tumblr.com/avatar/96"
-            }
+//            } else {
+//                avatarURL = spadeAvatarURL + name! + ".tumblr.com/avatar/96"
+//            }
         }
     }
     var title: String?

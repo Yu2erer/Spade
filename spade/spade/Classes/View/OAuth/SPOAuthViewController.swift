@@ -35,9 +35,9 @@ class SPOAuthViewController: OAuthWebViewController {
     func close() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reset"), object: nil)
         SVProgressHUD.dismiss()
-        if inReview == false {
-            URLProtocol.unregisterClass(NTURLProtocol.self)
-        }
+//        if inReview == false {
+//            URLProtocol.unregisterClass(NTURLProtocol.self)
+//        }
         self.dismissWebViewController()
     }
     override func handle(_ url: URL) {
@@ -49,9 +49,9 @@ class SPOAuthViewController: OAuthWebViewController {
         guard let url = targetURL else {
             return
         }
-        if inReview == false {
-            URLProtocol.registerClass(NTURLProtocol.self)
-        }
+//        if inReview == false {
+//            URLProtocol.registerClass(NTURLProtocol.self)
+//        }
         let req = URLRequest(url: url)
         self.webView.loadRequest(req)
     }
@@ -60,9 +60,9 @@ extension SPOAuthViewController: UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         if let url = request.url, url.scheme == "spade" {
-            if inReview == false {
-                URLProtocol.unregisterClass(NTURLProtocol.self)
-            }
+//            if inReview == false {
+//                URLProtocol.unregisterClass(NTURLProtocol.self)
+//            }
             self.dismissWebViewController()
             SVProgressHUD.dismiss()
         }

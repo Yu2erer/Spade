@@ -19,7 +19,7 @@ var inReview = true
 //    return Int(Date().timeIntervalSince1970) > 1495857600
 //}()
 // MARK: - 代理信息
-let proxyDict: NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 443, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 443]
+//let proxyDict: NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 443, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 443]
 let appLanaguage: String = {
     let applanaguage = UserDefaults.standard.object(forKey: "AppleLanguages") as! NSArray
     if (applanaguage.object(at: 0) as! String).hasPrefix("zh-Hans") {

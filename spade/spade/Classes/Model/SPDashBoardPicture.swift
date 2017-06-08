@@ -23,9 +23,9 @@ class SPDashBoardPicture: NSObject {
 class SPAlt_sizes: NSObject {
     var url: String? {
         didSet {
-            if inReview == false {
-                url = spadeBaseURL + (url?.removeMediaString() ?? "")
-            }
+//            if inReview == false {
+//                url = spadeBaseURL + (url?.removeMediaString() ?? "")
+//            }
         }
     }
     var width: String?
@@ -34,9 +34,9 @@ class SPAlt_sizes: NSObject {
 class SPOriginal_size: NSObject {
     var url: String? {
         didSet {
-            if inReview == false {
-                url = spadeBaseURL + (url?.removeMediaString() ?? "")
-            }
+//            if inReview == false {
+//                url = spadeBaseURL + (url?.removeMediaString() ?? "")
+//            }
         }
     }
     var width: String?

@@ -28,11 +28,12 @@ class SPDashBoardViewModel: CustomStringConvertible {
     
     init(model: SPDashBoard) {
         self.dashBoard = model
-        if inReview == true {
+
+//        if inReview == true {
             avatarURL = blogInfoURL + model.post_url! + "/avatar"
-        } else {
-            avatarURL = spadeAvatarURL + model.post_url! + "/avatar"
-        }
+//        } else {
+//            avatarURL = spadeAvatarURL + model.post_url! + "/avatar"
+//        }
         if model.note_count == 0 {
             self.note_count = ""
         } else {

@@ -26,5 +26,6 @@
 "NetworkUnavailable" = "登录失败, 请检查网络连接";
 "VideoDeleted" = "该视频已被删除,无法下载";
 "AddDownloadSuccess" = "添加到下载队列成功";
-
+"NeedLogin" = "需要重新登录";
+"Setting" = "设置";
 

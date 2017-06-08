@@ -32,7 +32,7 @@ extension SPMainViewController {
         let _ = try? FileManager.default.removeItem(atPath: path)
         selectedIndex = 0
         SVProgressHUD.setDefaultMaskType(.gradient)
-        SVProgressHUD.showInfo(withStatus: "需要重新登录")
+        SVProgressHUD.showInfo(withStatus: NSLocalizedString("NeedLogin", comment: "需要重新登录"))
         var when = DispatchTime.now()
         if n.object != nil {
             when = DispatchTime.now() + 2
