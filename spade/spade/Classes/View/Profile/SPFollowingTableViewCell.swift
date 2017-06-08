@@ -26,8 +26,8 @@ class SPFollowingTableViewCell: UITableViewCell {
             titleLabel.text = model?.title
             model?.followed = 1
             // 关注了
-            followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
-            followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+            followBtn.setImage(UIImage(named: "followedBtn\(appLanaguage)"), for: .normal)
+            followBtn.setImage(UIImage(named: "followedHighlight\(appLanaguage)"), for: .highlighted)
         }
     }
     fileprivate var trackingTouch = false
@@ -40,26 +40,26 @@ class SPFollowingTableViewCell: UITableViewCell {
             SPNetworkManage.shared.userFollow(blogUrl: (model?.name)! + ".tumblr.com", completion: { (isSuccess) in
                 if isSuccess {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followedBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followedHighlight\(appLanaguage)"), for: .highlighted)
                     self.model?.followed = 1
                 } else {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followHighlight\(appLanaguage)"), for: .highlighted)
                 }
             })
         } else {
             SPNetworkManage.shared.userUnFollow(blogUrl: (model?.name)!, completion: { (isSuccess) in
                 if isSuccess {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followHighlight\(appLanaguage)"), for: .highlighted)
                     self.model?.followed = 0
                 } else {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followedBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followedHighlight\(appLanaguage)"), for: .highlighted)
                     
                 }
             })

@@ -26,7 +26,7 @@ class SPDownloadViewController: UIViewController {
     fileprivate lazy var tipLabel: UILabel = {
         let tipLabel = UILabel(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: 42))
         tipLabel.font = UIFont.systemFont(ofSize: 13)
-        tipLabel.text = "没有下载任务"
+        tipLabel.text = NSLocalizedString("NoDownloadTask", comment: "没有下载任务")
         tipLabel.textAlignment = .center
         tipLabel.isHidden = true
         return tipLabel
@@ -125,7 +125,7 @@ extension SPDownloadViewController {
     fileprivate func setupUI() {
         view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
-        navigationItem.title = "离线视频"
+        navigationItem.title = NSLocalizedString("Download", comment: "离线视频")
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "button-download", target: self, action: #selector(loadDowningView))
         downedTableView = UITableView(frame: view.bounds, style: .plain)
         downingTableView = UITableView(frame: CGRect(x: 0, y: 0, width: PictureViewWidth * 0.4, height: UIScreen.main.bounds.height / 3), style: .plain)

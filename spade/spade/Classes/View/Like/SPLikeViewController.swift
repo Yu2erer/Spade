@@ -27,7 +27,7 @@ class SPLikeViewController: SPBaseViewController {
             self.refreshControl?.endRefreshing()
             self.isPullup = false
             if !isSuccess {
-                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
+                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             if shouldRefresh {
@@ -103,8 +103,7 @@ extension SPLikeViewController: SPHomeTableViewCellDelegate {
 // MARK: - 设置界面
 extension SPLikeViewController {
     fileprivate func setupUI() {
-
-        self.navigationItem.title = "喜欢"
+        self.navigationItem.title = NSLocalizedString("Like", comment: "喜欢")
     }
     override func setupTableView() {
         super.setupTableView()

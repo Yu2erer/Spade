@@ -34,7 +34,7 @@ class SPFollowingViewController: UIViewController {
             self.isPullup = false
             SVProgressHUD.dismiss()
             if !isSuccess {
-                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
+                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             if shouldRefresh {
@@ -84,7 +84,7 @@ extension SPFollowingViewController: UITableViewDelegate, UITableViewDataSource 
 // MARK: - 设置界面
 extension SPFollowingViewController {
     fileprivate func setupUI() {
-        self.title = "关注"
+        self.title = NSLocalizedString("Following", comment: "关注")
         view.backgroundColor = UIColor.white
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.register(UINib(nibName: "SPFollowingTableViewCell", bundle: nil), forCellReuseIdentifier: followingCell)

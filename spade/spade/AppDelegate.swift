@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        print(appLanaguage)
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         addAditions()
@@ -38,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func addAditions() {
 //        try? Keychain().remove("Key")
 //        try? Keychain().remove("Secret")
-//        SPNetworkManage.shared.getInReview()
+        SPNetworkManage.shared.getInReview()
         if !inReview && !SPNetworkManage.shared.haveKeyAndSecret{
             SPNetworkManage.shared.loadKeyAndSecret()
         }

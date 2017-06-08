@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "图片"; ObjectID = "NZS-sg-SLz"; */
+"NZS-sg-SLz.normalTitle" = "Photo";
+
+/* Class = "UIButton"; normalTitle = "视频"; ObjectID = "RgW-Va-3Vo"; */
+"RgW-Va-3Vo.normalTitle" = "Video";
+
+/* Class = "UIButton"; normalTitle = "主页"; ObjectID = "cEn-xg-DzF"; */
+"cEn-xg-DzF.normalTitle" = "Home";

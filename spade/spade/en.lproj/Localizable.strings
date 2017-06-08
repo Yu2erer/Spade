@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  spade
+
+  Created by ntian on 2017/6/8.
+  Copyright © 2017年 ntian. All rights reserved.
+*/
+
+// MARK: - selectLoadView
+"Spade" = "Spade";
+"Photo" = "Photo";
+"Video" = "Video";
+// MARK: - 搜索用户
+"SearchUser" = "Search people";
+"SearchNoFound" = "No accounts found";
+// MARK: - 喜欢控制器
+"Like" = "Like";
+// MARK: - 错误提示
+"RefreshFeedError" = "Couldn't Refresh Feed";
+"notes" = " notes";
+// headerView 不可见
+"invisible" = "invisible";
+"Following" = "Following";
+// 下载控制器
+"Download" = "Download";
+"NoDownloadTask" = "None";
+"NetworkUnavailable" = "Network unavailable";
+"VideoDeleted" = "The video has been deleted and cannot be downloaded";
+"AddDownloadSuccess" = "Added to the download queue successfully";
+

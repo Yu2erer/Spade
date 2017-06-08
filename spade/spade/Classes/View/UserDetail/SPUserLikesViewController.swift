@@ -76,6 +76,13 @@ extension SPUserLikesViewController {
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if likeListViewModel.likeModel.count == 0 {
+            return 0
+        }
+        let vm = likeListViewModel.likeModel[indexPath.row]
+        return vm.rowHeight
+    }
 }
 // MARK: - SPHomeTableViewCellDelegate
 extension SPUserLikesViewController: SPHomeTableViewCellDelegate {
@@ -88,7 +95,7 @@ extension SPUserLikesViewController: SPHomeTableViewCellDelegate {
 // MARK: - 设置界面
 extension SPUserLikesViewController {
     fileprivate func setupUI() {
-        navigationItem.title = "喜欢"
+        self.navigationItem.title = NSLocalizedString("Like", comment: "喜欢")
     }
     override func setupTableView() {
         super.setupTableView()

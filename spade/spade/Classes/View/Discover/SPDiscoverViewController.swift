@@ -54,7 +54,7 @@ class SPDiscoverViewController: UIViewController {
                 if isSuccess {
                     self.userTableView.reloadData()
                 } else {
-                    self.messageHud.showMessage(view: self.view, msg: "搜索不到该用户~", isError: true)
+                    self.messageHud.showMessage(view: self.view, msg:                     NSLocalizedString("SearchNoFound", comment: "搜索不到的提示"), isError: true)
                 }
             }
         } else {
@@ -129,7 +129,7 @@ extension SPDiscoverViewController: SPFollowingTableViewCellDelegate {
 extension SPDiscoverViewController: SPDiscoverTopBarViewDelegate {
     func didClickUserButton() {
         contentScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        searchBar.placeholder = "搜索用户"
+        searchBar.placeholder = NSLocalizedString("SearchUser", comment: "搜索用户咯")
     }
     func didClickPostButton() {
         contentScrollView.setContentOffset(CGPoint(x: PictureViewWidth, y: 0), animated: true)
@@ -154,7 +154,7 @@ extension SPDiscoverViewController {
 //        view.addSubview(topBarView)
         
         searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: PictureViewWidth, height: 34))
-        searchBar.placeholder = "搜索用户"
+        searchBar.placeholder = NSLocalizedString("SearchUser", comment: "搜索用户咯")
         searchBar.delegate = self
         let searchTextFeild = searchBar.subviews.first?.subviews.last
         searchTextFeild?.backgroundColor = UIColor(hex: 0xE5E5E8)

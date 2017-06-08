@@ -36,7 +36,7 @@ class SPDashBoardViewModel: CustomStringConvertible {
         if model.note_count == 0 {
             self.note_count = ""
         } else {
-            self.note_count = "\(model.note_count)条热度"
+            self.note_count = "\(model.note_count)\(NSLocalizedString("notes", comment: "热度"))"
         }
         
         // 计算配图视图高度

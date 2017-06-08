@@ -12,7 +12,7 @@ import Foundation
 // MARK: - 是否在审核期内
 // 控制该次版本功能的Id 每次上传到store一定要改！！！！
 let inReviewObjectId = "59216c1fa0bb9f005f543183"
-var inReview = false
+var inReview = true
 //let inReview: Bool = {
 ////    return false
 ////     大过他了 说明过了审核期 小过他 则没过审核期
@@ -20,6 +20,14 @@ var inReview = false
 //}()
 // MARK: - 代理信息
 let proxyDict: NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 443, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 443]
+let appLanaguage: String = {
+    let applanaguage = UserDefaults.standard.object(forKey: "AppleLanguages") as! NSArray
+    if (applanaguage.object(at: 0) as! String).hasPrefix("zh-Hans") {
+        return "_zh"
+    } else {
+        return "_en"
+    }
+}()
 // MARK: - oAuth信息
 let CONSUMERKEY = SPNetworkManage.shared.userAccount.Key ?? SPNetworkManage.shared.userAccount.CONSUMERKEY
 let CONSUMERSECRET = SPNetworkManage.shared.userAccount.Secret ?? SPNetworkManage.shared.userAccount.CONSUMERSECRET

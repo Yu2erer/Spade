@@ -77,7 +77,7 @@ class SPHomeViewController: SPBaseViewController {
             self.refreshControl?.endRefreshing()
             self.isPullup = false
             if !isSuccess {
-                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
+                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             if shouldRefresh {
@@ -139,6 +139,9 @@ extension SPHomeViewController {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if dashBoardListViewModel.dashBoardList.count == 0 {
+            return 0
+        }
         let vm = dashBoardListViewModel.dashBoardList[indexPath.row]
         return vm.rowHeight
     }
@@ -154,7 +157,8 @@ extension SPHomeViewController: SPHomeTableViewCellDelegate {
 // MARK: - SPSelectLoadViewDelegate
 extension SPHomeViewController: SPSelectLoadViewDelegate {
     func didClickHome() {
-        let button = SPTitleButton(title: "Spade")
+        let str = NSLocalizedString("Spade", comment: "主页咯")
+        let button = SPTitleButton(title: str)
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
@@ -168,7 +172,8 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
 
     }
     func didClickPhoto() {
-        let button = SPTitleButton(title: "图片")
+        let str = NSLocalizedString("Photo", comment: "图片咯")
+        let button = SPTitleButton(title: str)
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
@@ -181,7 +186,9 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
         tableView?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .top)
     }
     func didClickVideo() {
-        let button = SPTitleButton(title: "视频")
+        
+        let str = NSLocalizedString("Video", comment: "视频咯")
+        let button = SPTitleButton(title: str)
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()

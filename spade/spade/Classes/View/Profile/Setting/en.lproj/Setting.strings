@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "退出登录"; ObjectID = "DIN-kN-3yo"; */
+"DIN-kN-3yo.text" = "Log Out";
+
+/* Class = "UILabel"; text = "Telegram"; ObjectID = "Fj1-wU-NpF"; */
+"Fj1-wU-NpF.text" = "Telegram";
+
+/* Class = "UILabel"; text = "清理缓存"; ObjectID = "HPY-FG-Itx"; */
+"HPY-FG-Itx.text" = "Clear Cache";
+
+/* Class = "UILabel"; text = "小窗口"; ObjectID = "LNS-oR-HFn"; */
+"LNS-oR-HFn.text" = "Mini Player";
+
+/* Class = "UITableViewSection"; headerTitle = "视频"; ObjectID = "MYI-o6-Op5"; */
+"MYI-o6-Op5.headerTitle" = "Video";
+
+/* Class = "UITableViewSection"; headerTitle = "通用"; ObjectID = "vwz-jk-2DN"; */
+"vwz-jk-2DN.headerTitle" = "General";

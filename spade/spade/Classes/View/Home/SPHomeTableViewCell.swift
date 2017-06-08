@@ -82,10 +82,10 @@ class SPHomeTableViewCell: UITableViewCell {
     }
     @IBAction func downBtn(_ sender: UIButton) {
         guard let video_url = viewModel?.dashBoard.video_url, let fileImage = viewModel?.dashBoard.thumbnail_url else {
-            messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "该视频已被删除,无法下载", isError: true)
+            messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("VideoDeleted", comment: "视频已被删除"), isError: true)
             return
         }
-        messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "添加到下载队列成功", isError: false)
+        messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("AddDownloadSuccess", comment: "添加下载成功"), isError: false)
         NTDownloadManager.shared.newTask(urlString: video_url, fileImage: fileImage)
     }
     @IBAction func likeBtn(_ sender: UIButton) {
@@ -109,7 +109,7 @@ class SPHomeTableViewCell: UITableViewCell {
                     self.viewModel?.dashBoard.liked = 1
                 } else {
                     self.viewModel?.dashBoard.liked = 0
-                    self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
+//                    self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likeImage, for: .normal)
                 }
             })
@@ -123,7 +123,7 @@ class SPHomeTableViewCell: UITableViewCell {
                 } else {
                     self.viewModel?.dashBoard.liked = 1
                     self.likeIcon.isSelected = !self.likeIcon.isSelected
-                    self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
+//                    self.messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: "取消喜欢失败啦~", isError: true)
                     self.likeIcon.setImage(self.likedImage, for: .normal)
 
                 }
@@ -152,6 +152,7 @@ class SPHomeTableViewCell: UITableViewCell {
 // MARK: - 点击事件
 extension SPHomeTableViewCell {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         self.trackingTouch = false
         let t: UITouch = (touches as NSSet).anyObject() as! UITouch
         var p = t.location(in: iconView)

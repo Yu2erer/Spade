@@ -35,7 +35,7 @@ class SPUserDetailHeaderView: UIView {
             if model.likes > 0 {
                 likesNum.text = String(model.likes)
             } else {
-                likesNum.text = "不可见"
+                likesNum.text = NSLocalizedString("invisible", comment: "不可见")
             }
             
             postNum.text = String(model.total_posts)
@@ -45,11 +45,11 @@ class SPUserDetailHeaderView: UIView {
                 followBtn.isHidden = false
                 if model.followed == 1 {
                     // 关注了
-                    followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
-                    followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+                    followBtn.setImage(UIImage(named: "followedBtn\(appLanaguage)"), for: .normal)
+                    followBtn.setImage(UIImage(named: "followedHighlight\(appLanaguage)"), for: .highlighted)
                 } else {
-                    followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
-                    followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                    followBtn.setImage(UIImage(named: "followBtn\(appLanaguage)"), for: .normal)
+                    followBtn.setImage(UIImage(named: "followHighlight\(appLanaguage)"), for: .highlighted)
                 }
             }
         }
@@ -65,26 +65,26 @@ class SPUserDetailHeaderView: UIView {
             SPNetworkManage.shared.userFollow(blogUrl: name + ".tumblr.com", completion: { (isSuccess) in
                 if isSuccess {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followedBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followedHighlight\(appLanaguage)"), for: .highlighted)
                     self.model?.followed = 1
                 } else {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followHighlight\(appLanaguage)"), for: .highlighted)
                 }
             })
         } else {
             SPNetworkManage.shared.userUnFollow(blogUrl: name, completion: { (isSuccess) in
                 if isSuccess {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followHighlight\(appLanaguage)"), for: .highlighted)
                     self.model?.followed = 0
                 } else {
                     SVProgressHUD.dismiss()
-                    self.followBtn.setImage(UIImage(named: "followedBtn"), for: .normal)
-                    self.followBtn.setImage(UIImage(named: "followedHighlight"), for: .highlighted)
+                    self.followBtn.setImage(UIImage(named: "followedBtn\(appLanaguage)"), for: .normal)
+                    self.followBtn.setImage(UIImage(named: "followedHighlight\(appLanaguage)"), for: .highlighted)
 
                 }
             })

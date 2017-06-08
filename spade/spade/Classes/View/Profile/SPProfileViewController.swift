@@ -29,7 +29,7 @@ class SPProfileViewController: SPBaseViewController {
         blogInfoViewModel.loadBlogInfo(blogName: nil) { (isSuccess) in
             self.refreshControl?.endRefreshing()
             if (!isSuccess) {
-                self.messageHud.showMessage(view: self.view, msg: "加载失败", isError: true)
+                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             let blogName = self.blogInfoViewModel.blogInfo.name ?? "" + ".tumblr.com"

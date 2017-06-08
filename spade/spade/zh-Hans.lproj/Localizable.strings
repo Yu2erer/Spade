@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  spade
+
+  Created by ntian on 2017/6/8.
+  Copyright © 2017年 ntian. All rights reserved.
+*/
+
+// MARK: - selectLoadView
+"Spade" = "Spade";
+"Photo" = "图片";
+"Video" = "视频";
+// MARK: - 搜索用户
+"SearchUser" = "搜索用户";
+"SearchNoFound" = "搜索不到该用户~";
+// MARK: - 喜欢控制器
+"Like" = "喜欢";
+// MARK: - 错误提示
+"RefreshFeedError" = "加载失败~";
+"notes" = "条热度";
+// headerView 不可见
+"invisible" = "不可见";
+"Following" = "关注";
+"Download" = "离线视频";
+"NoDownloadTask" = "没有下载任务";
+"NetworkUnavailable" = "登录失败, 请检查网络连接";
+"VideoDeleted" = "该视频已被删除,无法下载";
+"AddDownloadSuccess" = "添加到下载队列成功";
+
+

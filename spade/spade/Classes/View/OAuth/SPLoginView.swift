@@ -19,7 +19,7 @@ class SPLoginView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-  
+        
         // 停止后，隐藏菊花
         self.activity.hidesWhenStopped = true
         // 添加activity到view中
@@ -72,7 +72,7 @@ class SPLoginView: UIView {
                     self.removeFromSuperview()
                 })
             } else {
-                SVProgressHUD.showError(withStatus: "登录失败, 请检查网络连接")
+                SVProgressHUD.showError(withStatus:              NSLocalizedString("NetworkUnavailable", comment: "网络错误"))
                 self.activity.stopAnimating()
                 self.login.isEnabled = true
             }

@@ -13,7 +13,12 @@
 		9F17FC661ECBFAE7009BE5CE /* SPDashBoardListDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17FC651ECBFAE7009BE5CE /* SPDashBoardListDAL.swift */; };
 		9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A59E41EA99021008A286D /* SPLikeViewController.swift */; };
 		9F2ED21F1EA49CA90079B688 /* SPProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */; };
-		9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */; };
+		9F32C4FA1EE912D90013D9BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C4F91EE912D90013D9BE /* LaunchScreen.storyboard */; };
+		9F32C5001EE914FA0013D9BE /* SPSelectLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C5021EE914FA0013D9BE /* SPSelectLoadView.xib */; };
+		9F32C5141EE921680013D9BE /* SPProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C5161EE921680013D9BE /* SPProfileHeaderView.xib */; };
+		9F32C51B1EE924720013D9BE /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C51D1EE924720013D9BE /* Setting.storyboard */; };
+		9F32C5331EE928770013D9BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C5351EE928770013D9BE /* Localizable.strings */; };
+		9F32C5381EE92A870013D9BE /* SPUserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C53A1EE92A870013D9BE /* SPUserDetailHeaderView.xib */; };
 		9F44EF9D1EBD766B007F7F60 /* NTURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */; };
 		9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */; };
 		9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */; };
@@ -26,7 +31,6 @@
 		9F5332C11EAF140000C7D2BE /* NTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5332BE1EAF140000C7D2BE /* NTRefreshControl.swift */; };
 		9F5332C21EAF140000C7D2BE /* NTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5332BF1EAF140000C7D2BE /* NTRefreshView.swift */; };
 		9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5332C01EAF140000C7D2BE /* NTRefreshView.xib */; };
-		9F5C75AF1EB83E7200C7D5DC /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5C75AE1EB83E7200C7D5DC /* Setting.storyboard */; };
 		9F5C75B11EB83E9300C7D5DC /* SPSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5C75B01EB83E9300C7D5DC /* SPSetting.swift */; };
 		9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */; };
 		9F61CCF71E99D8B900C64627 /* UIimageView+WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */; };
@@ -34,7 +38,6 @@
 		9F63A0BB1EBACEE300685395 /* SPDiscoverTopBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F63A0BA1EBACEE300685395 /* SPDiscoverTopBarView.xib */; };
 		9F6668721EAD909200AC1DF9 /* SPUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */; };
 		9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */; };
-		9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */; };
 		9F8384381EC9B1D0004617A1 /* SPDownloadedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8384361EC9B1D0004617A1 /* SPDownloadedViewCell.xib */; };
 		9F83843D1EC9B285004617A1 /* NTDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83843B1EC9B285004617A1 /* NTDownloadManager.swift */; };
 		9F83843E1EC9B285004617A1 /* NTDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83843C1EC9B285004617A1 /* NTDownloadTask.swift */; };
@@ -63,7 +66,6 @@
 		9FCA5F361EB8D3D40038DC66 /* NTUserDefault+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA5F351EB8D3D40038DC66 /* NTUserDefault+Extensions.swift */; };
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
 		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
-		9FD36DA31EA7684B0007D3C2 /* SPUserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD36DA21EA7684B0007D3C2 /* SPUserDetailHeaderView.xib */; };
 		9FD36DA51EA768B10007D3C2 /* SPUserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD36DA41EA768B10007D3C2 /* SPUserDetailHeaderView.swift */; };
 		9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C841E96272F0019D76A /* AppDelegate.swift */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
@@ -92,7 +94,22 @@
 		9F17FC651ECBFAE7009BE5CE /* SPDashBoardListDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardListDAL.swift; sourceTree = "<group>"; };
 		9F1A59E41EA99021008A286D /* SPLikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeViewController.swift; sourceTree = "<group>"; };
 		9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileViewController.swift; sourceTree = "<group>"; };
-		9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPProfileHeaderView.xib; sourceTree = "<group>"; };
+		9F32C4F91EE912D90013D9BE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F32C5061EE9163F0013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SPSelectLoadView.xib; sourceTree = "<group>"; };
+		9F32C5081EE916F60013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SPSelectLoadView.strings"; sourceTree = "<group>"; };
+		9F32C5151EE921680013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SPProfileHeaderView.xib; sourceTree = "<group>"; };
+		9F32C51A1EE9216A0013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SPProfileHeaderView.strings"; sourceTree = "<group>"; };
+		9F32C51C1EE924720013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
+		9F32C5231EE924850013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
+		9F32C5251EE926AF0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPSelectLoadView.strings; sourceTree = "<group>"; };
+		9F32C5261EE926AF0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Setting.strings; sourceTree = "<group>"; };
+		9F32C5271EE926AF0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPProfileHeaderView.strings; sourceTree = "<group>"; };
+		9F32C5341EE928770013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F32C5361EE928780013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9F32C5371EE928780013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9F32C5401EE934C10013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SPUserDetailHeaderView.xib; sourceTree = "<group>"; };
+		9F32C5411EE934CA0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPUserDetailHeaderView.strings; sourceTree = "<group>"; };
+		9F32C5431EE934DF0013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SPUserDetailHeaderView.strings"; sourceTree = "<group>"; };
 		9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTURLProtocol.swift; sourceTree = "<group>"; };
 		9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileHeaderView.swift; sourceTree = "<group>"; };
 		9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -105,7 +122,6 @@
 		9F5332BE1EAF140000C7D2BE /* NTRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshControl.swift; sourceTree = "<group>"; };
 		9F5332BF1EAF140000C7D2BE /* NTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTRefreshView.swift; sourceTree = "<group>"; };
 		9F5332C01EAF140000C7D2BE /* NTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NTRefreshView.xib; sourceTree = "<group>"; };
-		9F5C75AE1EB83E7200C7D5DC /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		9F5C75B01EB83E9300C7D5DC /* SPSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPSetting.swift; sourceTree = "<group>"; };
 		9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIImage+Extensions.swift"; sourceTree = "<group>"; };
 		9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIimageView+WebImage.swift"; sourceTree = "<group>"; };
@@ -113,7 +129,6 @@
 		9F63A0BA1EBACEE300685395 /* SPDiscoverTopBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPDiscoverTopBarView.xib; sourceTree = "<group>"; };
 		9F6668711EAD909200AC1DF9 /* SPUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserAccount.swift; sourceTree = "<group>"; };
 		9F6CA4D71E9E572A0098E4DA /* NTInt+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTInt+Extensions.swift"; sourceTree = "<group>"; };
-		9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPSelectLoadView.xib; sourceTree = "<group>"; };
 		9F8384361EC9B1D0004617A1 /* SPDownloadedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPDownloadedViewCell.xib; sourceTree = "<group>"; };
 		9F83843B1EC9B285004617A1 /* NTDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDownloadManager.swift; sourceTree = "<group>"; };
 		9F83843C1EC9B285004617A1 /* NTDownloadTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTDownloadTask.swift; sourceTree = "<group>"; };
@@ -143,7 +158,6 @@
 		9FCA5F351EB8D3D40038DC66 /* NTUserDefault+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUserDefault+Extensions.swift"; sourceTree = "<group>"; };
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
 		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
-		9FD36DA21EA7684B0007D3C2 /* SPUserDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPUserDetailHeaderView.xib; sourceTree = "<group>"; };
 		9FD36DA41EA768B10007D3C2 /* SPUserDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailHeaderView.swift; sourceTree = "<group>"; };
 		9FDC1C811E96272F0019D76A /* spade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDC1C841E96272F0019D76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +215,7 @@
 		9F22B0AE1EB0EC8E00E0A627 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				9F5C75AE1EB83E7200C7D5DC /* Setting.storyboard */,
+				9F32C51D1EE924720013D9BE /* Setting.storyboard */,
 				9F5C75B01EB83E9300C7D5DC /* SPSetting.swift */,
 			);
 			path = Setting;
@@ -281,8 +295,8 @@
 		9F6FC65D1EC2FEF0005734A7 /* SelectLoadView */ = {
 			isa = PBXGroup;
 			children = (
+				9F32C5021EE914FA0013D9BE /* SPSelectLoadView.xib */,
 				9F83A8EF1EC3014600CBF09D /* SPSelectLoadView.swift */,
-				9F6FC6601EC2FF29005734A7 /* SPSelectLoadView.xib */,
 			);
 			path = SelectLoadView;
 			sourceTree = "<group>";
@@ -323,7 +337,7 @@
 				9FB378571EA73C5B0048A51C /* SPUserDetailViewController.swift */,
 				9FD36DA41EA768B10007D3C2 /* SPUserDetailHeaderView.swift */,
 				9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */,
-				9FD36DA21EA7684B0007D3C2 /* SPUserDetailHeaderView.xib */,
+				9F32C53A1EE92A870013D9BE /* SPUserDetailHeaderView.xib */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -371,6 +385,8 @@
 				9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */,
 				9FB3784A1EA7267E0048A51C /* Spade-Bridging-Header.h */,
 				9FDC1C901E96272F0019D76A /* Info.plist */,
+				9F32C4F91EE912D90013D9BE /* LaunchScreen.storyboard */,
+				9F32C5351EE928770013D9BE /* Localizable.strings */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -467,7 +483,7 @@
 				9F22B0AE1EB0EC8E00E0A627 /* Setting */,
 				9F2ED21E1EA49CA90079B688 /* SPProfileViewController.swift */,
 				9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */,
-				9F2ED2221EA49E480079B688 /* SPProfileHeaderView.xib */,
+				9F32C5161EE921680013D9BE /* SPProfileHeaderView.xib */,
 				9FEC9F831EB96FD200C82680 /* SPFollowingViewController.swift */,
 				9FEC9F851EB972CA00C82680 /* SPFollowingTableViewCell.swift */,
 				9FEC9F861EB972CA00C82680 /* SPFollowingTableViewCell.xib */,
@@ -570,8 +586,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hans",
+				en,
 			);
 			mainGroup = 9FDC1C781E96272E0019D76A;
 			productRefGroup = 9FDC1C821E96272F0019D76A /* Products */;
@@ -588,18 +605,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F32C5001EE914FA0013D9BE /* SPSelectLoadView.xib in Resources */,
 				9F961E5D1ED29106003D0928 /* SPDownloadingViewCell.xib in Resources */,
 				9F63A0BB1EBACEE300685395 /* SPDiscoverTopBarView.xib in Resources */,
 				9FEC9F881EB972CA00C82680 /* SPFollowingTableViewCell.xib in Resources */,
-				9F2ED2231EA49E480079B688 /* SPProfileHeaderView.xib in Resources */,
+				9F32C4FA1EE912D90013D9BE /* LaunchScreen.storyboard in Resources */,
+				9F32C5141EE921680013D9BE /* SPProfileHeaderView.xib in Resources */,
 				9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */,
 				9FC767091EA23A19000A2A51 /* SPHomeVideoTableViewCell.xib in Resources */,
-				9FD36DA31EA7684B0007D3C2 /* SPUserDetailHeaderView.xib in Resources */,
+				9F32C5381EE92A870013D9BE /* SPUserDetailHeaderView.xib in Resources */,
 				9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */,
-				9F5C75AF1EB83E7200C7D5DC /* Setting.storyboard in Resources */,
+				9F32C51B1EE924720013D9BE /* Setting.storyboard in Resources */,
 				9F8384381EC9B1D0004617A1 /* SPDownloadedViewCell.xib in Resources */,
-				9F6FC6611EC2FF29005734A7 /* SPSelectLoadView.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
+				9F32C5331EE928770013D9BE /* Localizable.strings in Resources */,
 				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
 				9F17FC631ECBF966009BE5CE /* dashboard.sql in Resources */,
 			);
@@ -725,11 +744,65 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		9F32C5021EE914FA0013D9BE /* SPSelectLoadView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F32C5061EE9163F0013D9BE /* Base */,
+				9F32C5081EE916F60013D9BE /* zh-Hans */,
+				9F32C5251EE926AF0013D9BE /* en */,
+			);
+			name = SPSelectLoadView.xib;
+			sourceTree = "<group>";
+		};
+		9F32C5161EE921680013D9BE /* SPProfileHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F32C5151EE921680013D9BE /* Base */,
+				9F32C51A1EE9216A0013D9BE /* zh-Hans */,
+				9F32C5271EE926AF0013D9BE /* en */,
+			);
+			name = SPProfileHeaderView.xib;
+			sourceTree = "<group>";
+		};
+		9F32C51D1EE924720013D9BE /* Setting.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F32C51C1EE924720013D9BE /* Base */,
+				9F32C5231EE924850013D9BE /* zh-Hans */,
+				9F32C5261EE926AF0013D9BE /* en */,
+			);
+			name = Setting.storyboard;
+			sourceTree = "<group>";
+		};
+		9F32C5351EE928770013D9BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F32C5341EE928770013D9BE /* Base */,
+				9F32C5361EE928780013D9BE /* zh-Hans */,
+				9F32C5371EE928780013D9BE /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		9F32C53A1EE92A870013D9BE /* SPUserDetailHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F32C5401EE934C10013D9BE /* Base */,
+				9F32C5411EE934CA0013D9BE /* en */,
+				9F32C5431EE934DF0013D9BE /* zh-Hans */,
+			);
+			name = SPUserDetailHeaderView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		9FDC1C911E96272F0019D76A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -780,6 +853,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -824,7 +898,6 @@
 			baseConfigurationReference = 415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
@@ -847,7 +920,6 @@
 			baseConfigurationReference = 48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
