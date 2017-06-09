@@ -30,6 +30,10 @@ class SPSetting: UITableViewController {
             actionSheet.show(in: self.view)
         }
     }
+    fileprivate func toService() {
+        let vc = SPServiceViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     fileprivate func logOut() {
         print("退出登录")
         let actionSheet = UIActionSheet(title: "确定要退出登录吗", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "确定")
@@ -54,6 +58,8 @@ class SPSetting: UITableViewController {
                     telegram()
                 case 1:
                     cleanCache()
+                case 2:
+                    toService()
                 default:
                     break
                 }

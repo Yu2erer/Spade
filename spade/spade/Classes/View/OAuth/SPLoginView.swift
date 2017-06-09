@@ -9,19 +9,32 @@
 import UIKit
 import OAuthSwift
 import SVProgressHUD
-//import Popover
+import Popover
 
 class SPLoginView: UIView {
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var logo: UIImageView!
-    
+    @IBOutlet weak var serviceBtn: UIButton!
+    fileprivate var popover: Popover!
+    fileprivate var popoverOptions: [PopoverOption] = [
+        .type(.up),
+        .blackOverlayColor(UIColor(white: 0.0, alpha: 0.6))
+    ]
+    fileprivate lazy var webView: UIWebView = {
+        let webView = UIWebView(frame: CGRect(x: 0, y: 0, width: PictureViewWidth - 40, height: PictureViewHeight - 100))
+        let path = Bundle.main.path(forResource: "service", ofType: "html")
+        let htmlString = try! String(contentsOfFile: path!)
+        webView.loadHTMLString(htmlString, baseURL: nil)
+        return webView
+    }()
     override func awakeFromNib() {
         super.awakeFromNib()
         
         // 停止后，隐藏菊花
         self.activity.hidesWhenStopped = true
+        serviceBtn.alpha = 0
         // 添加activity到view中
         login.addSubview(self.activity)
         activity.center = CGPoint(x: login.bounds.width / 2, y: login.bounds.height / 2)
@@ -34,12 +47,13 @@ class SPLoginView: UIView {
         self.layoutIfNeeded()
         login.center.y += 214
         logo.center.x -= PictureViewWidth
-        UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
             self.logo.center.x += PictureViewWidth
         }, completion: nil)
-        UIView.animate(withDuration: 0.5, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+        UIView.animate(withDuration: 0.6, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
             self.login.center.y -= 214
             self.layoutIfNeeded()
+            self.serviceBtn.alpha = 1
         }, completion: nil)
     }
     deinit {
@@ -48,6 +62,7 @@ class SPLoginView: UIView {
     @objc fileprivate func reset() {
         self.activity.stopAnimating()
         self.login.isEnabled = true
+        self.serviceBtn.alpha = 0
     }
     class func loginView()-> SPLoginView {
         let nib = UINib(nibName: "SPLoginView", bundle: nil)
@@ -62,11 +77,12 @@ class SPLoginView: UIView {
         SPNetworkManage.shared.loadToken { (isSuccess) in
             if isSuccess {
                 self.layoutIfNeeded()
-                UIView.animate(withDuration: 0.5, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+                UIView.animate(withDuration: 0.6, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
                     self.logo.center.x -= PictureViewWidth
                 }, completion: nil)
-                UIView.animate(withDuration: 0.5, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+                UIView.animate(withDuration: 0.6, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
                     self.login.center.y += 214
+                    self.serviceBtn.alpha = 0
                     self.alpha = 0
                 }, completion: { (_) in
                     self.removeFromSuperview()
@@ -77,5 +93,9 @@ class SPLoginView: UIView {
                 self.login.isEnabled = true
             }
         }
+    }
+    @IBAction func service() {
+        self.popover = Popover(options: popoverOptions)
+        popover.show(webView, fromView: serviceBtn)
     }
 }

@@ -157,8 +157,7 @@ extension SPHomeViewController: SPHomeTableViewCellDelegate {
 // MARK: - SPSelectLoadViewDelegate
 extension SPHomeViewController: SPSelectLoadViewDelegate {
     func didClickHome() {
-        let str = NSLocalizedString("Spade", comment: "主页咯")
-        let button = SPTitleButton(title: str)
+        let button = SPTitleButton(title: NSLocalizedString("Spade", comment: "主页咯"))
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
@@ -172,8 +171,7 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
 
     }
     func didClickPhoto() {
-        let str = NSLocalizedString("Photo", comment: "图片咯")
-        let button = SPTitleButton(title: str)
+        let button = SPTitleButton(title: NSLocalizedString("Photo", comment: "图片咯"))
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()
@@ -187,8 +185,7 @@ extension SPHomeViewController: SPSelectLoadViewDelegate {
     }
     func didClickVideo() {
         
-        let str = NSLocalizedString("Video", comment: "视频咯")
-        let button = SPTitleButton(title: str)
+        let button = SPTitleButton(title: NSLocalizedString("Video", comment: "视频咯"))
         button.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
         navigationItem.titleView = button
         popover.dismiss()

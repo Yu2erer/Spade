@@ -33,12 +33,22 @@
                         <constraint firstAttribute="width" constant="173" id="lt6-gj-xJS"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFy-Is-4Ge">
+                    <rect key="frame" x="101" y="611" width="173" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="登录即代表您已同意服务协议"/>
+                    <connections>
+                        <action selector="service" destination="iN0-l3-epB" eventType="touchUpInside" id="3JV-ZK-XvA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="qh1-Pn-VLv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3TW-P8-dFz"/>
                 <constraint firstItem="jeg-TS-Vhc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="4RJ-eS-Lpc"/>
                 <constraint firstItem="jeg-TS-Vhc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8yM-Ti-2Ty"/>
+                <constraint firstAttribute="bottom" secondItem="hFy-Is-4Ge" secondAttribute="bottom" constant="28" id="Mxw-Hd-LU8"/>
+                <constraint firstItem="hFy-Is-4Ge" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RMM-tZ-DEy"/>
                 <constraint firstAttribute="bottom" secondItem="qh1-Pn-VLv" secondAttribute="bottom" constant="130" id="gth-Pm-evI"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -46,6 +56,7 @@
                 <outlet property="activity" destination="pD4-Jq-i6N" id="Bsb-UL-6gQ"/>
                 <outlet property="login" destination="qh1-Pn-VLv" id="rbh-pl-evX"/>
                 <outlet property="logo" destination="jeg-TS-Vhc" id="Wpt-rP-if3"/>
+                <outlet property="serviceBtn" destination="hFy-Is-4Ge" id="uI0-gq-5rW"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

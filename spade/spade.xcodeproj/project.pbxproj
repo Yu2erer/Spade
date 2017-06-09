@@ -19,6 +19,9 @@
 		9F32C51B1EE924720013D9BE /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C51D1EE924720013D9BE /* Setting.storyboard */; };
 		9F32C5331EE928770013D9BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C5351EE928770013D9BE /* Localizable.strings */; };
 		9F32C5381EE92A870013D9BE /* SPUserDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F32C53A1EE92A870013D9BE /* SPUserDetailHeaderView.xib */; };
+		9F3BFF3B1EEA3B9A00C914B6 /* service.html in Resources */ = {isa = PBXBuildFile; fileRef = 9F3BFF3A1EEA3B9A00C914B6 /* service.html */; };
+		9F3BFF3C1EEA3BDA00C914B6 /* SPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3BFF3E1EEA3BDA00C914B6 /* SPLoginView.xib */; };
+		9F3BFF441EEA3CEA00C914B6 /* SPServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3BFF431EEA3CEA00C914B6 /* SPServiceViewController.swift */; };
 		9F44EF9D1EBD766B007F7F60 /* NTURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */; };
 		9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */; };
 		9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */; };
@@ -47,7 +50,6 @@
 		9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */; };
 		9F887FE51EAAEF4C00094D48 /* SPLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */; };
 		9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */; };
-		9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */; };
 		9F8BB2331EADF1E30012BC86 /* SPLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */; };
 		9F8BEA301EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */; };
 		9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */; };
@@ -100,9 +102,7 @@
 		9F32C5151EE921680013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SPProfileHeaderView.xib; sourceTree = "<group>"; };
 		9F32C51A1EE9216A0013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SPProfileHeaderView.strings"; sourceTree = "<group>"; };
 		9F32C51C1EE924720013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
-		9F32C5231EE924850013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
 		9F32C5251EE926AF0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPSelectLoadView.strings; sourceTree = "<group>"; };
-		9F32C5261EE926AF0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Setting.strings; sourceTree = "<group>"; };
 		9F32C5271EE926AF0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPProfileHeaderView.strings; sourceTree = "<group>"; };
 		9F32C5341EE928770013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F32C5361EE928780013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -110,6 +110,13 @@
 		9F32C5401EE934C10013D9BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SPUserDetailHeaderView.xib; sourceTree = "<group>"; };
 		9F32C5411EE934CA0013D9BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPUserDetailHeaderView.strings; sourceTree = "<group>"; };
 		9F32C5431EE934DF0013D9BE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SPUserDetailHeaderView.strings"; sourceTree = "<group>"; };
+		9F3BFF3A1EEA3B9A00C914B6 /* service.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = service.html; sourceTree = "<group>"; };
+		9F3BFF3D1EEA3BDA00C914B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SPLoginView.xib; sourceTree = "<group>"; };
+		9F3BFF401EEA3BDC00C914B6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SPLoginView.strings"; sourceTree = "<group>"; };
+		9F3BFF421EEA3BDD00C914B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SPLoginView.strings; sourceTree = "<group>"; };
+		9F3BFF431EEA3CEA00C914B6 /* SPServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPServiceViewController.swift; sourceTree = "<group>"; };
+		9F3BFF461EEA3EB800C914B6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
+		9F3BFF481EEA3EBB00C914B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Setting.strings; sourceTree = "<group>"; };
 		9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTURLProtocol.swift; sourceTree = "<group>"; };
 		9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileHeaderView.swift; sourceTree = "<group>"; };
 		9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -138,7 +145,6 @@
 		9F87A6891EC433AD0020E145 /* SPDownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDownloadViewController.swift; sourceTree = "<group>"; };
 		9F887FE41EAAEF4C00094D48 /* SPLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLikeListViewModel.swift; sourceTree = "<group>"; };
 		9F887FE61EAAF10100094D48 /* SPUserLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikesViewController.swift; sourceTree = "<group>"; };
-		9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginView.xib; sourceTree = "<group>"; };
 		9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLoginView.swift; sourceTree = "<group>"; };
 		9F8BEA2F1EA5E52C00F9CF0A /* SPBlogInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPBlogInfoViewModel.swift; sourceTree = "<group>"; };
 		9F8BEA391EA6088A00F9CF0A /* SPUserListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserListViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 			children = (
 				9F32C51D1EE924720013D9BE /* Setting.storyboard */,
 				9F5C75B01EB83E9300C7D5DC /* SPSetting.swift */,
+				9F3BFF431EEA3CEA00C914B6 /* SPServiceViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -279,7 +286,7 @@
 			children = (
 				9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */,
 				9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */,
-				9F8BB2301EADE58C0012BC86 /* SPLoginView.xib */,
+				9F3BFF3E1EEA3BDA00C914B6 /* SPLoginView.xib */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -380,6 +387,7 @@
 		9FDC1C961E96275A0019D76A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F3BFF3A1EEA3B9A00C914B6 /* service.html */,
 				9FDC1C841E96272F0019D76A /* AppDelegate.swift */,
 				9FDC1C8B1E96272F0019D76A /* Assets.xcassets */,
 				9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */,
@@ -616,10 +624,11 @@
 				9F32C5381EE92A870013D9BE /* SPUserDetailHeaderView.xib in Resources */,
 				9F5332C31EAF140000C7D2BE /* NTRefreshView.xib in Resources */,
 				9F32C51B1EE924720013D9BE /* Setting.storyboard in Resources */,
+				9F3BFF3B1EEA3B9A00C914B6 /* service.html in Resources */,
 				9F8384381EC9B1D0004617A1 /* SPDownloadedViewCell.xib in Resources */,
 				9FDC1CAB1E964B2F0019D76A /* SPHomeTableViewCell.xib in Resources */,
 				9F32C5331EE928770013D9BE /* Localizable.strings in Resources */,
-				9F8BB2311EADE58C0012BC86 /* SPLoginView.xib in Resources */,
+				9F3BFF3C1EEA3BDA00C914B6 /* SPLoginView.xib in Resources */,
 				9F17FC631ECBF966009BE5CE /* dashboard.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,6 +717,7 @@
 				9FDC1CAA1E964B2F0019D76A /* SPHomeTableViewCell.swift in Sources */,
 				9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */,
 				9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */,
+				9F3BFF441EEA3CEA00C914B6 /* SPServiceViewController.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */,
@@ -769,8 +779,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				9F32C51C1EE924720013D9BE /* Base */,
-				9F32C5231EE924850013D9BE /* zh-Hans */,
-				9F32C5261EE926AF0013D9BE /* en */,
+				9F3BFF461EEA3EB800C914B6 /* zh-Hans */,
+				9F3BFF481EEA3EBB00C914B6 /* en */,
 			);
 			name = Setting.storyboard;
 			sourceTree = "<group>";
@@ -793,6 +803,16 @@
 				9F32C5431EE934DF0013D9BE /* zh-Hans */,
 			);
 			name = SPUserDetailHeaderView.xib;
+			sourceTree = "<group>";
+		};
+		9F3BFF3E1EEA3BDA00C914B6 /* SPLoginView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F3BFF3D1EEA3BDA00C914B6 /* Base */,
+				9F3BFF401EEA3BDC00C914B6 /* zh-Hans */,
+				9F3BFF421EEA3BDD00C914B6 /* en */,
+			);
+			name = SPLoginView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
