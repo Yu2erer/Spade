@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -67,11 +67,24 @@
                                     <action selector="likeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RE7-NL-nTl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoC-uf-2s1">
+                                <rect key="frame" x="213" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="LeT-Ul-nqZ"/>
+                                    <constraint firstAttribute="width" constant="25" id="Zwt-NM-NrY"/>
+                                </constraints>
+                                <state key="normal" image="report"/>
+                                <connections>
+                                    <action selector="report" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WsU-cq-WWR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="fO4-rP-Gcj" firstAttribute="centerY" secondItem="LGH-u3-PLh" secondAttribute="centerY" constant="-3" id="7Wr-EJ-EpY"/>
+                            <constraint firstItem="TYB-Q3-ARH" firstAttribute="leading" secondItem="qoC-uf-2s1" secondAttribute="trailing" constant="11" id="Gme-Fd-xyC"/>
                             <constraint firstItem="TYB-Q3-ARH" firstAttribute="centerY" secondItem="fO4-rP-Gcj" secondAttribute="centerY" id="SsQ-8P-5eL"/>
                             <constraint firstItem="fO4-rP-Gcj" firstAttribute="leading" secondItem="LGH-u3-PLh" secondAttribute="leading" constant="13" id="Tim-St-WI8"/>
+                            <constraint firstItem="qoC-uf-2s1" firstAttribute="centerY" secondItem="fO4-rP-Gcj" secondAttribute="centerY" id="TjP-n8-abZ"/>
                             <constraint firstAttribute="height" constant="30" id="kyB-Rm-qYC"/>
                             <constraint firstAttribute="trailing" secondItem="TYB-Q3-ARH" secondAttribute="trailing" constant="11" id="nTt-zE-gOC"/>
                         </constraints>
@@ -116,6 +129,7 @@
                 <outlet property="nameLabel" destination="ga4-yd-pjt" id="DnG-hj-eEs"/>
                 <outlet property="noteLabel" destination="TYB-Q3-ARH" id="HDI-Qg-kzH"/>
                 <outlet property="pictureView" destination="VB0-3J-APA" id="ouQ-f4-Lym"/>
+                <outlet property="reportBtn" destination="qoC-uf-2s1" id="uJn-1o-69M"/>
                 <outlet property="statusLabel" destination="I4n-xw-FCu" id="cpA-vJ-74c"/>
                 <outlet property="timeLabel" destination="R1V-hv-LP5" id="MPI-Bo-3eF"/>
             </connections>
@@ -124,5 +138,6 @@
     </objects>
     <resources>
         <image name="glyph-like" width="24" height="24"/>
+        <image name="report" width="52" height="52"/>
     </resources>
 </document>

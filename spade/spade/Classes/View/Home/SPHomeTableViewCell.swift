@@ -39,6 +39,8 @@ class SPHomeTableViewCell: UITableViewCell {
     fileprivate var trackingTouch = false
     fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
+    @IBOutlet weak var reportBtn: UIButton!
+    
     public weak var cellDelegate: SPHomeTableViewCellDelegate?
     /// 播放按钮回调
     var playBack: (()->())?
@@ -79,6 +81,15 @@ class SPHomeTableViewCell: UITableViewCell {
         
         playBtn.center = CGPoint(x: (placeholderImage?.bounds.width ?? 0) / 2, y: (placeholderImage?.bounds.height ?? 0) / 2)
         heightCons?.constant = height
+    }
+    
+    @IBAction func report() {
+        let btnAnime = CAKeyframeAnimation(keyPath: "transform.scale")
+        btnAnime.values = [1.0,0.7,0.5,0.3,0.5,0.7,1.0,1.2,1.4,1.2,1.0]
+        btnAnime.keyTimes = [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+        btnAnime.duration = 0.2
+        reportBtn.layer.add(btnAnime, forKey: "SHOW")
+        messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("ReportSuccess", comment: "举报成功"), isError: false)
     }
     @IBAction func downBtn(_ sender: UIButton) {
         guard let video_url = viewModel?.dashBoard.video_url, let fileImage = viewModel?.dashBoard.thumbnail_url else {
