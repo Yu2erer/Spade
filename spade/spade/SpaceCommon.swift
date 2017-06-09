@@ -22,10 +22,10 @@ var inReview = true
 //let proxyDict: NSDictionary = ["HTTPEnable": Int(1), "HTTPProxy": "119.29.85.125", "HTTPPort": 443, "HTTPSEnable": Int(1), "HTTPSProxy": "119.29.85.125", "HTTPSPort": 443]
 let appLanaguage: String = {
     let applanaguage = UserDefaults.standard.object(forKey: "AppleLanguages") as! NSArray
-    if (applanaguage.object(at: 0) as! String).hasPrefix("zh-Hans") {
-        return "_zh"
-    } else {
+    if (applanaguage.object(at: 0) as! String).hasPrefix("en") {
         return "_en"
+    } else {
+        return "_zh"
     }
 }()
 // MARK: - oAuth信息
