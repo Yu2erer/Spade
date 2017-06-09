@@ -42,6 +42,8 @@ class SPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var reportBtn: UIButton!
     
     public weak var cellDelegate: SPHomeTableViewCellDelegate?
+    /// 举报标识符
+//    private var reportFlag = false
     /// 播放按钮回调
     var playBack: (()->())?
 
@@ -89,7 +91,10 @@ class SPHomeTableViewCell: UITableViewCell {
         btnAnime.keyTimes = [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
         btnAnime.duration = 0.2
         reportBtn.layer.add(btnAnime, forKey: "SHOW")
-        messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("ReportSuccess", comment: "举报成功"), isError: false)
+//        if reportFlag == false {
+            messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("ReportSuccess", comment: "举报成功"), isError: false)
+//            reportFlag = true
+//        }
     }
     @IBAction func downBtn(_ sender: UIButton) {
         guard let video_url = viewModel?.dashBoard.video_url, let fileImage = viewModel?.dashBoard.thumbnail_url else {

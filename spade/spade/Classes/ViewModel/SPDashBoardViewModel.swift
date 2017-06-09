@@ -98,6 +98,8 @@ class SPDashBoardViewModel: CustomStringConvertible {
                 videoHeight = (720 / 1280) * PictureViewWidth
             }
             height += margin + videoHeight
+        } else {
+            height += margin
         }
         rowHeight = height
     }
