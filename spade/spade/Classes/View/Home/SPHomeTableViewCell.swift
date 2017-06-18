@@ -71,12 +71,6 @@ class SPHomeTableViewCell: UITableViewCell {
         }
     }
     fileprivate func calcViewHeight() {
-//        let thumbnail_height = CGFloat((viewModel?.dashBoard.thumbnail_height)!)
-//        let thumbnail_width = CGFloat((viewModel?.dashBoard.thumbnail_width)!)
-//        var height = (thumbnail_height / thumbnail_width) * PictureViewWidth
-//        if height.isNaN {
-//            height = (720 / 1280) * PictureViewWidth
-//        }
         let height = viewModel?.videoHeight ?? 0
 
         placeholderImage?.frame = CGRect(x: 0, y: 0, width: PictureViewWidth, height: height)

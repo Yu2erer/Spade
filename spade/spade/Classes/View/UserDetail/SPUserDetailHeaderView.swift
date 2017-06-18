@@ -12,7 +12,7 @@ import SVProgressHUD
 @objc protocol SPUserDetailHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
     @objc optional func didClickLikeNum(user: SPBlogInfo)
-    @objc optional func didClickAvatar()
+    @objc optional func didClickAvatar(imageView: UIImageView)
 }
 
 class SPUserDetailHeaderView: UIView {
@@ -131,7 +131,7 @@ extension SPUserDetailHeaderView {
         } else {
             postTouch ? headerViewDelegate?.didClickPostNum?() : ()
             likeTouch ? headerViewDelegate?.didClickLikeNum?(user: model!) : ()
-            avatarTouch ? headerViewDelegate?.didClickAvatar?() : ()
+            avatarTouch ? headerViewDelegate?.didClickAvatar?(imageView: avatarImage) : ()
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

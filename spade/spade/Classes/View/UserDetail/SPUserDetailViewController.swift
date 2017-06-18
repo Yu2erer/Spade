@@ -113,7 +113,7 @@ extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
         vc.model = user
         navigationController?.pushViewController(vc, animated: true)
     }
-    func didClickAvatar() {
+    func didClickAvatar(imageView: UIImageView) {
         guard var avatarUrl = blogInfoViewModel.blogInfo.avatarURL else {
             return
         }
@@ -123,7 +123,8 @@ extension SPUserDetailViewController: SPUserDetailHeaderViewDelegate {
         url.append(avatarUrl)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: url,
                                                                                                                                           
-                                                                                                                                          SPHomeCellBrowserPhotoSelectedIndexKey: 0])
+                                                                                                                                          SPHomeCellBrowserPhotoSelectedIndexKey: 0,
+                                                                                                                                          SPHomeCellBrowserPhotoImageView: [imageView]])
     }
 
 }

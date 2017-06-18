@@ -11,7 +11,7 @@ import UIKit
 @objc protocol SPProfileHeaderViewDelegate: NSObjectProtocol {
     @objc optional func didClickPostNum()
     @objc optional func didClickFollowingNum()
-    @objc optional func didClickAvatar()
+    @objc optional func didClickAvatar(imageView: UIImageView)
 }
 
 class SPProfileHeaderView: UIView {
@@ -94,7 +94,7 @@ extension SPProfileHeaderView {
             postTouch ? headerViewDelegate?.didClickPostNum?() : ()
             following ? headerViewDelegate?.didClickFollowingNum?() : ()
             followers ? () : ()
-            avatarTouch ? headerViewDelegate?.didClickAvatar?() : ()
+            avatarTouch ? headerViewDelegate?.didClickAvatar?(imageView: avatarImage) : ()
         }
     }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

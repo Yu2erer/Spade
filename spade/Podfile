@@ -5,13 +5,11 @@ target 'spade' do
  use_frameworks!
 
   # Pods for spade
-
 pod 'Kingfisher'
 pod 'OAuthSwift'
 pod 'YYModel'
 pod 'ZFPlayer'
 pod 'SVProgressHUD'
-pod 'SKPhotoBrowser'
 pod 'Popover'
 pod 'Bugly'
 pod 'Alamofire'

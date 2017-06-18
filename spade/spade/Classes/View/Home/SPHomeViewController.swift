@@ -8,7 +8,6 @@
 
 import UIKit
 import ZFPlayer
-import SKPhotoBrowser
 import Popover
 
 private let photoCellId = "photoCellId"
@@ -42,33 +41,12 @@ class SPHomeViewController: SPBaseViewController {
         NotificationCenter.default.removeObserver(self)
     }
     @objc fileprivate func browserPhoto(n: Notification) {
-        
         guard let selectedIndex = n.userInfo?[SPHomeCellBrowserPhotoSelectedIndexKey] as? Int,
-            let urls = n.userInfo?[SPHomeCellBrowserPhotoURLsKey] as? [String] else {
+            let urls = n.userInfo?[SPHomeCellBrowserPhotoURLsKey] as? [String],let imageViewList = n.userInfo?[SPHomeCellBrowserPhotoImageView] as? [UIImageView] else {
             return
         }
-        var images = [SKPhoto]()
-        for url in urls {
-            let photo = SKPhoto.photoWithImageURL(url)
-            images.append(photo)
-        }
-        SKPhotoBrowserOptions.displayHorizontalScrollIndicator = false
-        SKPhotoBrowserOptions.displayVerticalScrollIndicator = false
-        SKPhotoBrowserOptions.displayCloseButton = false
-        SKPhotoBrowserOptions.enableSingleTapDismiss = true
-        SKPhotoBrowserOptions.displayAction = false
-        SKPhotoBrowserOptions.displayBackAndForwardButton = false
-        
-        guard let imageViewList = n.userInfo?[SPHomeCellBrowserPhotoImageView] as? [UIImageView], let originImage = imageViewList[selectedIndex].image else {
-            let browser = SKPhotoBrowser(photos: images)
-            browser.initializePageIndex(selectedIndex)
-            present(browser, animated: true, completion: nil)
-            return
-        }
-        let browser = SKPhotoBrowser(originImage: originImage, photos: images, animatedFromView: (imageViewList[selectedIndex]))
-        
-        browser.initializePageIndex(selectedIndex)
-        present(browser, animated: true, completion: nil)
+        let vc = NTPhotoBrowserController(selectedIndex: selectedIndex, urls: urls, parentImageViews: imageViewList)
+        present(vc, animated: true, completion: nil)
     }
     /// 加载数据
     override func loadData() {

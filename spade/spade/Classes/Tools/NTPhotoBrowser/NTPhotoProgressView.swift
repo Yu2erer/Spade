@@ -1,6 +1,6 @@
 //
-//  SPPhotoProgressView.swift
-//  spade
+//  NTPhotoProgressView.swift
+//  NTPhotoProgressView
 //
 //  Created by ntian on 2017/4/13.
 //  Copyright © 2017年 ntian. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 /// 一个 环形进度条
-class SPPhotoProgressView: UIView {
+class NTPhotoProgressView: UIView {
     var progress: CGFloat = 1.0 {
         didSet {
             setNeedsDisplay()
@@ -30,10 +30,7 @@ class SPPhotoProgressView: UIView {
     
     override func draw(_ rect: CGRect) {
         
-        if (rect.size.width == 0 || rect.size.height == 0) {
-            return
-        }
-        if progress >= 1.0 {
+        if (rect.size.width == 0 || rect.size.height == 0 || progress >= 1.0) {
             return
         }
         var radius = min(rect.size.width, rect.size.height) * 0.5
@@ -50,6 +47,7 @@ class SPPhotoProgressView: UIView {
         let trackPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
         trackPath.fill()
         // 绘制进度
+        progressTintColor.set()
         let start: CGFloat = -CGFloat.pi / 2
         let end: CGFloat = start + self.progress * 2 * CGFloat.pi
         let progressPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: start, endAngle: end, clockwise: true)

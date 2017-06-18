@@ -22,10 +22,8 @@
 		9F3BFF3B1EEA3B9A00C914B6 /* service.html in Resources */ = {isa = PBXBuildFile; fileRef = 9F3BFF3A1EEA3B9A00C914B6 /* service.html */; };
 		9F3BFF3C1EEA3BDA00C914B6 /* SPLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3BFF3E1EEA3BDA00C914B6 /* SPLoginView.xib */; };
 		9F3BFF441EEA3CEA00C914B6 /* SPServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3BFF431EEA3CEA00C914B6 /* SPServiceViewController.swift */; };
-		9F44EF9D1EBD766B007F7F60 /* NTURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */; };
 		9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */; };
 		9F49F21C1E9F6DC2001922DA /* NTUIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */; };
-		9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */; };
 		9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */; };
 		9F4E0EF91E9692BB004F307A /* SpaceCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */; };
 		9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E0EFB1E972E50004F307A /* SPDashBoard.swift */; };
@@ -69,6 +67,11 @@
 		9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */; };
 		9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */; };
 		9FD36DA51EA768B10007D3C2 /* SPUserDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD36DA41EA768B10007D3C2 /* SPUserDetailHeaderView.swift */; };
+		9FD6D1221EF668ED00DBDDC9 /* NTPhotoBrowserAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6D11D1EF668ED00DBDDC9 /* NTPhotoBrowserAnimator.swift */; };
+		9FD6D1231EF668ED00DBDDC9 /* NTPhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6D11E1EF668ED00DBDDC9 /* NTPhotoBrowserController.swift */; };
+		9FD6D1241EF668ED00DBDDC9 /* NTPhotoBrowserPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6D11F1EF668ED00DBDDC9 /* NTPhotoBrowserPhotos.swift */; };
+		9FD6D1251EF668ED00DBDDC9 /* NTPhotoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6D1201EF668ED00DBDDC9 /* NTPhotoProgressView.swift */; };
+		9FD6D1261EF668ED00DBDDC9 /* NTPhotoViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD6D1211EF668ED00DBDDC9 /* NTPhotoViewerController.swift */; };
 		9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C841E96272F0019D76A /* AppDelegate.swift */; };
 		9FDC1C8C1E96272F0019D76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDC1C8B1E96272F0019D76A /* Assets.xcassets */; };
 		9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC1C9F1E962CBB0019D76A /* SPMainViewController.swift */; };
@@ -117,10 +120,8 @@
 		9F3BFF431EEA3CEA00C914B6 /* SPServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPServiceViewController.swift; sourceTree = "<group>"; };
 		9F3BFF461EEA3EB800C914B6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Setting.strings"; sourceTree = "<group>"; };
 		9F3BFF481EEA3EBB00C914B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Setting.strings; sourceTree = "<group>"; };
-		9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTURLProtocol.swift; sourceTree = "<group>"; };
 		9F47CFF51EA4FB2B0011F87C /* SPProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPProfileHeaderView.swift; sourceTree = "<group>"; };
 		9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NTUIColor+Extensions.swift"; sourceTree = "<group>"; };
-		9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPPhotoProgressView.swift; sourceTree = "<group>"; };
 		9F4E0EF61E9691CA004F307A /* SPNetworkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPNetworkManage.swift; sourceTree = "<group>"; };
 		9F4E0EF81E9692BB004F307A /* SpaceCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCommon.swift; sourceTree = "<group>"; };
 		9F4E0EFB1E972E50004F307A /* SPDashBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoard.swift; sourceTree = "<group>"; };
@@ -165,6 +166,11 @@
 		9FCEC2AD1E9A542900DF0034 /* SPHomePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPHomePictureView.swift; sourceTree = "<group>"; };
 		9FCEC2B11E9A72BF00DF0034 /* SPDashBoardPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDashBoardPicture.swift; sourceTree = "<group>"; };
 		9FD36DA41EA768B10007D3C2 /* SPUserDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserDetailHeaderView.swift; sourceTree = "<group>"; };
+		9FD6D11D1EF668ED00DBDDC9 /* NTPhotoBrowserAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPhotoBrowserAnimator.swift; sourceTree = "<group>"; };
+		9FD6D11E1EF668ED00DBDDC9 /* NTPhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPhotoBrowserController.swift; sourceTree = "<group>"; };
+		9FD6D11F1EF668ED00DBDDC9 /* NTPhotoBrowserPhotos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPhotoBrowserPhotos.swift; sourceTree = "<group>"; };
+		9FD6D1201EF668ED00DBDDC9 /* NTPhotoProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPhotoProgressView.swift; sourceTree = "<group>"; };
+		9FD6D1211EF668ED00DBDDC9 /* NTPhotoViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTPhotoViewerController.swift; sourceTree = "<group>"; };
 		9FDC1C811E96272F0019D76A /* spade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDC1C841E96272F0019D76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FDC1C8B1E96272F0019D76A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,7 +237,6 @@
 		9F44EF9B1EBD7661007F7F60 /* NTProxy */ = {
 			isa = PBXGroup;
 			children = (
-				9F44EF9C1EBD766B007F7F60 /* NTURLProtocol.swift */,
 			);
 			path = NTProxy;
 			sourceTree = "<group>";
@@ -357,6 +362,18 @@
 			path = NTUserDefault;
 			sourceTree = "<group>";
 		};
+		9FD6D11C1EF668ED00DBDDC9 /* NTPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				9FD6D11D1EF668ED00DBDDC9 /* NTPhotoBrowserAnimator.swift */,
+				9FD6D11E1EF668ED00DBDDC9 /* NTPhotoBrowserController.swift */,
+				9FD6D11F1EF668ED00DBDDC9 /* NTPhotoBrowserPhotos.swift */,
+				9FD6D1201EF668ED00DBDDC9 /* NTPhotoProgressView.swift */,
+				9FD6D1211EF668ED00DBDDC9 /* NTPhotoViewerController.swift */,
+			);
+			path = NTPhotoBrowser;
+			sourceTree = "<group>";
+		};
 		9FDC1C781E96272E0019D76A = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB378591EA746640048A51C /* NTFPSLabel.swift */,
+				9FD6D11C1EF668ED00DBDDC9 /* NTPhotoBrowser */,
 				9F17FC601ECBF966009BE5CE /* SQLite */,
 				9F44EF9B1EBD7661007F7F60 /* NTProxy */,
 				9F83843A1EC9B285004617A1 /* NTDownload */,
@@ -502,7 +520,6 @@
 		9FDC1CA11E962ED80019D76A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9F49F21D1E9F726D001922DA /* SPPhotoProgressView.swift */,
 				9F61CCF41E99D8B900C64627 /* NTUIImage+Extensions.swift */,
 				9F49F21B1E9F6DC2001922DA /* NTUIColor+Extensions.swift */,
 				9F61CCF51E99D8B900C64627 /* UIimageView+WebImage.swift */,
@@ -688,7 +705,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F44EF9D1EBD766B007F7F60 /* NTURLProtocol.swift in Sources */,
 				9FD36DA51EA768B10007D3C2 /* SPUserDetailHeaderView.swift in Sources */,
 				9F887FE71EAAF10100094D48 /* SPUserLikesViewController.swift in Sources */,
 				9FE4D83A1EC2BB8F00749B85 /* SPTitleButton.swift in Sources */,
@@ -698,14 +714,17 @@
 				9F4E0EFE1E9744FD004F307A /* SPNetworkManage+Extensions.swift in Sources */,
 				9FDC1CB01E964F200019D76A /* NTUIBarButtonItem+Extensions.swift in Sources */,
 				9F9A2C911E994F300067E1A4 /* SPDashBoardListViewModel.swift in Sources */,
+				9FD6D1221EF668ED00DBDDC9 /* NTPhotoBrowserAnimator.swift in Sources */,
 				9F8BEA3A1EA6088A00F9CF0A /* SPUserListViewModel.swift in Sources */,
 				9F17FC641ECBF966009BE5CE /* NTSQLiteManager.swift in Sources */,
 				9FCEC2AE1E9A542900DF0034 /* SPHomePictureView.swift in Sources */,
 				9F8384401EC9B2F0004617A1 /* SPDownloadedViewCell.swift in Sources */,
 				9F5C75B11EB83E9300C7D5DC /* SPSetting.swift in Sources */,
 				9FCA5F361EB8D3D40038DC66 /* NTUserDefault+Extensions.swift in Sources */,
+				9FD6D1251EF668ED00DBDDC9 /* NTPhotoProgressView.swift in Sources */,
 				9FCEC2B21E9A72BF00DF0034 /* SPDashBoardPicture.swift in Sources */,
 				9FDC1CA31E962EFC0019D76A /* NTBundle+Extensions.swift in Sources */,
+				9FD6D1241EF668ED00DBDDC9 /* NTPhotoBrowserPhotos.swift in Sources */,
 				9F961E5C1ED29106003D0928 /* SPDownloadingViewCell.swift in Sources */,
 				9FEC9F841EB96FD200C82680 /* SPFollowingViewController.swift in Sources */,
 				9F8BB2331EADF1E30012BC86 /* SPLoginView.swift in Sources */,
@@ -722,10 +741,10 @@
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */,
 				9FDC1CAE1E964C670019D76A /* SPDemoViewController.swift in Sources */,
-				9F49F21E1E9F726D001922DA /* SPPhotoProgressView.swift in Sources */,
 				9FF874811EAA52FE0047241E /* SPDiscoverViewController.swift in Sources */,
 				9F6CA4D81E9E572A0098E4DA /* NTInt+Extensions.swift in Sources */,
 				9FDC1CA51E962F9F0019D76A /* SPNavigationController.swift in Sources */,
+				9FD6D1261EF668ED00DBDDC9 /* NTPhotoViewerController.swift in Sources */,
 				9F9A2C871E9902D80067E1A4 /* NTString+Extensions.swift in Sources */,
 				9F1A59E51EA99021008A286D /* SPLikeViewController.swift in Sources */,
 				9F4E0EFC1E972E50004F307A /* SPDashBoard.swift in Sources */,
@@ -745,6 +764,7 @@
 				9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */,
 				9F63A0B91EBACED400685395 /* SPDiscoverTopBarView.swift in Sources */,
 				9FEC9F871EB972CA00C82680 /* SPFollowingTableViewCell.swift in Sources */,
+				9FD6D1231EF668ED00DBDDC9 /* NTPhotoBrowserController.swift in Sources */,
 				9FDC1C851E96272F0019D76A /* AppDelegate.swift in Sources */,
 				9F85B0931EAF6721004C4D09 /* NTMessageHud.swift in Sources */,
 				9F61CCF61E99D8B900C64627 /* NTUIImage+Extensions.swift in Sources */,
@@ -918,7 +938,7 @@
 			baseConfigurationReference = 415A9CD500D9AED2735C62F2 /* Pods-spade.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -928,6 +948,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "spade/Spade-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -940,7 +961,7 @@
 			baseConfigurationReference = 48749C7EFFD4C4F8AB829C27 /* Pods-spade.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: yushan lin (57EGJELJS3)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 57EGJELJS3;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -949,6 +970,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuerer.Tspade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "spade/Spade-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

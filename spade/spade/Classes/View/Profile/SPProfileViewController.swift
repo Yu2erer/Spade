@@ -111,7 +111,7 @@ extension SPProfileViewController: SPProfileHeaderViewDelegate {
         let vc = SPFollowingViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    func didClickAvatar() {
+    func didClickAvatar(imageView: UIImageView) {
         guard var avatarUrl = blogInfoViewModel.blogInfo.avatarURL else {
             return
         }
@@ -121,7 +121,8 @@ extension SPProfileViewController: SPProfileHeaderViewDelegate {
         url.append(avatarUrl)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPHomeCellBrowserPhotoNotification), object: self, userInfo: [SPHomeCellBrowserPhotoURLsKey: url,
                                                                                                                                           
-                                                                                                                                          SPHomeCellBrowserPhotoSelectedIndexKey: 0])
+                                                                                                                                          SPHomeCellBrowserPhotoSelectedIndexKey: 0,
+                                                                                                                                          SPHomeCellBrowserPhotoImageView: [imageView]])
     }
 }
 // MARK: - 设置界面
