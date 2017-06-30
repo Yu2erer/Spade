@@ -104,8 +104,16 @@ class SPNetworkManage {
             completion(nil, false)
             return
         }
-        SPNetworkManage.oauthswift.client.credential.oauthToken = oauthToken
-        SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = oauthTokenSecret
+        if inReview {
+            SPNetworkManage.oauthswift.client.credential.oauthToken = "dwwtBRxbTuKf7g0zYc6C37LRdzAe5Omwc64SWlsVNoIKEz2OCh"
+            SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = "8YkxYHppXJGdQhVSlT7sC3LMLAVNNN2ZPWSXTzeca3g6kRTtmd"
+            self.userAccount.oauthToken = "dwwtBRxbTuKf7g0zYc6C37LRdzAe5Omwc64SWlsVNoIKEz2OCh"
+            self.userAccount.oauthTokenSecret = "8YkxYHppXJGdQhVSlT7sC3LMLAVNNN2ZPWSXTzeca3g6kRTtmd"
+            self.userAccount.saveAccount()
+        } else {
+            SPNetworkManage.oauthswift.client.credential.oauthToken = oauthToken
+            SPNetworkManage.oauthswift.client.credential.oauthTokenSecret = oauthTokenSecret
+        }
         if parameters == nil {
             SPNetworkManage.oauthswift.client.request(urlString, method: method, success: { (response) in
                 completion(try? response.jsonObject(), true)

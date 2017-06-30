@@ -14,9 +14,9 @@ class NTPhotoViewerController: UIViewController {
     lazy var scrollView = UIScrollView()
     lazy var imageView = UIImageView()
     fileprivate lazy var progressView: NTPhotoProgressView = NTPhotoProgressView()
-    var photoIndex: Int
+    var photoIndex: Int = 0
     fileprivate var url: URL?
-    fileprivate var placeholder: UIImage
+    fileprivate var placeholder: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +24,16 @@ class NTPhotoViewerController: UIViewController {
         loadImage()
     }
     init(urlString: String, photoIndex: Int, placeholder: UIImage) {
+        super.init(nibName: nil, bundle: nil)
         self.url = URL(string: urlString)
         self.photoIndex = photoIndex
-        self.placeholder = UIImage(cgImage: placeholder.cgImage!, scale: 1.0, orientation: placeholder.imageOrientation)
-        super.init(nibName: nil, bundle: nil)
+        let zeroSize = CGSize(width: 0, height: 0)
+        if placeholder.size == zeroSize {
+            self.placeholder = UIImage().nt_image(size: zeroSize, backColor: UIColor.black)
+        } else {
+            self.placeholder = UIImage(cgImage: placeholder.cgImage!, scale: 1.0, orientation: placeholder.imageOrientation)
+        }
+
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -37,11 +43,10 @@ extension NTPhotoViewerController {
     fileprivate func setupUI() {
         scrollView = UIScrollView(frame: view.bounds)
         view.addSubview(scrollView)
-//        imageView = UIImageView(image: placeholder)
-        imageView = UIImageView(frame: CGRect(origin: .zero, size:    imageSizeWithScreen(placeholder)))
+        imageView = UIImageView(image: placeholder)
+//        imageView = UIImageView(frame: CGRect(origin: .zero, size:    imageSizeWithScreen(placeholder!)))
         imageView.center = view.center
         scrollView.addSubview(imageView)
-        
         progressView = NTPhotoProgressView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         progressView.center = self.view.center
         progressView.progress = 1.0
@@ -79,10 +84,19 @@ extension NTPhotoViewerController {
         size.height = image.size.height * size.width / image.size.width
         return size
     }
+    fileprivate func setImageViewToTheCenter() {
+        let offsetX = scrollView.frame.width > scrollView.contentSize.width ? (scrollView.frame.width - scrollView.contentSize.width) * 0.5 : 0.0
+        let offsetY = (scrollView.frame.height > scrollView.contentSize.height) ? (scrollView.frame.height - scrollView.contentSize.height) * 0.5 : 0.0
+        imageView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX, y: scrollView.contentSize.height * 0.5)
+    }
+
 }
 // MARK: - UIScrollViewDelegate
 extension NTPhotoViewerController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
+    }
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        setImageViewToTheCenter()
     }
 }

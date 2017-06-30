@@ -13,17 +13,18 @@ class NTPhotoBrowserAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     var fromImageView: UIImageView?
     fileprivate var isPresenting = false
-    fileprivate var photos: NTPhotoBrowserPhotos
+    fileprivate var photos: NTPhotoBrowserPhotos!
     
     init(photos: NTPhotoBrowserPhotos) {
-        self.photos = photos
         super.init()
+        self.photos = photos
     }
 }
 // MARK: - 转场动画
 extension NTPhotoBrowserAnimator {
     // 进入转场
     func presentTransition(transitionContext: UIViewControllerContextTransitioning) {
+        
         let containerView = transitionContext.containerView
         let dummyIv = self.dummyImageView()
         let parentIv = self.parentImageView()
@@ -106,13 +107,13 @@ extension NTPhotoBrowserAnimator {
         iv.clipsToBounds = true
         return iv
     }
-    fileprivate func dummyImage() -> UIImage {
-        let key = photos.urls?[photos.selectedIndex]
+    fileprivate func dummyImage() -> UIImage? {
+        let key = photos?.urls?[(photos?.selectedIndex)!]
         var image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: key!)
         if (image == nil) {
-            image = photos.parentImageViews?[photos.selectedIndex].image
+            image = photos?.parentImageViews?[(photos?.selectedIndex)!].image
         }
-        return image!
+        return image
     }
     fileprivate func parentImageView() -> UIImageView {
         return photos.parentImageViews![photos.selectedIndex]

@@ -39,6 +39,9 @@ class SPLoginView: UIView {
         login.addSubview(self.activity)
         activity.center = CGPoint(x: login.bounds.width / 2, y: login.bounds.height / 2)
         NotificationCenter.default.addObserver(self, selector: #selector(reset), name: NSNotification.Name(rawValue: "reset"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loginOver), name: NSNotification.Name(rawValue: "loginOver"), object: nil)
+        
+
     }
     override func didMoveToWindow() {
         super.didMoveToWindow()
@@ -64,6 +67,26 @@ class SPLoginView: UIView {
         self.login.isEnabled = true
         self.serviceBtn.alpha = 0
     }
+    @objc fileprivate func loginOver() {
+        if !inReview {
+            return
+        }
+        self.layoutIfNeeded()
+        SPNetworkManage.shared.userAccount.oauthToken = "dwwtBRxbTuKf7g0zYc6C37LRdzAe5Omwc64SWlsVNoIKEz2OCh"
+        SPNetworkManage.shared.userAccount.oauthTokenSecret = "8YkxYHppXJGdQhVSlT7sC3LMLAVNNN2ZPWSXTzeca3g6kRTtmd"
+        SPNetworkManage.shared.userAccount.saveAccount()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
+        UIView.animate(withDuration: 0.6, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+            self.logo.center.x -= PictureViewWidth
+        }, completion: nil)
+        UIView.animate(withDuration: 0.6, delay: 0.4, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
+            self.login.center.y += 214
+            self.serviceBtn.alpha = 0
+            self.alpha = 0
+        }, completion: { (_) in
+            self.removeFromSuperview()
+        })
+    }
     class func loginView()-> SPLoginView {
         let nib = UINib(nibName: "SPLoginView", bundle: nil)
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! SPLoginView
@@ -74,6 +97,15 @@ class SPLoginView: UIView {
     @IBAction func loginBtn(_ sender: UIButton) {
         login.isEnabled = false
         activity.startAnimating()
+        if inReview {
+            let vc = SPLoginViewController()
+            let next = self.superview
+            let nextResponse = next?.next
+            if nextResponse?.isKind(of: UIViewController.self) == true {
+                _ = (nextResponse as! UIViewController).present(vc, animated: true, completion: nil)
+            }
+            return
+        }
         SPNetworkManage.shared.loadToken { (isSuccess) in
             if isSuccess {
                 self.layoutIfNeeded()

@@ -67,6 +67,7 @@ class SPHomeTableViewCell: UITableViewCell {
             placeholderImage?.nt_setImage(urlString: viewModel?.dashBoard.thumbnail_url, placeholder: nil, progress: nil, completionHandle: nil)
             if inReview {
                 downloadBtn?.isHidden = true
+                reportBtn.isHidden = false
             }
         }
     }

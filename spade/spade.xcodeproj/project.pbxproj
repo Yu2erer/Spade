@@ -87,6 +87,10 @@
 		9FEC9F841EB96FD200C82680 /* SPFollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC9F831EB96FD200C82680 /* SPFollowingViewController.swift */; };
 		9FEC9F871EB972CA00C82680 /* SPFollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEC9F851EB972CA00C82680 /* SPFollowingTableViewCell.swift */; };
 		9FEC9F881EB972CA00C82680 /* SPFollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FEC9F861EB972CA00C82680 /* SPFollowingTableViewCell.xib */; };
+		9FF35F2C1EF8E2E2003DCA61 /* SPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF35F2A1EF8E2E2003DCA61 /* SPLoginViewController.swift */; };
+		9FF35F2D1EF8E2E2003DCA61 /* SPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF35F2B1EF8E2E2003DCA61 /* SPLoginViewController.xib */; };
+		9FF35F301EF8F4D3003DCA61 /* SPRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF35F2E1EF8F4D3003DCA61 /* SPRegisterViewController.swift */; };
+		9FF35F311EF8F4D3003DCA61 /* SPRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF35F2F1EF8F4D3003DCA61 /* SPRegisterViewController.xib */; };
 		9FF8747F1EAA4C500047241E /* SPUserLikeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8747E1EAA4C500047241E /* SPUserLikeListViewModel.swift */; };
 		9FF874811EAA52FE0047241E /* SPDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF874801EAA52FE0047241E /* SPDiscoverViewController.swift */; };
 /* End PBXBuildFile section */
@@ -189,6 +193,10 @@
 		9FEC9F831EB96FD200C82680 /* SPFollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFollowingViewController.swift; sourceTree = "<group>"; };
 		9FEC9F851EB972CA00C82680 /* SPFollowingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPFollowingTableViewCell.swift; sourceTree = "<group>"; };
 		9FEC9F861EB972CA00C82680 /* SPFollowingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPFollowingTableViewCell.xib; sourceTree = "<group>"; };
+		9FF35F2A1EF8E2E2003DCA61 /* SPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPLoginViewController.swift; sourceTree = "<group>"; };
+		9FF35F2B1EF8E2E2003DCA61 /* SPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginViewController.xib; sourceTree = "<group>"; };
+		9FF35F2E1EF8F4D3003DCA61 /* SPRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRegisterViewController.swift; sourceTree = "<group>"; };
+		9FF35F2F1EF8F4D3003DCA61 /* SPRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPRegisterViewController.xib; sourceTree = "<group>"; };
 		9FF8747E1EAA4C500047241E /* SPUserLikeListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUserLikeListViewModel.swift; sourceTree = "<group>"; };
 		9FF874801EAA52FE0047241E /* SPDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPDiscoverViewController.swift; sourceTree = "<group>"; };
 		A50C2F42A49182BA021C5361 /* Pods_spade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +299,10 @@
 			children = (
 				9FBCFC9F1EACCFA0004A801E /* SPOAuthViewController.swift */,
 				9F8BB2321EADF1E30012BC86 /* SPLoginView.swift */,
+				9FF35F2E1EF8F4D3003DCA61 /* SPRegisterViewController.swift */,
+				9FF35F2F1EF8F4D3003DCA61 /* SPRegisterViewController.xib */,
+				9FF35F2A1EF8E2E2003DCA61 /* SPLoginViewController.swift */,
+				9FF35F2B1EF8E2E2003DCA61 /* SPLoginViewController.xib */,
 				9F3BFF3E1EEA3BDA00C914B6 /* SPLoginView.xib */,
 			);
 			path = OAuth;
@@ -633,6 +645,7 @@
 				9F32C5001EE914FA0013D9BE /* SPSelectLoadView.xib in Resources */,
 				9F961E5D1ED29106003D0928 /* SPDownloadingViewCell.xib in Resources */,
 				9F63A0BB1EBACEE300685395 /* SPDiscoverTopBarView.xib in Resources */,
+				9FF35F2D1EF8E2E2003DCA61 /* SPLoginViewController.xib in Resources */,
 				9FEC9F881EB972CA00C82680 /* SPFollowingTableViewCell.xib in Resources */,
 				9F32C4FA1EE912D90013D9BE /* LaunchScreen.storyboard in Resources */,
 				9F32C5141EE921680013D9BE /* SPProfileHeaderView.xib in Resources */,
@@ -647,6 +660,7 @@
 				9F32C5331EE928770013D9BE /* Localizable.strings in Resources */,
 				9F3BFF3C1EEA3BDA00C914B6 /* SPLoginView.xib in Resources */,
 				9F17FC631ECBF966009BE5CE /* dashboard.sql in Resources */,
+				9FF35F311EF8F4D3003DCA61 /* SPRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +751,7 @@
 				9FB378581EA73C5B0048A51C /* SPUserDetailViewController.swift in Sources */,
 				9F47CFF61EA4FB2B0011F87C /* SPProfileHeaderView.swift in Sources */,
 				9F3BFF441EEA3CEA00C914B6 /* SPServiceViewController.swift in Sources */,
+				9FF35F301EF8F4D3003DCA61 /* SPRegisterViewController.swift in Sources */,
 				9FDC1CA01E962CBB0019D76A /* SPMainViewController.swift in Sources */,
 				9FDC1CA71E9630BA0019D76A /* SPHomeViewController.swift in Sources */,
 				9F87A68A1EC433AD0020E145 /* SPDownloadViewController.swift in Sources */,
@@ -761,6 +776,7 @@
 				9F4E0EF71E9691CA004F307A /* SPNetworkManage.swift in Sources */,
 				9F83843D1EC9B285004617A1 /* NTDownloadManager.swift in Sources */,
 				9F4E0F001E97465B004F307A /* SPBaseViewController.swift in Sources */,
+				9FF35F2C1EF8E2E2003DCA61 /* SPLoginViewController.swift in Sources */,
 				9F9A2C891E9912EB0067E1A4 /* SPBlogInfo.swift in Sources */,
 				9F63A0B91EBACED400685395 /* SPDiscoverTopBarView.swift in Sources */,
 				9FEC9F871EB972CA00C82680 /* SPFollowingTableViewCell.swift in Sources */,

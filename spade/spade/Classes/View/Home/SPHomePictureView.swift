@@ -38,7 +38,6 @@ class SPHomePictureView: UIView {
             for i in 0..<temp {
                 let v = subviews[index] as! UIImageView
                 let pv = v.subviews[0] as! UIProgressView
-
                 originalHeight = Double(viewModel?.dashBoard.photos?[picNum].original_size?.height ?? "") ?? 0
                 originalWidth = Double(viewModel?.dashBoard.photos?[picNum].original_size?.width ?? "") ?? 0
                 let picHeight = CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
@@ -50,7 +49,6 @@ class SPHomePictureView: UIView {
                 }
                 v.frame = CGRect(x: 0, y: PictureViewOutterMargin, width: PictureViewWidth / CGFloat(temp), height: picHeight).offsetBy(dx: xOffset, dy: yOffset)
                 pv.center = CGPoint(x: v.bounds.width / 2, y: v.bounds.height / 2)
-
                 index = index + 1
             }
             let picHeight = CGFloat(originalHeight / originalWidth) * PictureViewWidth / CGFloat(temp)
@@ -77,7 +75,7 @@ class SPHomePictureView: UIView {
                 iv.nt_setImage(urlString: url.alt_sizes?[1].url, placeholder: nil, progress: { (receivedSize, expectedSize) in
                     DispatchQueue.main.async(execute: {
                         let progress = Float(receivedSize) / Float(expectedSize)
-                        if progress < 1 {
+                        if progress <= 1 {
                             pv.progress = Float(receivedSize) / Float(expectedSize)
                         }
                     })
@@ -130,7 +128,6 @@ extension SPHomePictureView {
         for i in 0..<count {
             let progressView = UIProgressView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
             let iv = UIImageView(frame: rect)
-
             iv.backgroundColor = UIColor(hex: 0xEAEAEA)
             addSubview(iv)
             progressView.progress = 0

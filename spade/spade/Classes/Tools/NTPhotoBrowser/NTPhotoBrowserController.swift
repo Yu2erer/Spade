@@ -13,25 +13,25 @@ import UIKit
 
 class NTPhotoBrowserController: UIViewController {
 
-    fileprivate var photos: NTPhotoBrowserPhotos
+    fileprivate lazy var photos = NTPhotoBrowserPhotos()
     fileprivate var currentViewer: NTPhotoViewerController?
     fileprivate var statusBarHidden = false
     fileprivate lazy var pageControl = UIPageControl()
     fileprivate var activityViewController: UIActivityViewController!
-    fileprivate var animator: NTPhotoBrowserAnimator!
+    fileprivate var animator: NTPhotoBrowserAnimator?
     public weak var delegate: NTPhotoBrowserDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     init(selectedIndex: Int, urls: [String], parentImageViews: [UIImageView]) {
+        super.init(nibName: nil, bundle: nil)
         photos = NTPhotoBrowserPhotos()
         photos.selectedIndex = selectedIndex
         photos.urls = urls
         photos.parentImageViews = parentImageViews
         statusBarHidden = false
         animator = NTPhotoBrowserAnimator(photos: photos)
-        super.init(nibName: nil, bundle: nil)
         self.modalPresentationStyle = .custom
         transitioningDelegate = animator
     }
@@ -53,10 +53,10 @@ class NTPhotoBrowserController: UIViewController {
     }
 
     fileprivate func viewerWithIndex(index: Int) -> NTPhotoViewerController {
-        return NTPhotoViewerController(urlString: (photos.urls![index]), photoIndex: index, placeholder: (photos.parentImageViews![index].image)!)
+        return NTPhotoViewerController(urlString: (photos.urls?[index])!, photoIndex: index, placeholder: (photos.parentImageViews?[index].image) ?? UIImage())
     }
     @objc fileprivate func singleTapGesture() {
-        animator.fromImageView = currentViewer?.imageView
+        animator?.fromImageView = currentViewer?.imageView
         self.dismiss(animated: true, completion: nil)
     }
     @objc fileprivate func doubleTapGesture(recognizer: UITapGestureRecognizer) {
@@ -151,17 +151,8 @@ extension NTPhotoBrowserController {
         pageController.didMove(toParentViewController: self)
         // 手势
         self.view.gestureRecognizers = pageController.gestureRecognizers
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapGesture))
-        singleTap.numberOfTapsRequired = 1
-        singleTap.numberOfTouchesRequired = 1
-        self.view.addGestureRecognizer(singleTap)
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapGesture(recognizer:)))
-        doubleTap.numberOfTapsRequired = 2
-        doubleTap.numberOfTouchesRequired = 1
-        self.view.addGestureRecognizer(doubleTap)
-        singleTap.require(toFail: doubleTap)
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(recognizer:)))
-        self.view.addGestureRecognizer(longPress)
+        addGesture()
+
         pageControl = UIPageControl(frame: CGRect(origin: .zero, size:         pageControl.size(forNumberOfPages: (photos.urls?.count)!)))
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.white
@@ -174,5 +165,18 @@ extension NTPhotoBrowserController {
         if photos.urls?.count == 1 {
             pageControl.isHidden = true
         }
+    }
+    fileprivate func addGesture() {
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapGesture))
+        singleTap.numberOfTapsRequired = 1
+        singleTap.numberOfTouchesRequired = 1
+        self.view.addGestureRecognizer(singleTap)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapGesture(recognizer:)))
+        doubleTap.numberOfTapsRequired = 2
+        doubleTap.numberOfTouchesRequired = 1
+        self.view.addGestureRecognizer(doubleTap)
+        singleTap.require(toFail: doubleTap)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(recognizer:)))
+        self.view.addGestureRecognizer(longPress)
     }
 }
