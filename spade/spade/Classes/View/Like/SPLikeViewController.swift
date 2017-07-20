@@ -15,7 +15,6 @@ private let videoCellId = "videoCellId"
 class SPLikeViewController: SPBaseViewController {
 
     fileprivate lazy var likeListViewModel = SPUserLikeListViewModel()
-    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,7 @@ class SPLikeViewController: SPBaseViewController {
             self.refreshControl?.endRefreshing()
             self.isPullup = false
             if !isSuccess {
-                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
+                NTMessageHud.showMessage(targetView: self.view, message: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             if shouldRefresh {

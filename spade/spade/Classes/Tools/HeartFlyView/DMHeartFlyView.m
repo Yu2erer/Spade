@@ -96,26 +96,6 @@ static CGFloat PI = M_PI;
 
 
 -(void)drawRect:(CGRect)rect{
-//    UIImage *heartImage = [UIImage imageNamed:@"heart"];
-//    UIImage *heartImageBorder = [UIImage imageNamed:@"heartBorder"];
-//    
-//    //Draw background image (mimics border)
-//    UIGraphicsBeginImageContextWithOptions(heartImageBorder.size, NO, 0.0f);
-//    [_strokeColor setFill];
-//    CGRect bounds = CGRectMake(0, 0, heartImageBorder.size.width, heartImageBorder.size.height);
-//    UIRectFill(bounds);
-//    [heartImageBorder drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
-//    heartImageBorder = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//    //Draw foreground heart image
-//    UIGraphicsBeginImageContextWithOptions(heartImage.size, NO, 0.0f);
-//    [_fillColor setFill];
-//    CGRect bounds1 = CGRectMake(0, 0, heartImage.size.width, heartImage.size.height);
-//    UIRectFill(bounds1);
-//    [heartImage drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
-//    heartImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
 
     [self drawHeartInRect:rect];
 

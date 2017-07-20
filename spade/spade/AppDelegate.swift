@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         window?.backgroundColor = UIColor.white
+        // 指纹识别
+//        NTEasyAuth.shared.isEnabledAuth = true
+//        NTEasyAuth.shared.delegate = self
+//        NTEasyAuth.shared.touchIDAuth(message: "指纹识别", fallbackTitle: nil)
         addAditions()
         window?.rootViewController = SPMainViewController()
         window?.makeKeyAndVisible()
@@ -49,12 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
         
-//        if inReview == false {
-//            let sessionConfiguration = URLSessionConfiguration.default
-//            sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
+        if inReview == false {
+            let sessionConfiguration = URLSessionConfiguration.default
+            sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
 //            OAuthSwift.session.configuration = sessionConfiguration
-//        }
-        
+        }
+    
 //        let VERIFY_RECEIPT_URL = "https://buy.itunes.apple.com/verifyReceipt"
 //        let ITMS_SANDBOX_VERIFY_RECEIPT_URL = "https://sandbox.itunes.apple.com/verifyReceipt"
 
@@ -84,3 +88,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
+// MARK: - NTEasyAuthDelegate
+//extension AppDelegate: NTEasyAuthDelegate {
+//    func touchIDAuthSuccess() {
+//        DispatchQueue.main.async {
+//            self.window?.rootViewController = SPMainViewController()
+//            self.window?.makeKeyAndVisible()
+//        }
+//    }
+//    func touchIDAuthFail() {
+//        
+//    }
+//}

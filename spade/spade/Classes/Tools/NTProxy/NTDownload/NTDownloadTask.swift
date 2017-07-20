@@ -9,11 +9,6 @@
 import UIKit
 import Foundation
 
-enum NTDownloadState {
-    case NTWillDownload
-    case NTDownloading
-    case NTStopDownload
-}
 class NTDownloadTask: NSObject {
     
     var url: URL
@@ -23,7 +18,6 @@ class NTDownloadTask: NSObject {
     var fileReceivedSize: Int64 = 0
     var fileSize: Int64 = 0
     var name: String
-    var downloadState: NTDownloadState?
     init(url: URL, taskIdentifier: Int, fileImage: String) {
         self.url = url
         name = (url.absoluteString as NSString).lastPathComponent

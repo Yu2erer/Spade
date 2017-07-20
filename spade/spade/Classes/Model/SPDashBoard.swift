@@ -68,17 +68,17 @@ class SPDashBoard: NSObject {
     /// 视频地址
     var video_url: String? {
         didSet {
-//            if inReview == false {
-//                video_url = spadeBaseURL + (video_url?.removeMediaString() ?? "")
-//            }
+            if inReview == false {
+                video_url = spadeBaseURL + (video_url?.removeMediaString() ?? "")
+            }
         }
     }
     /// 视频缩略图地址
     var thumbnail_url: String? {
         didSet {
-//            if inReview == false {
-//                thumbnail_url = spadeBaseURL + (thumbnail_url?.removeMediaString() ?? "")
-//            }
+            if inReview == false {
+                thumbnail_url = spadeBaseURL + (thumbnail_url?.removeMediaString() ?? "")
+            }
         }
     }
     /// 视频宽度

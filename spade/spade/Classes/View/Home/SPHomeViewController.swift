@@ -23,7 +23,6 @@ class SPHomeViewController: SPBaseViewController {
     fileprivate var selected: String = loadType.home.rawValue
     /// 列表视图模型
     lazy var dashBoardListViewModel = SPDashBoardListViewModel()
-    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
     fileprivate var popover: Popover!
     fileprivate var popoverOptions: [PopoverOption] = [
         .type(.down),
@@ -55,7 +54,7 @@ class SPHomeViewController: SPBaseViewController {
             self.refreshControl?.endRefreshing()
             self.isPullup = false
             if !isSuccess {
-                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
+                NTMessageHud.showMessage(targetView: self.view, message: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             if shouldRefresh {

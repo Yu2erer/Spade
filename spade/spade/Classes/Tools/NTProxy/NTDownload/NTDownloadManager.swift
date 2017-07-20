@@ -112,7 +112,6 @@ class NTDownloadManager: URLSessionDownloadTask {
         let downloadTask = self.session?.downloadTask(with: url)
         downloadTask?.resume()
         let task = NTDownloadTask(url: url, taskIdentifier: downloadTask?.taskIdentifier ?? 0, fileImage: fileImage)
-        task.downloadState = .NTDownloading
         self.taskList.append(task)
         self.saveTaskList()
     }

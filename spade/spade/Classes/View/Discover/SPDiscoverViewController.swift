@@ -16,7 +16,6 @@ class SPDiscoverViewController: UIViewController {
     fileprivate lazy var postTableView = UITableView()
     fileprivate lazy var contentScrollView = UIScrollView()
     fileprivate lazy var topBarView: SPDiscoverTopBarView = SPDiscoverTopBarView()
-    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
     fileprivate lazy var customNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 12, width: PictureViewWidth, height: 64))
     fileprivate lazy var navItem = UINavigationItem()
 
@@ -54,7 +53,7 @@ class SPDiscoverViewController: UIViewController {
                 if isSuccess {
                     self.userTableView.reloadData()
                 } else {
-                    self.messageHud.showMessage(view: self.view, msg:                     NSLocalizedString("SearchNoFound", comment: "搜索不到的提示"), isError: true)
+                    NTMessageHud.showMessage(targetView: self.view, message:  NSLocalizedString("SearchNoFound", comment: "搜索不到的提示"), isError: true)
                 }
             }
         } else {

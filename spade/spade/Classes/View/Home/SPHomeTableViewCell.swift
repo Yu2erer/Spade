@@ -37,7 +37,6 @@ class SPHomeTableViewCell: UITableViewCell {
     // 播放按钮
     fileprivate let playBtn = UIButton(type: .custom)
     fileprivate var trackingTouch = false
-    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
 
     @IBOutlet weak var reportBtn: UIButton!
     
@@ -87,16 +86,16 @@ class SPHomeTableViewCell: UITableViewCell {
         btnAnime.duration = 0.2
         reportBtn.layer.add(btnAnime, forKey: "SHOW")
 //        if reportFlag == false {
-            messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("ReportSuccess", comment: "举报成功"), isError: false)
+        NTMessageHud.showMessage(targetView: self.superview?.superview?.superview, message: NSLocalizedString("ReportSuccess", comment: "举报成功"), isError: false)
 //            reportFlag = true
 //        }
     }
     @IBAction func downBtn(_ sender: UIButton) {
         guard let video_url = viewModel?.dashBoard.video_url, let fileImage = viewModel?.dashBoard.thumbnail_url else {
-            messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("VideoDeleted", comment: "视频已被删除"), isError: true)
+            NTMessageHud.showMessage(targetView: self.superview?.superview?.superview, message: NSLocalizedString("VideoDeleted", comment: "视频已被删除"), isError: true)
             return
         }
-        messageHud.showMessage(view: (self.superview?.superview?.superview)!, msg: NSLocalizedString("AddDownloadSuccess", comment: "添加下载成功"), isError: false)
+        NTMessageHud.showMessage(targetView: self.superview?.superview?.superview, message: NSLocalizedString("AddDownloadSuccess", comment: "添加下载成功"), isError: false)
         NTDownloadManager.shared.newTask(urlString: video_url, fileImage: fileImage)
     }
     @IBAction func likeBtn(_ sender: UIButton) {

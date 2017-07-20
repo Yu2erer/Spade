@@ -14,7 +14,6 @@ private let followingCell = "followingCell"
 class SPFollowingViewController: UIViewController {
 
     fileprivate lazy var followingListViewModel = SPUserFollowingListViewModel()
-    fileprivate lazy var messageHud: NTMessageHud = NTMessageHud()
     /// 上拉刷新标记
     fileprivate var isPullup = false
     fileprivate var tableView = UITableView()
@@ -34,7 +33,7 @@ class SPFollowingViewController: UIViewController {
             self.isPullup = false
             SVProgressHUD.dismiss()
             if !isSuccess {
-                self.messageHud.showMessage(view: self.view, msg: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
+                NTMessageHud.showMessage(targetView: self.view, message: NSLocalizedString("RefreshFeedError", comment: "加载失败"), isError: true)
                 return
             }
             if shouldRefresh {

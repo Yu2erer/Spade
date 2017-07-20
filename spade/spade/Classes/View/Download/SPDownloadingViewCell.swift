@@ -29,7 +29,7 @@ class SPDownloadingViewCell: UITableViewCell {
         guard let model = n.userInfo?["downloadModel"] as? NTDownloadTask else {
             return
         }
-        if model.taskIdentifier == fileInfo?.taskIdentifier {
+        if model == fileInfo {
             if model.fileSize == 0 {
                 progress = 0
             } else {
