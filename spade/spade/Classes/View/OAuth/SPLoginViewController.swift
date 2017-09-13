@@ -39,7 +39,7 @@ class SPLoginViewController: UIViewController {
         passText.addTarget(self, action: #selector(passChanged), for: .editingChanged)
     }
     @IBAction func login() {
-        if emailText.text == "1179953947@qq.com" && passText.text == "shenlong00" {
+        if emailText.text == "test" && passText.text == "test" {
             dismiss(animated: true, completion: { 
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loginOver"), object: nil)
             })

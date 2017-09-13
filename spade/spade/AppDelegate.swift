@@ -53,11 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.UserSetting.set(value: true, forKey: .isSmallWindowOn)
         }
         
-        if inReview == false {
-            let sessionConfiguration = URLSessionConfiguration.default
-            sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
-//            OAuthSwift.session.configuration = sessionConfiguration
-        }
+//        if inReview == false {
+//            let sessionConfiguration = URLSessionConfiguration.default
+//            sessionConfiguration.connectionProxyDictionary = proxyDict as? [AnyHashable : Any]
+////            OAuthSwift.session.configuration = sessionConfiguration
+//        }
     
 //        let VERIFY_RECEIPT_URL = "https://buy.itunes.apple.com/verifyReceipt"
 //        let ITMS_SANDBOX_VERIFY_RECEIPT_URL = "https://sandbox.itunes.apple.com/verifyReceipt"

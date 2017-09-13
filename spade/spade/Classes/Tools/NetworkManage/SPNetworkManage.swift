@@ -147,6 +147,8 @@ class SPNetworkManage {
             self.userAccount.oauthToken = credential.oauthToken
             self.userAccount.oauthTokenSecret = credential.oauthTokenSecret
             self.userAccount.saveAccount()
+//            print(credential.oauthToken)
+//            print(credential.oauthTokenSecret)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
             completion(true)
         }) { (error) in

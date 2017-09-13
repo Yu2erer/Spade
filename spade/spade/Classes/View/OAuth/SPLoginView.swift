@@ -72,8 +72,8 @@ class SPLoginView: UIView {
             return
         }
         self.layoutIfNeeded()
-        SPNetworkManage.shared.userAccount.oauthToken = "dwwtBRxbTuKf7g0zYc6C37LRdzAe5Omwc64SWlsVNoIKEz2OCh"
-        SPNetworkManage.shared.userAccount.oauthTokenSecret = "8YkxYHppXJGdQhVSlT7sC3LMLAVNNN2ZPWSXTzeca3g6kRTtmd"
+        SPNetworkManage.shared.userAccount.oauthToken = "O5xZJhHtBEQBfR8ECGNMEsmdfdVkeQeNk40WxCxmgJM70799IM"
+        SPNetworkManage.shared.userAccount.oauthTokenSecret = "7qOw3SzB5Mx9AL2otmfbCHTr8xX8icWOkRBKS1i3lEkbW9qVmd"
         SPNetworkManage.shared.userAccount.saveAccount()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPUserLoginSuccessedNotification), object: nil)
         UIView.animate(withDuration: 0.6, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
